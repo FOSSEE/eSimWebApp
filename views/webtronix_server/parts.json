@@ -1,0 +1,240 @@
+{
+  "parts":{
+    "ic":{
+      "3_pins":{},
+      "4_pins":{},
+      "5_pins":{}
+    },
+    
+    "amplifier":{
+      "op-amp":{
+	"help":"ux + - v- out v+ model\n\ndirective = include model file",
+	"values":{
+	  "lm324":["lm324.mod"],
+	  "lm358":["lm358.mod"],
+	  "741":["ua741.mod","lm741.mod"],
+	  "tl084":["tl084.mod"]
+	}
+      },
+      "inst-amp":{
+	"values":{
+	  "ina128":["ina128.mod"],
+	  "ad620a":["ad620a.mod"],
+	  "ad8221":["ad8221.mod"]
+	}
+      }
+    },
+    "digital":{
+      
+      "adc_bridge":{
+	"ideal_adc":["digital.lib"]
+      },
+      "dac_bridge":{
+	"ideal_dac":["digital.lib"]
+      },                    
+      "source":{
+	"clk":["dsource.mod"]
+      },                
+      "and":{
+	"and(rise = 0.5e-9 fall = 0.3e-9)":[],
+	"and1":["digital.lib"]
+      },
+      "nand":{
+	"nand1":["digital.lib"]                        
+      },
+      "nor":{
+	"nor1":["digital.lib"]                        
+      },
+      "not":{
+	"inv1":["digital.lib"]
+      },
+      "or":{
+	"or1":["digital.lib"]
+      },
+      "xnor":{
+	"xnor":["digital.lib"]                        
+      },
+      "xor":{
+	"xor":["digital.lib"]                        
+      }
+    },
+    
+    "resistors":{
+      "photo-resistor":{},
+      "resistor":{
+	"help":"rx 1 2 value\nrx = part id\nvalue = 0-xMeg",         
+	"values":{
+	  "10":[""],
+	  "100":[""],
+	  "1K":[""],
+	  "10K":[""],
+	  "100K":[""],
+	  "1.0Meg":[""],
+	  "10Meg":[""]
+	}
+      },
+      
+      "vari-resistor":{},
+      "potentiometer":{}
+    },
+    "transistors":{
+      "njfet":{
+	"values":{
+	  "mpf102":["models.lib"],
+	  "2n3819":["models.lib"]
+	  
+	}
+      },
+      "npn":{
+	"values":{
+	  
+	  "2n3904":["models.lib"],
+	  "2n2222":["models.lib"],                    
+	  "2n3055":["models.lib"]                    
+	}
+      },
+      "pjfet":{},
+      "pnp":{
+	"values":{
+	  "2n3906":["models.lib"],
+	  "2n2907":["models.lib"]
+	}
+      },
+      "nmosfet":{
+	"values":{
+	  "2n7000":["2n7000.mod"],
+	  "irf150":["irf150.mod"],
+	  "irf530":["irf530.mod"],
+	  "irfz44n":["irfz44n.mod"]
+	}
+      },
+      "phototrans":{},
+      "pmosfet":{}
+    },
+    "audio":{
+      "speaker":{}
+    },
+    
+    "diodes":{
+      "diode":{
+	"values":{
+	  
+	  "1n4148":["models.lib"],
+	  "1n4007":["models.lib"],
+	  "1n34a":["models.lib"],
+	  "1n5711":["models.lib"]
+	  
+	},
+	"help":"dx a k model\na=anode\nk=kathode"         
+	
+      },
+      "led":{},
+      "photodiode":{},
+      "scr":{},
+      "triac":{},
+      "trigger":{},
+      "zener":{}
+    },
+    "switches":{
+      
+      "ncpb":{},
+      "nopb":{},
+      "spst-relay":{},
+      "spst-switch":{}
+    },
+    "capacitors":{
+      "capacitor":{
+	"help":"cx 1 2 value",         
+	
+	"values":{
+	  
+	  "1pf":[""],
+	  "10pf":[""],
+	  "100pf":[""],
+	  "1nf":[""],
+	  "10nf":[""],
+	  "100nf":[""],
+	  "1uf":[""],
+	  "10uf":[""],
+	  "100uf":[""]
+	  
+	}
+      },
+      "polar-cap":{},
+      "varicap":{}
+    },
+    "frequency":{
+      "crystal":{}
+    },
+    "inductors":{
+      "coil":{
+	"help":"lx 1 2  value\n\ncoupling  directive \ncouples 2 inductors\n\nkx lx lx value\nlx = inductor id's\nvalue = coupling",         
+	"values":{
+	  "1h":[""],
+	  "100mh":[""],
+	  "10mh":[""],
+	  "1mh":[""],
+	  "100uh":[""],
+	  "10uh":[""],
+	  "1uh":[""],
+	  "100nh":[""],
+	  "10nh":[""],
+	  "1h":[""]
+	}
+      },
+      "tapcoil":{},
+      "transformer":{}
+    },
+    "power":{
+      "current":{
+	
+	"values":{		
+	  "DC 1ma":[""],
+	  "DC 10ma":[""],
+	  "DC 100ma":[""],
+	  "DC 1a":[""],
+	  "SIN(0 1ma 1KHZ)":[""],
+	  "SIN(0 10ma 1KHZ)":[""]
+	}
+      },
+      "ac":{
+	"help":"SIN = sine wave source\nAC = AC frequency sweep",
+	"values":{		
+	  "SIN(0 5 1KHZ)":[""],
+	  "SIN(0 12 60HZ)":[""],
+	  "SIN(0 120 60HZ)":[""],
+	  "PWL(0 0 10ns 0 10ns 5 20ns 5)R=0":[""],
+	  "PULSE(0 1 0 0 0 2n 4n)":[""],
+	  "SFFM( 0 1V 20K 5 1K)":[""],                    
+	  "AC 1 SIN":[".ac lin 20 100 200 "]
+	  
+	}                    },
+	"battery":{
+	  "values":{		
+	    "dc 5v":[""],
+	    "dc 9v":[""],
+	    "dc 12v":[""]
+	  }
+	},
+	"ground":{},
+	"namewire":{}
+    },
+    
+    
+    "test":{
+      "scope":{
+	"help":".TRAN step total \nstep = step size\ntotal = total length of time",
+	"values":{		
+	  "tran":[".TRAN 1NS 100NS",
+	  ".TRAN 1NS 1000NS 500NS",
+	  ".TRAN 10NS 1US UIC",
+	  ".TRAN 1ms 100ms"]
+	  
+	}
+      }
+    }            
+  },
+  "model":{
+    "555":["555.mod"]
+  }
+}

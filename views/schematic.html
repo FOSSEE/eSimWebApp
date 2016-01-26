@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<title>eSIM</title>
+<link rel="shortcut icon" href="../icons/favicon.ico" />
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style/schematic.css" type="text/css">
+<link rel="stylesheet" href="style/input.css" type="text/css">
+<script type="text/javascript" src="script/jquery-1.10.2.js"></script> 
+<script type="text/javascript" src="script/utils.js"></script>
+<script type="text/javascript" src="script/prototype.js"></script>
+<script type="text/javascript" src="script/chipmaker.js"></script>
+<script type="text/javascript" src="script/wtx2kicad.js"></script>
+<script type="text/javascript" src="script/gui.js"></script>
+<script type="text/javascript" src="script/netlist.js"></script>
+<script type="text/javascript" src="script/canvg.js"></script>
+<script type="text/javascript" src="script/rgbcolor.js"></script>
+<script type="text/javascript" src="script/savenetlist.js"></script>
+
+</head><body>
+
+<div id="webtronics_main_window">
+<!--
+toolbar
+-->
+	<div id="webtronics_toolbar">
+            <img id='webtronics_file' title="file menu" src="buttons/openmenu.png">
+			<fieldset>	
+				<legend>Circuit</legend>
+				<img id="webtronics_netlist" class="normal_button" title="view the netlist" src="buttons/netlist.png">
+			<!--	<img id="webtronics_run" class="normal_button" title="run spice" src="buttons/run.png">   -->
+				<img id="webtronics_chips_open" class="normal_button" title="make chips" src="buttons/icbut.png">
+				<img id="webtronics_delete" class="normal_button" title="Delete selected shape" src="buttons/delete.png">
+				<img id="webtronics_text" class="normal_button" title="add text" src="buttons/text.png">
+								
+			</fieldset>
+			<fieldset>
+				<legend>History</legend>			
+				<img id="webtronics_undo" class="normal_button" title="undo last action" src="buttons/undo.png">
+				<img id="webtronics_redo" class="normal_button" title="redo last action" src="buttons/redo.png">
+			</fieldset>
+			<fieldset>
+				<legend>Settings</legend>			
+				<form> 
+					<table  border="0" cellpadding="0" cellspacing="0">				
+					<tr>
+						<td><input id="webtronics_connections" type="checkbox"></td><td> connections</td>
+						<td><input id="webtronics_graph" type="checkbox"></td><td>graph</td>           
+					</tr>
+					<tr>
+						<td><input type="checkbox" id="webtronics_invert"></td><td>invert</td>
+						<td><input type="checkbox" id="webtronics_showhelp"></td><td>help</td>
+					</tr>
+					</table>         
+				</form>
+			</fieldset>
+	</div>
+<!--part selection menu -->
+<div id="webtronics_center" >
+	<div id="webtronics_side_bar" >
+		<div id="webtronics_parts_list" >
+
+		</div>	
+
+			
+			<br>	
+			<a href="http://esim.fossee.in/" target="_blank"><img src="icons/logo.png"/></a>
+			<br>
+			<a href="https://github.com/FOSSEE/eSIM-webapp" target="_blank">Fossee</a>
+			<br>
+			<a href="https://github.com/nielmishra" target="_blank">Github</a>
+			
+			
+		
+
+
+	</div>
+<!--    
+tab area
+
+    <div id="webtronics_tab_area"></div>
+-->
+<!--
+display area
+-->
+	<div id="webtronics_diagram_area" ></div>	
+</div>
+<!--
+status bar
+-->
+  
+ <div id="webtronics_status_bar">Mode: Draw Rectangle</div>
+
+
+
+<div id='webtronics_disable'></div>
+<!--
+make chips
+-->
+
+<div id="webtronics_chips_box" class='modal'>
+    <div id="webtronics_chip_display" ></div>
+    <form name="webtronics_chips_form" >
+        <fieldset>
+            <legend>pin count</legend>
+            <select id="webtronics_vert_pins"></select>
+            <select id="webtronics_hor_pins"></select>
+        </fieldset>
+        <br/>
+        <fieldset>
+            <legend>model</legend>
+            <input id="webtronics_chip_spice"><br/>
+            <select size=5 id="webtronics_chip_spice_select">
+                <option value="">none</option>
+            </select>
+         </fieldset>
+    </form>
+    <img id="webtronics_chip_ok" class="normal_button" src="buttons/ok.png">
+    <img id="webtronics_chip_cancel" class="normal_button" src="buttons/cancel.png">
+</div>
+
+<!--
+add text
+ -->
+
+<div id="webtronics_add_text" class='modal'>
+<textarea cols="50" rows="4" id="webtronics_comment"></textarea>
+</div>
+<!--
+properties form
+-->
+<div id="webtronics_properties_div" class='modal'>
+<form name="webtronics_properties_form">
+<fieldset>
+<legend>part id</legend>    
+<input id="webtronics_part_id"><br>
+</fieldset>
+<br>
+<fieldset>
+<legend>value or model</legend>    
+<input id="webtronics_part_value">
+<select id="webtronics_part_model">
+<option value="">none</option>	
+</select>
+</fieldset>
+<br>
+<fieldset>
+<legend>spice directive</legend>    
+<input id="webtronics_part_dir_value">
+<select id="webtronics_part_dir_model">
+<option value="">none</option>	
+</select>
+</fieldset>
+<br>
+<fieldset id="webtronics_print_dir_field">
+<legend>measurements</legend>    
+<input id="webtronics_print_dir_value"/>
+</fieldset>
+<!--**OPEN LOCAL SPICE MODELS EXPERIMENT<input id="webtronics_part_file" type="file"/>-->
+</form>
+<div class="webtronics_help">
+spice:
+<pre id="webtronics_part_help">
+</pre>
+</div>
+
+<div id="webtronics_properties_buttons">
+<img id="webtronics_properties_ok" class="normal_button" src="buttons/ok.png"> 
+<img id="webtronics_properties_cancel" class="normal_button" src="buttons/cancel.png">
+</div>
+
+
+</div>
+
+<!--
+select source server
+-->
+<div id="webtronics_add source" class='modal'>
+<div>
+<input class="webtronics_add_source_input" /></br>
+<input class="webtronics_add_source_input" /></br>
+<input class="webtronics_add_source_input" /></br>
+<input class="webtronics_add_source_input" /></br>
+<input class="webtronics_add_source_input" />
+</div></br>
+<div class="webtronics_help" ></br>
+<pre>
+sources can be local or remote
+
+webtronix_server is the default server parts
+
+remote sources must start with http://
+
+local source are absolute
+
+/local/source/webtronix_server
+
+</pre>
+</div></br>
+<img id="webtronics_add source_ok" src="buttons/ok.png"> 
+<img id="webtronics_add_source_cancel" src="buttons/cancel.png">
+</div>
+
+
+<!--
+add code text
+ -->
+
+<div id="webtronics_open_text" class='modal'>
+<textarea cols="50" rows="4" id="webtronics_svg_code"></textarea>
+<img id="webtronics_open_text_ok" src="buttons/ok.png"> 
+<img id="webtronics_open_text_cancel" src="buttons/cancel.png">
+</div>
+
+
+<!--
+netlist display
+-->
+
+<div id="webtronics_netlist_text" class='modal'>
+<div id="webtronics_netlist_text_div" ></div>
+<div class="webtronics_help" >
+<pre>
+convergence:
+
+increase or decrease step size
+or try adding
+
+.options dampstrategy=2
+
+</pre>
+</div>
+<div id="webtronics_netlist_buttons">
+<!--<img id="webtronics_netlist_text_run" class="normal_button" src="buttons/run.png"> -->
+<img id="webtronics_netlist_text_ok" class="normal_button" src="buttons/cancel.png">
+<img id="webtronics_netlist_generate" class="normal_button"  src="buttons/generate.png">
+<img id="webtronics_netlist_simulate" class="normal_button"  src="buttons/run.png">
+<img id="webtronics_netlist_text_download" class="normal_button"  src="buttons/download.png">
+<select id="analysis_selectbox" class="exclude_button">
+			        <option value="" disabled="disabled" selected="selected">Analysis type</option>
+    				<option value="1">DC</option>
+    				<option value="2">AC</option>
+    				<option value="3">Transient</option>
+			<!--	<option value="4">Four</option> -->	
+</select>
+<!------------------------------------------------------------------------------------------------------------------------------------------------
+AC MENU FORM AND DIV
+------------------------------------------------------------------------------------------------------------------------------------------------->
+<div id = "ac_menu" display: none;> 
+
+
+
+
+<div id="inputbox_ac" display: table;>
+				
+<form >
+<table>
+
+<tr>
+<td>
+<label for="dummy1">Start Frequency</label>
+<input type="number" id="startfreqval" pattern="[0-9]{3}" min="0"  name="Start Frequency">
+</td>
+
+<td>
+<select id="start_frequency_selectbox" class="exclude_button">
+				<option value="" disabled="disabled" selected="selected"> Start Frequency Units</option>
+				<option value="1">Hz</option>
+				<option value="2">THz</option>
+				<option value="3">GHz</option>
+				<option value="4">Meg</option>
+				<option value="5">KHz</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="dummy2">Stop Frequency</label>
+<input type="number" id="stopfreqval" pattern="[0-9]{3}" min="0" name="Stop Frequency" >
+</td>
+<td>
+<select id="stop_frequency_selectbox" class="exclude_button">
+				<option value="" disabled="disabled" selected="selected">Stop Frequency Units</option>
+				<option value="1">Hz</option>
+				<option value="2">THz</option>
+				<option value="3">GHz</option>
+				<option value="4">Meg</option>
+				<option value="5">KHz</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>
+<label for="dummy3">Number Of Points</label>
+<input type="number" id="noofpointsval" min="0" pattern="[0-9]{3}" name="No of Points">
+</td>
+<td>
+<select id="scale_selectbox" class="exclude_button">
+<option value="" disabled="disabled" selected="selected">Scale</option>
+				<option value="1">Lin</option>
+				<option value="2">Dec</option>
+				<option value="3">Oct</option>
+				
+</select>
+</td>
+</tr>
+</table>
+<input id ="saveac" type="button" value="Save" >
+
+
+</form>
+
+</div>
+
+</div>
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------
+TRANSIENT MENU FORM AND DIV
+------------------------------------------------------------------------------------------------------------------------------------------------->
+<div id="transient_menu" display: none;>
+
+<div id="inputbox_transient" display: table;>
+
+
+<form >
+<table>
+
+<tr>
+<td>
+<label for="dummy1">Start Time</label>
+<input type="number" id="start_time" pattern="[0-9]{3}" min="0" name="Start Time">
+
+<select id="start_time_selectbox" class="exclude_button">
+<option value="" disabled="disabled" selected="selected">Start Time units</option>
+				<option value="1">ms</option>
+				<option value="2">us</option>
+				<option value="3">ns</option>
+				<option value="4">ps</option>				
+</select>
+</td>
+</tr>
+
+
+<tr>
+<td>
+<label for="dummy2">Step Time</label>
+<input type="number" id="step_time" pattern="[0-9]{3}" min="0"  name="Step Time" >
+
+
+<select id="step_time_selectbox" class="exclude_button">
+<option value="" disabled="disabled" selected="selected">Step Time units</option>
+				<option value="1">ms</option>
+				<option value="2">us</option>
+				<option value="3">ns</option>
+				<option value="4">ps</option>				
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="dummy3">Stop Time</label>
+<input type="number" id="stop_time" pattern="[0-9]{3}" min="0"  name="Stop Time">
+<select id="stop_time_selectbox" class="exclude_button">
+<option value="" disabled="disabled" selected="selected">Stop Time units</option>
+				<option value="1">ms</option>
+				<option value="2">us</option>
+				<option value="3">ns</option>
+				<option value="4">ps</option>				
+</select>
+</td>
+</tr>
+</table>
+<input id ="savetransient" type="button" value="Save" >
+</form>
+</div>
+</div>
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------
+DC MENU FORM AND DIV
+------------------------------------------------------------------------------------------------------------------------------------------------->
+<div id="dc_menu" display: none;>
+
+
+
+
+<div id="inputbox_dc" display: table;>
+				
+<form >
+            
+          <!--  Source name: <input type="text" name="source" id ='sourceval' size="10"><br>
+            Start      : <input type="text" name="start" id ='startval' size="10"><br>
+            Increment  : <input type="text" name="increment" id ='incrementval' size="10"><br>
+	    Stop       : <input type="text" name="stop" id = 'stopval' size="10"><br>  
+	    -->
+	   
+<table>
+<td>
+
+<label for="dummy1">Source name</label>
+<input type="text" id="sourceval" name="Source Name">
+
+</td>
+
+<tr>
+<td>
+<label for="dummy2">Start </label>
+<input type="number" id="startval" pattern="[0-9]{3}" min="0"  name="Start" >
+
+<select id="start_volt_selectbox" class="exclude_button">
+				<option value="" disabled="disabled" selected="selected">Start Time Units</option>
+				<option value="1">Volts or Amperes</option>
+				<option value="2">mV or mA</option>
+				<option value="3">uV or uA</option>
+				<option value="4">nV or nA</option>
+				<option value="5">pV or pA</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+
+<label for="dummy3">Incrememnt</label>
+<input type="number" id="Incrementval" pattern="[0-9]{3}" min="0"  name="Increment">
+
+
+<select id="inc_volt_selectbox" class="exclude_button">
+				<option value="" disabled="disabled" selected="selected">Increment Time Units</option>
+				<option value="1">Volts or Amperes</option>
+				<option value="2">mV or mA</option>
+				<option value="3">uV or uA</option>
+				<option value="4">nV or nA</option>
+				<option value="5">pV or pA</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>
+<label for="dummy4">Stop </label>
+<input type="number" id="stopval" pattern="[0-9]{3}" min="0"  name="Stop">
+
+<select id="stop_volt_selectbox" class="exclude_button">
+				<option value="" disabled="disabled" selected="selected">Stop Time Units</option>
+				<option value="1">Volts or Amperes</option>
+				<option value="2">mV or mA</option>
+				<option value="3">uV or uA</option>
+				<option value="4">nV or nA</option>
+				<option value="5">pV or pA</option>
+</select>
+</td>
+</tr>
+</table>
+
+<input id ="savedc" type="button" value="Save" >
+</form>
+</div>
+</div>
+<div id="domchange">  </div>
+</div> 
+</div>
+</div>
+
+<!--
+code for select options of analysis 
+-->
+
+
+<!--
+simulation display
+-->
+<div id="webtronics_scope_display" class="modal" >
+<div id="webtronics_scope_display_div"></div>
+<img id="webtronics_scope_display_ok" class="normal_button" title="close simulation" src="buttons/cancel.png">
+<img id="webtronics_scope_display_stop"  class="normal_button" title="stop simulation" src="buttons/process-stop.png">
+<form>
+<input id="webtronics_scope_output_log" type="radio" name="scope_output" >log<br>
+<input id="webtronics_scope_output_graph" type="radio" name="scope_output" value="graph">graph
+</form>
+<br>
+<div id="webtronics_scope_status_bar">
+<p id="webtronics_scope_data" ></p> 
+<p id="webtronics_scope_status" >DOWNLOADING GNUCAP</p> 
+</div> 
+</div>
+
+</div>
+
+</body></html>
