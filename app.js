@@ -1,7 +1,8 @@
 var express = require('express'),
     path = require('path'),
     cookieParser = require('cookie-parser'),
-    session = require('express-session')
+    session = require('express-session'),
+    config = require('./config/config.js')
 
 
     var app = express();
@@ -15,17 +16,13 @@ app.use(session({secret:'esimSession',
                 resave: true,
                 saveUninitialized: true
                 }));
-app.set('port',process.env.PORT||3000);
+app.set('port',process.env.PORT||4000);
 
-
+//Setting config
+app.set('host',config.host);
 
 //Routing
-var router = express.Router();
-router.get('/',function(req,res,next){
-            res.render('schematic',{});
-
-})
-app.use('/',router);
+require('./routes/routes.js')(express,app);
 
 //Socket IO
 var server = require('http').createServer(app);
