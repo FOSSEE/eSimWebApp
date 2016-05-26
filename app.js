@@ -1,7 +1,5 @@
 var express = require('express'),
     path = require('path'),
-    cookieParser = require('cookie-parser'),
-    session = require('express-session'),
     config = require('./config/config.js')
 
 
@@ -11,11 +9,7 @@ app.engine('html',require('hogan-express'));
 app.set('view engine','html');
 
 app.use(express.static(path.join(__dirname,'views')));
-app.use(cookieParser());
-app.use(session({secret:'esimSession',
-                resave: true,
-                saveUninitialized: true
-                }));
+
 app.set('port',process.env.PORT||4000);
 
 //Setting config

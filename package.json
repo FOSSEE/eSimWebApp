@@ -9,9 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cookie-parser": "^1.4.1",
     "express": "^4.13.3",
-    "express-session": "^1.13.0",
     "hogan-express": "^0.5.2",
     "socket.io": "^1.4.4"
   }
