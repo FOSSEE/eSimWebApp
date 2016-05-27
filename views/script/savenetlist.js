@@ -58,15 +58,25 @@ For Simulation of Netlist and Removal of netlist Window
 VIEW NETLIST WINDOW
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-jQuery("#webtronics_netlist").click(function(){
-
-    jQuery('#webtronics_netlist_text_div').show(); 
-    jQuery('#webtronics_netlist_buttons').show();
-    jQuery('#webtronics_netlist_text').show();       
-    jQuery('#webtronics_disable').show();
 
 
- });
+
+
+
+
+
+// jQuery(".view_netlist").click(function(){
+
+//     jQuery('#webtronics_netlist_text_div').show(); 
+//     jQuery('#webtronics_netlist_text').show();       
+// });
+
+
+
+
+
+
+
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------
 For Download of netlist
@@ -112,29 +122,43 @@ For Download of netlist
 DC FUNCTIONALITY IS WRITTEN HERE 
 ---------------------------------------------------------------------------------------------------------------------------------------------------*/
 jQuery(function(){
+	jQuery("#select").show();
     jQuery("#dc_menu").hide();
     jQuery("#ac_menu").hide();
     jQuery("#transient_menu").hide();
     jQuery("#analysis_selectbox").change(function(){
-    if (jQuery(this).val() == "1")
+    
+    if (jQuery(this).val() == "4")
     {
+    jQuery("#select").show();	
+    jQuery("#transient_menu").hide();
+    jQuery("#dc_menu").hide();
+    jQuery("#ac_menu").hide();
+    
+    }
+    else if (jQuery(this).val() == "1")
+    {
+    jQuery("#select").hide();	
     jQuery("#dc_menu").show();
     jQuery("#ac_menu").hide();
     jQuery("#transient_menu").hide();
     }
     else if (jQuery(this).val() == "2")
     {
+    jQuery("#select").hide();	
     jQuery("#ac_menu").show();
     jQuery("#dc_menu").hide();
     jQuery("#transient_menu").hide();
     }
     else if (jQuery(this).val() == "3")
     {
+    jQuery("#select").hide();	
     jQuery("#transient_menu").show();
     jQuery("#dc_menu").hide();
     jQuery("#ac_menu").hide();
     
     }
+     
    
     //$("#preview").change(function(){
     //jQuery"#analysis_selectbox".val();
@@ -144,12 +168,7 @@ jQuery(function(){
 
 
 
-jQuery("#analysis_selectbox").change(function(){
 
-	analysis_type = jQuery(this).val();
-       //console.log(analysis_type);
-});
-			
 /*------------------------------------------------------------------------------------------------------------------------------------------------
 Ac netlist variable for ac
 ------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -173,6 +192,13 @@ jQuery("#saveac").click(function(){
 	{
 	alert("Please Enter No Of Points");
 	}
+	else{
+
+		jQuery("#webtronics_netlist_analysis").hide();
+        jQuery("#webtronics_disable").hide();
+	}
+
+
 });
 
 
@@ -280,6 +306,13 @@ jQuery("#savedc").click(function(){
         {
         alert("Please enter the Stop Time");
         }
+
+	else{
+
+		jQuery("#webtronics_netlist_analysis").hide();
+        jQuery("#webtronics_disable").hide();
+	}
+
            
 });
 
@@ -395,6 +428,12 @@ jQuery("#savetransient").click(function(){
 	{
 	alert("Please enter the Stop Time");  
 	}
+	else{
+
+		jQuery("#webtronics_netlist_analysis").hide();
+        jQuery("#webtronics_disable").hide();
+	}
+
 	
 });
 
@@ -471,96 +510,28 @@ jQuery("#stop_time_selectbox").change(function(){
 	console.log(stop_trans_unit);
 });	
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*------------------------------------------------------------------------------------------------------------------------------------------------
 Netlist Generation
-------------------------------------------------------------------------------------------------------------------------------------------------*/
-change_val = "0";
-Flag = "";
-	//console.log("out")
-	//console.log(change_val)
- jQuery("#webtronics_netlist_generate").click(function(){
-	//console.log(change_val)
-	
-	if (change_val == "0")
-	{
-		Flag = jQuery("#webtronics_netlist_text_area").val();
-		//console.log("if when 0")
-	
-	
-/*-------------------------------------------------------------------------------------------------------------------------------------	
- Here are the conditions concatenated to give final netlist values for dc all cases	 
----------------------------------------------------------------------------------------------------------------------------------------------*/	
-	if (analysis_type == "1") 
-	{	
-	  	//console.log(jQuery("#analysis_selectbox").val());
-				 
-             jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".dc" + " " + source + " " + start + "e" + "-" + start_dc_unit + " " +  stop + "e" + "-" + stop_dc_unit + " " + increment + "e" + "-" + increment_dc_unit + '\n' + '\n'+ ".control \n"+ "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+ ".end \n" );
-            
-	      change_val = "1";
-    //console.log(jQuery("#analysis_selectbox").val());
-	}
-	
-
-/*------------------------------------------------------------------------------------------------------------------------------------------------
-Here are the all AC Cases for generating final netlist values
-------------------------------------------------------------------------------------------------------------------------------------------------*/
-	else if (analysis_type == "2")
-	{
-		jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".ac" + " " + scale_val + " " + noofpoint + " " + startfreq + start_ac_unit + " " + stopfreq + stop_ac_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+  ".end \n" );
-
-		change_val = "1";
-	} 
-/*------------------------------------------------------------------------------------------------------------------------------------------------
-Here are the all Transiet Cases for generating final netlist values
-------------------------------------------------------------------------------------------------------------------------------------------------*/
-	//else if (analysis_type == "3" && time == "1")
-	else if (analysis_type == "3")
-	{
-		jQuery("#webtronics_netlist_text_area").val(Flag + '\n' + ".tran" + " " + step_trans + "e" + "-" + step_trans_unit + " " + stop_trans + "e"+ "-" + stop_trans_unit + " " + start_trans + "e" + "-" + start_trans_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n" +".end \n" ); 
-
-		change_val = "1";
-	}
-
-
-}
-
-else if( change_val == "1")
-	
-{
-	//console.log(change_val)
-		jQuery("#webtronics_netlist_text_area").val("");
-			//console.log("if when 1")
-					
-		if (analysis_type == "1") 
-		
-		{	
-	 
-				 
-             jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".dc" + " " + source + " " + start + "e" + "-" + start_dc_unit + " " +  stop + "e" + "-" + stop_dc_unit + " " + increment + "e" + "-" + increment_dc_unit + '\n' + '\n'+ ".control \n"+ "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" +  ".endc \n"+ ".end \n" );
-            		change_val = "1";
-		}	      
-
-	
-	
-	else if (analysis_type == "2")
-	{
-		jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".ac" + " " + scale_val + " " + noofpoint + " " + startfreq + start_ac_unit + " " + stopfreq + stop_ac_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" +   ".endc \n"+ ".end \n" );
-
-		change_val = "1";
-	} 
-
-
-	else if (analysis_type == "3")
-	{
-		jQuery("#webtronics_netlist_text_area").val(Flag + '\n' + ".tran" + " " + step_trans + "e" + "-" + step_trans_unit + " " + stop_trans + "e"+ "-" + stop_trans_unit + " " + start_trans + "e" + "-" + start_trans_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n" +".end \n" ); 
-
-			change_val = "1";
-	}
-	
-
-}
-
+----------------------*/
 
 });
-});
+
+
 

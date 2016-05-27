@@ -129,7 +129,7 @@ sortnetlist:function(list){
   M.each(function(item){newlist.push(item)});		
   N.each(function(item){newlist.push(item)});		
   Q.each(function(item){newlist.push(item)});		
-  R.each(function(item){newlist.push(item)});		
+  R.each(function(item){newlist.push(item)});
   U.each(function(item){newlist.push(item)});		
   A.each(function(item){newlist.push(item)});		
   other.each(function(item){newlist.push(item)});		
@@ -203,6 +203,7 @@ getwtxdata:function(parts){
   catch{part.error="wtx:pins not found"}
   */
     part.elem=parts[i];
+
 		try{
       var category=webtronics.circuit.getwtxtagname(parts[i],"analog")[0];
       var nodes = webtronics.circuit.getwtxtagname(category,"node");
@@ -244,7 +245,7 @@ getwtxdata:function(parts){
     }
     catch(e){part.error="wtx:category not found";}    
     try{
-      part.value=this.readwtx(parts[i],'value');
+      part.value=this.readwtx(parts[i],'value');  
     }
     catch(e){part.error="wtx:value not found";}    
     try{
@@ -260,7 +261,7 @@ getwtxdata:function(parts){
       part.measure=this.readwtx(parts[i],'measure');
     }
     catch(e){}    
-    
+     
     list.push(part);
   }
   return list;
@@ -429,18 +430,24 @@ getnodes:function(parts){
 createnetlist:function(responsefunc){
   
   var parts=webtronics.circuit.getwithselector('#webtronics_drawing > g');
+ 
   if(parts.length<1){
-    responsefunc("no parts found (moded by Niel Mishra)\n");
+    responsefunc("no parts found \n");
     return;
   }
+
+
+ 
   var partswtx=this.sortnetlist(this.getwtxdata(parts));
+   
+
   if(partswtx[0].type.toLowerCase()!='gnd'){
     responsefunc('no ground node');
     return;
   }
   this.connectnamewires(partswtx);
   
-  var spice="*ngspice netlist  by Niel Mishra* \n";
+  var spice="*ngspice netlist * \n";
   var sections=this.getnodes(partswtx);
   
   //dump models into spice	
@@ -458,9 +465,10 @@ createnetlist:function(responsefunc){
       for(var j=0;j<sections.netlist[i].pins['digital'].length;j++)pins.push(sections.netlist[i].pins['digital'][j]);
       pins.sort(function(a,b){return a.index > b.index? 1:a.index < b.index?-1:0;})
 //      console.log(pins);
-      for(var j=0;j<pins.length;j++)command += " "+pins[j].node;
+      for(var j=0;j<pins.length;j++){command += " "+pins[j].node;}
 
       command+=" "+sections.netlist[i].model;
+   
       if(command!="")spice+=command+'\n';
     }
   }

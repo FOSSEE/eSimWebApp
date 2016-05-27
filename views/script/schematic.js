@@ -678,6 +678,7 @@ Schematic.prototype.createvalue=function(elem){
     var id=this.readwtx(elem,"id");
     var value=this.readwtx(elem,"value");
     var label=this.readwtx(elem,"label");
+    
   }
   catch(e){console.log(e);}
   if(label.length && $(label)){
@@ -689,6 +690,8 @@ Schematic.prototype.createvalue=function(elem){
       var idspan=this.createtspan(id,0,0);
       $(label).appendChild(idspan);
     }
+
+    
     if(value){
       var box=this.tracker($(label));
       var valuespan=this.createtspan(value,-box.width,box.height);
@@ -696,6 +699,7 @@ Schematic.prototype.createvalue=function(elem){
     }
     $(label).appendChild(idspan);
     $(label).appendChild(valuespan);
+    $(label).appendChild(tempspan);
   }
   else{
     var text=this.createtext("",'black',0,0-this.fontsize);
@@ -706,6 +710,7 @@ Schematic.prototype.createvalue=function(elem){
 	var idspan=this.createtspan(id,0,0);
 	text.appendChild(idspan);
       }
+
       if(value){
 	var box=this.tracker(text);
 	var valuespan=this.createtspan(value,-box.width,box.height);

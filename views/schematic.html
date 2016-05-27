@@ -28,6 +28,7 @@ toolbar
             <img id='webtronics_file' title="file menu" src="buttons/openmenu.png">
 			<fieldset>	
 				<legend>Circuit</legend>
+				<img id="webtronics_analysis" class="normal_button" title="analysis" src="buttons/analysis.png">
 				<img id="webtronics_netlist" class="normal_button" title="view the netlist" src="buttons/netlist.png">
 			<!--	<img id="webtronics_run" class="normal_button" title="run spice" src="buttons/run.png">   -->
 				<img id="webtronics_chips_open" class="normal_button" title="make chips" src="buttons/icbut.png">
@@ -209,39 +210,39 @@ add code text
 </div>
 
 
-<!--
-netlist display
--->
 
-<div id="webtronics_netlist_text" class='modal'>
-<div id="webtronics_netlist_text_div" ></div>
-<div class="webtronics_help" >
-<pre>
-convergence:
 
-increase or decrease step size
-or try adding
 
-.options dampstrategy=2
 
-</pre>
-</div>
-<div id="webtronics_netlist_buttons">
-<!--<img id="webtronics_netlist_text_run" class="normal_button" src="buttons/run.png"> -->
-<img id="webtronics_netlist_text_ok" class="normal_button" src="buttons/cancel.png">
-<img id="webtronics_netlist_generate" class="normal_button"  src="buttons/generate.png">
-<img id="webtronics_netlist_simulate" class="normal_button"  src="buttons/run.png">
-<img id="webtronics_netlist_text_download" class="normal_button"  src="buttons/download.png">
-<select id="analysis_selectbox" class="exclude_button">
-			        <option value="" disabled="disabled" selected="selected">Analysis type</option>
+<div  id="webtronics_netlist_analysis" class='modal'>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+<br>
+
+
+<select id="analysis_selectbox" class="exclude_button"><br>
+			       <option  selected="selected" value="4">Analysis Type</option>
     				<option value="1">DC</option>
     				<option value="2">AC</option>
     				<option value="3">Transient</option>
 			<!--	<option value="4">Four</option> -->	
 </select>
-<!------------------------------------------------------------------------------------------------------------------------------------------------
-AC MENU FORM AND DIV
-------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+<div id = "select" display: none;> 
+<input id ="webtronics_netlist_cancels" class="button_cancel" type="button" value="cancel" ><br>
+
+</div>
+
+<!------------------------- AC MENU FORM AND DIV  -------------------------------------------------------------------------------------------------------------->
+
+
 <div id = "ac_menu" display: none;> 
 
 
@@ -302,8 +303,9 @@ AC MENU FORM AND DIV
 </td>
 </tr>
 </table>
-<input id ="saveac" type="button" value="Save" >
+<input id ="saveac" class="view_netlist" type="button" value="save" >
 
+<input id ="webtronics_netlist_cancela" class="button_cancel" type="button" value="cancel" ><br>
 
 </form>
 
@@ -311,9 +313,13 @@ AC MENU FORM AND DIV
 
 </div>
 
-<!------------------------------------------------------------------------------------------------------------------------------------------------
-TRANSIENT MENU FORM AND DIV
-------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!----------------------------------------- TRANSIENT MENU FORM AND DIV ------------------------------------------------------------> 
+
+
+
+
 <div id="transient_menu" display: none;>
 
 <div id="inputbox_transient" display: table;>
@@ -368,14 +374,17 @@ TRANSIENT MENU FORM AND DIV
 </td>
 </tr>
 </table>
-<input id ="savetransient" type="button" value="Save" >
+<input id ="savetransient" class="view_netlist" type="button" value="save" >
+<input id ="webtronics_netlist_cancelt" class="button_cancel" type="button" value="cancel" ><br>
+
 </form>
 </div>
+
 </div>
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------
 DC MENU FORM AND DIV
-------------------------------------------------------------------------------------------------------------------------------------------------->
+-------------------------------------------------------------------------------------------------------------------------------------------->
 <div id="dc_menu" display: none;>
 
 
@@ -450,20 +459,75 @@ DC MENU FORM AND DIV
 </tr>
 </table>
 
-<input id ="savedc" type="button" value="Save" >
+<input id ="savedc" class="view_netlist" type="button" value="save" >
+<input id ="webtronics_netlist_canceld" class="button_cancel" type="button" value="cancel" ><br>
+
 </form>
+
 </div>
 </div>
+
 <div id="domchange">  </div>
-</div> 
+
 </div>
+
+
+<!--
+netlist display
+-->
+
+<div id="webtronics_netlist_text" class='modal'>
+
+<div class="webtronics_help" >
+<pre>
+convergence:
+
+increase or decrease step size
+or try adding
+
+.options dampstrategy=2
+
+</pre>
+</div>
+
+
+
+
+<br><br>
+<div id="webtronics_netlist_text_div" ></div>
+<br><br>
+
+
+
+<div id="webtronics_netlist_buttons">
+<!--<img id="webtronics_netlist_text_run" class="normal_button" src="buttons/run.png"> -->
+<img id="webtronics_netlist_text_ok" class="normal_button" src="buttons/cancel.png">
+
+
+<img id="webtronics_netlist_simulate" class="normal_button"  src="buttons/run.png">
+<img id="webtronics_netlist_text_download" class="normal_button"  src="buttons/download.png">
+
+
+ 
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
 <!--
 code for select options of analysis 
 -->
-
-
 <!--
 simulation display
 -->

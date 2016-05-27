@@ -1,3 +1,10 @@
+
+
+
+
+globalVariable=0; 
+
+
 var webtronics={
   circuit:null,
   copy:null,
@@ -142,8 +149,13 @@ var webtronics={
     var id=netlistcreator.readwtx(this.circuit.selected[0],"id");
     var value=netlistcreator.readwtx(this.circuit.selected[0],"value");
     
+    
+
     if(id!=""){$('webtronics_part_id').value=id;}
     if(value!=""){$('webtronics_part_value').value=value;}
+
+    
+
     $("webtronics_part_dir_value").value=netlistcreator.readwtx(this.circuit.selected[0],'model');
     
     if(!netlistcreator.readwtx(webtronics.circuit.selected[0],"value")){
@@ -636,15 +648,31 @@ console.log(exception);
 		  });
 /*
 		  if($('webtronics_save')){
-		    Event.observe($('webtronics_save'), 'click', function() {
+ 		    Event.observe($('webtronics_save'), 'click', function() {
 		      webtronics.circuit.clearinfo();
 		      webtronics.showMarkup();
 		    });
 		  }
 */
+
+      flag1=0;
+
+
+
+jQuery("#analysis_selectbox").change(function(){
+
+  analysis_type = jQuery(this).val();
+
+});
+      
+
+
+
+
 		  if($('webtronics_netlist')){
 		    Event.observe($('webtronics_netlist'), 'click', function() {
-		      
+		      if(flag1!=0){
+          
 		      netlistcreator.createnetlist(function(netlist){
 			var content=$$("#webtronics_netlist_text_div > *") 
 			for(var i=0;i<content.length;i++){
@@ -652,12 +680,152 @@ console.log(exception);
 			}
 			$("webtronics_netlist_text_div").insert(webtronics.formatnetlist(netlist,null));
 			$("webtronics_netlist_text").style.display='block';
-			
-			webtronics.center($('webtronics_netlist_text'));
+			globalVariable=1;
+			webtronics.center($('webtronics_netlist_text_div'));
 			webtronics.disablepage();});
-		      
+
+
+
+
+    jQuery('#webtronics_netlist_buttons').show();
+    
+
+
+
+
+change_val = "0";
+Flag = "";
+  //console.log("out")
+  console.log(globalVariable+" gv\n");
+ 
+
+console.log(globalVariable+" gv1\n");
+console.log(Flag+"1 s\n");
+      
+  if (change_val == "0")
+  {
+    Flag = jQuery("#webtronics_netlist_text_area").val();
+    
+  
+  console.log(Flag+"11s\n");
+/*------------------------------------------------------------------------------------------------------------------------------------- 
+ Here are the conditions concatenated to give final netlist values for dc all cases  
+---------------------------------------------------------------------------------------------------------------------------------------------*/ 
+  if (analysis_type == "1") 
+  { 
+
+      console.log(jQuery("#analysis_selectbox").val());
+         
+             jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".dc" + " " + source + " " + start + "e" + "-" + start_dc_unit + " " +  stop + "e" + "-" + stop_dc_unit + " " + increment + "e" + "-" + increment_dc_unit + '\n' + '\n'+ ".control \n"+ "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+ ".end \n" );
+            
+        change_val = "1";
+    console.log(jQuery("#analysis_selectbox").val());
+  }
+  
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------
+Here are the all AC Cases for generating final netlist values
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+  else if (analysis_type == "2")
+  {
+    jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".ac" + " " + scale_val + " " + noofpoint + " " + startfreq + start_ac_unit + " " + stopfreq + stop_ac_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+  ".end \n" );
+
+    change_val = "1";
+  } 
+/*------------------------------------------------------------------------------------------------------------------------------------------------
+Here are the all Transiet Cases for generating final netlist values
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+  //else if (analysis_type == "3" && time == "1")
+  else if (analysis_type== "3")
+  {
+    jQuery("#webtronics_netlist_text_area").val(Flag + '\n' + ".tran" + " " + step_trans + "e" + "-" + step_trans_unit + " " + stop_trans + "e"+ "-" + stop_trans_unit + " " + start_trans + "e" + "-" + start_trans_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n" +".end \n" ); 
+
+    change_val = "1";
+  }
+console.log(Flag+"2\n");
+
+}
+
+else if( change_val == "1")
+  
+{
+  console.log(Flag+"as\n");
+    jQuery("#webtronics_netlist_text_area").val("");
+      //console.log("if when 1")
+          
+    if (analysis_type == "1") 
+    
+    { 
+   
+         
+             jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".dc" + " " + source + " " + start + "e" + "-" + start_dc_unit + " " +  stop + "e" + "-" + stop_dc_unit + " " + increment + "e" + "-" + increment_dc_unit + '\n' + '\n'+ ".control \n"+ "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" +  ".endc \n"+ ".end \n" );
+                change_val = "1";
+    }       
+
+  
+  
+  else if (analysis_type == "2")
+  {
+    jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".ac" + " " + scale_val + " " + noofpoint + " " + startfreq + start_ac_unit + " " + stopfreq + stop_ac_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" +   ".endc \n"+ ".end \n" );
+
+    change_val = "1";
+  } 
+
+
+  else if (analysis_type == "3")
+  {
+    jQuery("#webtronics_netlist_text_area").val(Flag + '\n' + ".tran" + " " + step_trans + "e" + "-" + step_trans_unit + " " + stop_trans + "e"+ "-" + stop_trans_unit + " " + start_trans + "e" + "-" + start_trans_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n" +".end \n" ); 
+
+      change_val = "1";
+  }
+  console.log(Flag+"as\n");
+
+}
+
+
+
+
+
+
+
+		      }
+          else {
+            alert("Analysis information is not available !");
+
+
+          }
+
+
+
+
 		    });
 		  }
+
+
+
+
+
+      jQuery("#webtronics_analysis").click(function(){
+        flag1=1;
+        jQuery('#webtronics_netlist_analysis').show();
+    
+        jQuery('#webtronics_disable').show();
+
+
+
+       });
+
+      jQuery(".button_cancel").click(function(){
+        flag1=0;
+        jQuery("#webtronics_netlist_analysis").hide();
+        jQuery("#webtronics_disable").hide();
+
+      });
+
+
+
+
+
 		  if($('webtronics_run')){
 		    Event.observe($('webtronics_run'), 'click', function() {
 		      //                    webtronics.postspice(webtronics.circuit.createnetlist());
@@ -719,7 +887,9 @@ console.log(exception);
 		    netlistcreator.writewtx(model,"model",$('webtronics_part_dir_value').value);
 		    netlistcreator.writewtx(model,"measure",$('webtronics_print_dir_value').value);
 
-		    webtronics.circuit.createvalue(webtronics.circuit.selected[0]);
+       
+		    
+        webtronics.circuit.createvalue(webtronics.circuit.selected[0]);
 		  });
 		  
 		  if($('webtronics_properties_cancel'))Event.observe($('webtronics_properties_cancel'), 'click', function() {
@@ -837,7 +1007,13 @@ console.log(exception);
 		      $('webtronics_netlist_text').style.display='none';
 		      webtronics.enablepage();
 		    });
-		  }  
+		  }
+
+
+    
+
+
+
 		  if($("webtronics_netlist_text_run")){
 		    Event.observe($('webtronics_netlist_text_run'), 'click', function() {
 		      webtronics.gnucapjs($("webtronics_netlist_text_area").value);
