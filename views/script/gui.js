@@ -696,18 +696,13 @@ jQuery("#analysis_selectbox").change(function(){
 change_val = "0";
 Flag = "";
   //console.log("out")
-  console.log(globalVariable+" gv\n");
- 
 
-console.log(globalVariable+" gv1\n");
-console.log(Flag+"1 s\n");
       
   if (change_val == "0")
   {
     Flag = jQuery("#webtronics_netlist_text_area").val();
     
   
-  console.log(Flag+"11s\n");
 /*------------------------------------------------------------------------------------------------------------------------------------- 
  Here are the conditions concatenated to give final netlist values for dc all cases  
 ---------------------------------------------------------------------------------------------------------------------------------------------*/ 
@@ -742,14 +737,14 @@ Here are the all Transiet Cases for generating final netlist values
 
     change_val = "1";
   }
-console.log(Flag+"2\n");
+  socket.emit('netlist', jQuery("#webtronics_netlist_text_area").val());
 
 }
 
 else if( change_val == "1")
   
 {
-  console.log(Flag+"as\n");
+  
     jQuery("#webtronics_netlist_text_area").val("");
       //console.log("if when 1")
           
@@ -778,7 +773,7 @@ else if( change_val == "1")
 
       change_val = "1";
   }
-  console.log(Flag+"as\n");
+  socket.emit('netlist', jQuery("#webtronics_netlist_text_area").val());
 
 }
 

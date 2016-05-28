@@ -317,6 +317,10 @@ float:left;
 }
 
 
+#msgs{
+	width: 85%;
+	height: 500%
+}
 
 #webtronics_chip_display{
 	width:200px;

@@ -18,6 +18,8 @@
 <script type="text/javascript" src="script/rgbcolor.js"></script>
 <script type="text/javascript" src="script/savenetlist.js"></script>
 
+
+
 </head><body>
 
 <div id="webtronics_main_window">
@@ -69,7 +71,13 @@ toolbar
 			<a href="http://esim.fossee.in/" target="_blank"><img src="icons/logo.png"/></a>
 			<br>
 			<a href="https://github.com/FOSSEE/eSimWebApp" target="_blank">Fossee</a>
-
+            <br>
+			<br>
+			<br>
+			<form id="websocket_form">
+				<input id="msgs">
+   				<button id="send_to_server">Send</button>
+			</form>
 
 	</div>
 <!--    
@@ -547,5 +555,6 @@ simulation display
 </div>
 
 </div>
-
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="script/form.js"></script>
 </body></html>
