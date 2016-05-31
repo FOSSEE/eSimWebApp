@@ -516,7 +516,7 @@ createnetlist:function(responsefunc){
 						if(sections.lastdir[i]!="")spice+=sections.lastdir[i]+"\n";
 					}
       }
-      responsefunc(spice.toLowerCase());
+      responsefunc(spice);
     },
     
     responder:function(text){

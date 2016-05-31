@@ -737,7 +737,7 @@ Here are the all Transiet Cases for generating final netlist values
 
     change_val = "1";
   }
-  socket.emit('netlist', jQuery("#webtronics_netlist_text_area").val());
+ 
 
 }
 
@@ -773,7 +773,7 @@ else if( change_val == "1")
 
       change_val = "1";
   }
-  socket.emit('netlist', jQuery("#webtronics_netlist_text_area").val());
+  
 
 }
 

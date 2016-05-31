@@ -9,7 +9,3 @@ jQuery("#websocket_form").click(function(){
     return false;
  });
 
-socket.on('chat message', function(msg){
-    console.log(msg);
-});
-
