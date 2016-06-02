@@ -33,9 +33,6 @@ module.exports = function(express,app,io,fs,exec){
 		});
 					
 	});
-	socket.on('chat message', function(msg){
-      console.log('message: ' + msg);
-	});
 	socket.on('netlist', function(msg){
 	  var update = msg.replace('dumpv', '/tmp' + socket.id.toLowerCase() + '-dumpv');
 	  var result = update.replace('dumpi', '/tmp' + socket.id.toLowerCase() + '-dumpi');
