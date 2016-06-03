@@ -106,6 +106,7 @@ Schematic.prototype.getwithselector=function(selector){
 
 Schematic.prototype.getnextid=function(elem,count){
   var type=this.readwtx(elem,"type");
+  if(type=="gnd")return "gnd";// to make universal id gnd for ground 
   if(!count)count=1;
   var newid=type+count
   var parts=this.drawing.getElementsByTagName("g");
@@ -699,8 +700,7 @@ Schematic.prototype.createvalue=function(elem){
     }
     $(label).appendChild(idspan);
     $(label).appendChild(valuespan);
-    $(label).appendChild(tempspan);
-  }
+   }
   else{
     var text=this.createtext("",'black',0,0-this.fontsize);
     this.drawing.appendChild(text);

@@ -119,20 +119,17 @@
       "diode":{
 	"values":{
 	  
-	  "1n4148":["models.lib"],
-	  "1n4007":["models.lib"],
-	  "1n34a":["models.lib"],
-	  "1n5711":["models.lib"]
+	  "1n4148":["1n4148.lib"],
+	  "1n4007":["1n4007.lib"],
+	  "1n34a":["1n34a.lib"],
+	  "1n5711":["1n5711.lib"]
 	  
 	},
 	"help":"dx a k model\na=anode\nk=kathode"         
 	
       },
-      "led":{},
-      "photodiode":{},
       "scr":{},
       "triac":{},
-      "trigger":{},
       "zener":{}
     },
     "switches":{
@@ -187,53 +184,45 @@
     },
     "power":{
      
+    	"pulse":{},
+    	"pwl":{},
+    	"exponential":{},
+
+    	"sinvoltagesource":{
+    		"help":"SIN = sine wave source\nAC = AC frequency sweep",
+	"values":{		
+	}
+
+    	},
+
+
       "current":{
 	
 	"values":{		
-	  "DC 1ma":[""],
-	  "DC 10ma":[""],
-	  "DC 100ma":[""],
-	  "DC 1a":[""],
-	  "SIN(0 1ma 1KHZ)":[""],
-	  "SIN(0 10ma 1KHZ)":[""]
+	  "1m":[""],
+	  "10m":[""],
+	  "100m":[""],
+	  "1":[""]
 	}
       },
       "ac":{
-	"help":"SIN = sine wave source\nAC = AC frequency sweep",
-	"values":{		
-	  "SIN(0 5 1KHZ)":[""],
-	  "SIN(0 12 60HZ)":[""],
-	  "SIN(0 120 60HZ)":[""],
-	  "PWL(0 0 10ns 0 10ns 5 20ns 5)R=0":[""],
-	  "PULSE(0 1 0 0 0 2n 4n)":[""],
-	  "SFFM( 0 1V 20K 5 1K)":[""],                    
-	  "AC 1 SIN":[".ac lin 20 100 200 "]
-	  
+	"help":"Amplitude= amplitude of wave \n phase = phase of wave",
+	"values":{	
 	}                    },
+
+
 	"battery":{
 	  "values":{		
-	    "dc 5v":[""],
-	    "dc 9v":[""],
-	    "dc 12v":[""]
+	    "5":[""],
+	    "9":[""],
+	    "12":[""]
 	  }
 	},
 	"ground":{},
 	"namewire":{}
-    },
+    }
     
-    
-    "test":{
-      "scope":{
-	"help":".TRAN step total \nstep = step size\ntotal = total length of time",
-	"values":{		
-	  "tran":[".TRAN 1NS 100NS",
-	  ".TRAN 1NS 1000NS 500NS",
-	  ".TRAN 10NS 1US UIC",
-	  ".TRAN 1ms 100ms"]
-	  
-	}
-      }
-    }            
+                
   },
   "model":{
     "555":["555.mod"]

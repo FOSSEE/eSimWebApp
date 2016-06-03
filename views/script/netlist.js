@@ -1,160 +1,163 @@
 var netlistcreator={
-matrixxform:function(point,matrix){
-  var pin=webtronics.circuit.svgRoot.createSVGPoint();
-  pin.x=point.x;
-  pin.y=point.y;
-  pin=pin.matrixTransform(matrix);
-  return {x:Math.round(pin.x),y:Math.round(pin.y)};
-},
+  matrixxform:function(point,matrix){
+    var pin=webtronics.circuit.svgRoot.createSVGPoint();
+    pin.x=point.x;
+    pin.y=point.y;
+    pin=pin.matrixTransform(matrix);
+    return {x:Math.round(pin.x),y:Math.round(pin.y)};
+  },
 
-/*tests if 2 point are within 3 pixels of each other*/
-ispoint:function(point1,point2){
-  return (Math.abs(point2.x-point1.x)<3)&&(Math.abs(point2.y-point1.y)<3); 
-},
+  /*tests if 2 point are within 3 pixels of each other*/
+  ispoint:function(point1,point2){
+    return (Math.abs(point2.x-point1.x)<3)&&(Math.abs(point2.y-point1.y)<3); 
+  },
 
-sortnetlist:function(list){
-  var G=[];
-  var A=[];
-  var B=[];
-  var C=[];
-  var D=[];
-  var I=[];
-  var J=[];
-  var K=[];
-  var L=[];
-  var M=[];
-  var N=[];
-  var P=[];
-  var Q=[];
-  var R=[];
-  var U=[];
-  var V=[];
-  var wire=[];
-  var other=[]
-  for(var i=0;i<list.length;i++){
-    if(list[i].type=='gnd'){
-      G.push(list[i]);
+  sortnetlist:function(list){
+    var G=[];
+    var S=[];
+    var A=[];
+    var B=[];
+    var C=[];
+    var D=[];
+    var I=[];
+    var J=[];
+    var K=[];
+    var L=[];
+    var M=[];
+    var N=[];
+    var P=[];
+    var Q=[];
+    var R=[];
+    var U=[];
+    var V=[];
+    var wire=[];
+    var other=[]
+    for(var i=0;i<list.length;i++){
+      if(list[i].type=='gnd'){
+        G.push(list[i]);
+      }
+      else if(list[i].type=='v'){
+        V.push(list[i]);
+      }
+      else if(list[i].type=='wire'){
+        wire.push(list[i]);			
+      }		
+      else if(list[i].type=='b'){
+        B.push(list[i]);
+      }
+      else if(list[i].type=='c'){
+        C.push(list[i]);	
+      }
+      else if(list[i].type=='d'){
+        D.push(list[i]);
+      }
+      else if(list[i].type=='i'){	
+        J.push(list[i]);
+      }
+      else if(list[i].type=='j'){	
+        J.push(list[i]);
+      }
+      else if(list[i].type=='k'){
+        K.push(list[i]);
+      }
+      else if(list[i].type=='l'){
+        L.push(list[i]);
+      }
+      else if(list[i].type=='m'){
+        M.push(list[i]);
+      }
+      else if(list[i].type=='n'){
+        N.push(list[i]);
+      }
+      else if(list[i].type=='plot'){
+        P.push(list[i]);
+      }
+      else if(list[i].type=='q'){
+        Q.push(list[i]);
+      }
+      else if(list[i].type=='r'){
+        R.push(list[i]);
+      }
+      else if(list[i].type=='u'){	
+        U.push(list[i]);
+      }
+      /* this is the best way I could think to tell if a part i digital */
+      else if(list[i].category=="digital"){	
+        A.push(list[i]);
+      }
+      else {
+        list[i].error='unknown device';
+        other.push(list[i]);
+      }
     }
-    else if(list[i].type=='v'){
-      V.push(list[i]);
-    }
-    else if(list[i].type=='wire'){
-      wire.push(list[i]);			
-    }		
-    else if(list[i].type=='b'){
-      B.push(list[i]);
-    }
-    else if(list[i].type=='c'){
-      C.push(list[i]);	
-    }
-    else if(list[i].type=='d'){
-      D.push(list[i]);
-    }
-    else if(list[i].type=='i'){	
-      J.push(list[i]);
-    }
-    else if(list[i].type=='j'){	
-      J.push(list[i]);
-    }
-    else if(list[i].type=='k'){
-      K.push(list[i]);
-    }
-    else if(list[i].type=='l'){
-      L.push(list[i]);
-    }
-    else if(list[i].type=='m'){
-      M.push(list[i]);
-    }
-    else if(list[i].type=='n'){
-      N.push(list[i]);
-    }
-    else if(list[i].type=='plot'){
-      P.push(list[i]);
-    }
-    else if(list[i].type=='q'){
-      Q.push(list[i]);
-    }
-    else if(list[i].type=='r'){
-      R.push(list[i]);
-    }
-    else if(list[i].type=='u'){	
-      U.push(list[i]);
-    }
-    /* this is the best way I could think to tell if a part i digital */
-    else if(list[i].category=="digital"){	
-      A.push(list[i]);
-    }
-    else {
-      list[i].error='unknown device';
-      other.push(list[i]);
-    }
-  }
-  
-  var sortfunction=function(a,b){
-    var apart=a.id.replace(a.type,"");
-    var bpart=b.id.replace(b.type,"");
-    if(!apart)apart=0;
-    if(!bpart)bpart=0;
-    return (apart>bpart);
-  };
-  V.sort(sortfunction);
-  wire.sort(sortfunction);
-  B.sort(sortfunction);
-  C.sort(sortfunction);
-  D.sort(sortfunction);
-  I.sort(sortfunction);
-  J.sort(sortfunction);
-  K.sort(sortfunction);
-  L.sort(sortfunction);
-  M.sort(sortfunction);
-  N.sort(sortfunction);
-  P.sort(sortfunction);
-  Q.sort(sortfunction);
-  R.sort(sortfunction);
-  U.sort(sortfunction);
-  A.sort(sortfunction);
-  
-  var newlist=[];
-  G.each(function(item){newlist.push(item)});		
-  G.reverse();
-  V.each(function(item){newlist.push(item)});		
-  wire.each(function(item){newlist.push(item)});		
-  B.each(function(item){newlist.push(item)});		
-  C.each(function(item){newlist.push(item)});		
-  D.each(function(item){newlist.push(item)});		
-  I.each(function(item){newlist.push(item)});		
-  J.each(function(item){newlist.push(item)});		
-  K.each(function(item){newlist.push(item)});		
-  L.each(function(item){newlist.push(item)});		
-  M.each(function(item){newlist.push(item)});		
-  N.each(function(item){newlist.push(item)});		
-  Q.each(function(item){newlist.push(item)});		
-  R.each(function(item){newlist.push(item)});
-  U.each(function(item){newlist.push(item)});		
-  A.each(function(item){newlist.push(item)});		
-  other.each(function(item){newlist.push(item)});		
-  
-  /*plots go last*/
-  P.each(function(item){newlist.push(item)});		
-  return newlist;
-},
 
-/* draws wires to namewire ports with the same id*/
-connectnamewires:function(list){
-  
-  for(var i=0;i<list.length;i++){
-    if((list[i].type=="wire") || (list[i].type=="gnd")){
-      for(var j=i;j<list.length;j++){
-	if( (list[i]!=list[j]) && ((list[i].id==list[j].id) || (list[i].type=="gnd" && list[j].type=="gnd"))   ){
-	  var line= webtronics.circuit.createline('yellow',1,list[i]['analogpins'][0]['x'],list[i]['analogpins'][0]['y'],list[j]['analogpins'][0]['x'],list[j]['analogpins'][0]['y']);
-	  line.setAttributeNS(null,'class','webtronics_namewire_connector');
-	  webtronics.circuit.info.appendChild(line);
+    var sortfunction=function(a,b){
+      var apart=a.id.replace(a.type,"");
+      var bpart=b.id.replace(b.type,"");
+      if(!apart)apart=0;
+      if(!bpart)bpart=0;
+      return (apart>bpart);
+    };
+    V.sort(sortfunction);
+    wire.sort(sortfunction);
+    B.sort(sortfunction);
+    C.sort(sortfunction);
+    D.sort(sortfunction);
+    I.sort(sortfunction);
+    J.sort(sortfunction);
+    K.sort(sortfunction);
+    L.sort(sortfunction);
+    M.sort(sortfunction);
+    N.sort(sortfunction);
+    P.sort(sortfunction);
+    Q.sort(sortfunction);
+    R.sort(sortfunction);
+    U.sort(sortfunction);
+    A.sort(sortfunction);
+
+    var newlist=[];
+    G.each(function(item){newlist.push(item)});		
+    G.reverse();
+    V.each(function(item){newlist.push(item)});		
+    wire.each(function(item){newlist.push(item)});		
+    B.each(function(item){newlist.push(item)});		
+    C.each(function(item){newlist.push(item)});		
+    D.each(function(item){newlist.push(item)});		
+    I.each(function(item){newlist.push(item)});		
+    J.each(function(item){newlist.push(item)});		
+    K.each(function(item){newlist.push(item)});		
+    L.each(function(item){newlist.push(item)});		
+    M.each(function(item){newlist.push(item)});		
+    N.each(function(item){newlist.push(item)});		
+    Q.each(function(item){newlist.push(item)});		
+    R.each(function(item){newlist.push(item)});
+    U.each(function(item){newlist.push(item)});		
+    A.each(function(item){newlist.push(item)});		
+    other.each(function(item){newlist.push(item)});		
+
+    /*plots go last*/
+    P.each(function(item){newlist.push(item)});		
+
+
+    return newlist;
+  },
+
+  /* draws wires to namewire ports with the same id*/
+  connectnamewires:function(list){
+
+    for(var i=0;i<list.length;i++){
+      if((list[i].type=="wire") || (list[i].type=="gnd")){
+        for(var j=i;j<list.length;j++){
+         if( (list[i]!=list[j]) && ((list[i].id==list[j].id) || (list[i].type=="gnd" && list[j].type=="gnd"))   ){
+           var line= webtronics.circuit.createline('yellow',1,list[i]['analogpins'][0]['x'],list[i]['analogpins'][0]['y'],list[j]['analogpins'][0]['x'],list[j]['analogpins'][0]['y']);
+           line.setAttributeNS(null,'class','webtronics_namewire_connector');
+           webtronics.circuit.info.appendChild(line);
 	  //console.log(line);            
 	  break; 
 	}
-      }    
-    }
-  }
+}    
+}
+}
 },
 
 /*check for vectors and convert them*/
@@ -163,7 +166,7 @@ tovector:function(pin,nodenumber){
   if(pin.parentNode.tagName=="wtx:vector"){
     var vector=Element.descendants(pin.parentNode);
     if(pin==vector[0]){v+="["}
-    v+="a"+nodenumber;
+      v+="a"+nodenumber;
     if(pin==vector[vector.length-1]){v+="]";}
   }
   else{
@@ -192,76 +195,213 @@ tovector:function(pin,nodenumber){
  */
 
 
-getwtxdata:function(parts){
+ getwtxdata:function(parts){
   list=[];
   for(var i=0;i<parts.length;i++){
-    var part={error:"", elem:{}, analogpins:[],digitalpins:[],type:"", name:"", category:"", value:"", spice:"", model:"",measure:""}
+    var part={error:"", elem:{}, analogpins:[],digitalpins:[],amplitude:"",phase:"",offsetvoltage:"",voltageamplitude:"",frequency:"",delaytime:"",dampingfactor:"",type:"", name:"", category:"", value:"", spice:"", model:"",measure:"",
+    pulval1:"",pulval2:"",pulval3:"",pulval4:"",pulval5:"",pulval6:"",pulval7:"",eval1:"",eval2:"",eval3:"",eval4:"",eval5:"",eval6:"", pwlval1:"",pwlval2:"",pwlval3:"",pwlval4:"",pwlval5:"",pwlval6:"",pwlval7:"",pwlval8:""
+  }
     /*
      *        try{
      *            part.nodes=this.getwtxpins(part[i]);        
   }
   catch{part.error="wtx:pins not found"}
   */
-    part.elem=parts[i];
+  part.elem=parts[i];
 
-		try{
-      var category=webtronics.circuit.getwtxtagname(parts[i],"analog")[0];
-      var nodes = webtronics.circuit.getwtxtagname(category,"node");
-      for(var j=0;j<nodes.length;j++){
-	var point = this.matrixxform( {x:webtronics.circuit.getwtxattribute(nodes[j],"x"),y:webtronics.circuit.getwtxattribute(nodes[j],"y")},webtronics.circuit.parseMatrix(part.elem));
-	part.analogpins.push({index:webtronics.circuit.getwtxattribute(nodes[j],"index"),x:point.x,y:point.y,node:undefined}) ;
-      }
+  try{
+    var category=webtronics.circuit.getwtxtagname(parts[i],"analog")[0];
+    var nodes = webtronics.circuit.getwtxtagname(category,"node");
+    for(var j=0;j<nodes.length;j++){
+     var point = this.matrixxform( {x:webtronics.circuit.getwtxattribute(nodes[j],"x"),y:webtronics.circuit.getwtxattribute(nodes[j],"y")},webtronics.circuit.parseMatrix(part.elem));
+     part.analogpins.push({index:webtronics.circuit.getwtxattribute(nodes[j],"index"),x:point.x,y:point.y,node:undefined}) ;
+   }
       //sort nodes int correct order
       part.analogpins.sort(function(a,b){if (a.name > b.name)return 1;if (a.name < b.name)return -1;return 0;});
-		}
+    }
     catch(e){console.log("no analog pins found");}
     
     try{
       var category=webtronics.circuit.getwtxtagname(parts[i],"digital")[0];
       var nodes = webtronics.circuit.getwtxtagname(category,"node");
       for(var j=0;j<nodes.length;j++){
-	var point = this.matrixxform( {x:webtronics.circuit.getwtxattribute(nodes[j],"x"),y:webtronics.circuit.getwtxattribute(nodes[j],"y")},webtronics.circuit.parseMatrix(part.elem));
-	part.digitalpins.push({index:webtronics.circuit.getwtxattribute(nodes[j],"index"),x:point.x,y:point.y,node:undefined}) ;
-      }
-      part.digitalpins.sort(function(a,b){if (a.name > b.name)return 1;if (a.name < b.name)return -1;return 0;});
-    }
-    catch(e){console.log("no digital pins found");}
-    try{
-      part.id=this.readwtx(parts[i],'id');
-    }
-    catch(e){part.error="wtx:id not found";}    
-    try{
-      part.type=this.readwtx(parts[i],'type');
-    }
-    catch(e){
-      part.error="wtx:type not found";
-    }
-    try{
-      part.name=this.readwtx(parts[i],'name');
-    }
-    catch(e){part.error="wtx:name not found";}
-    try{
-      part.category=this.readwtx(parts[i],'category');
-    }
-    catch(e){part.error="wtx:category not found";}    
-    try{
-      part.value=this.readwtx(parts[i],'value');  
-    }
-    catch(e){part.error="wtx:value not found";}    
-    try{
-      part.spice=this.readwtx(parts[i],'spice');
-    }
-    catch(e){part.error="wtx:spice not found";}    
+       var point = this.matrixxform( {x:webtronics.circuit.getwtxattribute(nodes[j],"x"),y:webtronics.circuit.getwtxattribute(nodes[j],"y")},webtronics.circuit.parseMatrix(part.elem));
+       part.digitalpins.push({index:webtronics.circuit.getwtxattribute(nodes[j],"index"),x:point.x,y:point.y,node:undefined}) ;
+     }
+     part.digitalpins.sort(function(a,b){if (a.name > b.name)return 1;if (a.name < b.name)return -1;return 0;});
+   }
+   catch(e){console.log("no digital pins found");}
+   try{
+    part.id=this.readwtx(parts[i],'id');
+ if(part.type=="gnd"){part.id=part.type;this.writewtx(parts[i],'id',part.id);console.log(this.readwtx(parts[i],'id')+" sfd ");}
+  }
+  catch(e){part.error="wtx:id not found";}    
+  try{
+    part.type=this.readwtx(parts[i],'type');
+  }
+  catch(e){
+    part.error="wtx:type not found";
+  }
+  try{
+    part.name=this.readwtx(parts[i],'name');
+  }
+  catch(e){part.error="wtx:name not found";}
+  try{
+    part.category=this.readwtx(parts[i],'category');
+  }
+  catch(e){part.error="wtx:category not found";}    
+  try{
+    part.value=this.readwtx(parts[i],'value');  
+
+  }
+  catch(e){part.error="wtx:value not found";}    
+  try{
+    part.spice=this.readwtx(parts[i],'spice');
+  }
+  catch(e){part.error="wtx:spice not found";}    
+  try{        
+    part.model=this.readwtx(parts[i],'model');
+  }
+  catch(e){part.error="wtx:model not found";} 
+    //for ac voltage source
     try{        
-      part.model=this.readwtx(parts[i],'model');
+      part.amplitude=this.readwtx(parts[i],'amplitude');
+
+
     }
-    catch(e){part.error="wtx:model not found";}    
+
+    catch(e){part.error="wtx:amplitude not found";} 
+    try{        
+      part.phase=this.readwtx(parts[i],'phase');
+    }
+    catch(e){part.error="wtx:phase not found";} 
+
+    //for sinusoidal voltage source
+
+    try{        
+      part.offsetvoltage=this.readwtx(parts[i],'offsetvoltage');
+    }
+    catch(e){part.error="wtx:offsetvoltage not found";} 
+
+    try{        
+      part.voltageamplitude=this.readwtx(parts[i],'voltageamplitude');
+    }
+    catch(e){part.error="wtx:voltageamplitude not found";} 
+    try{        
+      part.frequency=this.readwtx(parts[i],'frequency');
+    }
+    catch(e){part.error="wtx:frequency not found";} 
+    try{        
+      part.delaytime=this.readwtx(parts[i],'delaytime');
+    }
+    catch(e){part.error="wtx:delaytime not found";} 
+    try{        
+      part.dampingfactor=this.readwtx(parts[i],'dampingfactor');
+    }
+    catch(e){part.error="wtx:dampingfactor not found";} 
+
+    // FOR pulse volatge source  
+    try{        
+      part.pulval1=this.readwtx(parts[i],'pulval1');
+    }
+    catch(e){part.error="wtx:Initial Value not found";} 
+
+    try{        
+      part.pulval2=this.readwtx(parts[i],'pulval2');
+    }
+    catch(e){part.error="wtx:Pulse Value not found";} 
+    try{        
+      part.pulval3=this.readwtx(parts[i],'pulval3');
+    }
+    catch(e){part.error="wtx:Delay Time not found";} 
+    try{        
+      part.pulval4=this.readwtx(parts[i],'pulval4');
+    }
+    catch(e){part.error="wtx:Rise Time not found";} 
+
+    try{        
+      part.pulval5=this.readwtx(parts[i],'pulval5');
+    }
+    catch(e){part.error="wtx:Fall Time not found";} 
+    try{        
+      part.pulval6=this.readwtx(parts[i],'pulval6');
+    }
+    catch(e){part.error="wtx:Pulse Period not found";} 
+    try{        
+      part.pulval7=this.readwtx(parts[i],'pulval7');
+    }
+    catch(e){part.error="wtx:Pulse Width not found";} 
+
+    //FOR pwl volatge source
+    try{        
+      part.pwlval1=this.readwtx(parts[i],'pwlval1');
+    }
+    catch(e){part.error="wtx:Time T1 Value not found";} 
+
+    try{        
+      part.pwlval2=this.readwtx(parts[i],'pwlval2');
+    }
+    catch(e){part.error="wtx:Voltage V1 Value not found";} 
+    try{        
+      part.pwlval3=this.readwtx(parts[i],'pwlval3');
+    }
+    catch(e){part.error="wtx:Time T2 Value not found";} 
+    try{        
+      part.pwlval4=this.readwtx(parts[i],'pwlval4');
+    }
+    catch(e){part.error="wtx:Voltage V2 value not found";} 
+
+    try{        
+      part.pwlval5=this.readwtx(parts[i],'pwlval5');
+    }
+    catch(e){part.error="wtx:Time T3 value not found";} 
+    try{        
+      part.pwlval6=this.readwtx(parts[i],'pwlval6');
+    }
+    catch(e){part.error="wtx:Voltage V3 value not found";} 
+    try{        
+      part.pwlval7=this.readwtx(parts[i],'pwlval7');
+    }
+    catch(e){part.error="wtx:Time T4 Value not found";} 
+    try{        
+      part.pwlval8=this.readwtx(parts[i],'pwlval8');
+    }
+    catch(e){part.error="wtx:Voltage V4 Value not found";} 
+
+//FOR exponential volatge source
+try{        
+  part.eval1=this.readwtx(parts[i],'eval1');
+}
+catch(e){part.error="wtx:Initial Value not found";} 
+
+try{        
+  part.eval2=this.readwtx(parts[i],'eval2');
+}
+catch(e){part.error="wtx:Pulse Value not found";} 
+try{        
+  part.eval3=this.readwtx(parts[i],'eval3');
+}
+catch(e){part.error="wtx:Rise Time Delay value not found";} 
+try{        
+  part.eval4=this.readwtx(parts[i],'eval4');
+}
+catch(e){part.error="wtx:Rise Time Constant value not found";} 
+
+try{        
+  part.eval5=this.readwtx(parts[i],'eval5');
+}
+catch(e){part.error="wtx:Fall Time Delay value not found";} 
+try{        
+  part.eval6=this.readwtx(parts[i],'eval6');
+}
+catch(e){part.error="wtx:Fall Time Constan value not found";} 
+
     //special tag for parts that do simulation
     try{        
       part.measure=this.readwtx(parts[i],'measure');
     }
     catch(e){}    
-     
+
     list.push(part);
   }
   return list;
@@ -269,7 +409,7 @@ getwtxdata:function(parts){
 },
 /*detect analog and digital mix*/
 mixedsignals:function(analogwires,digitalwires){
-  
+
   for(var j=1;j<analogwires.length;j++){
     var crossed=this.getconnected(digitalwires,analogwires[j]);
     if(crossed>-1){
@@ -284,13 +424,13 @@ getconnected:function(wirelist,wire){
   for(var i=0;i<wirelist.length;i++){
     for(var j=0;j<wirelist[i].length;j++){
       for(var k=0;k<wire.length;k++){
-	if(this.ispoint(wirelist[i][j],wire[k])){
-	  return i;
-	}
-      }
-    }
-  }
-  return -1;
+       if(this.ispoint(wirelist[i][j],wire[k])){
+         return i;
+       }
+     }
+   }
+ }
+ return -1;
 },
 
 //returns points connected by lines
@@ -305,18 +445,18 @@ followwires:function(wires,pin){
     var point2={x:lines[i].getAttribute('x2')-0,y:lines[i].getAttribute('y2')-0};
     if(wires.indexOf(lines[i])<0){		
       if(this.ispoint(point1,pin)){
-	wires.push(lines[i]);
-	var p=this.followwires(wires,point2);
-	for(var j=0;j<p.length;j++)points.push(p[j]);				
-      }
-      else if(this.ispoint(point2,pin)){
-	wires.push(lines[i]);
-	var p=this.followwires(wires,point1);
-	for(var j=0;j<p.length;j++)points.push(p[j]);				
-      }
-    }
-  }
-  return points;
+       wires.push(lines[i]);
+       var p=this.followwires(wires,point2);
+       for(var j=0;j<p.length;j++)points.push(p[j]);				
+     }
+   else if(this.ispoint(point2,pin)){
+     wires.push(lines[i]);
+     var p=this.followwires(wires,point1);
+     for(var j=0;j<p.length;j++)points.push(p[j]);				
+   }
+}
+}
+return points;
 },
 
 
@@ -331,44 +471,44 @@ numberwires:function(parts){
 
     if( parts[i].type=="gnd"){
       if (analogpoints.length==0 ){
-	var wire=this.followwires(null,{x:parts[i].analogpins[0]['x'],y:parts[i].analogpins[0]['y']});
-	analogpoints.push(wire);
+       var wire=this.followwires(null,{x:parts[i].analogpins[0]['x'],y:parts[i].analogpins[0]['y']});
+       analogpoints.push(wire);
 //add this node to thelist of digital wires
-	digitalpoints.push(wire);
-      }
-      parts[i].analogpins[0]["node"]=0;
+digitalpoints.push(wire);
+}
+parts[i].analogpins[0]["node"]=0;
 //      parts[i].digitalpins[0]["node"]=0;
-      continue;
-    }
-    if(parts[i].analogpins!=undefined){
-      for(var j=0;j<parts[i].analogpins.length;j++){
-	var wire=this.followwires(null,{x:parts[i].analogpins[j]['x'],y:parts[i].analogpins[j]['y']});
-	var found=this.getconnected(analogpoints,wire);
-	if(found<0){
-	  analogpoints.push(wire);
-	  parts[i].analogpins[j]["node"]=analogpoints.length-1;
-	}
-	else{
-	  parts[i].analogpins[j]["node"]=found;
-	}
-      }
-    }
+continue;
+}
+if(parts[i].analogpins!=undefined){
+  for(var j=0;j<parts[i].analogpins.length;j++){
+   var wire=this.followwires(null,{x:parts[i].analogpins[j]['x'],y:parts[i].analogpins[j]['y']});
+   var found=this.getconnected(analogpoints,wire);
+   if(found<0){
+     analogpoints.push(wire);
+     parts[i].analogpins[j]["node"]=analogpoints.length-1;
+   }
+   else{
+     parts[i].analogpins[j]["node"]=found;
+   }
+ }
+}
     //digital node numbering loop
     
     if(parts[i].digitalpins!=undefined){
       for(var j=0;j<parts[i].digitalpins.length;j++){
-	var wire=this.followwires(null,{x:parts[i].digitalpins[j]['x'],y:parts[i].digitalpins[j]['y']});
-	var found=this.getconnected(digitalpoints,wire);
-	if(found<0){
-	  digitalpoints.push(wire);
-	  parts[i].digitalpins[j]["node"]=digitalpoints.length-1;
-	}
-	else{
-	  parts[i].digitalpins[j]["node"]=found;
-	}
-      }	
-    }
-  }
+       var wire=this.followwires(null,{x:parts[i].digitalpins[j]['x'],y:parts[i].digitalpins[j]['y']});
+       var found=this.getconnected(digitalpoints,wire);
+       if(found<0){
+         digitalpoints.push(wire);
+         parts[i].digitalpins[j]["node"]=digitalpoints.length-1;
+       }
+       else{
+         parts[i].digitalpins[j]["node"]=found;
+       }
+     }	
+   }
+ }
   //returns true if digital and analog are mixed
   return this.mixedsignals(analogpoints,digitalpoints);
 } , 
@@ -386,38 +526,41 @@ getnodes:function(parts){
     // check what type of simulation to use
     if(parts[i].type=='gnd' || parts[i].type=='wire')continue;
     if(parts[i].type=="plot"){
-	if(sections.simulation.length==0){
-	  sections.simulation.push(".op");
-	  sections.simulation.push(".print tran");
-	}
-	if(sections.simulation[1] !=undefined && sections.simulation[1].match(/\.print\sac/g)==null){
-	  sections.simulation[1]+=" v("+parts[i].analogpins[0]["node"]+")";
-	  sections.simulation[1]+=" "+parts[i].measure;
-	  if(parts[i].model)sections.simulation.push(parts[i].model);
-	}
-	
-      
-    }
-    else{
-      if(parts[i].type=="v"){
-	if(sections.simulation.length==0 && parts[i].model.length){
-	  sections.simulation.push(".op");
-	  sections.simulation.push(".print ac "+parts[i].measure);
-	  sections.simulation.push(parts[i].model);
-	}
-      }
-      else if(parts[i].type=="l"){
-	if(parts[i].model.length){
-	    sections.coupling.push(parts[i].model);  
-	}
-      }
-      else{
-	if(parts[i].model.match(/\.mod/i) && !parts[i].id.match(/^x/))parts[i].id="x"+parts[i].id;
-	if(parts[i].model.length)sections.firstdir.push(parts[i].model);
-	
-      }
+     if(sections.simulation.length==0){
+       sections.simulation.push(".op");
+       sections.simulation.push(".print tran");
+     }
+     if(sections.simulation[1] !=undefined && sections.simulation[1].match(/\.print\sac/g)==null){
+       sections.simulation[1]+=" v("+parts[i].analogpins[0]["node"]+")";
+       sections.simulation[1]+=" "+parts[i].measure;
+       if(parts[i].model)sections.simulation.push(parts[i].model);
+     }
+
+
+   }
+   else{
+    if(parts[i].type=="v"){
+     if(sections.simulation.length==0 && parts[i].model.length){
+       sections.simulation.push(".op");
+       sections.simulation.push(".print ac "+parts[i].measure);
+       sections.simulation.push(parts[i].model);
+     }
+   }
+   else if(parts[i].type=="l"){
+     if(parts[i].model.length){
+       sections.coupling.push(parts[i].model);  
+     }
+   }
+   else{
+     if(parts[i].model.match(/\.mod/i) && !parts[i].id.match(/^x/))parts[i].id="x"+parts[i].id;
+     if(parts[i].model.length)sections.firstdir.push(parts[i].model);
+
+   }
       //create pins array
-      var net={error:parts[i].error,partid:parts[i].id,pins:{analog:parts[i].analogpins,digital:parts[i].digitalpins},model:parts[i].value};
+      var net={error:parts[i].error,pwlval1:parts[i].pwlval1,pwlval2:parts[i].pwlval2,pwlval3:parts[i].pwlval3,pwlval4:parts[i].pwlval4,pwlval5:parts[i].pwlval5,pwlval6:parts[i].pwlval6,pwlval7:parts[i].pwlval7,pwlval8:parts[i].pwlval8,pulval1:parts[i].pulval1,pulval2:parts[i].pulval2,pulval3:parts[i].pulval3,pulval4:parts[i].pulval4,pulval5:parts[i].pulval5,pulval6:parts[i].pulval6,pulval7:parts[i].pulval7,name:parts[i].name,
+        partid:parts[i].id,pins:{analog:parts[i].analogpins,digital:parts[i].digitalpins},model:parts[i].value,amplitude:parts[i].amplitude,
+      phase:parts[i].phase,offsetvoltage:parts[i].offsetvoltage,voltageamplitude:parts[i].voltageamplitude,frequency:parts[i].frequency,
+      delaytime:parts[i].delaytime,dampingfactor:parts[i].dampingfactor,eval1:parts[i].eval1,eval2:parts[i].eval2,eval3:parts[i].eval3,eval4:parts[i].eval4,eval5:parts[i].eval5,eval6:parts[i].eval6};
       if(net!=null)sections.netlist.push(net);
     }
     
@@ -428,18 +571,18 @@ getnodes:function(parts){
 
 /* organizes data into netlist*/
 createnetlist:function(responsefunc){
-  
+
   var parts=webtronics.circuit.getwithselector('#webtronics_drawing > g');
- 
+
   if(parts.length<1){
     responsefunc("no parts found \n");
     return;
   }
 
 
- 
+
   var partswtx=this.sortnetlist(this.getwtxdata(parts));
-   
+
 
   if(partswtx[0].type.toLowerCase()!='gnd'){
     responsefunc('no ground node');
@@ -456,101 +599,119 @@ createnetlist:function(responsefunc){
     var command="";
     for(var i=0;i<sections.netlist.length;i++){
       if(sections.netlist[i].error!=""){
-	spice+=sections.netlist[i].error+'\n';
-	continue;
-      }
-      command=sections.netlist[i].partid;
-      var pins=[];
-      for(var j=0;j<sections.netlist[i].pins['analog'].length;j++)pins.push(sections.netlist[i].pins['analog'][j]);
+       spice+=sections.netlist[i].error+'\n';
+       continue;
+     }
+     command=sections.netlist[i].partid;
+     var pins=[];
+     for(var j=0;j<sections.netlist[i].pins['analog'].length;j++)pins.push(sections.netlist[i].pins['analog'][j]);
       for(var j=0;j<sections.netlist[i].pins['digital'].length;j++)pins.push(sections.netlist[i].pins['digital'][j]);
-      pins.sort(function(a,b){return a.index > b.index? 1:a.index < b.index?-1:0;})
+        pins.sort(function(a,b){return a.index > b.index? 1:a.index < b.index?-1:0;})
 //      console.log(pins);
-      for(var j=0;j<pins.length;j++){command += " "+pins[j].node;}
+for(var j=0;j<pins.length;j++){command += " "+pins[j].node;}
 
-      command+=" "+sections.netlist[i].model;
-   
-      if(command!="")spice+=command+'\n';
-    }
+  if(sections.netlist[i].name=="ac"){
+   command+=" "+"AC "+sections.netlist[i].amplitude+" "+sections.netlist[i].phase;
+ }else if(sections.netlist[i].name=="sinvoltagesource"){
+   command+=" "+"SIN ("+sections.netlist[i].offsetvoltage+" "+sections.netlist[i].voltageamplitude+" "+sections.netlist[i].frequency+" "+sections.netlist[i].delaytime+" "+sections.netlist[i].dampingfactor+")";
+ }else if(sections.netlist[i].name=="battery"){
+  command+=" "+"DC "+sections.netlist[i].model;
+}else if(sections.netlist[i].name=="current"){
+ command+=" "+"dc "+sections.netlist[i].model;
+}else if(sections.netlist[i].name=="pulse"){
+  command+=" "+"PULSE ("+sections.netlist[i].pulval1+" "+sections.netlist[i].pulval2+" "+sections.netlist[i].pulval3+" "+sections.netlist[i].pulval4+" "+sections.netlist[i].pulval5+" "+sections.netlist[i].pulval6+" "+sections.netlist[i].pulval7+")";
+}
+else if(sections.netlist[i].name=="pwl"){
+  command+=" "+"PWL ("+sections.netlist[i].pwlval1+" "+sections.netlist[i].pwlval2+" "+sections.netlist[i].pwlval3+" "+sections.netlist[i].pwlval4+" "+sections.netlist[i].pwlval5+" "+sections.netlist[i].pwlval6+" "+sections.netlist[i].pwlval7+" "+sections.netlist[i].pwlval8+")";
+}
+else if(sections.netlist[i].name=="exponential"){
+  command+=" "+"EXP ("+sections.netlist[i].eval1+" "+sections.netlist[i].eval2+" "+sections.netlist[i].eval3+" "+sections.netlist[i].eval4+" "+sections.netlist[i].eval5+" "+sections.netlist[i].eval6+")";
+}
+else{
+  command+=" "+sections.netlist[i].model;
+}
+if(command!="")spice+=command+'\n';
+}
+}
+
+if(sections.coupling.length){
+  for(var i=0;i<sections.coupling.length;i++){
+    spice+=sections.coupling[i]+'\n';
   }
-  
-  if(sections.coupling.length){
-    for(var i=0;i<sections.coupling.length;i++){
-      spice+=sections.coupling[i]+'\n';
-    }
-  }
-  
-  
-    var modelloader={
-    modeltext:"",
-    modelcount:0,
-    download:function(name){
-			var found=false;
-    	for( var i=0;i<webtronics.partslists.length;i++){
-			
-				if(JSON.stringify(webtronics.partslists[i]).indexOf(name)!=-1){
-					found=true;
+}
+
+
+var modelloader={
+  modeltext:"",
+  modelcount:0,
+  download:function(name){
+   var found=false;
+   for( var i=0;i<webtronics.partslists.length;i++){
+
+    if(JSON.stringify(webtronics.partslists[i]).indexOf(name)!=-1){
+     found=true;
 					if(webtronics.partslists[i].url.indexOf("http://")==-1){//see if path is local
 
-		  	  	openfile( webtronics.partslists[i].url+"/spice/"+ name,this.responder);
-		  	  }
-		  	  else{
-		  	  	server.requestfile(list.url,this.responder);
-		  	  }
-					break;
-					this.modelcount++;
-				}
-				
-			}
-			if(!found)console.log("model not found");
+            openfile( webtronics.partslists[i].url+"/spice/"+ name,this.responder);
+          }
+          else{
+            server.requestfile(list.url,this.responder);
+          }
+          break;
+          this.modelcount++;
+        }
+
+      }
+      if(!found)console.log("model not found");
     },
     finish:function(){
       spice+=modelloader.modeltext; 
       if(sections.simulation.length){
-				for(var i=0;i<sections.simulation.length;i++){
-					if(sections.simulation[i]!="")spice+=sections.simulation[i]+"\n";
-				}
+        for(var i=0;i<sections.simulation.length;i++){
+         if(sections.simulation[i]!="")spice+=sections.simulation[i]+"\n";
+       }
+     }
+     if(sections.lastdir.length){
+      sections.lastdir=sections.lastdir.uniq();
+      for(var i=0;i<sections.lastdir.length;i++){
+        if(sections.lastdir[i]!="")spice+=sections.lastdir[i]+"\n";
       }
-      if(sections.lastdir.length){
-				sections.lastdir=sections.lastdir.uniq();
-					for(var i=0;i<sections.lastdir.length;i++){
-						if(sections.lastdir[i]!="")spice+=sections.lastdir[i]+"\n";
-					}
-      }
-      responsefunc(spice);
-    },
-    
-    responder:function(text){
-    		console.log("reponded");
-	      modelloader.modeltext+=text;
-	      if(!modelloader.modelcount){
-				modelloader.finish();
-				spice=spice.concat(".end \n");	
-	
-      }       
     }
+    responsefunc(spice);
+  },
+
+  responder:function(text){
+    console.log("reponded");
+    modelloader.modeltext+=text;
+    if(!modelloader.modelcount){
+      modelloader.finish();
+      spice=spice.concat(".end \n");	
+
+    }       
   }
-  
-  
-  if(sections.firstdir.length){
-    sections.firstdir=sections.firstdir.uniq();
-    
-    for(var i=0;i<sections.firstdir.length;i++){
+}
+
+
+if(sections.firstdir.length){
+  sections.firstdir=sections.firstdir.uniq();
+
+  for(var i=0;i<sections.firstdir.length;i++){
 //      console.log(sections.firstdir[i]);
-      
-      if(sections.firstdir[i].length){
+
+if(sections.firstdir[i].length){
 
 
 
-			modelloader.download(sections.firstdir[i],sections,webtronics.partslists);
-      }
-    }
-  }
-  else modelloader.finish();
-  var connector=webtronics.circuit.getwithselector('#information > .webtronics_namewire_connector')
-	for(var i=0;i<connector.length;i++)connector[i].parentNode.removeChild(connector[i]);
+ modelloader.download(sections.firstdir[i],sections,webtronics.partslists);
+}
+}
+}
+else modelloader.finish();
+var connector=webtronics.circuit.getwithselector('#information > .webtronics_namewire_connector')
+for(var i=0;i<connector.length;i++)connector[i].parentNode.removeChild(connector[i]);
 
-  
-  
+
+
 },
 
 
@@ -558,7 +719,7 @@ createnetlist:function(responsefunc){
 
 
 writeconnects:function(pins){
-  
+
   var str=[];
   
   for(var i=0;i<pins.length;i++){
@@ -569,38 +730,38 @@ writeconnects:function(pins){
 
 
 getconnects:function(elem){
-    var pins=[];    
-      var nodes = this.getwtxtagname(elem,"node");
-      for(var j=0;j<nodes.length;j++){
+  var pins=[];    
+  var nodes = this.getwtxtagname(elem,"node");
+  for(var j=0;j<nodes.length;j++){
 //	console.log(nodes[j]);
 //	console.log(this.parseMatrix(elem));
-	var point = this.matrixxform( {x:this.getwtxattribute(nodes[j],"x"),y:this.getwtxattribute(nodes[j],"y")},this.parseMatrix(elem));
-	pins.push({x:point.x,y:point.y}) ;
-      }
+var point = this.matrixxform( {x:this.getwtxattribute(nodes[j],"x"),y:this.getwtxattribute(nodes[j],"y")},this.parseMatrix(elem));
+pins.push({x:point.x,y:point.y}) ;
+}
       //sort nodes int correct order
-  return pins;
-},
+      return pins;
+    },
 
-isconnect:function(pin,radius,x,y){
-  return (Math.abs(pin.x-x)<3)&&(Math.abs(pin.y-y)<3); 
-},
+    isconnect:function(pin,radius,x,y){
+      return (Math.abs(pin.x-x)<3)&&(Math.abs(pin.y-y)<3); 
+    },
 
-isconnects:function(parts,radius,x,y){
-  
-  for(var i=0; i<parts.length; i++){
-    if(parts[i].tagName =='g'){
-     var pins=this.getconnects(parts[i]);
-      if(pins){
-	for(var j=0;j<pins.length;j++){
-	  if(this.isconnect(pins[j],radius,x,y)){
-	    return pins[j];
-	  }
-	}
-      }
-    }
-  }
-  return null;
-},
+    isconnects:function(parts,radius,x,y){
+
+      for(var i=0; i<parts.length; i++){
+        if(parts[i].tagName =='g'){
+         var pins=this.getconnects(parts[i]);
+         if(pins){
+           for(var j=0;j<pins.length;j++){
+             if(this.isconnect(pins[j],radius,x,y)){
+               return pins[j];
+             }
+           }
+         }
+       }
+     }
+     return null;
+   },
 
 //get the number by part id and leg
 getnodenumber:function(name, leg){
@@ -616,8 +777,8 @@ getnodenumber:function(name, leg){
   return -1
 },
 getwtxtagname:function(elem,tagname){
-  
-  
+
+
   var tag=elem.getElementsByTagName("wtx:"+tagname);
   if(!tag.length){
     tag=elem.getElementsByTagName(tagname);
