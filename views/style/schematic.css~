@@ -422,3 +422,18 @@ div#webtronics_scope_status_bar{
 }
 
 
+#webtronics_risedelay{
+	display:none;
+}
+
+#webtronics_falldelay{
+	display:none;
+}
+
+#webtronics_inputload{
+	display:none;
+}
+
+
+
+

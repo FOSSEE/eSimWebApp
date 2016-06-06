@@ -647,7 +647,7 @@ else if(sections.netlist[i].name=="exponential"){
   command+=" "+"EXP ("+sections.netlist[i].eval1+" "+sections.netlist[i].eval2+" "+sections.netlist[i].eval3+" "+sections.netlist[i].eval4+" "+sections.netlist[i].eval5+" "+sections.netlist[i].eval6+")";
 }
 else if(sections.netlist[i].name=="and"){
-  command+=" "+sections.netlist[i].risedelay+" "+sections.netlist[i].falldelay+" "+sections.netlist[i].inputload;
+  command+=" "+sections.netlist[i].risedelay+" "+sections.netlist[i].falldelay;
 }
 else{
   command+=" "+sections.netlist[i].model;
