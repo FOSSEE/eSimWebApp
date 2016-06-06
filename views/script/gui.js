@@ -130,6 +130,7 @@ returnchip:function(){
 openProperties:function(){
   document.forms['webtronics_properties_form'].reset();
   var c=netlistcreator.readwtx(this.circuit.selected[0],"name");
+ var type=netlistcreator.readwtx(this.circuit.selected[0],"type");
 	$("webtronics_risedelay").style.display='none';
 	 $("webtronics_falldelay").style.display='none';
 	$("webtronics_inputload").style.display='none';
@@ -533,7 +534,7 @@ openProperties:function(){
 
   if(c=="diode")$("directive").style.display='block'
     var id=netlistcreator.readwtx(this.circuit.selected[0],"id");
-
+  if(type=="x")$("directive").style.display='block';
   
   if(id!=""){$('webtronics_part_id').value=id;}
 

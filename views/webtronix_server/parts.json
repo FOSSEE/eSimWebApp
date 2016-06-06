@@ -6,7 +6,7 @@
       "5_pins":{}
     },
     
-    "amplifier":{
+    "subcircuits":{
       "op-amp":{
 	"help":"ux + - v- out v+ model\n\ndirective = include model file",
 	"values":{
@@ -15,16 +15,15 @@
 	  "741":["ua741.mod","lm741.mod"],
 	  "tl084":["tl084.mod"]
 	}
-      },
-      "inst-amp":{
-	"values":{
-	  "ina128":["ina128.mod"],
-	  "ad620a":["ad620a.mod"],
-	  "ad8221":["ad8221.mod"]
-	}
       }
     },
-    "digital":{
+
+    "analogmodels":{
+
+    },
+
+
+    "digitalmodels":{
       
       "adc_bridge":{
 	"ideal_adc":["digital.lib"]
@@ -60,7 +59,7 @@
     },
     
     "resistors":{
-      "photo-resistor":{},
+      
       "resistor":{
 	"help":"rx 1 2 value\nrx = part id\nvalue = 0-xMeg",         
 	"values":{
@@ -74,17 +73,34 @@
 	}
       },
       
-      "vari-resistor":{},
-      "potentiometer":{}
+      "variresistor":{}      
     },
-    "transistors":{
-      "njfet":{
+
+    "mosfets":{
+    	"njfet":{
 	"values":{
 	  "mpf102":["models.lib"],
 	  "2n3819":["models.lib"]
 	  
 	}
       },
+
+    	"pjfet":{},
+    	"nmosfet":{
+	"values":{
+	  "2n7000":["2n7000.mod"],
+	  "irf150":["irf150.mod"],
+	  "irf530":["irf530.mod"],
+	  "irfz44n":["irfz44n.mod"]
+	}
+      },
+		"pmosfet":{}
+   		   
+    },
+
+
+    "transistors":{
+      
       "npn":{
 	"values":{
 	  
@@ -93,29 +109,19 @@
 	  "2n3055":["models.lib"]                    
 	}
       },
-      "pjfet":{},
+      
       "pnp":{
 	"values":{
 	  "2n3906":["models.lib"],
 	  "2n2907":["models.lib"]
 	}
-      },
-      "nmosfet":{
-	"values":{
-	  "2n7000":["2n7000.mod"],
-	  "irf150":["irf150.mod"],
-	  "irf530":["irf530.mod"],
-	  "irfz44n":["irfz44n.mod"]
-	}
-      },
-      "phototrans":{},
-      "pmosfet":{}
+      }
+      
+     
     },
-    "audio":{
-      "speaker":{}
-    },
-    
-    "diodes":{
+
+      
+     "diodes":{
       "diode":{
 	"values":{
 	  
@@ -182,7 +188,7 @@
       "tapcoil":{},
       "transformer":{}
     },
-    "power":{
+    "sources":{
      
     	"pulse":{},
     	"pwl":{},

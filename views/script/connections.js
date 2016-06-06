@@ -266,8 +266,16 @@ Schematic.prototype.addconnects=function(){
     }
     
     
-//    if(parts[i].digitalpins!=undefined)for(var j=0;j<parts[i].digitalpins.length;j++){
-//    }
+   if(parts[i].digitalpins!=undefined)for(var j=0;j<parts[i].digitalpins.length;j++){
+
+		var terminal1=this.maketerminal(null);
+		terminal1.setAttribute('class',"webtronics_part_terminal");
+		terminal1.setAttribute("cx",parts[i].digitalpins[j].x);
+		terminal1.setAttribute("cy",parts[i].digitalpins[j].y);
+		this.info.appendChild(terminal1);
+
+
+   }
   }
 //clean up lines while i'm at it    
   var lines=$$("#webtronics_drawing > line");

@@ -486,7 +486,7 @@ jQuery("#step_time_selectbox").change(function(){
 	 step_trans_unit = "12";
 	}
 	
-	console.log(step_trans_unit);
+	//console.log(step_trans_unit);
 });	
 
 jQuery("#stop_time_selectbox").change(function(){
@@ -510,7 +510,7 @@ jQuery("#stop_time_selectbox").change(function(){
 	 stop_trans_unit = "12";
 	}
 	
-	console.log(stop_trans_unit);
+	//console.log(stop_trans_unit);
 });	
 
 

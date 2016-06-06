@@ -207,7 +207,7 @@ fieldset {
 
 
 div#webtronics_toolbar{
-	height:60px;
+	height:80px;
 	width:100%;
 	border-style:solid;
 	border-width:2px;
@@ -217,6 +217,8 @@ div#webtronics_toolbar{
 	-webkit-user-select:none;
 	-ms-user-select:none;
 	}
+
+
 
 
 

@@ -78,11 +78,11 @@ var netlistcreator={
       else if(list[i].type=='r'){
         R.push(list[i]);
       }
-      else if(list[i].type=='u'){	
+      else if(list[i].type=='x'){	
         U.push(list[i]);
       }
       /* this is the best way I could think to tell if a part i digital */
-      else if(list[i].category=="digital"){	
+      else if(list[i].category=="digitalmodels"){	
         A.push(list[i]);
       }
       else {
