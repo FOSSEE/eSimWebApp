@@ -198,8 +198,7 @@ tovector:function(pin,nodenumber){
  getwtxdata:function(parts){
   list=[];
   for(var i=0;i<parts.length;i++){
-    var part={error:"", elem:{}, analogpins:[],digitalpins:[],amplitude:"",phase:"",offsetvoltage:"",voltageamplitude:"",frequency:"",delaytime:"",dampingfactor:"",type:"", name:"", category:"", value:"", spice:"", model:"",measure:"",
-    pulval1:"",pulval2:"",pulval3:"",pulval4:"",pulval5:"",pulval6:"",pulval7:"",eval1:"",eval2:"",eval3:"",eval4:"",eval5:"",eval6:"", pwlval1:"",pwlval2:"",pwlval3:"",pwlval4:"",pwlval5:"",pwlval6:"",pwlval7:"",pwlval8:""
+    var part={error:"", elem:{}, analogpins:[],digitalpins:[],amplitude:"",phase:"",offsetvoltage:"",voltageamplitude:"",frequency:"",delaytime:"",dampingfactor:"",type:"", name:"", category:"", value:"", spice:"", model:"",measure:"", risedelay:"", falldelay:"", pulval1:"", pulval2:"", pulval3:"", pulval4:"", pulval5:"", pulval6:"", pulval7:"", eval1:"", eval2:"", eval3:"", eval4:"", eval5:"", eval6:"", pwlval1:"", pwlval2:"", pwlval3:"", pwlval4:"", pwlval5:"", pwlval6:"", pwlval7:"", pwlval8:""
   }
     /*
      *        try{
@@ -396,6 +395,21 @@ try{
 }
 catch(e){part.error="wtx:Fall Time Constan value not found";} 
 
+//digital and
+ try{
+	part.risedelay=this.readwtx(parts[i],'risedelay');
+    }
+catch(e){
+        part.error="wtx:risedelay not found";}
+
+try{
+	part.falldelay=this.readwtx(parts[i],'falldelay');
+    }
+catch(e){
+        part.error="wtx:risedelay not found";}
+
+
+
     //special tag for parts that do simulation
     try{        
       part.measure=this.readwtx(parts[i],'measure');
@@ -559,7 +573,7 @@ getnodes:function(parts){
       //create pins array
       var net={error:parts[i].error,pwlval1:parts[i].pwlval1,pwlval2:parts[i].pwlval2,pwlval3:parts[i].pwlval3,pwlval4:parts[i].pwlval4,pwlval5:parts[i].pwlval5,pwlval6:parts[i].pwlval6,pwlval7:parts[i].pwlval7,pwlval8:parts[i].pwlval8,pulval1:parts[i].pulval1,pulval2:parts[i].pulval2,pulval3:parts[i].pulval3,pulval4:parts[i].pulval4,pulval5:parts[i].pulval5,pulval6:parts[i].pulval6,pulval7:parts[i].pulval7,name:parts[i].name,
         partid:parts[i].id,pins:{analog:parts[i].analogpins,digital:parts[i].digitalpins},model:parts[i].value,amplitude:parts[i].amplitude,
-      phase:parts[i].phase,offsetvoltage:parts[i].offsetvoltage,voltageamplitude:parts[i].voltageamplitude,frequency:parts[i].frequency,
+      phase:parts[i].phase, risedelay:parts[i].risedelay, falldelay:parts[i].falldelay, offsetvoltage:parts[i].offsetvoltage,voltageamplitude:parts[i].voltageamplitude,frequency:parts[i].frequency,
       delaytime:parts[i].delaytime,dampingfactor:parts[i].dampingfactor,eval1:parts[i].eval1,eval2:parts[i].eval2,eval3:parts[i].eval3,eval4:parts[i].eval4,eval5:parts[i].eval5,eval6:parts[i].eval6};
       if(net!=null)sections.netlist.push(net);
     }
@@ -626,6 +640,9 @@ else if(sections.netlist[i].name=="pwl"){
 }
 else if(sections.netlist[i].name=="exponential"){
   command+=" "+"EXP ("+sections.netlist[i].eval1+" "+sections.netlist[i].eval2+" "+sections.netlist[i].eval3+" "+sections.netlist[i].eval4+" "+sections.netlist[i].eval5+" "+sections.netlist[i].eval6+")";
+}
+else if(sections.netlist[i].name=="and"){
+  command+=" "+sections.netlist[i].risedelay+" "+sections.netlist[i].falldelay;
 }
 else{
   command+=" "+sections.netlist[i].model;

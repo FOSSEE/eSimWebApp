@@ -6,7 +6,7 @@ globalVariable=0;
 
 
 var webtronics={
-  circuit:null,
+  circuit:nul
   copy:null,
   rightclickmenu:null,
   title:null,
@@ -20,7 +20,7 @@ var webtronics={
   
   Vlist:/\s*expression|\s*url|.*script/,
   Alist:/^(x|y|x1|y1|x2|y2|dx|dy|cx|cy|r|width|height|transform|d|id|class|fill|stroke|visibility|stroke-width|xmlns|xmlns:wtx|connects|partvalue|flippable|spice|index|font-size|font-weight|font-style|font-family)$/,
-  Elist:/^(path|circle|rect|line|text|g|tspan|svg|wtx:eval1|wtx:eval2|wtx:eval3|wtx:eval4|wtx:eval5|wtx:eval6|wtx:pwlval1|wtx:pwlval2|wtx:pwlval3|wtx:pwlval4|wtx:pwlval5|wtx:pwlval6|wtx:pwlval7|wtx:pwlval8|wtx:pulval1|wtx:pulval2|wtx:pulval3|wtx:pulval4|wtx:pulval5|wtx:pulval6|wtx:pulval7|wtx:amplitude|wtx:phase|wtx:offsetvoltage|wtx:voltageamplitude|wtx:frequency|wtx:delaytime|wtx:dampingfactor|wtx:part|wtx:pins|wtx:analog|wtx:digital|wtx:node|wtx:id|wtx:type|wtx:name|wtx:category|wtx:value|wtx:label|wtx:spice|wtx:flip|wtx:model|wtx:measure|metadata|)$/,
+  Elist:/^(path|circle|rect|line|text|g|tspan|svg|wtx:eval1|wtx:eval2|wtx:eval3|wtx:eval4|wtx:eval5|wtx:eval6|wtx:pwlval1|wtx:pwlval2|wtx:pwlval3|wtx:pwlval4|wtx:pwlval5|wtx:pwlval6|wtx:pwlval7|wtx:pwlval8|wtx:pulval1|wtx:pulval2|wtx:pulval3|wtx:pulval4|wtx:pulval5|wtx:pulval6|wtx:pulval7|wtx:amplitude|wtx:phase|wtx:offsetvoltage|wtx:voltageamplitude|wtx:frequency|wtx:delaytime|wtx:dampingfactor|wtx:part|wtx:pins|wtx:analog|wtx:digital|wtx:node|wtx:id|wtx:type|wtx:name|wtx:category|wtx:value|wtx:label|wtx:spice|wtx:risedelay|wtx:falldelay|wtx:flip|wtx:model|wtx:measure|metadata|)$/,
   /* .lib files contain spice .model devices .mod devices contain .subckt devices and the id must begin with x*/
 //	serverurls:["http://logical.github.io/webtronix/webtronix_server"],
  	serverurls:["webtronix_server"],
@@ -511,6 +511,16 @@ openProperties:function(){
     $("webtronics_pulval7").style.display='none'
     var value=netlistcreator.readwtx(this.circuit.selected[0],"value");
     if(value!=""){$('webtronics_part_value').value=value;}
+
+    if(c=='and'|| c=='not'|| c=='nand'|| c=='or'||c=='nor'||c=='xor'||c=='xnor')
+    {
+      var risedelay = netlistcreator.readwtx(this.circuit.selected[0],"risedelay");
+      if(risedelay!=""){$(webtronics_part_risedelay).value=risedelay;}
+      var falldelay = netlistcreator.readwtx(this.circuit.selected[0],"falldelay");
+      if(falldelay!=""){$(webtronics_part_falldelay).value=falldelay;}
+
+    }
+
   }
 
   if(c=="diode")$("directive").style.display='block'
@@ -1289,6 +1299,10 @@ if($('webtronics_properties_ok'))Event.observe($('webtronics_properties_ok'), 'c
     netlistcreator.writewtx(model,"eval6",$('webtronics_eval6_value').value);
   }
 
+  else if(modelname=="and"|| c=='not'|| c=='nand'|| c=='or'||c=='nor'||c=='xor'||c=='xnor')){
+    netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
+    netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
+  }
 
   webtronics.circuit.createvalue(webtronics.circuit.selected[0]);
 });
