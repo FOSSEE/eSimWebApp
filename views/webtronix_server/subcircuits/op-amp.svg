@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="60pt" height="60pt"  version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+
+ <g id="x" class="op-amp">
+<metadata class="part" >
+<wtx:part xmlns:wtx="/home/niel/Desktop/webtronics" >
+    <wtx:pins>
+		<wtx:analog>
+<!--
+all opamp models must be in this order
+* CONNECTIONS:   NON-INVERTING INPUT
+*                | INVERTING INPUT
+*                | | POSITIVE POWER SUPPLY
+*                | | | NEGATIVE POWER SUPPLY
+*                | | | | OPEN COLLECTOR OUTPUT
+*                | | | | |
+.SUBCKT LM339    1 2 3 4 5
+-->
+			<wtx:node index="1" x="0" y="10"/>
+			<wtx:node index="2" x="0" y="50"/>
+			
+			<wtx:node index="3" x="60" y="30"/>
+		</wtx:analog>
+    </wtx:pins>
+    <wtx:id>x</wtx:id>
+    <wtx:type>x</wtx:type>
+    <wtx:name>op-amp</wtx:name>
+    <wtx:category>subcircuits</wtx:category>
+    <wtx:value></wtx:value>
+    <wtx:spice></wtx:spice>
+    <wtx:label></wtx:label>
+    <wtx:flip>true</wtx:flip>
+    <wtx:model></wtx:model>
+</wtx:part>
+</metadata>
+
+
+
+<path fill="#ffffff" d=" M 0.00 0.00 L 8.99 0.00 C 9.01 3.00 8.99 6.00 9.00 9.00 C 6.00 8.98 3.00 9.01 0.00 9.00 L 0.00 0.00 Z" />
+<path fill="#000000" d=" M 8.99 0.00 L 11.44 0.00 C 23.93 8.97 36.11 18.37 48.40 27.61 C 51.73 30.09 56.16 28.65 60.00 29.00 L 60.00 31.00 C 56.17 31.35 51.73 29.91 48.41 32.39 C 36.13 41.65 23.95 51.03 11.46 60.00 L 8.99 60.00 C 9.01 57.00 8.99 54.00 9.00 51.00 C 6.00 51.01 3.00 50.99 0.00 51.00 L 0.00 49.00 C 3.00 49.01 6.00 48.98 9.00 49.00 C 9.00 36.33 9.00 23.67 9.00 11.00 C 6.00 11.01 3.00 10.99 0.00 11.00 L 0.00 9.00 C 3.00 9.01 6.00 8.98 9.00 9.00 C 8.99 6.00 9.01 3.00 8.99 0.00 Z" />
+<path fill="#ffffff" d=" M 11.44 0.00 L 60.00 0.00 L 60.00 29.00 C 56.16 28.65 51.73 30.09 48.40 27.61 C 36.11 18.37 23.93 8.97 11.44 0.00 Z" />
+<path fill="#ffffff" d=" M 11.00 1.72 C 23.24 11.47 35.93 20.69 48.51 30.00 C 35.93 39.31 23.24 48.53 11.00 58.28 C 11.00 39.43 11.00 20.57 11.00 1.72 Z" />
+<path fill="#ffffff" d=" M 0.00 11.00 C 3.00 10.99 6.00 11.01 9.00 11.00 C 9.00 23.67 9.00 36.33 9.00 49.00 C 6.00 48.98 3.00 49.01 0.00 49.00 L 0.00 11.00 Z" />
+<path fill="#000000" d=" M 15.40 16.95 C 17.84 16.26 19.97 15.01 21.00 12.58 C 21.00 13.40 20.98 15.03 20.98 15.85 C 21.88 15.95 23.69 16.15 24.60 16.26 C 23.48 16.70 22.32 17.01 21.13 17.21 C 21.03 18.05 20.82 19.73 20.72 20.57 C 20.25 19.43 19.94 18.26 19.78 17.03 C 18.32 17.04 16.86 17.01 15.40 16.95 Z" />
+<path fill="#ffffff" d=" M 48.41 32.39 C 51.73 29.91 56.17 31.35 60.00 31.00 L 60.00 60.00 L 11.46 60.00 C 23.95 51.03 36.13 41.65 48.41 32.39 Z" />
+<path fill="#000000" d=" M 15.09 47.30 C 16.71 46.88 19.99 46.22 20.90 47.70 C 19.29 48.12 16.01 48.78 15.09 47.30 Z" />
+<path fill="#ffffff" d=" M 0.00 51.00 C 3.00 50.99 6.00 51.01 9.00 51.00 C 8.99 54.00 9.01 57.00 8.99 60.00 L 0.00 60.00 L 0.00 51.00 Z" />
+</g>
+</svg>
