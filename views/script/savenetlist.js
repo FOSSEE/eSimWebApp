@@ -6,11 +6,11 @@ For Simulation of Netlist and Removal of netlist Window
 
   jQuery("#webtronics_netlist_simulate").click(function(){
   	socket.emit('netlist', jQuery("#webtronics_netlist_text_area").val());
-    console.log("simulation button clicked");
-    // jQuery('#webtronics_netlist_text_div').hide(); 
-    // jQuery('#webtronics_netlist_buttons').hide();
-    // jQuery('#webtronics_netlist_text').hide();       
-    // jQuery('#webtronics_disable').hide();
+   // console.log("simulation button clicked");
+     jQuery('#webtronics_netlist_text_div').hide(); 
+     jQuery('#webtronics_netlist_buttons').hide();
+     jQuery('#webtronics_netlist_text').hide();       
+     jQuery('#webtronics_disable').hide();
 
 
    
