@@ -38,7 +38,7 @@ module.exports = function(express,app,io,fs,exec){
       			}
       		});
 
-      		executeNgspiceNetlist(analysisFile);
+      		executeNgspiceNetlist(socket, analysisFile);
 		});
 	});
 
@@ -62,7 +62,7 @@ module.exports = function(express,app,io,fs,exec){
 	}
 
 
-	function executeNgspiceNetlist(fileName)
+	function executeNgspiceNetlist(socket, fileName)
 	{
 		fs.exists(fileName, function(exists) {
 			if (exists) {
