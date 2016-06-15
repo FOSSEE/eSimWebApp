@@ -1,0 +1,41 @@
+<svg width="102" height="63" xmlns="http://www.w3.org/2000/svg">
+  <g
+  stroke='black'
+  stroke-width='2px' >
+
+<metadata class="part" >
+    <wtx:part xmlns:wtx="http://code.google.com/p/webtronics" >
+    <wtx:pins>
+        <wtx:analog>
+            <wtx:node index="2" x="100" y="30" />
+            <wtx:node index="1" x="3" y="30" />
+          
+        </wtx:analog>
+    </wtx:pins>
+    <wtx:id>a</wtx:id>
+    <wtx:type>a</wtx:type>
+    <wtx:name>pwlcontrolsource</wtx:name>
+    <wtx:category>analogmodels</wtx:category>
+
+    <wtx:xarr></wtx:xarr>
+    <wtx:yarr></wtx:yarr>
+    <wtx:indomain></wtx:indomain>
+    <wtx:fraction></wtx:fraction>  
+
+
+    <wtx:flip></wtx:flip>
+    <wtx:value></wtx:value>
+    <wtx:label></wtx:label>
+    <wtx:spice></wtx:spice>
+    <wtx:model></wtx:model>
+    </wtx:part>
+</metadata>
+  <rect id="svg_1" height="58" width="40" y="3" x="31" stroke-width="1.5" stroke="#000" fill="#fff"/>
+  <rect id="svg_2" height="1" width="0" y="78" x="134" stroke-width="1.5" stroke="#000" fill="#fff"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_6" y2="31" x2="101" y1="31" x1="72" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_7" y2="31" x2="30" y1="31" x1="1" stroke-width="1.5" stroke="#000" fill="none"/>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="10" id="svg_9" y="15" x="39" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">PWL</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="10" id="svg_10" y="30" x="34.5" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">Control</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="10" id="svg_11" y="45" x="34.5" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">Source</text>
+ </g>
+</svg>

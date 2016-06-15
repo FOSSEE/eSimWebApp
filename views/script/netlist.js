@@ -14,6 +14,7 @@ var netlistcreator={
 
   sortnetlist:function(list){
     var G=[];
+    var X=[];
     var S=[];
     var A=[];
     var B=[];
@@ -81,6 +82,13 @@ var netlistcreator={
       else if(list[i].type=='x'){	
         U.push(list[i]);
       }
+      // for analogmodels s
+      else if(list[i].category=="analogmodels"){
+        X.push(list[i]);
+      }
+
+
+
       /* this is the best way I could think to tell if a part i digital */
       else if(list[i].category=="digitalmodels"){	
         A.push(list[i]);
@@ -113,6 +121,7 @@ var netlistcreator={
     Q.sort(sortfunction);
     R.sort(sortfunction);
     U.sort(sortfunction);
+    X.sort(sortfunction);
     A.sort(sortfunction);
 
     var newlist=[];
@@ -132,6 +141,7 @@ var netlistcreator={
     Q.each(function(item){newlist.push(item)});		
     R.each(function(item){newlist.push(item)});
     U.each(function(item){newlist.push(item)});		
+    X.each(function(item){newlist.push(item)});
     A.each(function(item){newlist.push(item)});		
     other.each(function(item){newlist.push(item)});		
 
@@ -198,7 +208,11 @@ tovector:function(pin,nodenumber){
  getwtxdata:function(parts){
   list=[];
   for(var i=0;i<parts.length;i++){
-    var part={error:"", elem:{}, analogpins:[],digitalpins:[],amplitude:"",phase:"",offsetvoltage:"",voltageamplitude:"",frequency:"",delaytime:"",dampingfactor:"",type:"", name:"", category:"", value:"", spice:"", model:"",measure:"", risedelay:"", falldelay:"", pulval1:"", pulval2:"", pulval3:"", pulval4:"", pulval5:"", pulval6:"", pulval7:"", eval1:"", eval2:"", eval3:"", eval4:"", eval5:"", eval6:"", pwlval1:"", pwlval2:"", pwlval3:"", pwlval4:"", pwlval5:"", pwlval6:"", pwlval7:"", pwlval8:""
+    var part={error:"", elem:{}, analogpins:[],digitalpins:[],amplitude:"",phase:"",offsetvoltage:"",voltageamplitude:"",frequency:"",delaytime:"",dampingfactor:"",type:"", name:"", category:"", value:"", spice:"", model:"",measure:"", risedelay:"", falldelay:"", pulval1:"", pulval2:"", pulval3:"", pulval4:"", pulval5:"", pulval6:"", pulval7:"", eval1:"", eval2:"", eval3:"", eval4:"", eval5:"", eval6:"", pwlval1:"", pwlval2:"", pwlval3:"", pwlval4:"", pwlval5:"", pwlval6:"", pwlval7:"", pwlval8:"",
+    inoffset:"",gain:"",outoffset:"",ingain:"",outgain:"",denoffset:"",dengain:"",numoffset:"",numgain:"",fraction:"",dendomain:"",denlowerlimit:"",outlowerlimit:"",outupperlimit:"",limitrange:"",upperdelta:"",lowerdelta:"",indomain:"",xarr:"",yarr:"",amodel:"",coff:"",con:"",irev:"",rbreak:"",limitswitch:"",roff:"",ron:"",log:"",vbreak:"",ibreak:"",isat:"",nfor:"",rsource:"",rsink:"",ilimitsource:"",ilimitsink:"",vpwr:"",isource:"",isink:"",routdomain:"",inlow:"",inhigh:"",hyst:"",outic:"",numcoeff:"",dencoeff:"",intic:"",denormfreq:"",
+    riseslope:"",fallslope:"",outlow:"",outhigh:"",cntlarr:"",freqarr:"",duty:"",risetime:"",falltime:"",clktrig:"",pwarr:"",ptrig:"",rdelay:"",fdelay:"",rmax:"",rmin:"",rinit:"",vt:"",alpha:"",beta:""
+
+
   }
     /*
      *        try{
@@ -421,6 +435,234 @@ catch(e){
     }
     catch(e){}    
 
+try{ part.inoffset=this.readwtx(parts[i],'inoffset'); }
+catch(e){ part.error="wtx:inoffset not found"; }
+
+
+try{ part.gain=this.readwtx(parts[i],'gain'); }
+catch(e){ part.error="wtx:gain not found"; }
+
+
+try{ part.outoffset=this.readwtx(parts[i],'outoffset'); }
+catch(e){ part.error="wtx:outoffset not found"; }
+
+try{ part.ingain=this.readwtx(parts[i],'ingain'); }
+catch(e){ part.error="wtx:ingain not found"; }
+
+try{ part.outgain=this.readwtx(parts[i],'outgain'); }
+catch(e){ part.error="wtx:outgain not found"; }
+
+try{ part.denoffset=this.readwtx(parts[i],'denoffset'); }
+catch(e){ part.error="wtx:denoffset not found"; }
+
+try{ part.dengain=this.readwtx(parts[i],'dengain'); }
+catch(e){ part.error="wtx:dengain not found"; }
+
+try{ part.numoffset=this.readwtx(parts[i],'numoffset'); }
+catch(e){ part.error="wtx:numoffset not found"; }
+
+try{ part.numgain=this.readwtx(parts[i],'numgain'); }
+catch(e){ part.error="wtx:numgain not found"; }
+
+try{ part.fraction=this.readwtx(parts[i],'fraction'); }
+catch(e){ part.error="wtx:fraction not found"; }
+
+try{ part.dendomain=this.readwtx(parts[i],'dendomain'); }
+catch(e){ part.error="wtx:dendomain not found"; }
+
+try{ part.denlowerlimit=this.readwtx(parts[i],'denlowerlimit'); }
+catch(e){ part.error="wtx:denlowerlimit not found"; }
+
+try{ part.outlowerlimit=this.readwtx(parts[i],'outlowerlimit'); }
+catch(e){ part.error="wtx:outlowerlimit not found"; }
+
+try{ part.outupperlimit=this.readwtx(parts[i],'outupperlimit'); }
+catch(e){ part.error="wtx:outupperlimit not found"; }
+
+
+try{ part.limitrange=this.readwtx(parts[i],'limitrange'); }
+catch(e){ part.error="wtx:limitrange not found"; }
+
+
+try{ part.upperdelta=this.readwtx(parts[i],'upperdelta'); }
+catch(e){ part.error="wtx:upperdelta not found"; }
+
+try{ part.lowerdelta=this.readwtx(parts[i],'lowerdelta'); }
+catch(e){ part.error="wtx:lowerdelta not found"; }
+
+try{ part.indomain=this.readwtx(parts[i],'indomain'); }
+catch(e){ part.error="wtx:indomain not found"; }
+
+try{ part.xarr=this.readwtx(parts[i],'xarr'); }
+catch(e){ part.error="wtx:xarr not found"; }
+
+try{ part.yarr=this.readwtx(parts[i],'yarr'); }
+catch(e){ part.error="wtx:yarr not found"; }
+
+try{ part.amodel=this.readwtx(parts[i],'amodel'); }
+catch(e){ part.error="wtx:amodel not found"; }
+
+try{ part.coff=this.readwtx(parts[i],'coff'); }
+catch(e){ part.error="wtx:coff not found"; }
+
+try{ part.con=this.readwtx(parts[i],'con'); }
+catch(e){ part.error="wtx:con not found"; }
+
+try{ part.roff=this.readwtx(parts[i],'roff'); }
+catch(e){ part.error="wtx:roff not found"; }
+
+
+try{ part.irev=this.readwtx(parts[i],'irev'); }
+catch(e){ part.error="wtx:irev not found"; }
+
+try{ part.rbreak=this.readwtx(parts[i],'rbreak'); }
+catch(e){ part.error="wtx:rbreak not found"; }
+
+try{ part.limitswitch=this.readwtx(parts[i],'limitswitch'); }
+catch(e){ part.error="wtx:limitswitch not found"; }
+
+try{ part.ron=this.readwtx(parts[i],'ron'); }
+catch(e){ part.error="wtx:ron not found"; }
+
+try{ part.log=this.readwtx(parts[i],'log'); }
+catch(e){ part.error="wtx:log not found"; }
+
+try{ part.vbreak=this.readwtx(parts[i],'vbreak'); }
+catch(e){ part.error="wtx:vbreak not found"; }
+
+
+try{ part.ibreak=this.readwtx(parts[i],'ibreak'); }
+catch(e){ part.error="wtx:ibreak not found"; }
+
+try{ part.isat=this.readwtx(parts[i],'isat'); }
+catch(e){ part.error="wtx:isat not found"; }
+
+try{ part.nfor=this.readwtx(parts[i],'nfor'); }
+catch(e){ part.error="wtx:nfor not found"; }
+
+try{ part.rsource=this.readwtx(parts[i],'rsource'); }
+catch(e){ part.error="wtx:rsource not found"; }
+
+try{ part.rsink=this.readwtx(parts[i],'rsink'); }
+catch(e){ part.error="wtx:rsink not found"; }
+
+try{ part.ilimitsink=this.readwtx(parts[i],'ilimitsink'); }
+catch(e){ part.error="wtx:ilimitsink not found"; }
+
+try{ part.ilimitsource=this.readwtx(parts[i],'ilimitsource'); }
+catch(e){ part.error="wtx:ilimitsource not found"; }
+
+try{ part.vpwr=this.readwtx(parts[i],'vpwr'); }
+catch(e){ part.error="wtx:vpwr not found"; }
+
+try{ part.isource=this.readwtx(parts[i],'isource'); }
+catch(e){ part.error="wtx:isource not found"; }
+
+try{ part.isink=this.readwtx(parts[i],'isink'); }
+catch(e){ part.error="wtx:isink not found"; }
+
+try{ part.routdomain=this.readwtx(parts[i],'routdomain'); }
+catch(e){ part.error="wtx:routdomain not found"; }
+
+try{ part.inlow=this.readwtx(parts[i],'inlow'); }
+catch(e){ part.error="wtx:inlow not found"; }
+
+try{ part.inhigh=this.readwtx(parts[i],'inhigh'); }
+catch(e){ part.error="wtx:inhigh not found"; }
+
+try{ part.hyst=this.readwtx(parts[i],'hyst'); }
+catch(e){ part.error="wtx:hyst not found"; }
+
+try{ part.outic=this.readwtx(parts[i],'outic'); }
+catch(e){ part.error="wtx:outic not found"; }
+
+
+try{ part.numcoeff=this.readwtx(parts[i],'numcoeff'); }
+catch(e){ part.error="wtx:numcoeff not found"; }
+
+
+try{ part.dencoeff=this.readwtx(parts[i],'dencoeff'); }
+catch(e){ part.error="wtx:dencoeff not found"; }
+
+try{ part.lowerdelta=this.readwtx(parts[i],'lowerdelta'); }
+catch(e){ part.error="wtx:lowerdelta not found"; }
+
+try{ part.intic=this.readwtx(parts[i],'intic'); }
+catch(e){ part.error="wtx:intic not found"; }
+
+try{ part.denormfreq=this.readwtx(parts[i],'denormfreq'); }
+catch(e){ part.error="wtx:denormfreq not found"; }
+
+try{ part.riseslope=this.readwtx(parts[i],'riseslope'); }
+catch(e){ part.error="wtx:riseslope not found"; }
+
+try{ part.fallslope=this.readwtx(parts[i],'fallslope'); }
+catch(e){ part.error="wtx:fallslope not found"; }
+
+try{ part.outlow=this.readwtx(parts[i],'outlow'); }
+catch(e){ part.error="wtx:outlow not found"; }
+
+try{ part.outhigh=this.readwtx(parts[i],'outhigh'); }
+catch(e){ part.error="wtx:outhigh not found"; }
+
+try{ part.cntlarr=this.readwtx(parts[i],'cntlarr'); }
+catch(e){ part.error="wtx:cntlarr not found"; }
+
+try{ part.freqarr=this.readwtx(parts[i],'freqarr'); }
+catch(e){ part.error="wtx:freqarr not found"; }
+
+try{ part.duty=this.readwtx(parts[i],'duty'); }
+catch(e){ part.error="wtx:duty not found"; }
+
+try{ part.risetime=this.readwtx(parts[i],'risetime'); }
+catch(e){ part.error="wtx:risetime not found"; }
+
+
+try{ part.falltime=this.readwtx(parts[i],'falltime'); }
+catch(e){ part.error="wtx:falltime not found"; }
+
+try{ part.clktrig=this.readwtx(parts[i],'clktrig'); }
+catch(e){ part.error="wtx:clktrig not found"; }
+
+try{ part.pwarr=this.readwtx(parts[i],'pwarr'); }
+catch(e){ part.error="wtx:pwarr not found"; }
+
+try{ part.ptrig=this.readwtx(parts[i],'ptrig'); }
+catch(e){ part.error="wtx:ptrig not found"; }
+
+try{ part.rdelay=this.readwtx(parts[i],'rdelay'); }
+catch(e){ part.error="wtx:rdelay not found"; }
+
+try{ part.fdelay=this.readwtx(parts[i],'fdelay'); }
+catch(e){ part.error="wtx:fdelay not found"; }
+
+try{ part.rmax=this.readwtx(parts[i],'rmax'); }
+catch(e){ part.error="wtx:rmax not found"; }
+
+try{ part.rmin=this.readwtx(parts[i],'rmin'); }
+catch(e){ part.error="wtx:rmin not found"; }
+
+try{ part.rinit=this.readwtx(parts[i],'isource'); }
+catch(e){ part.error="wtx:isource not found"; }
+
+try{ part.vt=this.readwtx(parts[i],'vt'); }
+catch(e){ part.error="wtx:vt not found"; }
+
+try{ part.alpha=this.readwtx(parts[i],'alpha'); }
+catch(e){ part.error="wtx:alpha not found"; }
+
+try{ part.beta=this.readwtx(parts[i],'beta'); }
+catch(e){ part.error="wtx:beta not found"; }
+
+
+
+
+
+
+
+
+
+
     list.push(part);
   }
   return list;
@@ -579,7 +821,12 @@ getnodes:function(parts){
       var net={error:parts[i].error,pwlval1:parts[i].pwlval1,pwlval2:parts[i].pwlval2,pwlval3:parts[i].pwlval3,pwlval4:parts[i].pwlval4,pwlval5:parts[i].pwlval5,pwlval6:parts[i].pwlval6,pwlval7:parts[i].pwlval7,pwlval8:parts[i].pwlval8,pulval1:parts[i].pulval1,pulval2:parts[i].pulval2,pulval3:parts[i].pulval3,pulval4:parts[i].pulval4,pulval5:parts[i].pulval5,pulval6:parts[i].pulval6,pulval7:parts[i].pulval7,name:parts[i].name,
         partid:parts[i].id,pins:{analog:parts[i].analogpins,digital:parts[i].digitalpins},model:parts[i].value,amplitude:parts[i].amplitude,
       phase:parts[i].phase, risedelay:parts[i].risedelay, inputload:parts[i].inputload, falldelay:parts[i].falldelay, offsetvoltage:parts[i].offsetvoltage,voltageamplitude:parts[i].voltageamplitude,frequency:parts[i].frequency,
-      delaytime:parts[i].delaytime,dampingfactor:parts[i].dampingfactor,eval1:parts[i].eval1,eval2:parts[i].eval2,eval3:parts[i].eval3,eval4:parts[i].eval4,eval5:parts[i].eval5,eval6:parts[i].eval6};
+      delaytime:parts[i].delaytime,dampingfactor:parts[i].dampingfactor,eval1:parts[i].eval1,eval2:parts[i].eval2,eval3:parts[i].eval3,eval4:parts[i].eval4,eval5:parts[i].eval5,eval6:parts[i].eval6,
+      inoffset:parts[i].inoffset,gain:parts[i].gain,outoffset:parts[i].outoffset,ingain:parts[i].ingain,outgain:parts[i].outgain,denoffset:parts[i].denoffset,dengain:parts[i].dengain,numoffset:parts[i].numoffset,numgain:parts[i].numgain,fraction:parts[i].fraction,dendomain:parts[i].dendomain,denlowerlimit:parts[i].denlowerlimit,outlowerlimit:parts[i].outlowerlimit,outupperlimit:parts[i].outupperlimit,limitrange:parts[i].limitrange,upperdelta:parts[i].upperdelta,lowerdelta:parts[i].lowerdelta,
+ indomain:parts[i].indomain,xarr:parts[i].xarr,yarr:parts[i].yarr,amodel:parts[i].amodel,coff:parts[i].coff,con:parts[i].con,irev:parts[i].irev,rbreak:parts[i].rbreak,limitswitch:parts[i].limitswitch,roff:parts[i].roff,ron:parts[i].ron,log:parts[i].log,vbreak:parts[i].vbreak,ibreak:parts[i].ibreak,isat:parts[i].isat,nfor:parts[i].nfor,rsource:parts[i].rsource,rsink:parts[i].rsink,ilimitsource:parts[i].ilimitsource,ilimitsink:parts[i].ilimitsink,vpwr:parts[i].vpwr,isource:parts[i].isource,isink:parts[i].isink,routdomain:parts[i].routdomain,inlow:parts[i].inlow,inhigh:parts[i].inhigh,hyst:parts[i].hyst,outic:parts[i].outic,
+ numcoeff:parts[i].numcoeff,dencoeff:parts[i].dencoeff,intic:parts[i].intic,denormfreq:parts[i].denormfreq,riseslope:parts[i].riseslope,fallslope:parts[i].fallslope,outlow:parts[i].outlow,outhigh:parts[i].outhigh,cntlarr:parts[i].cntlarr,freqarr:parts[i].freqarr,duty:parts[i].duty,risetime:parts[i].risetime,falltime:parts[i].falltime,clktrig:parts[i].clktrig,pwarr:parts[i].pwarr,ptrig:parts[i].ptrig,rdelay:parts[i].rdelay,fdelay:parts[i].fdelay,rmax:parts[i].rmax,rmin:parts[i].rmin,rinit:parts[i].rinit,vt:parts[i].vt,alpha:parts[i].alpha,beta:parts[i].beta
+
+    };
       if(net!=null)sections.netlist.push(net);
     }
     
@@ -628,7 +875,7 @@ createnetlist:function(responsefunc){
         pins.sort(function(a,b){return a.index > b.index? 1:a.index < b.index?-1:0;})
 //      console.log(pins);
 for(var j=0;j<pins.length;j++){command += " "+pins[j].node;}
-
+var pid=sections.netlist[i].partid;
   if(sections.netlist[i].name=="ac"){
    command+=" "+"AC "+sections.netlist[i].amplitude+" "+sections.netlist[i].phase;
  }else if(sections.netlist[i].name=="sinvoltagesource"){
@@ -648,6 +895,204 @@ else if(sections.netlist[i].name=="exponential"){
 }
 else if(sections.netlist[i].name=="and"){
   command+=" "+sections.netlist[i].risedelay+" "+sections.netlist[i].falldelay+" "+sections.netlist[i].inputload;
+}
+else if(sections.netlist[i].name=="gains"){
+  var inoff=sections.netlist[i].inoffset;var gn=sections.netlist[i].gain;var outoff=sections.netlist[i].outoffset;
+  command+=" ref_"+pid+"\n"+".model ref_"+pid+" gain(in_offset="+inoff+" gain="+gn+" out_offset="+outoff+")\n";
+}
+else if(sections.netlist[i].name=="summer"){
+  var inoff=sections.netlist[i].inoffset;
+  var outoff=sections.netlist[i].outoffset;
+  var ingn=sections.netlist[i].ingain;
+  var outgn=sections.netlist[i].outgain;
+command+=" ref_"+pid+"\n"+".model ref_"+pid+" summer(in_offset=["+inoff+"] in_gain=["+ingn+"] out_gain=["+outgn+"] out_offset=["+outoff+"])\n";
+}
+else if(sections.netlist[i].name=="multiplier"){
+  var inoff=sections.netlist[i].inoffset;
+  var outoff=sections.netlist[i].outoffset;
+  var ingn=sections.netlist[i].ingain;
+  var outgn=sections.netlist[i].outgain;
+command+=" ref_"+pid+"\n"+".model ref_"+pid+" mult(in_offset=["+inoff+"] in_gain=["+ingn+"] out_gain="+outgn+" out_offset="+outoff+")\n";
+
+}
+else if(sections.netlist[i].name=="divider"){
+  var numoff=sections.netlist[i].numoffset;
+  var denoff=sections.netlist[i].denoffset;
+  var numgn=sections.netlist[i].numgain;
+  var dengn=sections.netlist[i].dengain;
+  var frac=sections.netlist[i].fraction;
+  var dendomn=sections.netlist[i].dendomain;
+  var dll=sections.netlist[i].denlowerlimit;
+  var outgn=sections.netlist[i].outgain;
+  var outoff=sections.netlist[i].outoffset;
+command+=" ref_"+pid+"\n"+".model ref_"+pid+" divide(num_offset="+numoff+" num_gain="+numgn+" den_offset="+denoff+" den_gain="+dengn+" den_lower.limit="+dll+" den_domain="+dendomn+" fraction="+frac+" out_gain="+outgn+" out_offset="+outoff+")\n";
+}
+else if(sections.netlist[i].name=="limiter"){
+  var lr=sections.netlist[i].limitrange;
+  var frac=sections.netlist[i].fraction;
+  var oul=sections.netlist[i].outupperlimit;
+  var oll=sections.netlist[i].outlowerlimit;
+  var gn=sections.netlist[i].gain;
+  var inoff=sections.netlist[i].inoffset;
+command+=" ref_"+pid+"\n"+".model ref_"+pid+" limit(in_offset="+inoff+" gain="+gn+" out_lower_limit="+oll+" out_upper_limit="+oul+" limit_range="+lr+" fraction="+frac+")\n";
+}
+else if(sections.netlist[i].name=="controllimiter"){
+  var lr=sections.netlist[i].limitrange;
+  var frac=sections.netlist[i].fraction;
+  var ud=sections.netlist[i].upperdelta;
+  var ld=sections.netlist[i].lowerdelta;
+  var gn=sections.netlist[i].gain;
+  var inoff=sections.netlist[i].inoffset;
+command+=" ref_"+pid+"\n"+".model ref_"+pid+" climit(in_offset="+inoff+" gain="+gn+" upper_delta="+ud+" lower_delta="+ld+" limit_range="+lr+" fraction="+frac+")\n";
+}
+else if(sections.netlist[i].name=="pwlcontrolsource"){
+  var xar=sections.netlist[i].xarr;
+  var frac=sections.netlist[i].fraction;
+  var yar=sections.netlist[i].yarr;
+  var indn=sections.netlist[i].indomain;
+  command+=" ref_"+pid+"\n"+".model ref_"+pid+" pwl(x_array=["+xar+"] y_array=["+yar+"] input_domain="+indn+" fraction="+frac+")\n";
+}
+else if(sections.netlist[i].name=="multiinputpwlblock"){
+  var xar=sections.netlist[i].xarr;
+  var modl=sections.netlist[i].amodel;
+  var yar=sections.netlist[i].yarr;
+  command+=" ref_"+pid+"\n"+".model ref_"+pid+" multi_input_pwl(x_array=["+xar+"] y_array=["+yar+"] model="+modl+")\n";
+}
+else if(sections.netlist[i].name=="aswitch"){
+  var rf=sections.netlist[i].roff;
+  var rn=sections.netlist[i].ron;
+  var cf=sections.netlist[i].coff;
+  var cn=sections.netlist[i].con;
+  var lg=sections.netlist[i].log;
+  command+=" ref_"+pid+"\n"+".model ref_"+pid+" aswitch(cntl_off="+cf+" cntl_on="+cn+" r_off="+rf+" r_on="+rn+" log="+lg+")\n";
+}
+else if(sections.netlist[i].name=="aswitch"){
+  var rf=sections.netlist[i].roff;
+  var rn=sections.netlist[i].ron;
+  var cf=sections.netlist[i].coff;
+  var cn=sections.netlist[i].con;
+  var lg=sections.netlist[i].log;
+  command+=" ref_"+pid+"\n"+".model ref_"+pid+" aswitch(cntl_off="+cf+" cntl_on="+cn+" r_off="+rf+" r_on="+rn+" log="+lg+")\n";
+}
+else if(sections.netlist[i].name=="zener"){
+  var ir=sections.netlist[i].irev;
+  var vb=sections.netlist[i].vbreak;
+  var rb=sections.netlist[i].rbreak;
+  var ib=sections.netlist[i].ibreak;
+  var nf=sections.netlist[i].nfor;
+  var is=sections.netlist[i].isat;
+  var ls=sections.netlist[i].limitswitch;
+  command+=" ref_"+pid+"\n"+".model ref_"+pid+" zener(v_breakdown="+vb+" i_breakdown="+ib+" r_breakdown="+rb+" i_rev="+ir+" i_sat="+is+" n_forward="+nf+" limit_switch="+ls+")\n";
+}
+else if(sections.netlist[i].name=="currentlimiter"){
+  var rso=sections.netlist[i].rsource;
+  var rsi=sections.netlist[i].rsink;
+  var inoff=sections.netlist[i].inoffset;
+  var gn=sections.netlist[i].gain;
+  var ilso=sections.netlist[i].ilimitsource;
+  var ilsi=sections.netlist[i].ilimitsink;
+  var vp=sections.netlist[i].vpwr;
+  var isi=sections.netlist[i].isink;
+  var iso=sections.netlist[i].isource;
+  var rd=sections.netlist[i].routdomain;
+  command+=" ref_"+pid+"\n"+".model ref_"+pid+" ilimit(in_offset="+inoff+" gain="+gn+" r_out_source="+rso+" r_out_sink="+rsi+" i_limit_source="+ilso+" i_limit_sink="+ilsi+" v_pwr_range="+vp+" i_source_range="+iso+" i_sink_range="+isi+" r_out_domain="+rd+")\n";
+}
+else if(sections.netlist[i].name=="hysteresis"){
+  var il=sections.netlist[i].inlow;
+  var ih=sections.netlist[i].inhigh;
+  var ol=sections.netlist[i].outlowerlimit;
+  var ou=sections.netlist[i].outupperlimit;
+  var h=sections.netlist[i].hyst;
+  var idmn=sections.netlist[i].indomain;
+  var frac=sections.netlist[i].fraction;
+  command+=" ref_"+pid+"\n"+".model ref_"+pid+" hyst(in_low="+il+" in_high="+ih+" hyst="+h+" out_lower_limit="+ol+" out_upper_limit="+ou+" input_domain="+idmn+" fraction="+frac+")\n";
+}
+else if(sections.netlist[i].name=="differentiator"){
+  var oo=sections.netlist[i].outoffset;
+  var gn=sections.netlist[i].gain;
+  var ol=sections.netlist[i].outlowerlimit;
+  var ou=sections.netlist[i].outupperlimit;
+  var lr=sections.netlist[i].limitrange;
+  command+=" ref_"+pid+"\n"+".model ref_"+pid+" d_dt(out_offset="+oo+" gain="+gn+" out_lower_limit="+ol+" out_upper_limit="+ou+" limit_range="+lr+")\n";
+}
+else if(sections.netlist[i].name=="integrator"){
+  var oo=sections.netlist[i].outoffset;
+  var gn=sections.netlist[i].gain;
+  var ol=sections.netlist[i].outlowerlimit;
+  var ou=sections.netlist[i].outupperlimit;
+  var lr=sections.netlist[i].limitrange;
+  var oi=sections.netlist[i].outic;
+  command+=" ref_"+pid+"\n"+".model ref_"+pid+" int(out_offset="+oo+" gain="+gn+" out_lower_limit="+ol+" out_upper_limit="+ou+" limit_range="+lr+" out_ic="+oi+")\n";
+}
+else if(sections.netlist[i].name=="sdomain"){
+  var gn=sections.netlist[i].gain;
+  var ic=sections.netlist[i].intic;
+  var nc=sections.netlist[i].numcoeff;
+  var dc=sections.netlist[i].dencoeff;
+  var io=sections.netlist[i].inoffset;
+  var df=sections.netlist[i].denormfreq;
+  command+=" ref_"+pid+"\n"+".model ref_"+pid+" s_xfer(gain="+gn+" in_offset="+io+" denormalized_freq="+df+" int_ic=["+ic+"] num_coeff=["+nc+"] den_coeff=["+dc+"])\n";
+}
+else if(sections.netlist[i].name=="slewrateblock"){
+  var gn=sections.netlist[i].riseslope;
+  var ic=sections.netlist[i].fallslope;
+  command+=" ref_"+pid+"\n"+".model ref_"+pid+" slew(rise_slope="+gn+" fall_slope="+ic+")\n";
+}
+
+else if(sections.netlist[i].name=="sineoscillator"){
+  var ol=sections.netlist[i].outlow;
+  var oh=sections.netlist[i].outhigh;
+ var ca=sections.netlist[i].cntlarr;
+  var fa=sections.netlist[i].freqarr;
+   command+=" ref_"+pid+"\n"+".model ref_"+pid+" sine(cntl_array=["+ca+"] freq_array=["+fa+"] out_low="+ol+" out_high="+oh+")\n";
+}
+else if(sections.netlist[i].name=="triangleoscillator"){
+  var ol=sections.netlist[i].outlow;
+  var oh=sections.netlist[i].outhigh;
+ var ca=sections.netlist[i].cntlarr;
+  var fa=sections.netlist[i].freqarr;
+  var dt=sections.netlist[i].duty;
+   command+=" ref_"+pid+"\n"+".model ref_"+pid+" triangle(cntl_array=["+ca+"] freq_array=["+fa+"] out_low="+ol+" out_high="+oh+" duty_cycle="+dt+")\n";
+}
+else if(sections.netlist[i].name=="squareoscillator"){
+  var ol=sections.netlist[i].outlow;
+  var oh=sections.netlist[i].outhigh;
+ var ca=sections.netlist[i].cntlarr;
+  var fa=sections.netlist[i].freqarr;
+  var dt=sections.netlist[i].duty;
+   var rt=sections.netlist[i].risetime;
+  var ft=sections.netlist[i].falltime;
+   command+=" ref_"+pid+"\n"+".model ref_"+pid+" square(cntl_array=["+ca+"] freq_array=["+fa+"] out_low="+ol+" out_high="+oh+" duty_cycle="+dt+" rise_time="+rt+" fall_time="+ft+")\n";
+}
+else if(sections.netlist[i].name=="capacitancemeter"){
+  var gn=sections.netlist[i].gain;
+   command+=" ref_"+pid+"\n"+".model ref_"+pid+" cmeter(gain="+gn+")\n";
+}
+
+else if(sections.netlist[i].name=="inductancemeter"){
+ var gn=sections.netlist[i].gain;
+   command+=" ref_"+pid+"\n"+".model ref_"+pid+" lmeter(gain="+gn+")\n";
+}
+else if(sections.netlist[i].name=="oneshot"){
+  var ct=sections.netlist[i].cntlarr;
+  var pw=sections.netlist[i].pwarr;
+  var ctg=sections.netlist[i].clktrig;
+  var pt=sections.netlist[i].ptrig;
+  var ol=sections.netlist[i].outlow;
+  var oh=sections.netlist[i].outhigh;
+  var rd=sections.netlist[i].rdelay;
+  var fd=sections.netlist[i].fdelay;
+
+  command+=" ref_"+pid+"\n"+".model ref_"+pid+" oneshot(cntl_array=["+ct+"] pw_array=["+pw+"] clk_trig="+ctg+" pos_edge_trig="+pt+" out_low="+ol+" out_high="+oh+" rise_delay="+rd+" fall_delay="+fd+")\n";
+}
+else if(sections.netlist[i].name=="memristor"){
+  var ct=sections.netlist[i].rmin;
+  var pw=sections.netlist[i].rmax;
+  var ctg=sections.netlist[i].rinit;
+  var pt=sections.netlist[i].alpha;
+  var ol=sections.netlist[i].beta;
+  var oh=sections.netlist[i].vt;
+  command+=" ref_"+pid+"\n"+".model ref_"+pid+" memristor(rmin="+ct+" rmax="+pw+" rinit="+ctg+" alpha="+pt+" beta="+ol+" vt="+oh+")\n";
 }
 else{
   command+=" "+sections.netlist[i].model;

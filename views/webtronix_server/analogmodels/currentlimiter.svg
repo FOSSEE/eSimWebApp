@@ -1,0 +1,53 @@
+<svg width="104" height="64" xmlns="http://www.w3.org/2000/svg">
+ <g
+  stroke='black'
+  stroke-width='2px' >
+
+<metadata class="part" >
+    <wtx:part xmlns:wtx="http://code.google.com/p/webtronics" >
+    <wtx:pins>
+        <wtx:analog>
+            <wtx:node index="3" x="103" y="20" />
+            <wtx:node index="4" x="103" y="46" />
+            <wtx:node index="1" x="3" y="20" />
+            <wtx:node index="2" x="3" y="46" />
+          
+        </wtx:analog>
+    </wtx:pins>
+    <wtx:id>a</wtx:id>
+    <wtx:type>a</wtx:type>
+    <wtx:name>currentlimiter</wtx:name>
+    <wtx:category>analogmodels</wtx:category>
+
+    <wtx:rsource></wtx:rsource>
+    <wtx:rsink></wtx:rsink>
+    <wtx:inoffset></wtx:inoffset>
+    <wtx:gain></wtx:gain>
+    <wtx:ilimitsource></wtx:ilimitsource>
+    <wtx:ilimitsink></wtx:ilimitsink>
+    <wtx:vpwr></wtx:vpwr>
+    <wtx:isource></wtx:isource>
+    <wtx:isink></wtx:isink>
+    <wtx:routdomain></wtx:routdomain>
+    
+
+
+
+
+
+    <wtx:flip></wtx:flip>
+    <wtx:value></wtx:value>
+    <wtx:label></wtx:label>
+    <wtx:spice></wtx:spice>
+    <wtx:model></wtx:model>
+    </wtx:part>
+</metadata>
+  <rect id="svg_1" height="60" width="40" y="2.75" x="31.75" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_2" y2="19.75" x2="102.75" y1="19.75" x1="71.75" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_3" y2="19.75" x2="31.75" y1="19.75" x1="0.75" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_6" y2="45.75" x2="31.75" y1="45.75" x1="0.75" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="10" id="svg_9" y="24.5" x="36.5" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">current</text>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_11" y2="45.75" x2="102.75" y1="45.75" x1="71.75" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="10" id="svg_12" y="43.5" x="39.5" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">limiter</text>
+ </g>
+</svg>

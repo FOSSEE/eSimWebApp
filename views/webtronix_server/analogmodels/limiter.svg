@@ -1,0 +1,44 @@
+<svg width="88" height="64" xmlns="http://www.w3.org/2000/svg">
+<g
+  stroke='black'
+  stroke-width='2px' >
+
+<metadata class="part" >
+    <wtx:part xmlns:wtx="http://code.google.com/p/webtronics" >
+    <wtx:pins>
+        <wtx:analog>
+            <wtx:node index="2" x="100" y="29" />
+            <wtx:node index="1" x="5" y="29" />
+          
+        </wtx:analog>
+    </wtx:pins>
+    <wtx:id>a</wtx:id>
+    <wtx:type>a</wtx:type>
+    <wtx:name>limiter</wtx:name>
+    <wtx:category>analogmodels</wtx:category>
+
+    <wtx:limitrange></wtx:limitrange>
+    <wtx:fraction></wtx:fraction>
+    <wtx:outupperlimit></wtx:outupperlimit>
+    <wtx:outlowerlimit></wtx:outlowerlimit>
+    <wtx:gain></wtx:gain>
+    <wtx:inoffset></wtx:inoffset>
+
+    <wtx:flip></wtx:flip>
+    <wtx:value></wtx:value>
+    <wtx:label></wtx:label>
+    <wtx:spice></wtx:spice>
+    <wtx:model></wtx:model>
+    </wtx:part>
+</metadata>
+
+
+  <rect transform="rotate(90, 52.25, 31.25)" id="svg_6" height="40" width="60" y="11.25" x="22.25" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff"/>
+  <rect id="svg_8" height="1" width="0" y="111.25" x="376.25" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff"/>
+  <rect id="svg_9" height="0" width="1" y="89.25" x="321.25" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff"/>
+  <text transform="matrix(-11.2186, 0, 0, -1.4465, 2022.18, 130.044)" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="2" id="svg_11" y="46.93647" x="164.786697" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_22" y2="29" x2="99" y1="29" x1="71" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_23" y2="29" x2="31" y1="29" x1="3" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+   <text style="cursor: move;" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="10" id="svg_43" y="22.25" x="35.25" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">Limiter</text>
+ </g>
+</svg>

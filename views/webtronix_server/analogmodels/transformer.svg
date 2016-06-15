@@ -1,0 +1,37 @@
+<svg width="100" height="64" xmlns="http://www.w3.org/2000/svg">
+<g
+  stroke='black'
+  stroke-width='2px' >
+
+<metadata class="part" >
+    <wtx:part xmlns:wtx="http://code.google.com/p/webtronics" >
+    <wtx:pins>
+        <wtx:digital>
+            <wtx:node index="1" x="103" y="20" />
+            <wtx:node index="2" x="103" y="46" />
+            <wtx:node index="4" x="3" y="20" />
+            <wtx:node index="5" x="3" y="46" />
+          
+        </wtx:digital>
+    </wtx:pins>
+    <wtx:id>a</wtx:id>
+    <wtx:type>a</wtx:type>
+    <wtx:name>transformer</wtx:name>
+    <wtx:category>analogmodels</wtx:category>
+    <wtx:flip></wtx:flip>
+    <wtx:value></wtx:value>
+    <wtx:label></wtx:label>
+    <wtx:spice></wtx:spice>
+    <wtx:model></wtx:model>
+    </wtx:part>
+</metadata>
+  <rect id="svg_35" height="60" width="40" y="2.5" x="30.5" stroke-width="1.5" stroke="#000" fill="#fff"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_37" y2="19.5" x2="100.5" y1="19.5" x1="70.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_38" y2="45.5" x2="100.5" y1="45.5" x1="70.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_39" y2="19.5" x2="29.5" y1="19.5" x1="-0.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_40" y2="45.5" x2="30.5" y1="45.5" x1="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_41" y2="40.5" x2="56.5" y1="40.5" x1="55.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="10" id="svg_42" y="22.5" x="35.5" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">Trans-</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="10" id="svg_43" y="37.5" x="35.5" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">former</text>
+ </g>
+</svg>

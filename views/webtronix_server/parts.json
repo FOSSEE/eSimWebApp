@@ -1,236 +1,261 @@
 {
-  "parts":{
-    "ic":{
-      "3_pins":{},
-      "4_pins":{},
-      "5_pins":{}
-    },
-    
-    "subcircuits":{
-      "op-amp":{
-	"help":"ux + - v- out v+ model\n\ndirective = include model file",
-	"values":{
-	  "lm324":["lm324.mod"],
-	  "lm358":["lm358.mod"],
-	  "741":["ua741.mod","lm741.mod"],
-	  "tl084":["tl084.mod"]
+	"parts":{
+		"ic":{
+			"3_pins":{},
+			"4_pins":{},
+			"5_pins":{}
+		},
+
+		"subcircuits":{
+			"op-amp":{
+				"help":"ux + - v- out v+ model\n\ndirective = include model file",
+				"values":{
+					"lm324":["lm324.mod"],
+					"lm358":["lm358.mod"],
+					"741":["ua741.mod","lm741.mod"],
+					"tl084":["tl084.mod"]
+				}
+			}
+		},
+
+		"analogmodels":{
+			"gains":{},
+			"summer":{},
+			"multiplier":{},
+			"divider":{},
+			"limiter":{},
+			"controlledlimiter":{},
+			"pwlcontrolsource":{},
+			"multi_input_pwl_block":{},
+			"aswitch":{},
+			"zenerdiode":{},
+			"currentlimiter":{},
+			"hysteresis":{},
+			"differentiator":{},
+			"integrator":{},
+			"sdomain":{},
+			"slewrateblock":{},
+			"transformer":{},
+			"sineoscillator":{},
+			"triangleoscillator":{},
+			"squareoscillator":{},
+			"oneshot":{},
+			"capacitancemeter":{},
+			"inductancemeter":{},
+			"memristor":{}			
+
+
+
+		},
+
+
+		"digitalmodels":{
+
+			"adc_bridge":{
+				"ideal_adc":["digital.lib"]
+			},
+			"dac_bridge":{
+				"ideal_dac":["digital.lib"]
+			},                    
+			"source":{
+				"clk":["dsource.mod"]
+			},                
+			"and":{
+				"and(rise = 0.5e-9 fall = 0.3e-9)":[],
+				"and1":["digital.lib"]
+			},
+			"nand":{
+				"nand1":["digital.lib"]                        
+			},
+			"nor":{
+				"nor1":["digital.lib"]                        
+			},
+			"not":{
+				"inv1":["digital.lib"]
+			},
+			"or":{
+				"or1":["digital.lib"]
+			},
+			"xnor":{
+				"xnor":["digital.lib"]                        
+			},
+			"xor":{
+				"xor":["digital.lib"]                        
+			}
+		},
+
+		"resistors":{
+
+			"resistor":{
+				"help":"rx 1 2 value\nrx = part id\nvalue = 0-xMeg",         
+				"values":{
+					"10":[""],
+					"100":[""],
+					"1K":[""],
+					"10K":[""],
+					"100K":[""],
+					"1.0Meg":[""],
+					"10Meg":[""]
+				}
+			},
+
+			"variresistor":{}      
+		},
+
+		"mosfets":{
+			"njfet":{
+				"values":{
+					"mpf102":["models.lib"],
+					"2n3819":["models.lib"]
+
+				}
+			},
+
+			"pjfet":{},
+			"nmosfet":{
+				"values":{
+					"2n7000":["2n7000.mod"],
+					"irf150":["irf150.mod"],
+					"irf530":["irf530.mod"],
+					"irfz44n":["irfz44n.mod"]
+				}
+			},
+			"pmosfet":{}
+
+		},
+
+
+		"transistors":{
+
+			"npn":{
+				"values":{
+
+					"2n3904":["models.lib"],
+					"2n2222":["models.lib"],                    
+					"2n3055":["models.lib"]                    
+				}
+			},
+
+			"pnp":{
+				"values":{
+					"2n3906":["models.lib"],
+					"2n2907":["models.lib"]
+				}
+			}
+
+
+		},
+
+
+		"diodes":{
+			"diode":{
+				"values":{
+
+					"1n4148":["1n4148.lib"],
+					"1n4007":["1n4007.lib"],
+					"1n34a":["1n34a.lib"],
+					"1n5711":["1n5711.lib"]
+
+				},
+				"help":"dx a k model\na=anode\nk=kathode"         
+
+			},
+			"scr":{},
+			"triac":{},
+			"zener":{}
+		},
+		"switches":{
+
+			"ncpb":{},
+			"nopb":{},
+			"spst-relay":{},
+			"spst-switch":{}
+		},
+		"capacitors":{
+			"capacitor":{
+				"help":"cx 1 2 value",         
+
+				"values":{
+
+					"1pf":[""],
+					"10pf":[""],
+					"100pf":[""],
+					"1nf":[""],
+					"10nf":[""],
+					"100nf":[""],
+					"1uf":[""],
+					"10uf":[""],
+					"100uf":[""]
+
+				}
+			},
+			"polar-cap":{},
+			"varicap":{}
+		},
+		"frequency":{
+			"crystal":{}
+		},
+		"inductors":{
+			"coil":{
+				"help":"lx 1 2  value\n\ncoupling  directive \ncouples 2 inductors\n\nkx lx lx value\nlx = inductor id's\nvalue = coupling",         
+				"values":{
+					"1h":[""],
+					"100mh":[""],
+					"10mh":[""],
+					"1mh":[""],
+					"100uh":[""],
+					"10uh":[""],
+					"1uh":[""],
+					"100nh":[""],
+					"10nh":[""],
+					"1h":[""]
+				}
+			},
+			"tapcoil":{},
+			"transformer":{}
+		},
+		"sources":{
+
+			"pulse":{},
+			"pwl":{},
+			"exponential":{},
+
+			"sinvoltagesource":{
+				"help":"SIN = sine wave source\nAC = AC frequency sweep",
+				"values":{		
+				}
+
+			},
+
+
+			"current":{
+
+				"values":{		
+					"1m":[""],
+					"10m":[""],
+					"100m":[""],
+					"1":[""]
+				}
+			},
+			"ac":{
+				"help":"Amplitude= amplitude of wave \n phase = phase of wave",
+				"values":{	
+				}  
+				                  },
+
+
+				"battery":{
+					"values":{		
+						"5":[""],
+						"9":[""],
+						"12":[""]
+					}
+				},
+				"ground":{},
+				"namewire":{}
+
+
+
+		}
 	}
-      }
-    },
-
-    "analogmodels":{
-
-    },
-
-
-    "digitalmodels":{
-      
-      "adc_bridge":{
-	"ideal_adc":["digital.lib"]
-      },
-      "dac_bridge":{
-	"ideal_dac":["digital.lib"]
-      },                    
-      "source":{
-	"clk":["dsource.mod"]
-      },                
-      "and":{
-	"and(rise = 0.5e-9 fall = 0.3e-9)":[],
-	"and1":["digital.lib"]
-      },
-      "nand":{
-	"nand1":["digital.lib"]                        
-      },
-      "nor":{
-	"nor1":["digital.lib"]                        
-      },
-      "not":{
-	"inv1":["digital.lib"]
-      },
-      "or":{
-	"or1":["digital.lib"]
-      },
-      "xnor":{
-	"xnor":["digital.lib"]                        
-      },
-      "xor":{
-	"xor":["digital.lib"]                        
-      }
-    },
-    
-    "resistors":{
-      
-      "resistor":{
-	"help":"rx 1 2 value\nrx = part id\nvalue = 0-xMeg",         
-	"values":{
-	  "10":[""],
-	  "100":[""],
-	  "1K":[""],
-	  "10K":[""],
-	  "100K":[""],
-	  "1.0Meg":[""],
-	  "10Meg":[""]
-	}
-      },
-      
-      "variresistor":{}      
-    },
-
-    "mosfets":{
-    	"njfet":{
-	"values":{
-	  "mpf102":["models.lib"],
-	  "2n3819":["models.lib"]
-	  
-	}
-      },
-
-    	"pjfet":{},
-    	"nmosfet":{
-	"values":{
-	  "2n7000":["2n7000.mod"],
-	  "irf150":["irf150.mod"],
-	  "irf530":["irf530.mod"],
-	  "irfz44n":["irfz44n.mod"]
-	}
-      },
-		"pmosfet":{}
-   		   
-    },
-
-
-    "transistors":{
-      
-      "npn":{
-	"values":{
-	  
-	  "2n3904":["models.lib"],
-	  "2n2222":["models.lib"],                    
-	  "2n3055":["models.lib"]                    
-	}
-      },
-      
-      "pnp":{
-	"values":{
-	  "2n3906":["models.lib"],
-	  "2n2907":["models.lib"]
-	}
-      }
-      
-     
-    },
-
-      
-     "diodes":{
-      "diode":{
-	"values":{
-	  
-	  "1n4148":["1n4148.lib"],
-	  "1n4007":["1n4007.lib"],
-	  "1n34a":["1n34a.lib"],
-	  "1n5711":["1n5711.lib"]
-	  
-	},
-	"help":"dx a k model\na=anode\nk=kathode"         
-	
-      },
-      "scr":{},
-      "triac":{},
-      "zener":{}
-    },
-    "switches":{
-      
-      "ncpb":{},
-      "nopb":{},
-      "spst-relay":{},
-      "spst-switch":{}
-    },
-    "capacitors":{
-      "capacitor":{
-	"help":"cx 1 2 value",         
-	
-	"values":{
-	  
-	  "1pf":[""],
-	  "10pf":[""],
-	  "100pf":[""],
-	  "1nf":[""],
-	  "10nf":[""],
-	  "100nf":[""],
-	  "1uf":[""],
-	  "10uf":[""],
-	  "100uf":[""]
-	  
-	}
-      },
-      "polar-cap":{},
-      "varicap":{}
-    },
-    "frequency":{
-      "crystal":{}
-    },
-    "inductors":{
-      "coil":{
-	"help":"lx 1 2  value\n\ncoupling  directive \ncouples 2 inductors\n\nkx lx lx value\nlx = inductor id's\nvalue = coupling",         
-	"values":{
-	  "1h":[""],
-	  "100mh":[""],
-	  "10mh":[""],
-	  "1mh":[""],
-	  "100uh":[""],
-	  "10uh":[""],
-	  "1uh":[""],
-	  "100nh":[""],
-	  "10nh":[""],
-	  "1h":[""]
-	}
-      },
-      "tapcoil":{},
-      "transformer":{}
-    },
-    "sources":{
-     
-    	"pulse":{},
-    	"pwl":{},
-    	"exponential":{},
-
-    	"sinvoltagesource":{
-    		"help":"SIN = sine wave source\nAC = AC frequency sweep",
-	"values":{		
-	}
-
-    	},
-
-
-      "current":{
-	
-	"values":{		
-	  "1m":[""],
-	  "10m":[""],
-	  "100m":[""],
-	  "1":[""]
-	}
-      },
-      "ac":{
-	"help":"Amplitude= amplitude of wave \n phase = phase of wave",
-	"values":{	
-	}                    },
-
-
-	"battery":{
-	  "values":{		
-	    "5":[""],
-	    "9":[""],
-	    "12":[""]
-	  }
-	},
-	"ground":{},
-	"namewire":{}
-    }
-    
-                
-  },
-  "model":{
-    "555":["555.mod"]
-  }
 }
