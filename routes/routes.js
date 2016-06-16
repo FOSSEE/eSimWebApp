@@ -1,6 +1,8 @@
-module.exports = function(express,app,io,fs,exec){
+module.exports = function(express,app,io,fs,exec,os,PythonShell,scriptPath){
 
     var router = express.Router();
+    var pyEnv = '/usr/bin/python';
+
     router.get('/',function(req,res,next){
         res.render('schematic',{});
 
@@ -38,9 +40,8 @@ module.exports = function(express,app,io,fs,exec){
       			}
       		});
 
-      		executeNgspiceNetlist(socket, analysisFile);
+      		executeNgspiceNetlist(analysisFile);
 		});
-	});
 
     function deleteOnExit(filename){
     	fs.stat(filename, function(err, stat){
@@ -62,7 +63,7 @@ module.exports = function(express,app,io,fs,exec){
 	}
 
 
-	function executeNgspiceNetlist(socket, fileName)
+	function executeNgspiceNetlist(fileName)
 	{
 		fs.exists(fileName, function(exists) {
 			if (exists) {
@@ -78,15 +79,47 @@ module.exports = function(express,app,io,fs,exec){
 								socket.emit('serverMessage','Error while executing ngspice netlist: '+stderr);	
 								break;
 							default:
+								parsePlotData();
 								break;
 						}
 					}
+
+					else
+						parsePlotData();
 				});
 			}
 	 	});
 				
 	}
 
+	function parsePlotData()
+	{
+		console.log("Ngspice netlist executed successfully ");
+		socket.emit('serverMessage','Ngspice netlist executed successfully: ');	
+		var analysisInfo = grep('.tran|.dc|.ac', analysisFile);
+		console.log("Analysis :"+analysisInfo);
+		
+		var options = {
+			mode: 'json',
+			pythonPath: pyEnv,
+			pythonOptions: ['-u'],
+ 			scriptPath: scriptPath,
+  			args: [analysisFile, dumpv, dumpi]
+		};
+
+ 		PythonShell.run('parser.py', options, function (err, results) 
+ 		{
+ 			if (err) throw err;
+  			// results is an array consisting of messages collected during execution 
+ 			//console.log('results: %j', results);
+ 			var resultString = results[0];
+ 			//console.log(resultString);
+ 			//Emitting Data Points to client
+			socket.emit('plotData',resultString);
+ 	    });
+	}
+
+});
 
 
 }

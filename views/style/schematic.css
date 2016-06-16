@@ -255,10 +255,19 @@ div.modal>*{
 	display:none;
 }
 
+#webtronics_graph_display{
+	width:500px;
+	height:300px;
+}
 
 #webtronics_chips_box>*{
 float:left;
 }
+
+#webtronics_plot_box>*{
+float:left;
+}
+
 
 #webtronics_netlist_text>*{
 float:left;

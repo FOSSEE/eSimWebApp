@@ -1412,6 +1412,18 @@ Event.observe($('webtronics_chips_open'), 'click', function() {
   webtronics.center($('webtronics_chips_box'));
   webtronics.disablepage();
 });
+
+
+Event.observe($('webtronics_netlist_simulate'), 'click', function() {
+  $('webtronics_plot_box').style.display = "block";
+  webtronics.center($('webtronics_plot_box'));
+  webtronics.disablepage();
+});
+
+
+
+
+
 if($("webtronics_select"))Event.observe($('webtronics_select'), 'click', function() {
   webtronics.circuit.clearinfo();
   webtronics.setMode('select', 'Selection');
@@ -1999,6 +2011,18 @@ else if(modelname=="oneshot"){
         $('webtronics_chips_box').style.display='none';
         webtronics.setMode('select','Selection');
       });
+
+
+	Event.observe($('webtronics_plot_cancel'), 'click', function() {
+        webtronics.enablepage();
+        $('webtronics_plot_box').style.display='none';
+      });
+
+
+
+
+
+
       /*text add events*/
       if($("webtronics_text_ok")){
         Event.observe($('webtronics_text_ok'), 'click', function() {
