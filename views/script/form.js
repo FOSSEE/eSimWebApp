@@ -23,7 +23,7 @@ socket.on("plotData",function(data){
 				if(keys[i]==ordinate){
 					flag=1;
 					var trace = {
-						x: data[evalabscissa],
+						x: data[abscissa],
 						y: data[keys[i]],
 						name: keys[i],
 						type: 'scatter'
