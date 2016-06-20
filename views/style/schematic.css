@@ -256,9 +256,13 @@ div.modal>*{
 }
 
 #webtronics_graph_display{
-	width:500px;
-	height:300px;
+	width:520px;
+	height:310px;
 }
+/*
+#webtronics_plot_cancel{
+	float: right;
+}*/
 
 #webtronics_chips_box>*{
 float:left;

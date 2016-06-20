@@ -17,7 +17,7 @@
 	<script type="text/javascript" src="script/canvg.js"></script>
 	<script type="text/javascript" src="script/rgbcolor.js"></script>
 	<script type="text/javascript" src="script/savenetlist.js"></script>
-    <script src="script/plotly-latest.min.js"></script>
+	<script src="script/plotly-latest.min.js"></script>
 
 </head><body>
 
@@ -144,10 +144,28 @@ make chips
 
 
 <div id="webtronics_plot_box" class='modal'>
-	<div id="webtronics_graph_display" >	
+	
+	<div id="webtronics_plot_area">
+		<div id="webtronics_graph_display"></div>
+		<div id="plot_details">
+			<p id="webtronics_plot_keys"></p>
+			<form id = "get_xy_form">
+				<table>
+					<tr><td>
+						<input id ="abscissa_submit" type="button" value="Enter Abscissa" >
+						<input id="abscissa_value" type="text" required>	
+    				</td></tr>
+ 					<tr>  <td> 
+ 						<input id ="ordinate_submit" type="button" value="Enter Ordinate" >
+ 		    			<input id="ordinate_value" type="text" required>
+       				</td></tr>
+    			</table>    
+			</form>
+			<input id ="plot_graph" type="button" value="Plot Graph" >
+		</div>
+	</div>
 	<img id="webtronics_plot_cancel" class="normal_button" src="buttons/cancel.png">
 	</div>
-</div>
 
 
 

@@ -17,7 +17,7 @@ var webtronics={
 
   tabs:[],
   mode:'',
-  
+
   Vlist:/\s*expression|\s*url|.*script/,
   Alist:/^(x|y|x1|y1|x2|y2|dx|dy|cx|cy|r|width|height|style|transform|d|id|xml:space|class|fill|stroke|text-anchor|visibility|fill-opacity|stroke-linejoin|stroke-linecap|stroke-opacity|stroke-width|xmlns|xmlns:wtx|connects|partvalue|flippable|spice|index|font-size|font-weight|font-style|font-family)$/,
   Elist:/^(path|circle|rect|line|text|g|tspan|svg|wtx:limitswitch|wtx:irev|wtx:rbreak|wtx:inoffset|wtx:gain|wtx:outoffset|wtx:ingain|wtx:outgain|wtx:denoffset|wtx:dengain|wtx:numoffset|wtx:numgain|wtx:fraction|wtx:dendomain|wtx:denlowerlimit|wtx:outlowerlimit|wtx:outupperlimit|wtx:limitrange|wtx:upperdelta|wtx:lowerdelta|wtx:indomain|wtx:xarr|wtx:yarr|wtx:amodel|wtx:coff|wtx:con|wtx:roff|wtx:ron|wtx:log|wtx:vbreak|wtx:ibreak|wtx:isat|wtx:nfor|wtx:rsource|wtx:rsink|wtx:ilimitsource|wtx:ilimitsink|wtx:vpwr|wtx:isource|wtx:isink|wtx:routdomain|wtx:inlow|wtx:inhigh|wtx:hyst|wtx:outic|wtx:numcoeff|wtx:dencoeff|wtx:intic|wtx:denormfreq|wtx:riseslope|wtx:fallslope|wtx:outlow|wtx:outhigh|wtx:cntlarr|wtx:freqarr|wtx:duty|wtx:risetime|wtx:falltime|wtx:clktrig|wtx:pwarr|wtx:ptrig|wtx:rdelay|wtx:fdelay|wtx:rmax|wtx:rmin|wtx:rinit|wtx:vt|wtx:alpha|wtx:beta|wtx:eval1|wtx:eval2|wtx:eval3|wtx:eval4|wtx:eval5|wtx:eval6|wtx:pwlval1|wtx:pwlval2|wtx:pwlval3|wtx:pwlval4|wtx:pwlval5|wtx:pwlval6|wtx:pwlval7|wtx:pwlval8|wtx:pulval1|wtx:pulval2|wtx:pulval3|wtx:pulval4|wtx:pulval5|wtx:pulval6|wtx:pulval7|wtx:amplitude|wtx:phase|wtx:offsetvoltage|wtx:voltageamplitude|wtx:frequency|wtx:delaytime|wtx:dampingfactor|wtx:part|wtx:pins|wtx:analog|wtx:digital|wtx:node|wtx:id|wtx:type|wtx:name|wtx:category|wtx:value|wtx:label|wtx:spice|wtx:risedelay|wtx:inputload|wtx:falldelay|wtx:flip|wtx:model|wtx:measure|metadata|)$/,
@@ -1416,6 +1416,10 @@ Event.observe($('webtronics_chips_open'), 'click', function() {
 
 Event.observe($('webtronics_netlist_simulate'), 'click', function() {
   $('webtronics_plot_box').style.display = "block";
+  $('plot_details').style.display = "block";
+  $('abscissa_value').value = "";
+  $('ordinate_value').value = "";
+  $('webtronics_graph_display').style.display = "none";
   webtronics.center($('webtronics_plot_box'));
   webtronics.disablepage();
 });
