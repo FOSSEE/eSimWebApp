@@ -1419,7 +1419,7 @@ Event.observe($('webtronics_netlist_simulate'), 'click', function() {
   $('plot_details').style.display = "block";
   $('abscissa_value').value = "";
   $('ordinate_value').value = "";
-  $('webtronics_graph_display').style.display = "none";
+ // $('webtronics_graph_display').style.display = "none";
   webtronics.center($('webtronics_plot_box'));
   webtronics.disablepage();
 });
