@@ -699,7 +699,7 @@ Schematic.prototype.createvalue=function(elem){
       $(label).appendChild(valuespan);
     }
     $(label).appendChild(idspan);
-    $(label).appendChild(valuespan);
+    //$(label).appendChild(valuespan);
    }
   else{
     var text=this.createtext("",'black',0,0-this.fontsize);

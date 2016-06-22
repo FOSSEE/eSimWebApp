@@ -1163,18 +1163,13 @@ add code text
 
 
 	<select id="analysis_selectbox" class="exclude_button"><br>
-		<option  selected="selected" value="4">Analysis Type</option>
+		<option  selected="selected" value="3">Transient</option>
 		<option value="1">DC</option>
 		<option value="2">AC</option>
-		<option value="3">Transient</option>
+		
 		<!--	<option value="4">Four</option> -->	
 	</select>
 
-
-	<div id = "select" display: none;> 
-		<input id ="webtronics_netlist_cancels" class="button_cancel" type="button" value="cancel" ><br>
-
-	</div>
 
 	<!------------------------- AC MENU FORM AND DIV  -------------------------------------------------------------------------------------------------------------->
 
@@ -1197,8 +1192,8 @@ add code text
 
 						<td>
 							<select id="start_frequency_selectbox" class="exclude_button">
-								<option value="" disabled="disabled" selected="selected"> Start Frequency Units</option>
-								<option value="1">Hz</option>
+								<!-- <option value=""  selected="selected"> Start Frequency Units</option>						 -->
+								<option selected="selected" value="1">Hz</option>
 								<option value="2">THz</option>
 								<option value="3">GHz</option>
 								<option value="4">Meg</option>
@@ -1214,8 +1209,8 @@ add code text
 						</td>
 						<td>
 							<select id="stop_frequency_selectbox" class="exclude_button">
-								<option value="" disabled="disabled" selected="selected">Stop Frequency Units</option>
-								<option value="1">Hz</option>
+							<!-- <option value=""  selected="selected">Stop Frequency Units</option> -->
+								<option selected="selected" value="1">Hz</option>
 								<option value="2">THz</option>
 								<option value="3">GHz</option>
 								<option value="4">Meg</option>
@@ -1230,8 +1225,8 @@ add code text
 						</td>
 						<td>
 							<select id="scale_selectbox" class="exclude_button">
-								<option value="" disabled="disabled" selected="selected">Scale</option>
-								<option value="1">Lin</option>
+							<!-- 	<option value=""  selected="selected">Scale</option> -->
+								<option selected="selected" value="1">Lin</option>
 								<option value="2">Dec</option>
 								<option value="3">Oct</option>
 
@@ -1270,8 +1265,8 @@ add code text
 							<input type="number" id="start_time" pattern="[0-9]{3}" min="0" name="Start Time">
 
 							<select id="start_time_selectbox" class="exclude_button">
-								<option value="" disabled="disabled" selected="selected">Start Time units</option>
-								<option value="1">ms</option>
+								<!-- <option value=""  selected="selected">Start Time units</option>							 -->
+								<option  selected="selected" value="1">ms</option>
 								<option value="2">us</option>
 								<option value="3">ns</option>
 								<option value="4">ps</option>				
@@ -1287,8 +1282,8 @@ add code text
 
 
 							<select id="step_time_selectbox" class="exclude_button">
-								<option value="" disabled="disabled" selected="selected">Step Time units</option>
-								<option value="1">ms</option>
+								<!-- <option value="" selected="selected">Step Time units</option>						 -->
+								<option selected="selected" value="1">ms</option>
 								<option value="2">us</option>
 								<option value="3">ns</option>
 								<option value="4">ps</option>				
@@ -1301,8 +1296,8 @@ add code text
 							<label for="dummy3">Stop Time</label>
 							<input type="number" id="stop_time" pattern="[0-9]{3}" min="0"  name="Stop Time">
 							<select id="stop_time_selectbox" class="exclude_button">
-								<option value="" disabled="disabled" selected="selected">Stop Time units</option>
-								<option value="1">ms</option>
+								<!-- <option value=""  selected="selected">Stop Time units</option>							 -->
+								<option selected="selected" value="1">ms</option>
 								<option value="2">us</option>
 								<option value="3">ns</option>
 								<option value="4">ps</option>				
@@ -1350,8 +1345,8 @@ DC MENU FORM AND DIV
 				<input type="number" id="startval" pattern="[0-9]{3}" min="0"  name="Start" >
 
 				<select id="start_volt_selectbox" class="exclude_button">
-					<option value="" disabled="disabled" selected="selected">Start Time Units</option>
-					<option value="1">Volts or Amperes</option>
+					<!-- <option value=""  selected="selected">Start Time Units</option>					 -->
+					<option selected="selected" value="1">Volts or Amperes</option>
 					<option value="2">mV or mA</option>
 					<option value="3">uV or uA</option>
 					<option value="4">nV or nA</option>
@@ -1368,8 +1363,8 @@ DC MENU FORM AND DIV
 
 
 				<select id="inc_volt_selectbox" class="exclude_button">
-					<option value="" disabled="disabled" selected="selected">Increment Time Units</option>
-					<option value="1">Volts or Amperes</option>
+					<!-- <option value=""  selected="selected">Increment Time Units</option>					 -->
+					<option selected="selected" value="1">Volts or Amperes</option>
 					<option value="2">mV or mA</option>
 					<option value="3">uV or uA</option>
 					<option value="4">nV or nA</option>
@@ -1384,8 +1379,8 @@ DC MENU FORM AND DIV
 				<input type="number" id="stopval" pattern="[0-9]{3}" min="0"  name="Stop">
 
 				<select id="stop_volt_selectbox" class="exclude_button">
-					<option value="" disabled="disabled" selected="selected">Stop Time Units</option>
-					<option value="1">Volts or Amperes</option>
+					<!-- <option value="" selected="selected">Stop Time Units</option>	 -->				
+					<option selected="selected" value="1">Volts or Amperes</option>
 					<option value="2">mV or mA</option>
 					<option value="3">uV or uA</option>
 					<option value="4">nV or nA</option>

@@ -128,7 +128,7 @@ jQuery(function(){
 	jQuery("#select").show();
     jQuery("#dc_menu").hide();
     jQuery("#ac_menu").hide();
-    jQuery("#transient_menu").hide();
+    jQuery("#transient_menu").show();
     jQuery("#analysis_selectbox").change(function(){
     
     if (jQuery(this).val() == "4")
@@ -201,14 +201,27 @@ jQuery("#saveac").click(function(){
         jQuery("#webtronics_disable").hide();
 	}
 
-
+scale_val=savedacval1;
+if(scale_val==""){
+	scale_val="lin";
+}
+start_ac_unit=savedacval2;
+if(start_ac_unit==""){
+	start_ac_unit="Hz";
+}
+stop_ac_unit=savedacval3;
+if(stop_ac_unit==""){
+	stop_ac_unit="Hz";
+}
 });
 
-
+var savedacval3="";
+var savedacval2="";
+var savedacval1="";
 jQuery("#frequency_selectbox").change(function(){
 
 	freq = jQuery(this).val();
-	//console.log(freq);
+	// console.log(freq);
 });
 
 jQuery("#scale_selectbox").change(function(){
@@ -226,6 +239,7 @@ jQuery("#scale_selectbox").change(function(){
 	{
 	scale_val = "octal";
 	}
+	savedacval1=scale_val;
 });
 
 jQuery("#start_frequency_selectbox").change(function(){
@@ -252,7 +266,7 @@ jQuery("#start_frequency_selectbox").change(function(){
 	{
 	 start_ac_unit = "KHz";
 	}
-
+	savedacval2=start_ac_unit;
 });
 
 jQuery("#stop_frequency_selectbox").change(function(){
@@ -279,7 +293,8 @@ jQuery("#stop_frequency_selectbox").change(function(){
 	{
 	 stop_ac_unit = "KHz";
 	}
-			
+				savedacval3=stop_ac_unit;
+
 });
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------
@@ -316,9 +331,23 @@ jQuery("#savedc").click(function(){
         jQuery("#webtronics_disable").hide();
 	}
 
+start_dc_unit=saveddcval1;
+if(start_dc_unit==""){
+	start_dc_unit="00";
+}
+increment_dc_unit=saveddcval2;
+if(increment_dc_unit==""){
+	increment_dc_unit="00";
+}
+stop_dc_unit=saveddcval3;
+if(stop_dc_unit==""){
+	stop_dc_unit="00";
+}
            
 });
-
+var saveddcval1="";
+var saveddcval2="";
+var saveddcval3="";
 	
 jQuery("#start_volt_selectbox").change(function(){
 	
@@ -344,7 +373,7 @@ jQuery("#start_volt_selectbox").change(function(){
 	{
 	 start_dc_unit = "12";
 	}
-	
+	saveddcval1=start_dc_unit;
 	//console.log(start_dc_unit);
 });	
 
@@ -373,7 +402,7 @@ jQuery("#inc_volt_selectbox").change(function(){
 	{
 	 increment_dc_unit = "12";
 	}
-	
+	saveddcval2=increment_dc_unit;
 	//console.log(increment_dc_unit);
 });	
 
@@ -402,7 +431,7 @@ jQuery("#stop_volt_selectbox").change(function(){
 	{
 	 stop_dc_unit = "12";
 	}
-	
+				saveddcval3=stop_dc_unit;
 	//console.log(stop_dc_unit);
 });	
 
@@ -437,10 +466,25 @@ jQuery("#savetransient").click(function(){
         jQuery("#webtronics_disable").hide();
 	}
 
+start_trans_unit=savedtransval1;
+if(start_trans_unit==""){
+	start_trans_unit="03";
+}
+step_trans_unit=savedtransval2;
+if(step_trans_unit==""){
+	step_trans_unit="03";
+}
+stop_trans_unit=savedtransval3;
+if(stop_trans_unit==""){
+	stop_trans_unit="03";
+}
+   
 	
 });
 
-
+var savedtransval1="";
+var savedtransval2="";
+var savedtransval3="";
 jQuery("#start_time_selectbox").change(function(){
 
 	trans_start_time = jQuery(this).val();
@@ -461,7 +505,7 @@ jQuery("#start_time_selectbox").change(function(){
 	{
 	 start_trans_unit = "12";
 	}
-	
+	savedtransval1=start_trans_unit;
 	//console.log(start_trans_unit);
 });	
 
@@ -485,7 +529,7 @@ jQuery("#step_time_selectbox").change(function(){
 	{
 	 step_trans_unit = "12";
 	}
-	
+	savedtransval2=step_trans_unit;
 	//console.log(step_trans_unit);
 });	
 
@@ -509,7 +553,7 @@ jQuery("#stop_time_selectbox").change(function(){
 	{
 	 stop_trans_unit = "12";
 	}
-	
+	savedtransval3=stop_trans_unit;
 	//console.log(stop_trans_unit);
 });	
 

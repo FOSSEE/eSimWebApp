@@ -80,6 +80,24 @@ var webtronics={
 },
 
 
+ showdefault:function(){
+
+
+      {
+        webtronics.openProperties();
+        this.enablepage();
+        $('webtronics_properties_div').style.display = "none";
+        var elemnt=document.getElementById("webtronics_properties_ok");
+        elemnt.click();
+        webtronics.circuit.createvalue(webtronics.circuit.selected[0]);
+      }
+
+
+
+ },   
+
+
+
 getvalues:function(elem){
 
 
@@ -138,6 +156,7 @@ jQuery(".analog").hide();
 	$("webtronics_risedelay").style.display='none';
 	 $("webtronics_falldelay").style.display='none';
 	$("webtronics_inputload").style.display='none';
+
   if(!c){
     netlistcreator.writewtx(this.circuit.selected[0],"name","ic");
   }
@@ -476,6 +495,7 @@ jQuery(".analog").hide();
     $("webtronics_amplitude").style.display='none'
     $("webtronics_phase").style.display='none'
   }
+  
   else if(category=="analogmodels"){
          $("models").style.display='none'
          if(c=="gains"){
@@ -893,6 +913,7 @@ jQuery(".analog").hide();
 
 
   else {
+
     this.getvalues(this.circuit.selected[0]);
     $("directive").style.display='none'
 
@@ -952,6 +973,10 @@ jQuery(".analog").hide();
 
   }
 
+    if(category=="mosfets"||category=="transistors"){
+  $("directive").style.display='block';
+
+  }
   if(c=="diode")$("directive").style.display='block'
     var id=netlistcreator.readwtx(this.circuit.selected[0],"id");
   if(type=="x")$("directive").style.display='block';
@@ -1195,6 +1220,11 @@ savepng:function(){
         var group=$$( "#"+ part.id+" g" )[0];
         webtronics.circuit.getgroup(group);
         webtronics.setMode('select','Selection');
+        
+        
+        webtronics.showdefault();
+
+
       });
       Event.observe(part,'mouseup',function(e){
        webtronics.circuit.deleteSelection();				
@@ -1477,7 +1507,7 @@ if($("webtronics_select"))Event.observe($('webtronics_select'), 'click', functio
       flag1=0;
 
 
-
+      analysis_type=3;      
       jQuery("#analysis_selectbox").change(function(){
 
         analysis_type = jQuery(this).val();
@@ -1530,12 +1560,12 @@ if($("webtronics_select"))Event.observe($('webtronics_select'), 'click', functio
  if (analysis_type == "1") 
  { 
 
-  console.log(jQuery("#analysis_selectbox").val());
+//  console.log(jQuery("#analysis_selectbox").val());
 
   jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".dc" + " " + source + " " + start + "e" + "-" + start_dc_unit + " " +  stop + "e" + "-" + stop_dc_unit + " " + increment + "e" + "-" + increment_dc_unit + '\n' + '\n'+ ".control \n"+ "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+ ".end \n" );
 
   change_val = "1";
-  console.log(jQuery("#analysis_selectbox").val());
+  //console.log(jQuery("#analysis_selectbox").val());
 }
 
 
