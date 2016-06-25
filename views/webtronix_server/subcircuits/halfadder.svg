@@ -1,0 +1,42 @@
+<svg width="104" height="74" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g id="x"
+    class="halfadder">
+
+<metadata class="part" >
+    <wtx:part xmlns:wtx="http://code.google.com/p/webtronics" >
+        <wtx:pins>
+        <wtx:analog>
+                <wtx:node index="1" x="0" y="19"/>
+                <wtx:node index="2" x="0" y="59"/>
+                <wtx:node index="3" x="103" y="19"/>
+                <wtx:node index="4" x="103" y="59"/>
+        </wtx:analog>
+    </wtx:pins>
+    <wtx:id>x</wtx:id>
+
+    <wtx:type>x</wtx:type>
+    <wtx:name>halfadder</wtx:name>
+    <wtx:category>subcircuits</wtx:category>
+    <wtx:flip></wtx:flip>
+    <wtx:value></wtx:value>
+    <wtx:label></wtx:label>
+    <wtx:spice></wtx:spice>
+    <wtx:model></wtx:model>
+    </wtx:part>
+</metadata>
+
+
+  <rect id="svg_1" height="70" width="55" y="2.75" x="23.75" stroke-width="1.5" stroke="#000" fill="#fff"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_4" y2="18.75" x2="102.75" y1="18.75" x1="79.75" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_5" y2="19.75" x2="23.75" y1="19.75" x1="0.75" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_6" y2="57.75" x2="102.75" y1="57.75" x1="79.75" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_8" y2="58.75" x2="23.75" y1="58.75" x1="0.75" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <text style="cursor: move;" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="9" id="svg_9" y="24.75" x="26.75" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">IN1</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="9" id="svg_10" y="62.75" x="26.75" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">IN2</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="9" id="svg_12" y="23.75" x="55.75" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">SUM</text>
+  <text style="cursor: move;" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="9" id="svg_13" y="62.75" x="51.75" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">COUT</text>
+  <text style="cursor: move;" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="8" id="svg_14" y="33.75" x="50.75" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">HALF</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="8" id="svg_15" y="44.75" x="47.75" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">ADDER</text>
+ </g>
+</svg>

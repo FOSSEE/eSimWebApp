@@ -276,8 +276,9 @@ float:left;
 #webtronics_netlist_text>*{
 float:left;
 }
+
 #webtronics_netlist_text_div{
-    overflow:hide;
+    overflow:auto;
 }
 
 #webtronics_image{

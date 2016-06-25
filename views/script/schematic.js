@@ -308,6 +308,12 @@ Schematic.prototype.showbackground=function(){
     }
   }
 }
+
+SVGElement.prototype.getTransformToElement = SVGElement.prototype.getTransformToElement || function(toElement) {
+  return toElement.getScreenCTM().inverse().multiply(this.getScreenCTM());  
+};
+
+
 Schematic.prototype.parseMatrix=function(group){
   var matrix={a:1,b:0,c:0,d:1,e:0,f:0};
   

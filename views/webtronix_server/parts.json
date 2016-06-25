@@ -10,12 +10,43 @@
 			"op-amp":{
 				"help":"ux + - v- out v+ model\n\ndirective = include model file",
 				"values":{
-					"lm324":["lm324.mod"],
-					"lm358":["lm358.mod"],
-					"741":["ua741.mod","lm741.mod"],
-					"tl084":["tl084.mod"]
+					"ua741":["ua741.sub"]
 				}
+			},
+			"scr":{
+				"values":{
+					"scr":["scr.sub"]
+				}
+			},
+			"triac":{
+  				"values":{
+					"triac":["triac.sub"]
+				}
+
+			},
+			"diac":{
+					"values":{
+					"diac":["diac.sub"]
+				}
+
+			},
+			"fulladder":{
+				"values":{
+					"full_adder":["full_adder.sub"]
+				}
+
+			},
+			"halfadder":{
+						"values":{
+					"half_adder":["half_adder.sub"]
+				}
+		
 			}
+
+
+
+
+
 		},
 
 		"analogmodels":{
@@ -160,8 +191,6 @@
 				"help":"dx a k model\na=anode\nk=kathode"         
 
 			},
-			"scr":{},
-			"triac":{},
 			"zener":{}
 		},
 		"switches":{

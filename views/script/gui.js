@@ -2,6 +2,10 @@
 
 
 
+str1="";
+str2="";
+str3="";
+final_str="";
 globalVariable=0; 
 
 
@@ -83,14 +87,14 @@ var webtronics={
  showdefault:function(){
 
 
-      {
+
         webtronics.openProperties();
         this.enablepage();
         $('webtronics_properties_div').style.display = "none";
         var elemnt=document.getElementById("webtronics_properties_ok");
         elemnt.click();
         webtronics.circuit.createvalue(webtronics.circuit.selected[0]);
-      }
+
 
 
 
@@ -1506,14 +1510,14 @@ if($("webtronics_select"))Event.observe($('webtronics_select'), 'click', functio
 
       flag1=0;
 
+      saved_analysis_type=3;
 
-      analysis_type=3;      
       jQuery("#analysis_selectbox").change(function(){
 
         analysis_type = jQuery(this).val();
-
+        saved_analysis_type=analysis_type;
       });
-      
+        analysis_type=saved_analysis_type;
 
 
 
@@ -1553,14 +1557,63 @@ if($("webtronics_select"))Event.observe($('webtronics_select'), 'click', functio
   {
     Flag = jQuery("#webtronics_netlist_text_area").val();
     
-
+jQuery("#webtronics_netlist_text_area").val("");
 /*------------------------------------------------------------------------------------------------------------------------------------- 
  Here are the conditions concatenated to give final netlist values for dc all cases  
  ---------------------------------------------------------------------------------------------------------------------------------------------*/ 
  if (analysis_type == "1") 
  { 
 
-//  console.log(jQuery("#analysis_selectbox").val());
+ 	str1='\n'+ ".dc" + " " + source + " " + start + "e" + "-" + start_dc_unit + " " +  stop + "e" + "-" + stop_dc_unit + " " + increment + "e" + "-" + increment_dc_unit + '\n' + '\n'+ ".control \n"+ "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+ ".end \n";
+  jQuery("#webtronics_netlist_text_area").val(Flag + str1 );
+  	final_str=str1;
+  change_val = "1";
+  //console.log(jQuery("#analysis_selectbox").val());
+}
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------
+Here are the all AC Cases for generating final netlist values
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+else if (analysis_type == "2")
+{	
+   str2='\n'+ ".ac" + " " + scale_val + " " + noofpoint + " " + startfreq + start_ac_unit + " " + stopfreq + stop_ac_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+  ".end \n" ;
+
+  jQuery("#webtronics_netlist_text_area").val(Flag +str2 );
+  final_str=str2;
+  change_val = "1";
+      //console.log(jQuery("#webtronics_netlist_text_area").val());
+    console.log("from 00");
+} 
+/*------------------------------------------------------------------------------------------------------------------------------------------------
+Here are the all Transiet Cases for generating final netlist values
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+  //else if (analysis_type == "3" && time == "1")
+  else if (analysis_type== "3")
+  {
+  	str3='\n' + ".tran" + " " + step_trans + "e" + "-" + step_trans_unit + " " + stop_trans + "e"+ "-" + stop_trans_unit + " " + start_trans + "e" + "-" + start_trans_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n" +".end \n";
+    jQuery("#webtronics_netlist_text_area").val(Flag + str3 ); 
+    final_str=str3;
+    change_val = "1";
+
+
+  }
+
+      console.log(jQuery("#webtronics_netlist_text_area").val());
+console.log("deepblueSea1");
+
+}
+
+else if (change_val == "1")
+  {
+
+jQuery("#webtronics_netlist_text_area").val("");
+
+/*------------------------------------------------------------------------------------------------------------------------------------- 
+ Here are the conditions concatenated to give final netlist values for dc all cases  
+ ---------------------------------------------------------------------------------------------------------------------------------------------*/ 
+ if (analysis_type == "1") 
+ { 
 
   jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".dc" + " " + source + " " + start + "e" + "-" + start_dc_unit + " " +  stop + "e" + "-" + stop_dc_unit + " " + increment + "e" + "-" + increment_dc_unit + '\n' + '\n'+ ".control \n"+ "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+ ".end \n" );
 
@@ -1577,6 +1630,7 @@ else if (analysis_type == "2")
   jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".ac" + " " + scale_val + " " + noofpoint + " " + startfreq + start_ac_unit + " " + stopfreq + stop_ac_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+  ".end \n" );
 
   change_val = "1";
+
 } 
 /*------------------------------------------------------------------------------------------------------------------------------------------------
 Here are the all Transiet Cases for generating final netlist values
@@ -1587,49 +1641,13 @@ Here are the all Transiet Cases for generating final netlist values
     jQuery("#webtronics_netlist_text_area").val(Flag + '\n' + ".tran" + " " + step_trans + "e" + "-" + step_trans_unit + " " + stop_trans + "e"+ "-" + stop_trans_unit + " " + start_trans + "e" + "-" + start_trans_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n" +".end \n" ); 
 
     change_val = "1";
-  }
-
-
-}
-
-else if( change_val == "1")
-
-{
-
-  jQuery("#webtronics_netlist_text_area").val("");
-      //console.log("if when 1")
-
-      if (analysis_type == "1") 
-
-      { 
-
-
-       jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".dc" + " " + source + " " + start + "e" + "-" + start_dc_unit + " " +  stop + "e" + "-" + stop_dc_unit + " " + increment + "e" + "-" + increment_dc_unit + '\n' + '\n'+ ".control \n"+ "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" +  ".endc \n"+ ".end \n" );
-       change_val = "1";
-     }       
-
-
-
-     else if (analysis_type == "2")
-     {
-      jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".ac" + " " + scale_val + " " + noofpoint + " " + startfreq + start_ac_unit + " " + stopfreq + stop_ac_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" +   ".endc \n"+ ".end \n" );
-
-      change_val = "1";
-    } 
-
-
-    else if (analysis_type == "3")
-    {
-      jQuery("#webtronics_netlist_text_area").val(Flag + '\n' + ".tran" + " " + step_trans + "e" + "-" + step_trans_unit + " " + stop_trans + "e"+ "-" + stop_trans_unit + " " + start_trans + "e" + "-" + start_trans_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n" +".end \n" ); 
-
-      change_val = "1";
-    }
 
 
   }
+      console.log(jQuery("#webtronics_netlist_text_area").val());
 
-
-
+    console.log("deepblueSea");
+} 
 
 
 

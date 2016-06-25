@@ -170,7 +170,17 @@ jQuery(function(){
 });
 
 
+var savedacval3="";
+var savedacval2="";
+var savedacval1="";
 
+var saveddcval1="";
+var saveddcval2="";
+var saveddcval3="";
+
+var savedtransval1="";
+var savedtransval2="";
+var savedtransval3="";
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------
 Ac netlist variable for ac
@@ -215,9 +225,7 @@ if(stop_ac_unit==""){
 }
 });
 
-var savedacval3="";
-var savedacval2="";
-var savedacval1="";
+
 jQuery("#frequency_selectbox").change(function(){
 
 	freq = jQuery(this).val();
@@ -345,9 +353,6 @@ if(stop_dc_unit==""){
 }
            
 });
-var saveddcval1="";
-var saveddcval2="";
-var saveddcval3="";
 	
 jQuery("#start_volt_selectbox").change(function(){
 	
@@ -374,7 +379,7 @@ jQuery("#start_volt_selectbox").change(function(){
 	 start_dc_unit = "12";
 	}
 	saveddcval1=start_dc_unit;
-	//console.log(start_dc_unit);
+	console.log(start_dc_unit);
 });	
 
 jQuery("#inc_volt_selectbox").change(function(){
@@ -403,7 +408,7 @@ jQuery("#inc_volt_selectbox").change(function(){
 	 increment_dc_unit = "12";
 	}
 	saveddcval2=increment_dc_unit;
-	//console.log(increment_dc_unit);
+	console.log(increment_dc_unit);
 });	
 
 jQuery("#stop_volt_selectbox").change(function(){
@@ -432,7 +437,7 @@ jQuery("#stop_volt_selectbox").change(function(){
 	 stop_dc_unit = "12";
 	}
 				saveddcval3=stop_dc_unit;
-	//console.log(stop_dc_unit);
+	console.log(stop_dc_unit);
 });	
 
        
@@ -482,9 +487,6 @@ if(stop_trans_unit==""){
 	
 });
 
-var savedtransval1="";
-var savedtransval2="";
-var savedtransval3="";
 jQuery("#start_time_selectbox").change(function(){
 
 	trans_start_time = jQuery(this).val();
@@ -506,7 +508,7 @@ jQuery("#start_time_selectbox").change(function(){
 	 start_trans_unit = "12";
 	}
 	savedtransval1=start_trans_unit;
-	//console.log(start_trans_unit);
+	console.log(start_trans_unit);
 });	
 
 jQuery("#step_time_selectbox").change(function(){
@@ -530,7 +532,7 @@ jQuery("#step_time_selectbox").change(function(){
 	 step_trans_unit = "12";
 	}
 	savedtransval2=step_trans_unit;
-	//console.log(step_trans_unit);
+	console.log(step_trans_unit);
 });	
 
 jQuery("#stop_time_selectbox").change(function(){
@@ -554,8 +556,10 @@ jQuery("#stop_time_selectbox").change(function(){
 	 stop_trans_unit = "12";
 	}
 	savedtransval3=stop_trans_unit;
-	//console.log(stop_trans_unit);
+	console.log(stop_trans_unit);
 });	
+
+
 
 
 

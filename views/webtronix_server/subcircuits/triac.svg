@@ -8,7 +8,7 @@
 >
   <g stroke='black'
 	stroke-width='2px' 
-    id="D"
+    id="x"
     class ="triac">
 <metadata class="part" >
     <wtx:part xmlns:wtx="/home/niel/Desktop/webtronics" >
@@ -19,11 +19,11 @@
                 <wtx:node index="3" x="40" y="20"/>
         </wtx:analog>
     </wtx:pins>
-    <wtx:id>d</wtx:id>
+    <wtx:id>x</wtx:id>
 
-    <wtx:type>d</wtx:type>
+    <wtx:type>x</wtx:type>
     <wtx:name>triac</wtx:name>
-    <wtx:category>diodes</wtx:category>
+    <wtx:category>subcircuits</wtx:category>
     <wtx:flip></wtx:flip>
     <wtx:value></wtx:value>
     <wtx:label></wtx:label>

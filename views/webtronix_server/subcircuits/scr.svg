@@ -9,10 +9,10 @@
   <g connects="0,10;40,10;0,20"
 	stroke='black'
 	stroke-width='2px' 
-    id="D"
-    classs="scr" >
+    id="x"
+    class="scr" >
 <metadata class="part" >
-    <wtx:part xmlns:wtx="/home/niel/Desktop/webtronics" >
+    <wtx:part xmlns:wtx="http://code.google.com/p/webtronics" >
         <wtx:pins>
         <wtx:analog>
                 <wtx:node index="1" x="0" y="10"/>
@@ -20,11 +20,11 @@
                 <wtx:node index="3" x="0" y="20"/>
         </wtx:analog>
     </wtx:pins>
-    <wtx:id>d</wtx:id>
+    <wtx:id>x</wtx:id>
 
-    <wtx:type>d</wtx:type>
+    <wtx:type>x</wtx:type>
     <wtx:name>scr</wtx:name>
-    <wtx:category>diodes</wtx:category>
+    <wtx:category>subcircuits</wtx:category>
     <wtx:flip></wtx:flip>
     <wtx:value></wtx:value>
     <wtx:label></wtx:label>

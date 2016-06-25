@@ -1095,7 +1095,9 @@ else if(sections.netlist[i].name=="memristor"){
   command+=" ref_"+pid+"\n"+".model ref_"+pid+" memristor(rmin="+ct+" rmax="+pw+" rinit="+ctg+" alpha="+pt+" beta="+ol+" vt="+oh+")\n";
 }
 else{
+  
   command+=" "+sections.netlist[i].model;
+
 }
 if(command!="")spice+=command+'\n';
 }
@@ -1119,7 +1121,7 @@ var modelloader={
      found=true;
 					if(webtronics.partslists[i].url.indexOf("http://")==-1){//see if path is local
 
-            openfile( webtronics.partslists[i].url+"/spice/"+ name,this.responder);
+                    openfile( webtronics.partslists[i].url+"/spice/"+ name,this.responder);
           }
           else{
             server.requestfile(list.url,this.responder);
@@ -1129,35 +1131,47 @@ var modelloader={
         }
 
       }
+     
       if(!found)console.log("model not found");
     },
     finish:function(){
+
       spice+=modelloader.modeltext; 
+
       if(sections.simulation.length){
         for(var i=0;i<sections.simulation.length;i++){
          if(sections.simulation[i]!="")spice+=sections.simulation[i]+"\n";
        }
      }
+
      if(sections.lastdir.length){
       sections.lastdir=sections.lastdir.uniq();
       for(var i=0;i<sections.lastdir.length;i++){
         if(sections.lastdir[i]!="")spice+=sections.lastdir[i]+"\n";
       }
     }
+    
+    
     responsefunc(spice);
+
+    console.log((final_str));
+    console.log((spice));
   },
 
   responder:function(text){
     console.log("reponded");
-    modelloader.modeltext+=text;
-    if(!modelloader.modelcount){
-      modelloader.finish();
-      spice=spice.concat(".end \n");	
+   modelloader.modeltext=text;
+     if(!modelloader.modelcount){
+      //spice+=modelloader.modeltext;
+    
+      
+     modelloader.finish();
+         jQuery("#webtronics_netlist_text_area").val(spice+final_str);	
+      //spice=spice.concat(".end \n");	
 
     }       
   }
 }
-
 
 if(sections.firstdir.length){
   sections.firstdir=sections.firstdir.uniq();
@@ -1282,3 +1296,4 @@ writewtx:function(elem,value,text){
 
 
 }
+
