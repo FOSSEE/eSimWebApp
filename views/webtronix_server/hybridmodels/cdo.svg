@@ -6,8 +6,8 @@
     <wtx:pins>
         <wtx:digital>
           
-            <wtx:node index="1" x="20" y="30" />
-            <wtx:node index="2" x="20" y="30" />
+            <wtx:node index="1" x="3" y="31" />
+            <wtx:node index="2" x="91" y="31" />
           
         </wtx:digital>
     </wtx:pins>
