@@ -466,8 +466,26 @@ properties form
 		</fieldset>
 		</td></tr>
 
-		<!-- Digital -->
-		<tr id="webtronics_risedelay"><td>
+		<tr id="webtronics_outundef"><td>
+
+		<fieldset >
+		
+			<legend>Out Uundefined:</legend>    
+			<input id="webtronics_outundef_value" type="text" value="0.5">
+		
+		</fieldset>
+		</td></tr>
+
+
+
+
+		</tbody>
+
+		<!-- Digital Models-->
+
+		<tbody id=digital>
+
+		<tr id="webtronics_risedelay" class="digital"><td>
 		<fieldset>
 		
 			<legend>Rise Delay:</legend>    
@@ -476,7 +494,7 @@ properties form
 		</fieldset>
 		</td></tr>
 
-		<tr id="webtronics_falldelay"><td>
+		<tr id="webtronics_falldelay" class="digital"><td>
 		<fieldset>
 		
 			<legend>Fall Delay:</legend>    
@@ -485,7 +503,7 @@ properties form
 		</fieldset>
 		</td></tr>
 
-		<tr id="webtronics_inputload"><td>
+		<tr id="webtronics_inputload" class="digital"><td>
 		<fieldset>
 		
 			<legend>Input Load:</legend>    
@@ -493,6 +511,130 @@ properties form
 		
 		</fieldset>
 		</td></tr>
+
+		<tr id="webtronics_clkdelay" class="digital"><td>
+		<fieldset>
+		
+			<legend>Clk Delay:</legend>    
+			<input id="webtronics_clkdelay_value" type="text" value="1.0e-9">		
+		</fieldset>
+		</td></tr>
+
+		<tr id="webtronics_setdelay" class="digital"><td>
+		<fieldset>
+		
+			<legend>Set Delay:</legend>    
+			<input id="webtronics_setdelay_value" type="text" value="1.0e-9">		
+		</fieldset>
+		</td></tr>
+
+		<tr id="webtronics_resetdelay" class="digital"><td>
+		<fieldset>
+		
+			<legend>Reset Delay:</legend>    
+			<input id="webtronics_resetdelay_value" type="text" value="1.0">		
+		</fieldset>
+		</td></tr>
+
+		<tr id="webtronics_datadelay" class="digital"><td>
+		<fieldset>
+		
+			<legend>Data Delay:</legend>    
+			<input id="webtronics_datadelay_value" type="text" value="1.0">		
+		</fieldset>
+		</td></tr>
+
+		<tr id="webtronics_enabledelay" class="digital"><td>
+		<fieldset>
+		
+			<legend>Enable Delay:</legend>    
+			<input id="webtronics_enabledelay_value" type="text" value="1.0">		
+		</fieldset>
+		</td></tr>
+
+		<tr id="webtronics_srdelay" class="digital"><td>
+		<fieldset>
+		
+			<legend>SR Delay:</legend>    
+			<input id="webtronics_srdelay_value" type="text" value="1.0">		
+		</fieldset>
+		</td></tr>
+
+
+
+		<tr id="webtronics_ic" class="digital"> <td>
+		<fieldset>
+		
+			<legend>Ic:</legend>    
+			<input id="webtronics_ic_value" type="text" value="0">		
+		</fieldset>
+		</td></tr>
+
+		<tr id="webtronics_dataload" class="digital"><td>
+		<fieldset>
+		
+			<legend>Data Load:</legend>    
+			<input id="webtronics_dataload_value" type="text" value="1.0e-12">		
+		</fieldset>
+		</td></tr>
+
+		<tr id="webtronics_jkload" class="digital"><td>
+		<fieldset>
+		
+			<legend>JK Load:</legend>    
+			<input id="webtronics_jkload_value" type="text" value="1.0e-12">		
+		</fieldset>
+		</td></tr>
+
+		<tr id="webtronics_tload" class="digital"><td>
+		<fieldset>
+		
+			<legend>T Load:</legend>    
+			<input id="webtronics_tload_value" type="text" value="1.0e-12">		
+		</fieldset>
+		</td></tr>
+
+		<tr id="webtronics_srload" class="digital"><td>
+		<fieldset>
+		
+			<legend>SR Load:</legend>    
+			<input id="webtronics_srload_value" type="text" value="1.0e-12">		
+		</fieldset>
+		</td></tr>
+
+		<tr id="webtronics_clkload" class="digital"><td>
+		<fieldset>
+		
+			<legend>Clk Load:</legend>    
+			<input id="webtronics_clkload_value" type="text" value="1.0e-12">		
+		</fieldset>
+		</td></tr>
+
+		<tr id="webtronics_setload" class="digital"><td>
+		<fieldset>
+		
+			<legend>Set Load:</legend>    
+			<input id="webtronics_setload_value" type="text" value="1.0e-12">		
+		</fieldset>
+		</td></tr>
+
+		<tr id="webtronics_resetload" class="digital"><td>
+		<fieldset>
+		
+			<legend>Reset Load:</legend>    
+			<input id="webtronics_resetload_value" type="text" value="1.0e-12">		
+		</fieldset>
+		</td></tr>
+
+		<tr id="webtronics_enableload" class="digital"><td>
+		<fieldset>
+		
+			<legend>Enable Load:</legend>    
+			<input id="webtronics_enableload_value" type="text" value="1.0e-12">		
+		</fieldset>
+		</td></tr>
+
+
 		</tbody>
 
 		<tbody id="analogs">
@@ -937,14 +1079,14 @@ properties form
 		<fieldset>
 		
 			<legend>Outputlowvalue:</legend>    
-			<input id="webtronics_outlow_value" type="text" value="-1.0">
+			<input id="webtronics_outlow_value" type="text" value="0.0">
 		
 		</fieldset>
 		</td></tr>
 		<tr id="webtronics_outhigh" class="analog"><td>
 		<fieldset>
 		
-			<legend>OutputHighvalue:</legend>    
+			<legend>Output Highvalue:</legend>    
 			<input id="webtronics_outhigh_value" type="text" value="1.0">
 		
 		</fieldset>
@@ -953,7 +1095,7 @@ properties form
 		<tr id="webtronics_cntlarr" class="analog"><td>
 		<fieldset>
 		
-			<legend>ControlArray:</legend>    
+			<legend>Control Array:</legend>    
 			<input id="webtronics_cntlarr_value" type="text" value="0.0">
 		
 		</fieldset>
@@ -961,7 +1103,7 @@ properties form
 		<tr id="webtronics_freqarr" class="analog"><td>
 		<fieldset>
 		
-			<legend>FrequencyArray:</legend>    
+			<legend>Frequency Array:</legend>    
 			<input id="webtronics_freqarr_value" type="text" value="1.0e3">
 		
 		</fieldset>
@@ -969,7 +1111,7 @@ properties form
 		<tr id="webtronics_duty" class="analog"><td>
 		<fieldset>
 		
-			<legend>DutyCycle:</legend>    
+			<legend>Duty Cycle:</legend>    
 			<input id="webtronics_duty_value" type="text" value="0.5">
 		
 		</fieldset>
@@ -1085,7 +1227,6 @@ properties form
 		</fieldset>
 		</td></tr>
 		</tbody>
-
 
 		</table>
 

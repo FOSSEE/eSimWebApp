@@ -42,11 +42,15 @@
 				}
 		
 			}
-
-
-
-
-
+		},
+		"hybridmodels":{
+			"cdo":{},
+			"adc_bridge":{
+			"ideal_adc":["digital.lib"]				
+				},
+			"dac_bridge":{
+			"ideal_dac":["digital.lib"]
+			}
 		},
 
 		"analogmodels":{
@@ -82,12 +86,7 @@
 
 		"digitalmodels":{
 
-			"adc_bridge":{
-				"ideal_adc":["digital.lib"]
-			},
-			"dac_bridge":{
-				"ideal_dac":["digital.lib"]
-			},                    
+			     
 			"source":{
 				"clk":["dsource.mod"]
 			},                
@@ -112,7 +111,13 @@
 			},
 			"xor":{
 				"xor":["digital.lib"]                        
-			}
+			},
+			"dff":{},
+			"jkff":{},
+			"srff":{},
+			"tff":{},
+			"dlatch":{},
+			"srlatch":{}
 		},
 
 		"resistors":{

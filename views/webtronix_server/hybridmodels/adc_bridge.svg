@@ -20,7 +20,12 @@
 <!--name of file-->
     <wtx:name>adc_bridge</wtx:name>
 <!--category of part-->
-    <wtx:category>digitalmodels</wtx:category>
+    <wtx:category>hybridmodels</wtx:category>
+
+    <wtx:inlow></wtx:inlow>
+    <wtx:inhigh></wtx:inhigh>
+    <wtx:risedelay></wtx:risedelay>
+    <wtx:falldelay></wtx:falldelay>
 <!--value or model name-->
     <wtx:value/>
 <!--label id for svg diagram-->

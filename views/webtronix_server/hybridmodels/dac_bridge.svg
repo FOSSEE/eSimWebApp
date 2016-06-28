@@ -21,7 +21,13 @@
     <wtx:id>ad</wtx:id>
     <wtx:type>a</wtx:type>
     <wtx:name>dac_bridge</wtx:name>
-    <wtx:category>digitalmodels</wtx:category>
+    <wtx:category>hybridmodels</wtx:category>
+    <wtx:outlow></wtx:outlow>
+    <wtx:outhigh></wtx:outhigh>
+    <wtx:inputload></wtx:inputload>
+    <wtx:outundef></wtx:outundef>
+    <wtx:risetime></wtx:risetime>
+    <wtx:falltime></wtx:falltime>
     <wtx:value></wtx:value>
     <wtx:label></wtx:label>
     <wtx:spice></wtx:spice>

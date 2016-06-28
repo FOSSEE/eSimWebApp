@@ -1,0 +1,38 @@
+<svg width="96" height="64" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <metadata class="part" >
+    <wtx:part xmlns:wtx="http://code.google.com/p/webtronics" >
+    <wtx:pins>
+        <wtx:digital>
+          
+            <wtx:node index="1" x="20" y="30" />
+            <wtx:node index="2" x="20" y="30" />
+          
+        </wtx:digital>
+    </wtx:pins>
+    <wtx:id>a</wtx:id>
+    <wtx:type>a</wtx:type>
+    <wtx:name>cdo</wtx:name>
+    <wtx:category>hybridmodels</wtx:category>
+
+    <wtx:cntlarr></wtx:cntlarr>
+    <wtx:freqarr></wtx:freqarr>
+    <wtx:duty></wtx:duty>
+    <wtx:initphase></wtx:initphase>
+    <wtx:risedelay></wtx:risedelay>
+    <wtx:falldelay></wtx:falldelay>
+    
+    <wtx:flip></wtx:flip>
+    <wtx:value></wtx:value>
+    <wtx:label></wtx:label>
+    <wtx:spice></wtx:spice>
+    <wtx:model></wtx:model>
+    </wtx:part>
+</metadata>
+  <rect id="svg_1" height="60" width="40" y="1.75" x="28.75" stroke-width="1.5" stroke="#000" fill="#fff"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_2" y2="30.75" x2="94.823973" y1="30.75" x1="67.75" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_3" y2="30.75" x2="27.823973" y1="30.75" x1="0.75" stroke-width="1.5" stroke="#000" fill="none"/>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="10" id="svg_5" y="32.75" x="35.75" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">CDO</text>
+ </g>
+</svg>

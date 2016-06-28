@@ -210,7 +210,7 @@ tovector:function(pin,nodenumber){
   for(var i=0;i<parts.length;i++){
     var part={error:"", elem:{}, analogpins:[],digitalpins:[],amplitude:"",phase:"",offsetvoltage:"",voltageamplitude:"",frequency:"",delaytime:"",dampingfactor:"",type:"", name:"", category:"", value:"", spice:"", model:"",measure:"", risedelay:"", falldelay:"", pulval1:"", pulval2:"", pulval3:"", pulval4:"", pulval5:"", pulval6:"", pulval7:"", eval1:"", eval2:"", eval3:"", eval4:"", eval5:"", eval6:"", pwlval1:"", pwlval2:"", pwlval3:"", pwlval4:"", pwlval5:"", pwlval6:"", pwlval7:"", pwlval8:"",
     inoffset:"",gain:"",outoffset:"",ingain:"",outgain:"",denoffset:"",dengain:"",numoffset:"",numgain:"",fraction:"",dendomain:"",denlowerlimit:"",outlowerlimit:"",outupperlimit:"",limitrange:"",upperdelta:"",lowerdelta:"",indomain:"",xarr:"",yarr:"",amodel:"",coff:"",con:"",irev:"",rbreak:"",limitswitch:"",roff:"",ron:"",log:"",vbreak:"",ibreak:"",isat:"",nfor:"",rsource:"",rsink:"",ilimitsource:"",ilimitsink:"",vpwr:"",isource:"",isink:"",routdomain:"",inlow:"",inhigh:"",hyst:"",outic:"",numcoeff:"",dencoeff:"",intic:"",denormfreq:"",
-    riseslope:"",fallslope:"",outlow:"",outhigh:"",cntlarr:"",freqarr:"",duty:"",risetime:"",falltime:"",clktrig:"",pwarr:"",ptrig:"",rdelay:"",fdelay:"",rmax:"",rmin:"",rinit:"",vt:"",alpha:"",beta:""
+    riseslope:"",fallslope:"",outlow:"",outhigh:"",cntlarr:"",freqarr:"",duty:"",risetime:"",falltime:"",clktrig:"",pwarr:"",ptrig:"",rdelay:"",fdelay:"",rmax:"",rmin:"",rinit:"",vt:"",alpha:"",beta:"", clkdelay:"", setdelay:"", resetdelay:"", ic:"", dataload:"", jkload:"", tload:"", srload:"", clkload:"", setload:"", resetload:"", datadelay:"", enableload:"",srdelay:"", enabledelay:"", outundef:""
 
 
   }
@@ -654,8 +654,60 @@ catch(e){ part.error="wtx:alpha not found"; }
 try{ part.beta=this.readwtx(parts[i],'beta'); }
 catch(e){ part.error="wtx:beta not found"; }
 
+try{ part.clkdelay=this.readwtx(parts[i],'clkdelay'); }
+catch(e){ part.error="wtx:clkdelay not found"; }
+
+try{ part.setdelay=this.readwtx(parts[i],'setdelay'); }
+catch(e){ part.error="wtx:setdelay not found"; }
+
+try{ part.resetdelay=this.readwtx(parts[i],'resetdelay'); }
+catch(e){ part.error="wtx:resetdelay not found"; }
+
+try{ part.ic=this.readwtx(parts[i],'ic'); }
+catch(e){ part.error="wtx:ic not found"; }
+
+try{ part.dataload=this.readwtx(parts[i],'dataload'); }
+catch(e){ part.error="wtx:dataload not found"; }
+
+try{ part.jkload=this.readwtx(parts[i],'jkload'); }
+catch(e){ part.error="wtx:jkload not found"; }
+
+try{ part.tload=this.readwtx(parts[i],'tload'); }
+catch(e){ part.error="wtx:tload not found"; }
+
+try{ part.srload=this.readwtx(parts[i],'srload'); }
+catch(e){ part.error="wtx:srload not found"; }
+
+try{ part.clkload=this.readwtx(parts[i],'clkload'); }
+catch(e){ part.error="wtx:clkload not found"; }
+
+try{ part.setload=this.readwtx(parts[i],'setload'); }
+catch(e){ part.error="wtx:setload not found"; }
+
+try{ part.resetload=this.readwtx(parts[i],'resetload'); }
+catch(e){ part.error="wtx:resetload not found"; }
+
+try{ part.enableload=this.readwtx(parts[i],'enableload'); }
+catch(e){ part.error="wtx:enableload not found"; }
+
+try{ part.datadelay=this.readwtx(parts[i],'datadelay'); }
+catch(e){ part.error="wtx:datadelay not found"; }
+
+try{ part.enabledelay=this.readwtx(parts[i],'enabledelay'); }
+catch(e){ part.error="wtx:enabledelay not found"; }
+
+try{ part.srdelay=this.readwtx(parts[i],'srdelay'); }
+catch(e){ part.error="wtx:srdelay load not found"; }
 
 
+
+
+try{ part.srdelay=this.readwtx(parts[i],'srdelay'); }
+catch(e){ part.error="wtx:srdelay load not found"; }
+
+
+try{ part.outdef=this.readwtx(parts[i],'outdef'); }
+catch(e){ part.error="wtx:outdef load not found"; }
 
 
 
@@ -824,7 +876,7 @@ getnodes:function(parts){
       delaytime:parts[i].delaytime,dampingfactor:parts[i].dampingfactor,eval1:parts[i].eval1,eval2:parts[i].eval2,eval3:parts[i].eval3,eval4:parts[i].eval4,eval5:parts[i].eval5,eval6:parts[i].eval6,
       inoffset:parts[i].inoffset,gain:parts[i].gain,outoffset:parts[i].outoffset,ingain:parts[i].ingain,outgain:parts[i].outgain,denoffset:parts[i].denoffset,dengain:parts[i].dengain,numoffset:parts[i].numoffset,numgain:parts[i].numgain,fraction:parts[i].fraction,dendomain:parts[i].dendomain,denlowerlimit:parts[i].denlowerlimit,outlowerlimit:parts[i].outlowerlimit,outupperlimit:parts[i].outupperlimit,limitrange:parts[i].limitrange,upperdelta:parts[i].upperdelta,lowerdelta:parts[i].lowerdelta,
  indomain:parts[i].indomain,xarr:parts[i].xarr,yarr:parts[i].yarr,amodel:parts[i].amodel,coff:parts[i].coff,con:parts[i].con,irev:parts[i].irev,rbreak:parts[i].rbreak,limitswitch:parts[i].limitswitch,roff:parts[i].roff,ron:parts[i].ron,log:parts[i].log,vbreak:parts[i].vbreak,ibreak:parts[i].ibreak,isat:parts[i].isat,nfor:parts[i].nfor,rsource:parts[i].rsource,rsink:parts[i].rsink,ilimitsource:parts[i].ilimitsource,ilimitsink:parts[i].ilimitsink,vpwr:parts[i].vpwr,isource:parts[i].isource,isink:parts[i].isink,routdomain:parts[i].routdomain,inlow:parts[i].inlow,inhigh:parts[i].inhigh,hyst:parts[i].hyst,outic:parts[i].outic,
- numcoeff:parts[i].numcoeff,dencoeff:parts[i].dencoeff,intic:parts[i].intic,denormfreq:parts[i].denormfreq,riseslope:parts[i].riseslope,fallslope:parts[i].fallslope,outlow:parts[i].outlow,outhigh:parts[i].outhigh,cntlarr:parts[i].cntlarr,freqarr:parts[i].freqarr,duty:parts[i].duty,risetime:parts[i].risetime,falltime:parts[i].falltime,clktrig:parts[i].clktrig,pwarr:parts[i].pwarr,ptrig:parts[i].ptrig,rdelay:parts[i].rdelay,fdelay:parts[i].fdelay,rmax:parts[i].rmax,rmin:parts[i].rmin,rinit:parts[i].rinit,vt:parts[i].vt,alpha:parts[i].alpha,beta:parts[i].beta
+ numcoeff:parts[i].numcoeff,dencoeff:parts[i].dencoeff,intic:parts[i].intic,denormfreq:parts[i].denormfreq,riseslope:parts[i].riseslope,fallslope:parts[i].fallslope,outlow:parts[i].outlow,outhigh:parts[i].outhigh,cntlarr:parts[i].cntlarr,freqarr:parts[i].freqarr,duty:parts[i].duty,risetime:parts[i].risetime,falltime:parts[i].falltime,clktrig:parts[i].clktrig,pwarr:parts[i].pwarr,ptrig:parts[i].ptrig,rdelay:parts[i].rdelay,fdelay:parts[i].fdelay,rmax:parts[i].rmax,rmin:parts[i].rmin,rinit:parts[i].rinit,vt:parts[i].vt,alpha:parts[i].alpha,beta:parts[i].beta, outundef:parts[i].outundef
 
     };
       if(net!=null)sections.netlist.push(net);
@@ -1094,6 +1146,152 @@ else if(sections.netlist[i].name=="memristor"){
   var oh=sections.netlist[i].vt;
   command+=" ref_"+pid+"\n"+".model ref_"+pid+" memristor(rmin="+ct+" rmax="+pw+" rinit="+ctg+" alpha="+pt+" beta="+ol+" vt="+oh+")\n";
 }
+
+else if(sections.netlist[i].name=="dff"){
+  var cd=sections.netlist[i].clkdelay;
+  var sd=sections.netlist[i].setdelay;
+  var rd=sections.netlist[i].resetdelay;
+  var ic=sections.netlist[i].ic;
+  var rised=sections.netlist[i].risedelay;
+  var falld=sections.netlist[i].falldelay;
+  command+="flop_"+pid+"\n.model flop_"+pid+ "d_dff(clk_delay = "+cd+" set_delay = "+sd+"+reset_delay = "+rd+" ic = "+ic+" rise_delay = "+rised+"+ fall_delay = "+falld+")";
+}
+
+else if(sections.netlist[i].name=="jkff"){
+  var cd=sections.netlist[i].clkdelay;
+  var sd=sections.netlist[i].setdelay;
+  var rd=sections.netlist[i].resetdelay;
+  var ic=sections.netlist[i].ic;
+  var rised=sections.netlist[i].risedelay;
+  var falld=sections.netlist[i].falldelay;
+  command+="flop_"+pid+"\n.model flop_"+pid+ "d_jkff(clk_delay = "+cd+" set_delay = "+sd+"+reset_delay = "+rd+" ic = "+ic+" rise_delay = "+rised+"+ fall_delay = "+falld+")";
+}
+
+else if(sections.netlist[i].name=="tff"){
+  var cd=sections.netlist[i].clkdelay;
+  var sd=sections.netlist[i].setdelay;
+  var rd=sections.netlist[i].resetdelay;
+  var ic=sections.netlist[i].ic;
+  var rised=sections.netlist[i].risedelay;
+  var falld=sections.netlist[i].falldelay;
+  command+="flop_"+pid+"\n.model flop_"+pid+ "d_tff(clk_delay = "+cd+" set_delay = "+sd+"+reset_delay = "+rd+" ic = "+ic+" rise_delay = "+rised+"+ fall_delay = "+falld+")";
+}
+
+else if(sections.netlist[i].name=="srff"){
+  var cd=sections.netlist[i].clkdelay;
+  var sd=sections.netlist[i].setdelay;
+  var rd=sections.netlist[i].resetdelay;
+  var ic=sections.netlist[i].ic;
+  var rised=sections.netlist[i].risedelay;
+  var falld=sections.netlist[i].falldelay;
+  command+="flop_"+pid+"\n.model flop_"+pid+ "d_srff(clk_delay = "+cd+" set_delay = "+sd+"+reset_delay = "+rd+" ic = "+ic+" rise_delay = "+rised+"+ fall_delay = "+falld+")";
+}
+
+
+else if(sections.netlist[i].name=="dlatch"){
+  var dd=sections.netlist[i].datadelay;
+  var ed=sections.netlist[i].enabledelay;
+  var sd=sections.netlist[i].setdelay;
+  var rd=sections.netlist[i].resetdelay;
+  var ic=sections.netlist[i].ic;
+  var rised=sections.netlist[i].risedelay;
+  var falld=sections.netlist[i].falldelay;
+  command+="latch_"+pid+"\n.model latch_"+pid+ "d_dlatch(data_delay = "+dd+" enable_delay "+ed+" set_delay = "+sd+"+reset_delay = "+rd+" ic = "+ic+" rise_delay = "+rised+"+ fall_delay = "+falld+")";
+}
+
+else if(sections.netlist[i].name=="srlatch"){
+  var srd=sections.netlist[i].srdelay;
+  var ed=sections.netlist[i].enabledelay;
+  var sd=sections.netlist[i].setdelay;
+  var rd=sections.netlist[i].resetdelay;
+  var ic=sections.netlist[i].ic;
+  var rised=sections.netlist[i].risedelay;
+  var falld=sections.netlist[i].falldelay;
+  command+="latch_"+pid+"\n.model latch_"+pid+ "d_dlatch(sr_delay = "+srd+" enable_delay "+ed+" set_delay = "+sd+"+reset_delay = "+rd+" ic = "+ic+" rise_delay = "+rised+"+ fall_delay = "+falld+")";
+}
+else if(sections.netlist[i].name=="not")
+{
+  var rised=sections.netlist[i].risedelay;
+  var falld=sections.netlist[i].falldelay;
+  var rd=sections.netlist[i].inputload;
+  command+=" ref_"+pid+"\n.model ref_"+pid+" d_inverter(rise_delay ="+rised+" fall_delay = "+falld+" input_load = "+rd+")\n";
+}
+else if(sections.netlist[i].name=="nor")
+{
+  var rised=sections.netlist[i].risedelay;
+  var falld=sections.netlist[i].falldelay;
+  var rd=sections.netlist[i].inputload;
+  command+=" ref_"+pid+"\n.model ref_"+pid+" d_nor(rise_delay ="+rised+" fall_delay = "+falld+" input_load = "+rd+")\n";
+}
+else if(sections.netlist[i].name=="xnor")
+{
+  var rised=sections.netlist[i].risedelay;
+  var falld=sections.netlist[i].falldelay;
+  var rd=sections.netlist[i].inputload;
+  command+=" ref_"+pid+"\n.model ref_"+pid+" d_xnor(rise_delay ="+rised+" fall_delay = "+falld+" input_load = "+rd+")\n";
+}
+else if(sections.netlist[i].name=="or")
+{
+  var rised=sections.netlist[i].risedelay;
+  var falld=sections.netlist[i].falldelay;
+  var rd=sections.netlist[i].inputload;
+  command+=" ref_"+pid+"\n.model ref_"+pid+" d_or(rise_delay ="+rised+" fall_delay = "+falld+" input_load = "+rd+")\n";
+}
+else if(sections.netlist[i].name=="and")
+{
+  var rised=sections.netlist[i].risedelay;
+  var falld=sections.netlist[i].falldelay;
+  var rd=sections.netlist[i].inputload;
+  command+=" ref_"+pid+"\n.model ref_"+pid+" d_and(rise_delay ="+rised+" fall_delay = "+falld+" input_load = "+rd+")\n";
+}
+else if(sections.netlist[i].name=="nand")
+{
+  var rised=sections.netlist[i].risedelay;
+  var falld=sections.netlist[i].falldelay;
+  var rd=sections.netlist[i].inputload;
+  command+=" ref_"+pid+"\n.model ref_"+pid+" d_nand(rise_delay ="+rised+" fall_delay = "+falld+" input_load = "+rd+")\n";
+}
+else if(sections.netlist[i].name=="xor")
+{
+  var rised=sections.netlist[i].risedelay;
+  var falld=sections.netlist[i].falldelay;
+  var rd=sections.netlist[i].inputload;
+  command+=" ref_"+pid+"\n.model ref_"+pid+" d_xor(rise_delay ="+rised+" fall_delay = "+falld+" input_load = "+rd+")\n";
+}
+
+else if(sections.netlist[i].name=="dac_bridge")
+{
+  var ol=sections.netlist[i].outlow;
+  var oh=sections.netlist[i].outhigh;
+  var ou=sections.netlist[i].outundef;
+  var rd=sections.netlist[i].inputload;
+  var rt=sections.netlist[i].risetime;
+  var ft=sections.netlist[i].falltime;
+  command+=" dac_"+pid+"\n.model dac_"+pid+" dac_bridge(out_low ="+ol+" out_high = "+oh+" out_undef = "+ou+" input_load = "+rd+" t_rise = "+rt+"t_fall"+ft+")\n";
+}
+
+else if(sections.netlist[i].name=="adc_bridge")
+{
+  var il=sections.netlist[i].inlow;
+  var ih=sections.netlist[i].inhigh;
+  var rised=sections.netlist[i].risedelay;
+  var falld=sections.netlist[i].falldelay;
+  command+=" adcbridge_"+pid+"\n.model adc_buff_"+pid+" adcbridge(in_low ="+il+" in_high = "+ih+")\n";
+}
+
+
+else if(sections.netlist[i].name=="cdo")
+{
+
+  var ca=sections.netlist[i].cntlarr;
+  var fa=sections.netlist[i].freqarr;
+  var dt=sections.netlist[i].duty;
+  var p=sections.netlist[i].phase;
+  var rised=sections.netlist[i].risedelay;
+  var falld=sections.netlist[i].falldelay;
+  command+=" var_clock"+pid+"\n.model var_clock"+pid+" d_osc(cntl_array = [ "+ca+"] freq_array = [ "+fa+" ] duty_cycle = "+dt+" initphase = "+p+" rise_delay = "+rised+" fall_delay = "+falld+")\n";
+}
+
 else{
   
   command+=" "+sections.netlist[i].model;

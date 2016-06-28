@@ -1,0 +1,56 @@
+<svg width="87" height="94" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+ <metadata class="part" >
+    <wtx:part xmlns:wtx="http://code.google.com/p/webtronics" >
+    <wtx:pins>
+        <wtx:digital>
+            <wtx:node index="5" x="85" y="34" />
+            <wtx:node index="6" x="85" y="64" />
+            <wtx:node index="1" x="2" y="36" />
+            <wtx:node index="2" x="2" y="63" />
+            <wtx:node index="3" x="42" y="1" />
+            <wtx:node index="4" x="42" y="93" />
+          
+        </wtx:digital>
+    </wtx:pins>
+    <wtx:id>a</wtx:id>
+    <wtx:type>a</wtx:type>
+    <wtx:name>dff</wtx:name>
+    <wtx:category>digitalmodels</wtx:category>
+
+    <wtx:clkdelay></wtx:clkdelay>
+    <wtx:setdelay></wtx:setdelay>
+    <wtx:resetdelay></wtx:resetdelay>
+    <wtx:ic></wtx:ic>
+    <wtx:dataload></wtx:dataload>
+    <wtx:clkload></wtx:clkload>
+    <wtx:setload></wtx:setload>
+    <wtx:resetload></wtx:resetload>
+    <wtx:risedelay></wtx:risedelay>
+    <wtx:falldelay></wtx:falldelay>
+    
+    <wtx:flip></wtx:flip>
+    <wtx:value></wtx:value>
+    <wtx:label></wtx:label>
+    <wtx:spice></wtx:spice>
+    <wtx:model></wtx:model>
+    </wtx:part>
+</metadata>
+
+  <rect id="svg_1" height="60" width="40" y="16.472149" x="23.21015" stroke-width="1.5" stroke="#000" fill="#fff"/>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="10" id="svg_10" y="26.472149" x="38.21015" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">S</text>
+  <text style="cursor: move;" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="10" id="svg_11" y="74.472149" x="38.21015" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">R</text>
+  <text style="cursor: move;" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="10" id="svg_12" y="38.472149" x="53.21015" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">Q</text>
+  <text style="cursor: move;" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="10" id="svg_13" y="38.472149" x="26.21015" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">D</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="10" id="svg_15" y="69.472149" x="51.21015" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#000000">Q'</text>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_16" y2="62.698318" x2="33.040236" y1="57.243778" x1="24.209076" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_17" y2="62.958058" x2="32.261016" y1="69.451558" x1="24.209076" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_18" y2="33.816342" x2="85.984099" y1="33.816342" x1="63.358689" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_19" y2="35.555473" x2="23.37541" y1="35.555473" x1="0.75" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_20" y2="62.511992" x2="23.37541" y1="62.511992" x1="0.75" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_21" y2="64.251122" x2="85.984099" y1="64.251122" x1="63.358689" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_24" y2="0.75" x2="42.489126" y1="17.294605" x1="42.489126" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_25" y2="76.402166" x2="42.489126" y1="92.946771" x1="42.489126" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="none"/>
+ </g>
+</svg>
