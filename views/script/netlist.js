@@ -1352,8 +1352,6 @@ var modelloader={
     
     responsefunc(spice);
 
-    console.log((final_str));
-    console.log((spice));
   },
 
   responder:function(text){

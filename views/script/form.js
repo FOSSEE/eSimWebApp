@@ -6,7 +6,6 @@ socket.on("plotData",function(data){
 	var traces = [];
 	
 
-	console.log(Object.keys(data));
 
 	$('webtronics_plot_keys').innerHTML = "Available keys: " + Object.keys(data);
 		
@@ -32,7 +31,6 @@ socket.on("plotData",function(data){
   		traces.push(value);
 	}
 	
-	console.log("traces :"+traces);
 			
 	var dataForPlotly = traces;
 

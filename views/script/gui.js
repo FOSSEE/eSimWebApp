@@ -157,6 +157,8 @@ var category=netlistcreator.readwtx(this.circuit.selected[0],"category");
 jQuery(".analog").hide();
 jQuery(".digital").hide();
          $("models").style.display='block'
+                $("webtronics_outundef").style.display='none'
+
 
 	$("webtronics_risedelay").style.display='none';
 	 $("webtronics_falldelay").style.display='none';
@@ -1904,8 +1906,6 @@ Here are the all Transiet Cases for generating final netlist values
 
   }
 
-      console.log(jQuery("#webtronics_netlist_text_area").val());
-console.log("deepblueSea1");
 
 }
 
