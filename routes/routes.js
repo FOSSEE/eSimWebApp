@@ -98,13 +98,15 @@ module.exports = function(express,app,io,fs,exec,os,PythonShell,scriptPath){
 		socket.emit('serverMessage','Ngspice netlist executed successfully: ');	
 		var analysisInfo = grep('.tran|.dc|.ac', analysisFile);
 		console.log("Analysis :"+analysisInfo);
+		console.log("Plot Allv :"+dumpv);
+		console.log("Plot Alli :"+dumpi);
 		
 		var options = {
 			mode: 'json',
 			pythonPath: pyEnv,
 			pythonOptions: ['-u'],
  			scriptPath: scriptPath,
-  			args: [analysisFile, dumpv, dumpi]
+  			args: [analysisInfo, dumpv, dumpi]
 		};
 
  		PythonShell.run('parser.py', options, function (err, results) 
