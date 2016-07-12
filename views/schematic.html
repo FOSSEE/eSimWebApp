@@ -1307,30 +1307,20 @@ add code text
 		<option  selected="selected" value="3">Transient</option>
 		<option value="1">DC</option>
 		<option value="2">AC</option>
-		
-		<!--	<option value="4">Four</option> -->	
+		<option value="4">DC Sweep</option> 	
 	</select>
 
 
 	<!------------------------- AC MENU FORM AND DIV  -------------------------------------------------------------------------------------------------------------->
-
-
 	<div id = "ac_menu" display: none;> 
-
-
-
-
 		<div id="inputbox_ac" display: table;>
-
 			<form >
 				<table>
-
 					<tr>
 						<td>
 							<label for="dummy1">Start Frequency</label>
 							<input type="number" id="startfreqval" pattern="[0-9]{3}" min="0"  name="Start Frequency">
 						</td>
-
 						<td>
 							<select id="start_frequency_selectbox" class="exclude_button">
 								<!-- <option value=""  selected="selected"> Start Frequency Units</option>						 -->
@@ -1342,7 +1332,6 @@ add code text
 							</select>
 						</td>
 					</tr>
-
 					<tr>
 						<td>
 							<label for="dummy2">Stop Frequency</label>
@@ -1370,41 +1359,26 @@ add code text
 								<option selected="selected" value="1">Lin</option>
 								<option value="2">Dec</option>
 								<option value="3">Oct</option>
-
 							</select>
 						</td>
 					</tr>
 				</table>
 				<input id ="saveac" class="view_netlist" type="button" value="save" >
-
 				<input id ="webtronics_netlist_cancela" class="button_cancel" type="button" value="cancel" ><br>
-
 			</form>
-
 		</div>
-
 	</div>
-
-
 
 	<!----------------------------------------- TRANSIENT MENU FORM AND DIV ------------------------------------------------------------> 
 
-
-
-
 	<div id="transient_menu" display: none;>
-
 		<div id="inputbox_transient" display: table;>
-
-
 			<form >
 				<table>
-
 					<tr>
 						<td>
 							<label for="dummy1">Start Time</label>
 							<input type="number" id="start_time" pattern="[0-9]{3}" min="0" name="Start Time">
-
 							<select id="start_time_selectbox" class="exclude_button">
 								<!-- <option value=""  selected="selected">Start Time units</option>							 -->
 								<option  selected="selected" value="1">ms</option>
@@ -1414,14 +1388,10 @@ add code text
 							</select>
 						</td>
 					</tr>
-
-
 					<tr>
 						<td>
 							<label for="dummy2">Step Time</label>
 							<input type="number" id="step_time" pattern="[0-9]{3}" min="0"  name="Step Time" >
-
-
 							<select id="step_time_selectbox" class="exclude_button">
 								<!-- <option value="" selected="selected">Step Time units</option>						 -->
 								<option selected="selected" value="1">ms</option>
@@ -1431,7 +1401,6 @@ add code text
 							</select>
 						</td>
 					</tr>
-
 					<tr>
 						<td>
 							<label for="dummy3">Stop Time</label>
@@ -1448,96 +1417,202 @@ add code text
 				</table>
 				<input id ="savetransient" class="view_netlist" type="button" value="save" >
 				<input id ="webtronics_netlist_cancelt" class="button_cancel" type="button" value="cancel" ><br>
-
 			</form>
 		</div>
-
 	</div>
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------
 DC MENU FORM AND DIV
 -------------------------------------------------------------------------------------------------------------------------------------------->
-<div id="dc_menu" display: none;>
+	<div id="dc_menu" display: none;>
+		<div id="inputbox_dc" display: table;>
+			<form >
+				<table>
+					<td>
+						<label for="dummy1">Source name</label>
+						<input type="text" id="sourceval" name="Source Name">
 
+					</td>
 
+					<tr>
+						<td>
+							<label for="dummy2">Start </label>
+							<input type="number" id="startval" pattern="[0-9]{3}" min="0"  name="Start" >
 
+							<select id="start_volt_selectbox" class="exclude_button">
+								<!-- <option value=""  selected="selected">Start Time Units</option>					 -->
+								<option selected="selected" value="1">Volts or Amperes</option>
+								<option value="2">mV or mA</option>
+								<option value="3">uV or uA</option>
+								<option value="4">nV or nA</option>
+								<option value="5">pV or pA</option>
+							</select>
+						</td>
+					</tr>
 
-	<div id="inputbox_dc" display: table;>
+					<tr>
+						<td>
+							<label for="dummy3">Incrememnt</label>
+							<input type="number" id="Incrementval" pattern="[0-9]{3}" min="0"  name="Increment">
 
-		<form >
+							<select id="inc_volt_selectbox" class="exclude_button">
+								<!-- <option value=""  selected="selected">Increment Time Units</option>					 -->
+								<option selected="selected" value="1">Volts or Amperes</option>
+								<option value="2">mV or mA</option>
+								<option value="3">uV or uA</option>
+								<option value="4">nV or nA</option>
+								<option value="5">pV or pA</option>
+							</select>
+						</td>
+					</tr>
 
-          <!--  Source name: <input type="text" name="source" id ='sourceval' size="10"><br>
-            Start      : <input type="text" name="start" id ='startval' size="10"><br>
-            Increment  : <input type="text" name="increment" id ='incrementval' size="10"><br>
-	    Stop       : <input type="text" name="stop" id = 'stopval' size="10"><br>  
-	-->
+					<tr>
+						<td>
+							<label for="dummy4">Stop </label>
+							<input type="number" id="stopval" pattern="[0-9]{3}" min="0"  name="Stop">
 
-	<table>
-		<td>
+							<select id="stop_volt_selectbox" class="exclude_button">
+								<!-- <option value="" selected="selected">Stop Time Units</option>	 -->				
+								<option selected="selected" value="1">Volts or Amperes</option>
+								<option value="2">mV or mA</option>
+								<option value="3">uV or uA</option>
+								<option value="4">nV or nA</option>
+								<option value="5">pV or pA</option>
+							</select>
+						</td>
+					</tr>
+				</table>
 
-			<label for="dummy1">Source name</label>
-			<input type="text" id="sourceval" name="Source Name">
+				<input id ="savedc" class="view_netlist" type="button" value="save" >
+				<input id ="webtronics_netlist_canceld" class="button_cancel" type="button" value="cancel" ><br>
 
-		</td>
+			</form>
 
-		<tr>
-			<td>
-				<label for="dummy2">Start </label>
-				<input type="number" id="startval" pattern="[0-9]{3}" min="0"  name="Start" >
+		</div>
+	</div>
 
-				<select id="start_volt_selectbox" class="exclude_button">
-					<!-- <option value=""  selected="selected">Start Time Units</option>					 -->
-					<option selected="selected" value="1">Volts or Amperes</option>
-					<option value="2">mV or mA</option>
-					<option value="3">uV or uA</option>
-					<option value="4">nV or nA</option>
-					<option value="5">pV or pA</option>
-				</select>
-			</td>
-		</tr>
+<!------------------------------------------------------------------------------------------------------------------------------------------------
+DC SWEEP MENU FORM AND DIV
+-------------------------------------------------------------------------------------------------------------------------------------------->
+	<div id="dc_sweep_menu" display: none;>
+		<div id="inputbox_dc_sweep" display: table;>
+			<form >
+				<table>
+					<td>
+						<label for="dummy1">Source name 1</label>
+						<input type="text" id="sourceval1" name="Source Name">
 
-		<tr>
-			<td>
+					</td>
 
-				<label for="dummy3">Incrememnt</label>
-				<input type="number" id="Incrementval" pattern="[0-9]{3}" min="0"  name="Increment">
+					<tr>
+						<td>
+							<label for="dummy2">Start </label>
+							<input type="number" id="startval1" pattern="[0-9]{3}" min="0"  name="Start" >
 
+							<select id="start_volt_selectbox1" class="exclude_button">
+								<!-- <option value=""  selected="selected">Start Time Units</option>					 -->
+								<option selected="selected" value="1">Volts or Amperes</option>
+								<option value="2">mV or mA</option>
+								<option value="3">uV or uA</option>
+								<option value="4">nV or nA</option>
+								<option value="5">pV or pA</option>
+							</select>
+						</td>
+					</tr>
 
-				<select id="inc_volt_selectbox" class="exclude_button">
-					<!-- <option value=""  selected="selected">Increment Time Units</option>					 -->
-					<option selected="selected" value="1">Volts or Amperes</option>
-					<option value="2">mV or mA</option>
-					<option value="3">uV or uA</option>
-					<option value="4">nV or nA</option>
-					<option value="5">pV or pA</option>
-				</select>
-			</td>
-		</tr>
+					<tr>
+						<td>
+							<label for="dummy3">Incrememnt</label>
+							<input type="number" id="Incrementval1" pattern="[0-9]{3}" min="0"  name="Increment">
 
-		<tr>
-			<td>
-				<label for="dummy4">Stop </label>
-				<input type="number" id="stopval" pattern="[0-9]{3}" min="0"  name="Stop">
+							<select id="inc_volt_selectbox1" class="exclude_button">
+								<!-- <option value=""  selected="selected">Increment Time Units</option>					 -->
+								<option selected="selected" value="1">Volts or Amperes</option>
+								<option value="2">mV or mA</option>
+								<option value="3">uV or uA</option>
+								<option value="4">nV or nA</option>
+								<option value="5">pV or pA</option>
+							</select>
+						</td>
+					</tr>
 
-				<select id="stop_volt_selectbox" class="exclude_button">
-					<!-- <option value="" selected="selected">Stop Time Units</option>	 -->				
-					<option selected="selected" value="1">Volts or Amperes</option>
-					<option value="2">mV or mA</option>
-					<option value="3">uV or uA</option>
-					<option value="4">nV or nA</option>
-					<option value="5">pV or pA</option>
-				</select>
-			</td>
-		</tr>
-	</table>
+					<tr>
+						<td>
+							<label for="dummy4">Stop </label>
+							<input type="number" id="stopval1" pattern="[0-9]{3}" min="0"  name="Stop">
 
-	<input id ="savedc" class="view_netlist" type="button" value="save" >
-	<input id ="webtronics_netlist_canceld" class="button_cancel" type="button" value="cancel" ><br>
+							<select id="stop_volt_selectbox1" class="exclude_button">
+								<!-- <option value="" selected="selected">Stop Time Units</option>	 -->				
+								<option selected="selected" value="1">Volts or Amperes</option>
+								<option value="2">mV or mA</option>
+								<option value="3">uV or uA</option>
+								<option value="4">nV or nA</option>
+								<option value="5">pV or pA</option>
+							</select>
+						</td>
+					</tr>
+					<td>
+						<label for="dummy1">Source name 2</label>
+						<input type="text" id="sourceval2" name="Source Name">
 
-</form>
+					</td>
 
-</div>
-</div>
+					<tr>
+						<td>
+							<label for="dummy2">Start </label>
+							<input type="number" id="startval2" pattern="[0-9]{3}" min="0"  name="Start" >
+
+							<select id="start_volt_selectbox2" class="exclude_button">
+								<!-- <option value=""  selected="selected">Start Time Units</option>					 -->
+								<option selected="selected" value="1">Volts or Amperes</option>
+								<option value="2">mV or mA</option>
+								<option value="3">uV or uA</option>
+								<option value="4">nV or nA</option>
+								<option value="5">pV or pA</option>
+							</select>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<label for="dummy3">Incrememnt</label>
+							<input type="number" id="Incrementval2" pattern="[0-9]{3}" min="0"  name="Increment">
+
+							<select id="inc_volt_selectbox2" class="exclude_button">
+								<!-- <option value=""  selected="selected">Increment Time Units</option>					 -->
+								<option selected="selected" value="1">Volts or Amperes</option>
+								<option value="2">mV or mA</option>
+								<option value="3">uV or uA</option>
+								<option value="4">nV or nA</option>
+								<option value="5">pV or pA</option>
+							</select>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<label for="dummy4">Stop </label>
+							<input type="number" id="stopval2" pattern="[0-9]{3}" min="0"  name="Stop">
+
+							<select id="stop_volt_selectbox2" class="exclude_button">
+								<!-- <option value="" selected="selected">Stop Time Units</option>	 -->				
+								<option selected="selected" value="1">Volts or Amperes</option>
+								<option value="2">mV or mA</option>
+								<option value="3">uV or uA</option>
+								<option value="4">nV or nA</option>
+								<option value="5">pV or pA</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+
+				<input id ="savedcs" class="view_netlist" type="button" value="save" >
+				<input id ="webtronics_netlist_canceldcs" class="button_cancel" type="button" value="cancel" ><br>
+
+			</form>
+
+		</div>
+	</div>
 
 <div id="domchange">  </div>
 

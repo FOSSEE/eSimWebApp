@@ -129,14 +129,16 @@ jQuery(function(){
     jQuery("#dc_menu").hide();
     jQuery("#ac_menu").hide();
     jQuery("#transient_menu").show();
+    jQuery("#dc_sweep_menu").hide();
     jQuery("#analysis_selectbox").change(function(){
     
-    if (jQuery(this).val() == "4")
+    if (jQuery(this).val() == "5")
     {
     jQuery("#select").show();	
     jQuery("#transient_menu").hide();
     jQuery("#dc_menu").hide();
     jQuery("#ac_menu").hide();
+    jQuery("#dc_sweep_menu").hide();
     
     }
     else if (jQuery(this).val() == "1")
@@ -145,6 +147,7 @@ jQuery(function(){
     jQuery("#dc_menu").show();
     jQuery("#ac_menu").hide();
     jQuery("#transient_menu").hide();
+    jQuery("#dc_sweep_menu").hide();
     }
     else if (jQuery(this).val() == "2")
     {
@@ -152,6 +155,7 @@ jQuery(function(){
     jQuery("#ac_menu").show();
     jQuery("#dc_menu").hide();
     jQuery("#transient_menu").hide();
+    jQuery("#dc_sweep_menu").hide();
     }
     else if (jQuery(this).val() == "3")
     {
@@ -159,7 +163,16 @@ jQuery(function(){
     jQuery("#transient_menu").show();
     jQuery("#dc_menu").hide();
     jQuery("#ac_menu").hide();
+    jQuery("#dc_sweep_menu").hide();
     
+    }
+    else if (jQuery(this).val() == "4")
+    {
+    jQuery("#select").hide();	
+    jQuery("#transient_menu").hide();
+    jQuery("#dc_menu").hide();
+    jQuery("#ac_menu").hide();
+    jQuery("#dc_sweep_menu").show();
     }
      
    
@@ -181,6 +194,14 @@ var saveddcval3="";
 var savedtransval1="";
 var savedtransval2="";
 var savedtransval3="";
+
+var savedsweepval1="";
+var savedsweepval2="";
+var savedsweepval3="";
+var savedsweepval4="";
+var savedsweepval5="";
+var savedsweepval6="";
+
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------
 Ac netlist variable for ac
@@ -314,8 +335,8 @@ jQuery("#savedc").click(function(){
         start = jQuery("#startval").val();
         increment = jQuery("#Incrementval").val();
         stop = jQuery("#stopval").val();
-        //console.log(source,start,increment,stop);
-        //console.log(start);
+        // console.log(source,start,increment,stop);
+        // console.log(start);
         if (source == "")
         {
         alert("Please enter Source Name");
@@ -440,6 +461,256 @@ jQuery("#stop_volt_selectbox").change(function(){
 	console.log(stop_dc_unit);
 });	
 
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------
+DC netlist variable for dc sweep
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+jQuery("#savedcs").click(function(){
+	source1 = jQuery("#sourceval1").val();
+    start1 = jQuery("#startval1").val();
+    increment1 = jQuery("#Incrementval1").val();
+    stop1 = jQuery("#stopval1").val();
+    source2 = jQuery("#sourceval2").val();
+    start2 = jQuery("#startval2").val();
+    increment2 = jQuery("#Incrementval2").val();
+    stop2 = jQuery("#stopval2").val();
+    //console.log(source1,start1,increment1,stop1);
+    //console.log(start1);
+    if (source1 == "")
+    {
+    	alert("Please enter Source Name");
+    }
+    else if (start1 == "")
+    {
+    	alert("Please enter Start Time");
+    }
+    else if (increment1 == "")
+    {
+    	alert("Please enter the increment value");
+    }
+    else if (stop1 == "")
+    {
+    	alert("Please enter the Stop Time");
+    }
+    else if (source2 == "")
+    {
+    	alert("Please enter Source Name");
+    }
+    else if (start2 == "")
+    {
+    	alert("Please enter Start Time");
+    }
+    else if (increment2 == "")
+    {
+    	alert("Please enter the increment value");
+    }
+    else if (stop2 == "")
+    {
+    	alert("Please enter the Stop Time");
+    }
+
+	else{
+		jQuery("#webtronics_netlist_analysis").hide();
+	    jQuery("#webtronics_disable").hide();
+	}
+
+	start_dc_unit1=savedsweepval1;
+	if(start_dc_unit1==""){
+		start_dc_unit1="00";
+	}
+	increment_dc_unit1=savedsweepval2;
+	if(increment_dc_unit1==""){
+		increment_dc_unit1="00";
+	}
+	stop_dc_unit1=savedsweepval3;
+	if(stop_dc_unit1==""){
+		stop_dc_unit1="00";
+	}
+
+	start_dc_unit2=savedsweepval4;
+	if(start_dc_unit2==""){
+		start_dc_unit2="00";
+	}
+	increment_dc_unit2=savedsweepval5;
+	if(increment_dc_unit2==""){
+		increment_dc_unit2="00";
+	}
+	stop_dc_unit2=savedsweepval6;
+	if(stop_dc_unit2==""){
+		stop_dc_unit2="00";
+	}
+           
+});
+	
+jQuery("#start_volt_selectbox1").change(function(){
+	
+	dc_start_time1 = jQuery(this).val();
+	
+	if (dc_start_time1 == "1")
+	{
+		start_dc_unit1 = "00";
+	}
+	else if (dc_start_time1 == "2")
+	{
+		start_dc_unit1 = "03";
+	}
+	if (dc_start_time1 == "3")
+	{
+	 	start_dc_unit1 = "06";
+	}
+	else if (dc_start_time1 == "4")
+	{
+	 	start_dc_unit1 = "09";
+	}
+	else if (dc_start_time1 == "5")
+	{
+	 	start_dc_unit1 = "12";
+	}
+	savedsweepval1=start_dc_unit1;
+	console.log(start_dc_unit1);
+});	
+
+jQuery("#inc_volt_selectbox1").change(function(){
+	dc_increment_time1 = jQuery(this).val();
+	
+	if (dc_increment_time1 == "1")
+	{
+	 	increment_dc_unit1 = "00";
+	}
+	else if (dc_increment_time1 == "2")
+	{
+	 	increment_dc_unit1 = "03";
+	}
+	if (dc_increment_time1 == "3")
+	{
+	 	increment_dc_unit1 = "06";
+	}
+	else if (dc_increment_time1 == "4")
+	{
+	 	increment_dc_unit1 = "09";
+	}
+	else if (dc_increment_time1 == "5")
+	{
+	 	increment_dc_unit1 = "12";
+	}
+	savedsweepval2=increment_dc_unit1;
+	console.log(increment_dc_unit1);
+});	
+
+jQuery("#stop_volt_selectbox1").change(function(){
+
+	dc_stop_time1 = jQuery(this).val();
+	
+	if (dc_stop_time1 == "1")
+	{
+		stop_dc_unit1 = "00";
+	}
+	else if (dc_stop_time1 == "2")
+	{
+	 	stop_dc_unit1 = "03";
+	}
+	if (dc_stop_time1 == "3")
+	{
+		stop_dc_unit1 = "06";
+	}
+	else if (dc_stop_time1 == "4")
+	{
+		stop_dc_unit1 = "09";
+	}
+	else if (dc_stop_time1 == "5")
+	{
+		stop_dc_unit1 = "12";
+	}
+	savedsweepval3=stop_dc_unit1;
+	console.log(stop_dc_unit1);
+});	
+
+
+jQuery("#start_volt_selectbox2").change(function(){
+	
+	dc_start_time2 = jQuery(this).val();
+	
+	if (dc_start_time2 == "1")
+	{
+		start_dc_unit2 = "00";
+	}
+	else if (dc_start_time2 == "2")
+	{
+	 	start_dc_unit2 = "03";
+	}
+	if (dc_start_time2 == "3")
+	{
+	 	start_dc_unit2 = "06";
+	}
+	else if (dc_start_time2 == "4")
+	{
+	 	start_dc_unit2 = "09";
+	}
+	else if (dc_start_time2 == "5")
+	{
+	 	start_dc_unit2 = "12";
+	}
+	savedsweepval4=start_dc_unit2;
+	console.log(start_dc_unit2);
+});	
+
+jQuery("#inc_volt_selectbox2").change(function(){
+	dc_increment_time2 = jQuery(this).val();
+	
+	if (dc_increment_time2 == "1")
+	{
+		increment_dc_unit2 = "00";
+	}
+	else if (dc_increment_time2 == "2")
+	{
+	 	increment_dc_unit2 = "03";
+	}
+	if (dc_increment_time2 == "3")
+	{
+	 	increment_dc_unit2 = "06";
+	}
+	else if (dc_increment_time2 == "4")
+	{
+	 	increment_dc_unit2 = "09";
+	}
+	else if (dc_increment_time2 == "5")
+	{
+	 	increment_dc_unit2 = "12";
+	}
+	savedsweepval5=increment_dc_unit2;
+	console.log(increment_dc_unit2);
+});	
+
+jQuery("#stop_volt_selectbox2").change(function(){
+
+	dc_stop_time2 = jQuery(this).val();
+	
+	if (dc_stop_time2 == "1")
+	{
+		stop_dc_unit2 = "00";
+	}
+	else if (dc_stop_time2 == "2")
+	{
+		stop_dc_unit2 = "03";
+	}
+	if (dc_stop_time2 == "3")
+	{
+		stop_dc_unit2 = "06";
+	}
+	else if (dc_stop_time2 == "4")
+	{
+		stop_dc_unit2 = "09";
+	}
+	else if (dc_stop_time2 == "5")
+	{
+	 	stop_dc_unit2 = "12";
+	}
+	savedsweepval6=stop_dc_unit2;
+	console.log(stop_dc_unit2);
+});	
+
+
        
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------
@@ -451,8 +722,7 @@ jQuery("#savetransient").click(function(){
 	step_trans  = jQuery("#step_time").val();
 	stop_trans  = jQuery("#stop_time").val();
 	//console.log(start_trans, step_trans, stop_trans);
-	console
-
+	
 	if (start_trans == "")
 	{
 	alert("Please enter Start Time")
