@@ -725,11 +725,11 @@ jQuery(".digital").hide();
    $("webtronics_falldelay").style.display='block';
   $("webtronics_inputload").style.display='block';
       var risedelay = netlistcreator.readwtx(this.circuit.selected[0],"risedelay");
-      if(risedelay!=""){$(webtronics_part_risedelay).value=risedelay;}
+      if(risedelay!=""){$(webtronics_risedelay_value).value=risedelay;}
       var falldelay = netlistcreator.readwtx(this.circuit.selected[0],"falldelay");
-      if(falldelay!=""){$(webtronics_part_falldelay).value=falldelay;}
+      if(falldelay!=""){$(webtronics_falldelay_value).value=falldelay;}
        var inputload = netlistcreator.readwtx(this.circuit.selected[0],"inputload");
-      if(inputload!=""){$(webtronics_part_inputload).value=inputload;}
+      if(inputload!=""){$(webtronics_inputload_value).value=inputload;}
 
     }
   }

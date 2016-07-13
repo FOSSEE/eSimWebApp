@@ -24,6 +24,10 @@
     </wtx:pins>
     <wtx:id>nand</wtx:id>
 
+    <wtx:risedelay></wtx:risedelay>
+    <wtx:falldelay></wtx:falldelay>
+    <wtx:inputload></wtx:inputload>
+
     <wtx:type>a</wtx:type>
     <wtx:name>nand</wtx:name>
     <wtx:category>digitalmodels</wtx:category>

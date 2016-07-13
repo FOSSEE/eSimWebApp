@@ -18,7 +18,7 @@
             <wtx:node index="2" x="30" y="10" />
         </wtx:analog>
     </wtx:pins>
-    <wtx:id>ad</wtx:id>
+    <wtx:id>a</wtx:id>
     <wtx:type>a</wtx:type>
     <wtx:name>dac_bridge</wtx:name>
     <wtx:category>hybridmodels</wtx:category>

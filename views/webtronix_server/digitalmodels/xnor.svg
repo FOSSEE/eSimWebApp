@@ -24,6 +24,9 @@
         </wtx:digital>
     </wtx:pins>
     <wtx:id>xnor</wtx:id>
+    <wtx:risedelay></wtx:risedelay>
+    <wtx:falldelay></wtx:falldelay>
+    <wtx:inputload></wtx:inputload>
 
     <wtx:type>a</wtx:type>
     <wtx:name>xnor</wtx:name>

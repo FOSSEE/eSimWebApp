@@ -945,9 +945,6 @@ else if(sections.netlist[i].name=="pwl"){
 else if(sections.netlist[i].name=="exponential"){
   command+=" "+"EXP ("+sections.netlist[i].eval1+" "+sections.netlist[i].eval2+" "+sections.netlist[i].eval3+" "+sections.netlist[i].eval4+" "+sections.netlist[i].eval5+" "+sections.netlist[i].eval6+")";
 }
-else if(sections.netlist[i].name=="and"){
-  command+=" "+sections.netlist[i].risedelay+" "+sections.netlist[i].falldelay+" "+sections.netlist[i].inputload;
-}
 else if(sections.netlist[i].name=="gains"){
   var inoff=sections.netlist[i].inoffset;var gn=sections.netlist[i].gain;var outoff=sections.netlist[i].outoffset;
   command+=" ref_"+pid+"\n"+".model ref_"+pid+" gain(in_offset="+inoff+" gain="+gn+" out_offset="+outoff+")\n";

@@ -14,7 +14,7 @@
         </wtx:digital>
     </wtx:pins>
 <!--id for svg diagram and spice-->
-    <wtx:id>ada</wtx:id>
+    <wtx:id>a</wtx:id>
 <!--type of part-->
     <wtx:type>a</wtx:type>
 <!--name of file-->

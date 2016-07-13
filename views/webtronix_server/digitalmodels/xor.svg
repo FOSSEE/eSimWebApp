@@ -24,6 +24,10 @@
         </wtx:digital>
     </wtx:pins>
     <wtx:id>xor</wtx:id>
+    <wtx:risedelay></wtx:risedelay>
+    <wtx:falldelay></wtx:falldelay>
+    <wtx:inputload></wtx:inputload>
+
 
     <wtx:type>a</wtx:type>
     <wtx:name>xor</wtx:name>

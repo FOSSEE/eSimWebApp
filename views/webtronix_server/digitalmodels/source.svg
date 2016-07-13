@@ -10,7 +10,7 @@
 
     </wtx:pins>
     <wtx:id>clock</wtx:id>
-
+    
     <wtx:type>a</wtx:type>
     <wtx:name>source</wtx:name>
     <wtx:category>digitalmodels</wtx:category>

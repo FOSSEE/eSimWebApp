@@ -23,6 +23,9 @@
         </wtx:digital>
     </wtx:pins>
     <wtx:id>nor</wtx:id>
+    <wtx:risedelay></wtx:risedelay>
+    <wtx:falldelay></wtx:falldelay>
+    <wtx:inputload></wtx:inputload>
 
     <wtx:type>a</wtx:type>
     <wtx:name>nor</wtx:name>
