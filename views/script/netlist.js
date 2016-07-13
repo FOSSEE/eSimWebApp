@@ -90,7 +90,7 @@ var netlistcreator={
 
 
       /* this is the best way I could think to tell if a part i digital */
-      else if(list[i].category=="digitalmodels"){	
+      else if(list[i].category=="digitalmodels"||list[i].category=="hybridmodels"){	
         A.push(list[i]);
       }
       else {
