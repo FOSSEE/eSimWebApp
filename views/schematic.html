@@ -19,106 +19,90 @@
 	<script type="text/javascript" src="script/savenetlist.js"></script>
 	<script src="script/plotly-latest.min.js"></script>
 
-</head><body>
+</head>
+<body>
 
+<!--START of Main Window-->
 <div id="webtronics_main_window">
-<!--
-toolbar
--->
+
+<!--START of Toolbar-->
 <div id="webtronics_toolbar">
-	<table><tr><td>
-		<a href="http://esim.fossee.in/" target="_blank" ><img src="icons/images.jpeg"/></a>
 
-	</td><td>
-	<img id='webtronics_file' title="file menu" src="buttons/openmenu.png"></td>
-	<td>
-		<fieldset>	
-			<legend>Circuit</legend>
-			<img id="webtronics_analysis" class="normal_button" title="analysis" src="buttons/analysis.png">
-			<img id="webtronics_netlist" class="normal_button" title="view the netlist" src="buttons/netlist.png">
-			<!--	<img id="webtronics_run" class="normal_button" title="run spice" src="buttons/run.png">   -->
-			<img id="webtronics_chips_open" class="normal_button" title="make chips" src="buttons/icbut.png">
-			<img id="webtronics_delete" class="normal_button" title="Delete selected shape" src="buttons/delete.png">
-			<img id="webtronics_text" class="normal_button" title="add text" src="buttons/text.png">
+	<table>
+		<tr>
+			<td>
+				<a href="http://esim.fossee.in/" target="_blank" ><img src="icons/images.jpeg"/></a>
+			</td>
+			<td>
+				<img id='webtronics_file' title="file menu" src="buttons/openmenu.png"></td>
+			<td>
+				<fieldset>
+					<legend>Circuit</legend>
+					<img id="webtronics_analysis" class="normal_button" title="analysis" src="buttons/analysis.png">
+					<img id="webtronics_netlist" class="normal_button" title="view the netlist" src="buttons/netlist.png">
+					<!--	<img id="webtronics_run" class="normal_button" title="run spice" src="buttons/run.png">   -->
+					<img id="webtronics_chips_open" class="normal_button" title="make chips" src="buttons/icbut.png">
+					<img id="webtronics_delete" class="normal_button" title="Delete selected shape" src="buttons/delete.png">
+					<img id="webtronics_text" class="normal_button" title="add text" src="buttons/text.png">
 
-		</fieldset>
-		<fieldset>
-			<legend>History</legend>			
-			<img id="webtronics_undo" class="normal_button" title="undo last action" src="buttons/undo.png">
-			<img id="webtronics_redo" class="normal_button" title="redo last action" src="buttons/redo.png">
-		</fieldset>
-		<fieldset>
-			<legend>Settings</legend>			
-			<form> 
-				<table  border="0" cellpadding="0" cellspacing="0">				
-					<tr>
-						<td><input id="webtronics_connections" type="checkbox"></td><td> connections</td>
-						<td><input id="webtronics_graph" type="checkbox"></td><td>graph</td>           
-					</tr>
-					<tr>
-						<td><input type="checkbox" id="webtronics_invert"></td><td>invert</td>
-						<td><input type="checkbox" id="webtronics_showhelp"></td><td>help</td>
-					</tr>
-				</table>         
-			</form>
-		</fieldset>
-	</td></tr></table>
-</div>
-<!--part selection menu -->
+				</fieldset>
+				<fieldset>
+					<legend>History</legend>			
+					<img id="webtronics_undo" class="normal_button" title="undo last action" src="buttons/undo.png">
+					<img id="webtronics_redo" class="normal_button" title="redo last action" src="buttons/redo.png">
+				</fieldset>
+				<fieldset>
+					<legend>Settings</legend>			
+					<form> 
+						<table  border="0" cellpadding="0" cellspacing="0">				
+							<tr>
+								<td><input id="webtronics_connections" type="checkbox"></td><td> connections</td>
+								<td><input id="webtronics_graph" type="checkbox"></td><td>graph</td>           
+							</tr>
+							<tr>
+								<td><input type="checkbox" id="webtronics_invert"></td><td>invert</td>
+								<td><input type="checkbox" id="webtronics_showhelp"></td><td>help</td>
+							</tr>
+						</table>         
+					</form>
+				</fieldset>
+			</td>
+		</tr>
+	</table>
+</div> <!-- ENd of Toolbar-->
+
+
+<!--START of part selection menu -->
 <div id="webtronics_center" >
 	<div id="webtronics_side_bar" >
 		<div id="webtronics_parts_list" >
-
 		</div>	
-
-
-		
-		<!--
-		<br>	
-		<a href="https://github.com/FOSSEE/eSimWebApp" target="_blank" >Fossee</a><br>
-		-->
-		
 	</div>
-<!--    
-tab area
+	<!--    
+	tab area
 
-    <div id="webtronics_tab_area"></div>
--->
-<!--
-display area
--->
-
-
-
-<div id="webtronics_diagram_area" >
-	
+	    <div id="webtronics_tab_area"></div>
+	-->
+	<!--
+	display area
+	-->
+	<div id="webtronics_diagram_area" >
+	</div>
+</div> <!--END of part selection menu-->
 
 
-</div>
-
-
-
-
-
-
-</div>
-<!--
-status bar
--->
+<!--START of status bar-->
 
 <div id="webtronics_footer">
-
-
 	<p align="center">&copy; 2016 FOSSEE, IIT Bombay</p>
-
 </div>
+<!--END of status bar-->
 
 
 
 <div id='webtronics_disable'></div>
-<!--
-make chips
--->
+
+<!--START of make chips-->
 
 <div id="webtronics_chips_box" class='modal'>
 	<div id="webtronics_chip_display" ></div>
@@ -140,1097 +124,1049 @@ make chips
 	<img id="webtronics_chip_ok" class="normal_button" src="buttons/ok.png">
 	<img id="webtronics_chip_cancel" class="normal_button" src="buttons/cancel.png">
 </div>
+<!--END OF make chips-->
 
-
-
+<!--START of PLOT BOX-->
 <div id="webtronics_plot_box" class='modal'>
-	
 	<div id="webtronics_plot_area">
 		<div id="webtronics_graph_display"></div>
 		<div id="plot_details">
 			<p id="webtronics_plot_keys"></p>
 			<form id = "get_xy_form">
 				<table>
-					<tr><td>
-						<input id ="abscissa_submit" type="button" value="Enter Abscissa" >
-						<input id="abscissa_value" type="text" required>	
-    				</td></tr>
- 					<tr>  <td> 
- 						<input id ="ordinate_submit" type="button" value="Enter Ordinate" >
- 		    			<input id="ordinate_value" type="text" required>
-       				</td></tr>
+					<tr>
+						<td>
+							<input id ="abscissa_submit" type="button" value="Enter Abscissa" >
+							<input id="abscissa_value" type="text" required>	
+    					</td>
+    				</tr>
+ 					<tr>  
+ 						<td> 
+	 						<input id ="ordinate_submit" type="button" value="Enter Ordinate" >
+	 		    			<input id="ordinate_value" type="text" required>
+       					</td>
+       				</tr>
     			</table>    
 			</form>
 			<input id ="plot_graph" type="button" value="Plot Graph" >
 		</div>
 	</div>
 	<img id="webtronics_plot_cancel" class="normal_button" src="buttons/cancel.png">
-	</div>
+</div>
+<!--END of PLOT BOX-->
 
 
 
 
 
 
-
-<!--
-add text
--->
+<!--START of add text-->
 
 <div id="webtronics_add_text" class='modal'>
 	<textarea cols="50" rows="4" id="webtronics_comment"></textarea>
 </div>
-<!--
-properties form
--->
+<!-- END of add text-->
+
+<!--START of properties form-->
 <div id="webtronics_properties_div" class='modal'>
 	<form name="webtronics_properties_form">
 		<table>
-		<tbody id="modelid">
-					<tr><td>
-		<fieldset>
-		
-			<legend>part id</legend>    
-			<input id="webtronics_part_id"><br>
-		
-		</fieldset>
-		</td></tr>
+			<tbody id="modelid">
+				<tr>
+					<td>
+						<fieldset>
+							<legend>part id</legend>    
+							<input id="webtronics_part_id"><br>
+						</fieldset>
+					</td>
+				</tr>
 
-		</tbody>	
+			</tbody>	
 
-		<tbody id="models">
-		<tr id="valuemodel"><td>
-		<fieldset > 
+			<tbody id="models">
+				<tr id="valuemodel">
+					<td>
+						<fieldset> 
+							<legend>value or model</legend>    
+							<input id="webtronics_part_value">
+							<select id="webtronics_part_model">
+								<option value="">none</option>	
+							</select>
 		
-			<legend>value or model</legend>    
-			<input id="webtronics_part_value">
-			<select id="webtronics_part_model">
-				<option value="">none</option>	
-			</select>
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="directive">
+					<td>
+						<fieldset>
+							<legend>spice directive</legend>
+							<input id="webtronics_part_dir_value">
+							<select id="webtronics_part_dir_model">
+								<option value="">none</option>	
+							</select>
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_amplitude">
+					<td>
+						<fieldset >
+							<legend>Amplitude</legend>    
+							<input id="webtronics_amplitude_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_phase">
+					<td>
+						<fieldset>
+							<legend>Phase</legend>    
+							<input id="webtronics_phase_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_offsetvoltage">
+					<td>
+						<fieldset>
+							<legend>Offset Voltage VO:</legend>    
+							<input id="webtronics_offsetvoltage_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_voltageamplitude">
+					<td>
+						<fieldset>
+							<legend>Voltage Amplitude VA:</legend>    
+							<input id="webtronics_voltageamplitude_value" type="text" value="0" >
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_frequency">
+					<td>
+						<fieldset>
+							<legend>Frequency FREQ:</legend>    
+							<input id="webtronics_frequency_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_delaytime">
+					<td>
+						<fieldset>
+							<legend>Delay Time TD:</legend>    
+							<input id="webtronics_delaytime_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_dampingfactor">
+					<td>
+						<fieldset>
+							<legend>Damping Factor THETA:</legend>    
+							<input id="webtronics_dampingfactor_value" type="text" value="0">
 		
-		</fieldset>
-		</td></tr><tr id="directive"><td>
-		<fieldset >
-		
-			<legend>spice directive</legend>    
-			<input id="webtronics_part_dir_value">
-			<select id="webtronics_part_dir_model">
-				<option value="">none</option>	
-			</select>
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_amplitude"><td>
-		<fieldset >
-		
-			<legend>Amplitude</legend>    
-			<input id="webtronics_amplitude_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_phase"><td>
-
-		<fieldset >
-		
-			<legend>Phase</legend>    
-			<input id="webtronics_phase_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_offsetvoltage"><td>
-		
-		<fieldset >
-				
-			<legend>Offset Voltage VO:</legend>    
-			<input id="webtronics_offsetvoltage_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_voltageamplitude"><td>
-
-		<fieldset >
-		
-			<legend>Voltage Amplitude VA:</legend>    
-			<input id="webtronics_voltageamplitude_value" type="text" value="0" >
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_frequency"><td>
-
-		<fieldset >
-		
-			<legend>Frequency FREQ:</legend>    
-			<input id="webtronics_frequency_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_delaytime"><td>
-
-		<fieldset >
-		
-			<legend>Delay Time TD:</legend>    
-			<input id="webtronics_delaytime_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_dampingfactor"><td>
-
-		<fieldset >
-		
-			<legend>Damping Factor THETA:</legend>    
-			<input id="webtronics_dampingfactor_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_print_dir_field"><td>
-		
-
-		<fieldset >
-			
-			<legend>measurements</legend>    
-			<input id="webtronics_print_dir_value">
-		
-		</fieldset>
-		</td></tr>
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_print_dir_field">
+					<td>
+						<fieldset >
+							<legend>measurements</legend>    
+							<input id="webtronics_print_dir_value">
+						</fieldset>
+					</td>
+				</tr>
 			<!--
 			pulse source properties
 			-->
 
-		<tr id="webtronics_pulval1"><td>
-		<fieldset >
-		
-			<legend>Initial Value V1:</legend>    
-			<input id="webtronics_pulval1_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_pulval2"><td>
-
-		<fieldset >
-		
-			<legend>Pulse Value V2:</legend>    
-			<input id="webtronics_pulval2_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_pulval3"><td>
-		
-		<fieldset >
-				
-			<legend>Delay Time TD:</legend>    
-			<input id="webtronics_pulval3_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_pulval4"><td>
-
-		<fieldset >
-		
-			<legend>Rise Time TR:</legend>    
-			<input id="webtronics_pulval4_value" type="text" value="0" >
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_pulval5"><td>
-
-		<fieldset >
-		
-			<legend>Fall Time TF:</legend>    
-			<input id="webtronics_pulval5_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_pulval6"><td>
-
-		<fieldset >
-		
-			<legend>Pulse Width PW:</legend>    
-			<input id="webtronics_pulval6_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_pulval7"><td>
-
-		<fieldset >
-		
-			<legend>Pulse Width PER:</legend>    
-			<input id="webtronics_pulval7_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr>
-
-
-		<!--for pwl voltage source
-		-->
-
-<tr id="webtronics_pwlval1"><td>
-		<fieldset >
-		
-			<legend>Time T1:</legend>    
-			<input id="webtronics_pwlval1_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_pwlval2"><td>
-
-		<fieldset >
-		
-			<legend>Voltage Value V1:</legend>    
-			<input id="webtronics_pwlval2_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_pwlval3"><td>
-		
-		<fieldset >
-				
-			<legend>Time T2:</legend>    
-			<input id="webtronics_pwlval3_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_pwlval4"><td>
-
-		<fieldset >
-		
-			<legend>Voltage Value V2:</legend>    
-			<input id="webtronics_pwlval4_value" type="text" value="0" >
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_pwlval5"><td>
-
-		<fieldset >
-		
-			<legend>Time T3:</legend>    
-			<input id="webtronics_pwlval5_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_pwlval6"><td>
-
-		<fieldset >
-		
-			<legend>Voltage Value V3:</legend>    
-			<input id="webtronics_pwlval6_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_pwlval7"><td>
-
-		<fieldset >
-		
-			<legend>Time T4:</legend>    
-			<input id="webtronics_pwlval7_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_pwlval8"><td>
-
-		<fieldset >
-		
-			<legend>Voltage Value V4:</legend>    
-			<input id="webtronics_pwlval8_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr>
-
-		<!--for exponential voltage source
-		-->
-
-<tr id="webtronics_eval1"><td>
-		<fieldset >
-		
-			<legend>Initial Value V1:</legend>    
-			<input id="webtronics_eval1_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_eval2"><td>
-
-		<fieldset >
-		
-			<legend>Pulse Value V2:</legend>    
-			<input id="webtronics_eval2_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_eval3"><td>
-		
-		<fieldset >
-				
-			<legend>Rise Time Delay TD1:</legend>    
-			<input id="webtronics_eval3_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_eval4"><td>
-
-		<fieldset >
-		
-			<legend>Rise Time Constant TAU1:</legend>    
-			<input id="webtronics_eval4_value" type="text" value="0" >
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_eval5"><td>
-
-		<fieldset >
-		
-			<legend>Fall Time Delay TD2:</legend>    
-			<input id="webtronics_eval5_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr><tr id="webtronics_eval6"><td>
-
-		<fieldset >
-		
-			<legend>Fall Time Constant TAU2:</legend>    
-			<input id="webtronics_eval6_value" type="text" value="0">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_outundef"><td>
-
-		<fieldset >
-		
-			<legend>Out Undefined:</legend>    
-			<input id="webtronics_outundef_value" type="text" value="0.5">
-		
-		</fieldset>
-		</td></tr>
-
-
-
-
-		</tbody>
-
-		<!-- Digital Models-->
-
-		<tbody id=digital>
-
-		<tr id="webtronics_risedelay" class="digital"><td>
-		<fieldset>
-		
-			<legend>Rise Delay:</legend>    
-			<input id="webtronics_risedelay_value" type="text" value="1.0e-9">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_falldelay" class="digital"><td>
-		<fieldset>
-		
-			<legend>Fall Delay:</legend>    
-			<input id="webtronics_falldelay_value" type="text" value="1.0e-9">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_inputload" class="digital"><td>
-		<fieldset>
-		
-			<legend>Input Load:</legend>    
-			<input id="webtronics_inputload_value" type="text" value="0.5e-12">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_clkdelay" class="digital"><td>
-		<fieldset>
-		
-			<legend>Clk Delay:</legend>    
-			<input id="webtronics_clkdelay_value" type="text" value="1.0e-9">		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_setdelay" class="digital"><td>
-		<fieldset>
-		
-			<legend>Set Delay:</legend>    
-			<input id="webtronics_setdelay_value" type="text" value="1.0e-9">		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_resetdelay" class="digital"><td>
-		<fieldset>
-		
-			<legend>Reset Delay:</legend>    
-			<input id="webtronics_resetdelay_value" type="text" value="1.0">		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_datadelay" class="digital"><td>
-		<fieldset>
-		
-			<legend>Data Delay:</legend>    
-			<input id="webtronics_datadelay_value" type="text" value="1.0">		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_enabledelay" class="digital"><td>
-		<fieldset>
-		
-			<legend>Enable Delay:</legend>    
-			<input id="webtronics_enabledelay_value" type="text" value="1.0">		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_srdelay" class="digital"><td>
-		<fieldset>
-		
-			<legend>SR Delay:</legend>    
-			<input id="webtronics_srdelay_value" type="text" value="1.0">		
-		</fieldset>
-		</td></tr>
-
-
-
-		<tr id="webtronics_ic" class="digital"> <td>
-		<fieldset>
-		
-			<legend>Ic:</legend>    
-			<input id="webtronics_ic_value" type="text" value="0">		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_dataload" class="digital"><td>
-		<fieldset>
-		
-			<legend>Data Load:</legend>    
-			<input id="webtronics_dataload_value" type="text" value="1.0e-12">		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_jkload" class="digital"><td>
-		<fieldset>
-		
-			<legend>JK Load:</legend>    
-			<input id="webtronics_jkload_value" type="text" value="1.0e-12">		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_tload" class="digital"><td>
-		<fieldset>
-		
-			<legend>T Load:</legend>    
-			<input id="webtronics_tload_value" type="text" value="1.0e-12">		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_srload" class="digital"><td>
-		<fieldset>
-		
-			<legend>SR Load:</legend>    
-			<input id="webtronics_srload_value" type="text" value="1.0e-12">		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_clkload" class="digital"><td>
-		<fieldset>
-		
-			<legend>Clk Load:</legend>    
-			<input id="webtronics_clkload_value" type="text" value="1.0e-12">		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_setload" class="digital"><td>
-		<fieldset>
-		
-			<legend>Set Load:</legend>    
-			<input id="webtronics_setload_value" type="text" value="1.0e-12">		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_resetload" class="digital"><td>
-		<fieldset>
-		
-			<legend>Reset Load:</legend>    
-			<input id="webtronics_resetload_value" type="text" value="1.0e-12">		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_enableload" class="digital"><td>
-		<fieldset>
-		
-			<legend>Enable Load:</legend>    
-			<input id="webtronics_enableload_value" type="text" value="1.0e-12">		
-		</fieldset>
-		</td></tr>
-
-
-		</tbody>
-
-		<tbody id="analogs">
-			
-		<tr id="webtronics_inoffset" class="analog" ><td>
-		<fieldset>
-		
-			<legend>Inoffset:</legend>    
-			<input id="webtronics_inoffset_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_gain" class="analog"><td>
-		<fieldset>
-		
-			<legend>Gain:</legend>    
-			<input id="webtronics_gain_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_outoffset" class="analog"><td>
-		<fieldset>
-		
-			<legend>Outoffset:</legend>    
-			<input id="webtronics_outoffset_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_ingain" class="analog"><td>
-		<fieldset>
-		
-			<legend>Ingain:</legend>    
-			<input id="webtronics_ingain_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_outgain" class="analog"><td>
-		<fieldset>
-		
-			<legend>Outgain:</legend>    
-			<input id="webtronics_outgain_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_denoffset" class="analog"><td>
-		<fieldset>
-		
-			<legend>Denominatoroffset:</legend>    
-			<input id="webtronics_denoffset_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_dengain" class="analog"><td>
-		<fieldset>
-		
-			<legend>DenominatorGain:</legend>    
-			<input id="webtronics_dengain_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_numoffset" class="analog"><td>
-		<fieldset>
-		
-			<legend>Numeratoroffset:</legend>    
-			<input id="webtronics_numoffset_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_numgain" class="analog"><td>
-		<fieldset>
-		
-			<legend>NumeratorGain:</legend>    
-			<input id="webtronics_numgain_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_fraction" class="analog"><td>
-		<fieldset>
-		
-			<legend>Fraction:</legend>    
-			<input id="webtronics_fraction_value" type="text" value="FALSE">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_dendomain" class="analog"><td>
-		<fieldset>
-		
-			<legend>Denominatordomain:</legend>    
-			<input id="webtronics_dendomain_value" type="text" value="1.0e-10">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_denlowerlimit" class="analog"><td>
-		<fieldset>
-		
-			<legend>DenominatorLowerlimit:</legend>    
-			<input id="webtronics_denlowerlimit_value" type="text" value="1.0e-10">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_outlowerlimit" class="analog"><td>
-		<fieldset>
-		
-			<legend>OutputLowerlimit:</legend>    
-			<input id="webtronics_outlowerlimit_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_outupperlimit" class="analog"><td>
-		<fieldset>
-		
-			<legend>OutputUpperlimit:</legend>    
-			<input id="webtronics_outupperlimit_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-		</td></tr>
-		<tr id="webtronics_limitrange" class="analog"><td>
-		<fieldset>
-		
-			<legend>limitrange:</legend>    
-			<input id="webtronics_limitrange_value" type="text" value="1.0e-6">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_upperdelta" class="analog"><td>
-		<fieldset>
-		
-			<legend>Upperdelta:</legend>    
-			<input id="webtronics_upperdelta_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_lowerdelta" class="analog"><td>
-		<fieldset>
-		
-			<legend>Lowerdelta:</legend>    
-			<input id="webtronics_lowerdelta_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_indomain" class="analog"><td>
-		<fieldset>
-		
-			<legend>Inputdomain:</legend>    
-			<input id="webtronics_indomain_value" type="text" value="0.01">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_xarr" class="analog"><td>
-		<fieldset>
-		
-			<legend>x elementarray:</legend>    
-			<input id="webtronics_xarr_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_yarr" class="analog"><td>
-		<fieldset>
-		
-			<legend>y elementarray:</legend>    
-			<input id="webtronics_yarr_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_amodel" class="analog"><td>
-		<fieldset>
-		
-			<legend>model:</legend>    
-			<input id="webtronics_amodel_value" type="text" value="and">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_coff" class="analog"><td>
-		<fieldset>
-		
-			<legend>Controloff:</legend>    
-			<input id="webtronics_coff_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_con" class="analog"><td>
-		<fieldset>
-		
-			<legend>Controlon:</legend>    
-			<input id="webtronics_con_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_roff" class="analog"><td>
-		<fieldset>
-		
-			<legend>Offresistance:</legend>    
-			<input id="webtronics_roff_value" type="text" value="1.0e12">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_ron" class="analog"><td>
-		<fieldset>
-		
-			<legend>Onresistance:</legend>    
-			<input id="webtronics_ron_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_log" class="analog"><td>
-		<fieldset>
-		
-			<legend>Log:</legend>    
-			<input id="webtronics_log_value" type="text" value="TRUE">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_vbreak" class="analog"><td>
-		<fieldset>
-		
-			<legend>Breakdownvoltage:</legend>    
-			<input id="webtronics_vbreak_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_ibreak" class="analog"><td>
-		<fieldset>
-		
-			<legend>Breakdowncurrent:</legend>    
-			<input id="webtronics_ibreak_value" type="text" value="2.0e-2">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_irev" class="analog"><td>
-		<fieldset>
-		
-			<legend>Reversecurrent:</legend>    
-			<input id="webtronics_irev_value" type="text" value="1.0e-6">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_rbreak" class="analog"><td>
-		<fieldset>
-		
-			<legend>Breakdownresistance:</legend>    
-			<input id="webtronics_rbreak_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_limitswitch" class="analog"><td>
-		<fieldset>
-		
-			<legend>limitswitch:</legend>    
-			<input id="webtronics_limitswitch_value" type="text" value="FALSE">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_isat" class="analog"><td>
-		<fieldset>
-		
-			<legend>Saturationcurrent:</legend>    
-			<input id="webtronics_isat_value" type="text" value="1.0e-12">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_nfor" class="analog"><td>
-		<fieldset>
-		
-			<legend>Forwardemission coefficient:</legend>    
-			<input id="webtronics_nfor_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-
-
-		<tr id="webtronics_rsource" class="analog"><td>
-		<fieldset>
-		
-			<legend>Sourcingresistance:</legend>    
-			<input id="webtronics_rsource_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_rsink" class="analog"><td>
-		<fieldset>
-		
-			<legend>Sinkingresistance:</legend>    
-			<input id="webtronics_rsink_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_ilimitsource" class="analog"><td>
-		<fieldset>
-		
-			<legend>CurrentSourcingLimit:</legend>    
-			<input id="webtronics_ilimitsource_value" type="text" value="1.0e-3">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_ilimitsink" class="analog"><td>
-		<fieldset>
-		
-			<legend>CurrentSinkingLimit:</legend>    
-			<input id="webtronics_ilimitsink_value" type="text" value="1.0e-3">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_vpwr" class="analog"><td>
-		<fieldset>
-		
-			<legend>UpperlowerPower Range:</legend>    
-			<input id="webtronics_vpwr_value" type="text" value="1.0e-6">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_isource" class="analog"><td>
-		<fieldset>
-		
-			<legend>SourceCurrent Smoothingrange:</legend>    
-			<input id="webtronics_isource_value" type="text" value="1.0e-9">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_isink" class="analog"><td>
-		<fieldset>
-		
-			<legend>SinkCurrent Smoothingrange:</legend>    
-			<input id="webtronics_isink_value" type="text" value="1.0e-9">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_routdomain" class="analog"><td>
-		<fieldset>
-		
-			<legend>VoltageDelta Smoothingrange:</legend>    
-			<input id="webtronics_routdomain_value" type="text" value="1.0e-9">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_inlow" class="analog"><td>
-		<fieldset>
-		
-			<legend>Inputlowvalue:</legend>    
-			<input id="webtronics_inlow_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_inhigh" class="analog"><td>
-		<fieldset>
-		
-			<legend>InputHighvalue:</legend>    
-			<input id="webtronics_inhigh_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_hyst" class="analog"><td>
-		<fieldset>
-		
-			<legend>Hysteresis:</legend>    
-			<input id="webtronics_hyst_value" type="text" value="0.1">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_outic" class="analog"><td>
-		<fieldset>
-		
-			<legend>OutputInitialCondition:</legend>    
-			<input id="webtronics_outic_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_numcoeff" class="analog"><td>
-		<fieldset>
-		
-			<legend>NumeratorCoefficient:</legend>    
-			<input id="webtronics_numcoeff_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_dencoeff" class="analog"><td>
-		<fieldset>
-		
-			<legend>DenominatorCoefficient:</legend>    
-			<input id="webtronics_dencoeff_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_intic" class="analog"><td>
-		<fieldset>
-		
-			<legend>IntegratorStageInitialCondition:</legend>    
-			<input id="webtronics_intic_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_denormfreq" class="analog"><td>
-		<fieldset>
-		
-			<legend>Denormalizedfrequency:</legend>    
-			<input id="webtronics_denormfreq_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-		</td></tr>
-		<tr id="webtronics_riseslope" class="analog"><td>
-		<fieldset>
-		
-			<legend>MaxRiseSlope:</legend>    
-			<input id="webtronics_riseslope_value" type="text" value="1.0e9">
-		
-		</fieldset>
-		</td></tr>
-		</td></tr>
-		<tr id="webtronics_fallslope" class="analog"><td>
-		<fieldset>
-		
-			<legend>MaxFallSlope:</legend>    
-			<input id="webtronics_fallslope_value" type="text" value="1.0e9">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_outlow" class="analog"><td>
-		<fieldset>
-		
-			<legend>Outputlowvalue:</legend>    
-			<input id="webtronics_outlow_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_outhigh" class="analog"><td>
-		<fieldset>
-		
-			<legend>Output Highvalue:</legend>    
-			<input id="webtronics_outhigh_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_cntlarr" class="analog"><td>
-		<fieldset>
-		
-			<legend>Control Array:</legend>    
-			<input id="webtronics_cntlarr_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_freqarr" class="analog"><td>
-		<fieldset>
-		
-			<legend>Frequency Array:</legend>    
-			<input id="webtronics_freqarr_value" type="text" value="1.0e3">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_duty" class="analog"><td>
-		<fieldset>
-		
-			<legend>Duty Cycle:</legend>    
-			<input id="webtronics_duty_value" type="text" value="0.5">
-		
-		</fieldset>
-		</td></tr>
-
-
-		<tr id="webtronics_risetime" class="analog"><td>
-		<fieldset>
-		
-			<legend>OutputRiseTime:</legend>    
-			<input id="webtronics_risetime_value" type="text" value="1.0e-9">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_falltime" class="analog"><td>
-		<fieldset>
-		
-			<legend>OutputFallTime:</legend>    
-			<input id="webtronics_falltime_value" type="text" value="1.0e-9">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_clktrig" class="analog"><td>
-		<fieldset>
-		
-			<legend>ClockTriggerValue:</legend>    
-			<input id="webtronics_clktrig_value" type="text" value="0.5">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_pwarr" class="analog"><td>
-		<fieldset>
-		
-			<legend>PulseWidthArray:</legend>    
-			<input id="webtronics_pwarr_value" type="text" value="1.0e-6">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_ptrig" class="analog"><td>
-		<fieldset>
-		
-			<legend>PositiveEdgeTrigger:</legend>    
-			<input id="webtronics_ptrig_value" type="text" value="TRUE">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_rdelay" class="analog"><td>
-		<fieldset>
-		
-			<legend>OutputTriggerDelay:</legend>    
-			<input id="webtronics_rdelay_value" type="text" value="1.0e-9">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_fdelay" class="analog"><td>
-		<fieldset>
-		
-			<legend>Outputpwdelay:</legend>    
-			<input id="webtronics_fdelay_value" type="text" value="1.0e-9">
-		
-		</fieldset>
-		</td></tr>
-
-		<tr id="webtronics_rmax" class="analog"><td>
-		<fieldset>
-		
-			<legend>MaximumResistance:</legend>    
-			<input id="webtronics_rmax_value" type="text" value="10000.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_rmin" class="analog"><td>
-		<fieldset>
-		
-			<legend>MinimumResistance:</legend>    
-			<input id="webtronics_rmin_value" type="text" value="10.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_rinit" class="analog"><td>
-		<fieldset>
-		
-			<legend>InitialResistance:</legend>    
-			<input id="webtronics_rinit_value" type="text" value="7000.0">
-		
-		</fieldset>
-		</td></tr>
-				<tr id="webtronics_vt" class="analog"><td>
-		<fieldset>
-		
-			<legend>Threshold:</legend>    
-			<input id="webtronics_vt_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_alpha" class="analog"><td>
-		<fieldset>
-		
-			<legend>ModelParameter1:</legend>    
-			<input id="webtronics_alpha_value" type="text" value="0.0">
-		
-		</fieldset>
-		</td></tr>
-		<tr id="webtronics_beta" class="analog"><td>
-		<fieldset>
-		
-			<legend>ModelParameter2:</legend>    
-			<input id="webtronics_beta_value" type="text" value="1.0">
-		
-		</fieldset>
-		</td></tr>
-		</tbody>
-
+				<tr id="webtronics_pulval1">
+					<td>
+						<fieldset>
+							<legend>Initial Value V1:</legend>    
+							<input id="webtronics_pulval1_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_pulval2">
+					<td>
+						<fieldset>
+							<legend>Pulse Value V2:</legend>    
+							<input id="webtronics_pulval2_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_pulval3">
+					<td>
+						<fieldset>
+							<legend>Delay Time TD:</legend>    
+							<input id="webtronics_pulval3_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_pulval4">
+					<td>
+						<fieldset>
+							<legend>Rise Time TR:</legend>    
+							<input id="webtronics_pulval4_value" type="text" value="0" >
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_pulval5">
+					<td>
+						<fieldset>
+							<legend>Fall Time TF:</legend>    
+							<input id="webtronics_pulval5_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_pulval6">
+					<td>
+						<fieldset>
+							<legend>Pulse Width PW:</legend>    
+							<input id="webtronics_pulval6_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_pulval7">
+					<td>
+						<fieldset >
+							<legend>Pulse Width PER:</legend>    
+							<input id="webtronics_pulval7_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<!--for pwl voltage source-->
+
+				<tr id="webtronics_pwlval1">
+					<td>
+						<fieldset>
+							<legend>Time T1:</legend>    
+							<input id="webtronics_pwlval1_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_pwlval2">
+					<td>
+						<fieldset>
+							<legend>Voltage Value V1:</legend>    
+							<input id="webtronics_pwlval2_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_pwlval3">
+					<td>
+						<fieldset>
+							<legend>Time T2:</legend>    
+							<input id="webtronics_pwlval3_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_pwlval4">
+					<td>
+						<fieldset>
+							<legend>Voltage Value V2:</legend>    
+							<input id="webtronics_pwlval4_value" type="text" value="0" >
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_pwlval5">
+					<td>
+						<fieldset>
+							<legend>Time T3:</legend>
+							<input id="webtronics_pwlval5_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_pwlval6">
+					<td>
+						<fieldset>
+							<legend>Voltage Value V3:</legend>    
+							<input id="webtronics_pwlval6_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_pwlval7">
+					<td>
+						<fieldset>
+							<legend>Time T4:</legend>
+							<input id="webtronics_pwlval7_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_pwlval8">
+					<td>
+						<fieldset>
+							<legend>Voltage Value V4:</legend>
+							<input id="webtronics_pwlval8_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<!--for exponential voltage source-->
+				<tr id="webtronics_eval1">
+					<td>
+						<fieldset>
+							<legend>Initial Value V1:</legend>
+							<input id="webtronics_eval1_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_eval2">
+					<td>
+						<fieldset>
+							<legend>Pulse Value V2:</legend>    
+							<input id="webtronics_eval2_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_eval3">
+					<td>
+						<fieldset>
+							<legend>Rise Time Delay TD1:</legend>    
+							<input id="webtronics_eval3_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_eval4">
+					<td>
+						<fieldset>
+							<legend>Rise Time Constant TAU1:</legend>    
+							<input id="webtronics_eval4_value" type="text" value="0" >
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_eval5">
+					<td>
+						<fieldset>
+							<legend>Fall Time Delay TD2:</legend>    
+							<input id="webtronics_eval5_value" type="text" value="0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_eval6">
+					<td>
+						<fieldset >
+							<legend>Fall Time Constant TAU2:</legend>    
+							<input id="webtronics_eval6_value" type="text" value="0">
+		
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_outundef">
+					<td>
+						<fieldset>
+							<legend>Out Undefined:</legend>    
+							<input id="webtronics_outundef_value" type="text" value="0.5">
+						</fieldset>
+					</td>
+				</tr>
+			</tbody>
+
+			<!-- Digital Models-->
+
+			<tbody id=digital>
+				<tr id="webtronics_risedelay" class="digital">
+					<td>
+						<fieldset>
+							<legend>Rise Delay:</legend>    
+							<input id="webtronics_risedelay_value" type="text" value="1.0e-9">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_falldelay" class="digital">
+					<td>
+						<fieldset>
+							<legend>Fall Delay:</legend>    
+							<input id="webtronics_falldelay_value" type="text" value="1.0e-9">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_inputload" class="digital">
+					<td>
+						<fieldset>
+							<legend>Input Load:</legend>    
+							<input id="webtronics_inputload_value" type="text" value="0.5e-12">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_clkdelay" class="digital">
+					<td>
+						<fieldset>
+							<legend>Clk Delay:</legend>    
+							<input id="webtronics_clkdelay_value" type="text" value="1.0e-9">		
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_setdelay" class="digital">
+					<td>
+						<fieldset>
+							<legend>Set Delay:</legend>    
+							<input id="webtronics_setdelay_value" type="text" value="1.0e-9">		
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_resetdelay" class="digital">
+					<td>
+						<fieldset>
+							<legend>Reset Delay:</legend>    
+							<input id="webtronics_resetdelay_value" type="text" value="1.0">		
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_datadelay" class="digital">
+					<td>
+						<fieldset>
+							<legend>Data Delay:</legend>    
+							<input id="webtronics_datadelay_value" type="text" value="1.0">		
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_enabledelay" class="digital">
+					<td>
+						<fieldset>
+							<legend>Enable Delay:</legend>    
+							<input id="webtronics_enabledelay_value" type="text" value="1.0">		
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_srdelay" class="digital">
+					<td>
+						<fieldset>
+							<legend>SR Delay:</legend>    
+							<input id="webtronics_srdelay_value" type="text" value="1.0">		
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_ic" class="digital"> 
+					<td>
+						<fieldset>
+							<legend>Ic:</legend>    
+							<input id="webtronics_ic_value" type="text" value="0">		
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_dataload" class="digital">
+					<td>
+						<fieldset>
+							<legend>Data Load:</legend>    
+							<input id="webtronics_dataload_value" type="text" value="1.0e-12">		
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_jkload" class="digital">
+					<td>
+						<fieldset>
+							<legend>JK Load:</legend>    
+							<input id="webtronics_jkload_value" type="text" value="1.0e-12">		
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_tload" class="digital">
+					<td>
+						<fieldset>
+							<legend>T Load:</legend>    
+							<input id="webtronics_tload_value" type="text" value="1.0e-12">		
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_srload" class="digital">
+					<td>
+						<fieldset>
+							<legend>SR Load:</legend>    
+							<input id="webtronics_srload_value" type="text" value="1.0e-12">		
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_clkload" class="digital">
+					<td>
+						<fieldset>
+							<legend>Clk Load:</legend>    
+							<input id="webtronics_clkload_value" type="text" value="1.0e-12">		
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_setload" class="digital">
+					<td>
+						<fieldset>
+							<legend>Set Load:</legend>    
+							<input id="webtronics_setload_value" type="text" value="1.0e-12">		
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_resetload" class="digital">
+					<td>
+						<fieldset>
+							<legend>Reset Load:</legend>    
+							<input id="webtronics_resetload_value" type="text" value="1.0e-12">		
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_enableload" class="digital">
+					<td>
+						<fieldset>
+							<legend>Enable Load:</legend>    
+							<input id="webtronics_enableload_value" type="text" value="1.0e-12">		
+						</fieldset>
+					</td>
+				</tr>
+			</tbody>
+
+			<tbody id="analogs">
+				<tr id="webtronics_inoffset" class="analog" >
+					<td>
+						<fieldset>
+							<legend>Inoffset:</legend>    
+							<input id="webtronics_inoffset_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_gain" class="analog">
+					<td>
+						<fieldset>
+							<legend>Gain:</legend>    
+							<input id="webtronics_gain_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_outoffset" class="analog">
+					<td>
+						<fieldset>
+							<legend>Outoffset:</legend>    
+							<input id="webtronics_outoffset_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_ingain" class="analog">
+					<td>
+						<fieldset>
+							<legend>Ingain:</legend>    
+							<input id="webtronics_ingain_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_outgain" class="analog">
+					<td>
+						<fieldset>
+							<legend>Outgain:</legend>    
+							<input id="webtronics_outgain_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_denoffset" class="analog">
+					<td>
+						<fieldset>
+							<legend>Denominatoroffset:</legend>    
+							<input id="webtronics_denoffset_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_dengain" class="analog">
+					<td>
+						<fieldset>
+							<legend>DenominatorGain:</legend>    
+							<input id="webtronics_dengain_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+
+				<tr id="webtronics_numoffset" class="analog">
+					<td>
+						<fieldset>
+							<legend>Numeratoroffset:</legend>    
+							<input id="webtronics_numoffset_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_numgain" class="analog">
+					<td>
+						<fieldset>
+							<legend>NumeratorGain:</legend>    
+							<input id="webtronics_numgain_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_fraction" class="analog">
+					<td>
+						<fieldset>
+							<legend>Fraction:</legend>    
+							<input id="webtronics_fraction_value" type="text" value="FALSE">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_dendomain" class="analog">
+					<td>
+						<fieldset>
+							<legend>Denominatordomain:</legend>    
+							<input id="webtronics_dendomain_value" type="text" value="1.0e-10">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_denlowerlimit" class="analog">
+					<td>
+						<fieldset>
+								<legend>DenominatorLowerlimit:</legend>    
+								<input id="webtronics_denlowerlimit_value" type="text" value="1.0e-10">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_outlowerlimit" class="analog">
+					<td>
+						<fieldset>
+							<legend>OutputLowerlimit:</legend>    
+							<input id="webtronics_outlowerlimit_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_outupperlimit" class="analog">
+					<td>
+						<fieldset>
+							<legend>OutputUpperlimit:</legend>    
+							<input id="webtronics_outupperlimit_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+				<!-- </td></tr> -->
+				<tr id="webtronics_limitrange" class="analog">
+					<td>
+						<fieldset>
+							<legend>limitrange:</legend>    
+							<input id="webtronics_limitrange_value" type="text" value="1.0e-6">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_upperdelta" class="analog">
+					<td>
+						<fieldset>
+							<legend>Upperdelta:</legend>    
+							<input id="webtronics_upperdelta_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_lowerdelta" class="analog">
+					<td>
+						<fieldset>
+							<legend>Lowerdelta:</legend>    
+							<input id="webtronics_lowerdelta_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_indomain" class="analog">
+					<td>
+						<fieldset>
+							<legend>Inputdomain:</legend>    
+							<input id="webtronics_indomain_value" type="text" value="0.01">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_xarr" class="analog">
+					<td>
+						<fieldset>
+							<legend>x elementarray:</legend>    
+							<input id="webtronics_xarr_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_yarr" class="analog">
+					<td>
+						<fieldset>
+							<legend>y elementarray:</legend>    
+							<input id="webtronics_yarr_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_amodel" class="analog">
+					<td>
+						<fieldset>
+							<legend>model:</legend>    
+							<input id="webtronics_amodel_value" type="text" value="and">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_coff" class="analog">
+					<td>
+						<fieldset>
+							<legend>Controloff:</legend>    
+							<input id="webtronics_coff_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_con" class="analog">
+					<td>
+						<fieldset>
+							<legend>Controlon:</legend>    
+							<input id="webtronics_con_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_roff" class="analog">
+					<td>
+						<fieldset>
+							<legend>Offresistance:</legend>    
+							<input id="webtronics_roff_value" type="text" value="1.0e12">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_ron" class="analog">
+					<td>
+						<fieldset>
+							<legend>Onresistance:</legend>    
+							<input id="webtronics_ron_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_log" class="analog">
+					<td>
+						<fieldset>
+							<legend>Log:</legend>    
+							<input id="webtronics_log_value" type="text" value="TRUE">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_vbreak" class="analog">
+					<td>
+						<fieldset>
+							<legend>Breakdownvoltage:</legend>    
+							<input id="webtronics_vbreak_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_ibreak" class="analog">
+					<td>
+						<fieldset>
+							<legend>Breakdowncurrent:</legend>    
+							<input id="webtronics_ibreak_value" type="text" value="2.0e-2">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_irev" class="analog">
+					<td>
+						<fieldset>
+							<legend>Reversecurrent:</legend>    
+							<input id="webtronics_irev_value" type="text" value="1.0e-6">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_rbreak" class="analog">
+					<td>
+						<fieldset>
+							<legend>Breakdownresistance:</legend>    
+							<input id="webtronics_rbreak_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_limitswitch" class="analog">
+					<td>
+						<fieldset>
+							<legend>limitswitch:</legend>    
+							<input id="webtronics_limitswitch_value" type="text" value="FALSE">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_isat" class="analog">
+					<td>
+						<fieldset>
+							<legend>Saturationcurrent:</legend>    
+							<input id="webtronics_isat_value" type="text" value="1.0e-12">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_nfor" class="analog">
+					<td>
+						<fieldset>
+							<legend>Forwardemission coefficient:</legend>    
+							<input id="webtronics_nfor_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_rsource" class="analog">
+					<td>
+						<fieldset>
+							<legend>Sourcingresistance:</legend>    
+							<input id="webtronics_rsource_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_rsink" class="analog">
+					<td>
+						<fieldset>
+							<legend>Sinkingresistance:</legend>    
+							<input id="webtronics_rsink_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_ilimitsource" class="analog">
+					<td>
+						<fieldset>
+							<legend>CurrentSourcingLimit:</legend>    
+							<input id="webtronics_ilimitsource_value" type="text" value="1.0e-3">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_ilimitsink" class="analog">
+					<td>
+						<fieldset>
+							<legend>CurrentSinkingLimit:</legend>    
+							<input id="webtronics_ilimitsink_value" type="text" value="1.0e-3">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_vpwr" class="analog">
+					<td>
+						<fieldset>
+							<legend>UpperlowerPower Range:</legend>    
+							<input id="webtronics_vpwr_value" type="text" value="1.0e-6">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_isource" class="analog">
+					<td>
+						<fieldset>
+							<legend>SourceCurrent Smoothingrange:</legend>    
+							<input id="webtronics_isource_value" type="text" value="1.0e-9">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_isink" class="analog">
+					<td>
+						<fieldset>
+							<legend>SinkCurrent Smoothingrange:</legend>    
+							<input id="webtronics_isink_value" type="text" value="1.0e-9">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_routdomain" class="analog">
+					<td>
+						<fieldset>
+							<legend>VoltageDelta Smoothingrange:</legend>    
+							<input id="webtronics_routdomain_value" type="text" value="1.0e-9">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_inlow" class="analog">
+					<td>
+						<fieldset>
+							<legend>Inputlowvalue:</legend>    
+							<input id="webtronics_inlow_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_inhigh" class="analog">
+					<td>
+						<fieldset>
+							<legend>InputHighvalue:</legend>    
+							<input id="webtronics_inhigh_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_hyst" class="analog">
+					<td>
+						<fieldset>
+							<legend>Hysteresis:</legend>    
+							<input id="webtronics_hyst_value" type="text" value="0.1">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_outic" class="analog">
+					<td>
+						<fieldset>
+							<legend>OutputInitialCondition:</legend>    
+							<input id="webtronics_outic_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_numcoeff" class="analog">
+					<td>
+						<fieldset>
+							<legend>NumeratorCoefficient:</legend>    
+							<input id="webtronics_numcoeff_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_dencoeff" class="analog">
+					<td>
+						<fieldset>
+							<legend>DenominatorCoefficient:</legend>    
+							<input id="webtronics_dencoeff_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_intic" class="analog">
+					<td>
+						<fieldset>
+							<legend>IntegratorStageInitialCondition:</legend>    
+							<input id="webtronics_intic_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_denormfreq" class="analog">
+					<td>
+						<fieldset>
+							<legend>Denormalizedfrequency:</legend>    
+							<input id="webtronics_denormfreq_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+				<!-- </td></tr> -->
+				<tr id="webtronics_riseslope" class="analog">
+					<td>
+						<fieldset>
+							<legend>MaxRiseSlope:</legend>    
+							<input id="webtronics_riseslope_value" type="text" value="1.0e9">
+						</fieldset>
+					</td>
+				</tr>
+				<!-- </td></tr> -->
+				<tr id="webtronics_fallslope" class="analog">
+					<td>
+						<fieldset>
+							<legend>MaxFallSlope:</legend>    
+							<input id="webtronics_fallslope_value" type="text" value="1.0e9">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_outlow" class="analog">
+					<td>
+						<fieldset>
+							<legend>Outputlowvalue:</legend>    
+							<input id="webtronics_outlow_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_outhigh" class="analog">
+					<td>
+						<fieldset>
+							<legend>Output Highvalue:</legend>    
+							<input id="webtronics_outhigh_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_cntlarr" class="analog">
+					<td>
+						<fieldset>
+							<legend>Control Array:</legend>    
+							<input id="webtronics_cntlarr_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_freqarr" class="analog">
+					<td>
+						<fieldset>
+							<legend>Frequency Array:</legend>    
+							<input id="webtronics_freqarr_value" type="text" value="1.0e3">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_duty" class="analog">
+					<td>
+						<fieldset>
+							<legend>Duty Cycle:</legend>    
+							<input id="webtronics_duty_value" type="text" value="0.5">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_risetime" class="analog">
+					<td>
+						<fieldset>
+							<legend>OutputRiseTime:</legend>    
+							<input id="webtronics_risetime_value" type="text" value="1.0e-9">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_falltime" class="analog">
+					<td>
+						<fieldset>
+							<legend>OutputFallTime:</legend>    
+							<input id="webtronics_falltime_value" type="text" value="1.0e-9">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_clktrig" class="analog">
+					<td>
+						<fieldset>
+							<legend>ClockTriggerValue:</legend>    
+							<input id="webtronics_clktrig_value" type="text" value="0.5">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_pwarr" class="analog">
+					<td>
+						<fieldset>
+							<legend>PulseWidthArray:</legend>    
+							<input id="webtronics_pwarr_value" type="text" value="1.0e-6">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_ptrig" class="analog">
+					<td>
+						<fieldset>
+							<legend>PositiveEdgeTrigger:</legend>    
+							<input id="webtronics_ptrig_value" type="text" value="TRUE">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_rdelay" class="analog">
+					<td>
+						<fieldset>
+							<legend>OutputTriggerDelay:</legend>    
+							<input id="webtronics_rdelay_value" type="text" value="1.0e-9">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_fdelay" class="analog">
+					<td>
+						<fieldset>
+							<legend>Outputpwdelay:</legend>    
+							<input id="webtronics_fdelay_value" type="text" value="1.0e-9">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_rmax" class="analog">
+					<td>
+						<fieldset>
+							<legend>MaximumResistance:</legend>    
+							<input id="webtronics_rmax_value" type="text" value="10000.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_rmin" class="analog">
+					<td>
+						<fieldset>
+							<legend>MinimumResistance:</legend>    
+							<input id="webtronics_rmin_value" type="text" value="10.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_rinit" class="analog">
+					<td>
+						<fieldset>
+							<legend>InitialResistance:</legend>    
+							<input id="webtronics_rinit_value" type="text" value="7000.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_vt" class="analog">
+					<td>
+						<fieldset>
+							<legend>Threshold:</legend>    
+							<input id="webtronics_vt_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_alpha" class="analog">
+					<td>
+						<fieldset>
+							<legend>ModelParameter1:</legend>    
+							<input id="webtronics_alpha_value" type="text" value="0.0">
+						</fieldset>
+					</td>
+				</tr>
+				<tr id="webtronics_beta" class="analog">
+					<td>
+						<fieldset>
+							<legend>ModelParameter2:</legend>    
+							<input id="webtronics_beta_value" type="text" value="1.0">
+						</fieldset>
+					</td>
+				</tr>
+			</tbody>
 		</table>
-
-		<!--**OPEN LOCAL SPICE MODELS EXPERIMENT<input id="webtronics_part_file" type="file"/>-->
+	<!--**OPEN LOCAL SPICE MODELS EXPERIMENT<input id="webtronics_part_file" type="file"/>-->
 	</form>
 	<div class="webtronics_help">
 		spice:
@@ -1245,10 +1181,9 @@ properties form
 
 
 </div>
+<!--END of properties form-->
 
-<!--
-select source server
--->
+<!--START of select source server-->
 <div id="webtronics_add source" class='modal'>
 	<div>
 		<input class="webtronics_add_source_input" /></br>
@@ -1274,23 +1209,22 @@ select source server
 	<img id="webtronics_add source_ok" src="buttons/ok.png"> 
 	<img id="webtronics_add_source_cancel" src="buttons/cancel.png">
 </div>
+<!--END of select source server-->
 
 
-<!--
-add code text
--->
+<!--START of add code text-->
 
 <div id="webtronics_open_text" class='modal'>
 	<textarea cols="50" rows="4" id="webtronics_svg_code"></textarea>
 	<img id="webtronics_open_text_ok" src="buttons/ok.png"> 
 	<img id="webtronics_open_text_cancel" src="buttons/cancel.png">
 </div>
+<!--END of add code text-->
 
 
 
 
-
-
+<!--START of netlist analysis-->
 <div  id="webtronics_netlist_analysis" class='modal'>
 
 	<br>
@@ -1618,13 +1552,12 @@ DC SWEEP MENU FORM AND DIV
 
 </div>
 
+<!--END of netlist analysis-->
 
-<!--
-netlist display
--->
+
+<!--START of netlist display-->
 
 <div id="webtronics_netlist_text" class='modal'>
-
 	<div class="webtronics_help" >
 		<pre>
 			convergence:
@@ -1636,43 +1569,20 @@ netlist display
 
 		</pre>
 	</div>
-
-
-
-
 	<br><br>
 	<div id="webtronics_netlist_text_div" ></div>
 	<br><br>
-
-
-
 	<div id="webtronics_netlist_buttons">
 		<!--<img id="webtronics_netlist_text_run" class="normal_button" src="buttons/run.png"> -->
 		<img id="webtronics_netlist_text_ok" class="normal_button" src="buttons/cancel.png">
-
-
 		<img id="webtronics_netlist_simulate" class="normal_button"  src="buttons/run.png">
 		<img id="webtronics_netlist_text_download" class="normal_button"  src="buttons/download.png">
-
-
-
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
-
+<!--END of netlist display-->
 
 
 </div>
-
-
 
 <!--
 code for select options of analysis 
@@ -1695,15 +1605,13 @@ simulation display
 	</div> 
 </div>
 
-
-
-
 </div>
 
 
 
 <script src="/socket.io/socket.io.js"></script>
 <script type="text/javascript" src="script/form.js"></script>
+
 
 </body>
 
