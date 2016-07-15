@@ -713,6 +713,9 @@ var netlistcreator={
       try{ part.outdef=this.readwtx(parts[i],'outdef'); }
       catch(e){ part.error="wtx:outdef load not found"; }
 
+      try{ part.outundef=this.readwtx(parts[i],'outundef');}
+      catch(e){ part.error="wtx:outdef load not found";}
+
 
       list.push(part);
   }
