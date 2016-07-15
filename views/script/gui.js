@@ -305,199 +305,322 @@ var webtronics={
         if(pulval7!=""){$('webtronics_pulval7_value').value=pulval7;}
 
         $("valuemodel").style.display='none'
-     }
+      }
 
-     else if(c=="exponential"){
-       $("webtronics_amplitude").style.display='none'
-       $("webtronics_phase").style.display='none'
+      else if(c=="exponential"){
+        $("webtronics_amplitude").style.display='none'
+        $("webtronics_phase").style.display='none'
 
-       $("webtronics_offsetvoltage").style.display='none'
-       $("webtronics_frequency").style.display='none'
-       $("webtronics_voltageamplitude").style.display='none'
-       $("webtronics_delaytime").style.display='none'
-       $("webtronics_dampingfactor").style.display='none'
-
-
-       $("webtronics_pulval1").style.display='none'
-       $("webtronics_pulval2").style.display='none'
-       $("webtronics_pulval3").style.display='none'
-       $("webtronics_pulval4").style.display='none'
-       $("webtronics_pulval5").style.display='none'
-       $("webtronics_pulval6").style.display='none'
-       $("webtronics_pulval7").style.display='none'
+        $("webtronics_offsetvoltage").style.display='none'
+        $("webtronics_frequency").style.display='none'
+        $("webtronics_voltageamplitude").style.display='none'
+        $("webtronics_delaytime").style.display='none'
+        $("webtronics_dampingfactor").style.display='none'
 
 
-       $("webtronics_pwlval1").style.display='none'
-       $("webtronics_pwlval2").style.display='none'
-       $("webtronics_pwlval3").style.display='none'
-       $("webtronics_pwlval4").style.display='none'
-       $("webtronics_pwlval5").style.display='none'
-       $("webtronics_pwlval6").style.display='none'
-       $("webtronics_pwlval7").style.display='none'
-       $("webtronics_pwlval8").style.display='none'
+        $("webtronics_pulval1").style.display='none'
+        $("webtronics_pulval2").style.display='none'
+        $("webtronics_pulval3").style.display='none'
+        $("webtronics_pulval4").style.display='none'
+        $("webtronics_pulval5").style.display='none'
+        $("webtronics_pulval6").style.display='none'
+        $("webtronics_pulval7").style.display='none'
 
-       $("webtronics_eval1").style.display='block'
-       $("webtronics_eval2").style.display='block'
-       $("webtronics_eval3").style.display='block'
-       $("webtronics_eval4").style.display='block'
-       $("webtronics_eval5").style.display='block'
-       $("webtronics_eval6").style.display='block'
+
+        $("webtronics_pwlval1").style.display='none'
+        $("webtronics_pwlval2").style.display='none'
+        $("webtronics_pwlval3").style.display='none'
+        $("webtronics_pwlval4").style.display='none'
+        $("webtronics_pwlval5").style.display='none'
+        $("webtronics_pwlval6").style.display='none'
+        $("webtronics_pwlval7").style.display='none'
+        $("webtronics_pwlval8").style.display='none'
+
+        $("webtronics_eval1").style.display='block'
+        $("webtronics_eval2").style.display='block'
+        $("webtronics_eval3").style.display='block'
+        $("webtronics_eval4").style.display='block'
+        $("webtronics_eval5").style.display='block'
+        $("webtronics_eval6").style.display='block'
        
 
-       $("directive").style.display='none'
-       var eval1=netlistcreator.readwtx(this.circuit.selected[0],"eval1");
-       var eval2=netlistcreator.readwtx(this.circuit.selected[0],"eval2");
-       var eval4=netlistcreator.readwtx(this.circuit.selected[0],"eval4");
-       var eval3=netlistcreator.readwtx(this.circuit.selected[0],"eval3");
-       var eval5=netlistcreator.readwtx(this.circuit.selected[0],"eval5");
-       var eval6=netlistcreator.readwtx(this.circuit.selected[0],"eval6");
+        $("directive").style.display='none'
+        var eval1=netlistcreator.readwtx(this.circuit.selected[0],"eval1");
+        var eval2=netlistcreator.readwtx(this.circuit.selected[0],"eval2");
+        var eval4=netlistcreator.readwtx(this.circuit.selected[0],"eval4");
+        var eval3=netlistcreator.readwtx(this.circuit.selected[0],"eval3");
+        var eval5=netlistcreator.readwtx(this.circuit.selected[0],"eval5");
+        var eval6=netlistcreator.readwtx(this.circuit.selected[0],"eval6");
        
-       if(eval1!=""){$('webtronics_eval1_value').value=eval1;}
-       if(eval2!=""){$('webtronics_eval2_value').value=eval2;}
-       if(eval3!=""){$('webtronics_eval3_value').value=eval3;}
-       if(eval4!=""){$('webtronics_eval4_value').value=eval4;}
-       if(eval5!=""){$('webtronics_eval5_value').value=eval5;}
-       if(eval6!=""){$('webtronics_eval6_value').value=eval6;}
+        if(eval1!=""){$('webtronics_eval1_value').value=eval1;}
+        if(eval2!=""){$('webtronics_eval2_value').value=eval2;}
+        if(eval3!=""){$('webtronics_eval3_value').value=eval3;}
+        if(eval4!=""){$('webtronics_eval4_value').value=eval4;}
+        if(eval5!=""){$('webtronics_eval5_value').value=eval5;}
+        if(eval6!=""){$('webtronics_eval6_value').value=eval6;}
        
+        $("valuemodel").style.display='none'
+      }
 
-       $("valuemodel").style.display='none'
-     }
+      else if(c=="pwl"){
+        $("webtronics_amplitude").style.display='none'
+        $("webtronics_phase").style.display='none'
 
+        $("webtronics_offsetvoltage").style.display='none'
+        $("webtronics_frequency").style.display='none'
+        $("webtronics_voltageamplitude").style.display='none'
+        $("webtronics_delaytime").style.display='none'
+        $("webtronics_dampingfactor").style.display='none'
 
+        $("webtronics_eval1").style.display='none'
+        $("webtronics_eval2").style.display='none'
+        $("webtronics_eval3").style.display='none'
+        $("webtronics_eval4").style.display='none'
+        $("webtronics_eval5").style.display='none'
+        $("webtronics_eval6").style.display='none'
 
+        $("webtronics_pulval1").style.display='none'
+        $("webtronics_pulval2").style.display='none'
+        $("webtronics_pulval3").style.display='none'
+        $("webtronics_pulval4").style.display='none'
+        $("webtronics_pulval5").style.display='none'
+        $("webtronics_pulval6").style.display='none'
+        $("webtronics_pulval7").style.display='none'
 
-     else if(c=="pwl"){
-       $("webtronics_amplitude").style.display='none'
-       $("webtronics_phase").style.display='none'
+        $("webtronics_pwlval1").style.display='block'
+        $("webtronics_pwlval2").style.display='block'
+        $("webtronics_pwlval3").style.display='block'
+        $("webtronics_pwlval4").style.display='block'
+        $("webtronics_pwlval5").style.display='block'
+        $("webtronics_pwlval6").style.display='block'
+        $("webtronics_pwlval7").style.display='block'
+        $("webtronics_pwlval8").style.display='block'
 
-       $("webtronics_offsetvoltage").style.display='none'
-       $("webtronics_frequency").style.display='none'
-       $("webtronics_voltageamplitude").style.display='none'
-       $("webtronics_delaytime").style.display='none'
-       $("webtronics_dampingfactor").style.display='none'
+        $("directive").style.display='none'
+        var pwlval1=netlistcreator.readwtx(this.circuit.selected[0],"pwlval1");
+        var pwlval2=netlistcreator.readwtx(this.circuit.selected[0],"pwlval2");
+        var pwlval3=netlistcreator.readwtx(this.circuit.selected[0],"pwlval3");
+        var pwlval4=netlistcreator.readwtx(this.circuit.selected[0],"pwlval4");
+        var pwlval5=netlistcreator.readwtx(this.circuit.selected[0],"pwlval5");
+        var pwlval6=netlistcreator.readwtx(this.circuit.selected[0],"pwlval6");
+        var pwlval7=netlistcreator.readwtx(this.circuit.selected[0],"pwlval7");
+        var pwlval8=netlistcreator.readwtx(this.circuit.selected[0],"pwlval8");         
+        if(pwlval1!=""){$('webtronics_pwlval1_value').value=pwlval1;}
+        if(pwlval2!=""){$('webtronics_pwlval2_value').value=pwlval2;}
+        if(pwlval3!=""){$('webtronics_pwlval3_value').value=pwlval3;}
+        if(pwlval4!=""){$('webtronics_pwlval4_value').value=pwlval4;}
+        if(pwlval5!=""){$('webtronics_pwlval5_value').value=pwlval5;}
+        if(pwlval6!=""){$('webtronics_pwlval6_value').value=pwlval6;}
+        if(pwlval7!=""){$('webtronics_pwlval7_value').value=pwlval7;}
+        if(pwlval8!=""){$('webtronics_pwlval7_value').value=pwlval8;}
+        $("valuemodel").style.display='none'
+      }
 
+      else if(c=="scope"){
+        this.getvalues(this.circuit.selected[0]);
+        $("webtronics_print_dir_field").style.display='block'
+        $("webtronics_print_dir_value").value=netlistcreator.readwtx(this.circuit.selected[0],'measure');
+        $("directive").style.display='none'
 
+        $("webtronics_offsetvoltage").style.display='none'
+        $("webtronics_frequency").style.display='none'
+        $("webtronics_voltageamplitude").style.display='none'
+        $("webtronics_delaytime").style.display='none'
+        $("webtronics_dampingfactor").style.display='none'
 
-       $("webtronics_eval1").style.display='none'
-       $("webtronics_eval2").style.display='none'
-       $("webtronics_eval3").style.display='none'
-       $("webtronics_eval4").style.display='none'
-       $("webtronics_eval5").style.display='none'
-       $("webtronics_eval6").style.display='none'
+        $("webtronics_eval1").style.display='none'
+        $("webtronics_eval2").style.display='none'
+        $("webtronics_eval3").style.display='none'
+        $("webtronics_eval4").style.display='none'
+        $("webtronics_eval5").style.display='none'
+        $("webtronics_eval6").style.display='none'
+  
+        $("webtronics_pwlval1").style.display='none'
+        $("webtronics_pwlval2").style.display='none'
+        $("webtronics_pwlval3").style.display='none'
+        $("webtronics_pwlval4").style.display='none'
+        $("webtronics_pwlval5").style.display='none'
+        $("webtronics_pwlval6").style.display='none'
+        $("webtronics_pwlval7").style.display='none'
+        $("webtronics_pwlval8").style.display='none'
 
-       $("webtronics_pulval1").style.display='none'
-       $("webtronics_pulval2").style.display='none'
-       $("webtronics_pulval3").style.display='none'
-       $("webtronics_pulval4").style.display='none'
-       $("webtronics_pulval5").style.display='none'
-       $("webtronics_pulval6").style.display='none'
-       $("webtronics_pulval7").style.display='none'
+        $("webtronics_pulval1").style.display='none'
+        $("webtronics_pulval2").style.display='none'
+        $("webtronics_pulval3").style.display='none'
+        $("webtronics_pulval4").style.display='none'
+        $("webtronics_pulval5").style.display='none'
+        $("webtronics_pulval6").style.display='none'
+        $("webtronics_pulval7").style.display='none'
 
+        $("webtronics_amplitude").style.display='none'
+        $("webtronics_phase").style.display='none'
+      }
 
-       $("webtronics_pwlval1").style.display='block'
-       $("webtronics_pwlval2").style.display='block'
-       $("webtronics_pwlval3").style.display='block'
-       $("webtronics_pwlval4").style.display='block'
-       $("webtronics_pwlval5").style.display='block'
-       $("webtronics_pwlval6").style.display='block'
-       $("webtronics_pwlval7").style.display='block'
-       $("webtronics_pwlval8").style.display='block'
+      else if(category=="digitalmodels"){
+        $("models").style.display='none'
+        if(c=="dff"){
+          $("webtronics_clkdelay").style.display='block'
+          $("webtronics_setdelay").style.display='block'
+          $("webtronics_resetdelay").style.display='block'
+          $("webtronics_ic").style.display='block'
+          $("webtronics_dataload").style.display='block'
+          $("webtronics_clkload").style.display='block'
+          $("webtronics_setload").style.display='block'
+          $("webtronics_resetload").style.display='block'
+          $("webtronics_risedelay").style.display='block'
+          $("webtronics_falldelay").style.display='block'
 
-       $("directive").style.display='none'
-       var pwlval1=netlistcreator.readwtx(this.circuit.selected[0],"pwlval1");
-       var pwlval2=netlistcreator.readwtx(this.circuit.selected[0],"pwlval2");
-       var pwlval3=netlistcreator.readwtx(this.circuit.selected[0],"pwlval3");
-       var pwlval4=netlistcreator.readwtx(this.circuit.selected[0],"pwlval4");
-       var pwlval5=netlistcreator.readwtx(this.circuit.selected[0],"pwlval5");
-       var pwlval6=netlistcreator.readwtx(this.circuit.selected[0],"pwlval6");
-       var pwlval7=netlistcreator.readwtx(this.circuit.selected[0],"pwlval7");
-       var pwlval8=netlistcreator.readwtx(this.circuit.selected[0],"pwlval8");         
-       if(pwlval1!=""){$('webtronics_pwlval1_value').value=pwlval1;}
-       if(pwlval2!=""){$('webtronics_pwlval2_value').value=pwlval2;}
-       if(pwlval3!=""){$('webtronics_pwlval3_value').value=pwlval3;}
-       if(pwlval4!=""){$('webtronics_pwlval4_value').value=pwlval4;}
-       if(pwlval5!=""){$('webtronics_pwlval5_value').value=pwlval5;}
-       if(pwlval6!=""){$('webtronics_pwlval6_value').value=pwlval6;}
-       if(pwlval7!=""){$('webtronics_pwlval7_value').value=pwlval7;}
-       if(pwlval8!=""){$('webtronics_pwlval7_value').value=pwlval8;}
+          var clkdelay = netlistcreator.readwtx(this.circuit.selected[0],"clkdelay");
+          if(clkdelay!=""){$(webtronics_clkdelay_value).value=clkdelay;}
+          var setdelay = netlistcreator.readwtx(this.circuit.selected[0],"setdelay");
+          if(setdelay!=""){$(webtronics_setdelay_value).value=setdelay;}
+          var resetdelay = netlistcreator.readwtx(this.circuit.selected[0],"resetdelay");
+          if(resetdelay!=""){$(webtronics_resetdelay_value).value=resetdelay;}
+          var ic = netlistcreator.readwtx(this.circuit.selected[0],"ic");
+          if(ic!=""){$(webtronics_ic_value).value=ic;}
+          var dataload = netlistcreator.readwtx(this.circuit.selected[0],"dataload");
+          if(dataload!=""){$(webtronics_dataload_value).value=dataload;}
+          var clkload = netlistcreator.readwtx(this.circuit.selected[0],"clkload");
+          if(clkload!=""){$(webtronics_clkload_value).value=clkload;}
+          var setload = netlistcreator.readwtx(this.circuit.selected[0],"setload");
+          if(setload!=""){$(webtronics_setload_value).value=setload;}
+          var resetload = netlistcreator.readwtx(this.circuit.selected[0],"resetload");
+          if(resetload!=""){$(webtronics_resetload_value).value=resetload;}
+          var risedelay = netlistcreator.readwtx(this.circuit.selected[0],"risedelay");
+          if(risedelay!=""){$(webtronics_risedelay_value).value=risedelay;}
+          var falldelay = netlistcreator.readwtx(this.circuit.selected[0],"falldelay");
+          if(falldelay!=""){$(webtronics_falldelay_value).value=falldelay;}
+        }
 
-       $("valuemodel").style.display='none'
-     }
+        if(c=="jkff"){
+          $("webtronics_clkdelay").style.display='block'
+          $("webtronics_setdelay").style.display='block'
+          $("webtronics_resetdelay").style.display='block'
+          $("webtronics_ic").style.display='block'
+          $("webtronics_jkload").style.display='block'
+          $("webtronics_clkload").style.display='block'
+          $("webtronics_setload").style.display='block'
+          $("webtronics_resetload").style.display='block'
+          $("webtronics_risedelay").style.display='block'
+          $("webtronics_falldelay").style.display='block'
 
+          var clkdelay = netlistcreator.readwtx(this.circuit.selected[0],"clkdelay");
+          if(clkdelay!=""){$(webtronics_clkdelay_value).value=clkdelay;}
+          var setdelay = netlistcreator.readwtx(this.circuit.selected[0],"setdelay");
+          if(setdelay!=""){$(webtronics_setdelay_value).value=setdelay;}
+          var resetdelay = netlistcreator.readwtx(this.circuit.selected[0],"resetdelay");
+          if(resetdelay!=""){$(webtronics_resetdelay_value).value=resetdelay;}
+          var ic = netlistcreator.readwtx(this.circuit.selected[0],"ic");
+          if(ic!=""){$(webtronics_ic_value).value=ic;}
+          var jkload = netlistcreator.readwtx(this.circuit.selected[0],"jkload");
+          if(jkload!=""){$(webtronics_jkload_value).value=jkload;}
+          var clkload = netlistcreator.readwtx(this.circuit.selected[0],"clkload");
+          if(clkload!=""){$(webtronics_clkload_value).value=clkload;}
+          var setload = netlistcreator.readwtx(this.circuit.selected[0],"setload");
+          if(setload!=""){$(webtronics_setload_value).value=setload;}
+          var resetload = netlistcreator.readwtx(this.circuit.selected[0],"resetload");
+          if(resetload!=""){$(webtronics_resetload_value).value=resetload;}
+          var risedelay = netlistcreator.readwtx(this.circuit.selected[0],"risedelay");
+          if(risedelay!=""){$(webtronics_risedelay_value).value=risedelay;}
+          var falldelay = netlistcreator.readwtx(this.circuit.selected[0],"falldelay");
+          if(falldelay!=""){$(webtronics_falldelay_value).value=falldelay;}
+        }
 
+        if(c=="tff"){
+          $("webtronics_clkdelay").style.display='block'
+          $("webtronics_setdelay").style.display='block'
+          $("webtronics_resetdelay").style.display='block'
+          $("webtronics_ic").style.display='block'
+          $("webtronics_tload").style.display='block'
+          $("webtronics_clkload").style.display='block'
+          $("webtronics_setload").style.display='block'
+          $("webtronics_resetload").style.display='block'
+          $("webtronics_risedelay").style.display='block'
+          $("webtronics_falldelay").style.display='block'
 
+          var clkdelay = netlistcreator.readwtx(this.circuit.selected[0],"clkdelay");
+          if(clkdelay!=""){$(webtronics_clkdelay_value).value=clkdelay;}
+          var setdelay = netlistcreator.readwtx(this.circuit.selected[0],"setdelay");
+          if(setdelay!=""){$(webtronics_setdelay_value).value=setdelay;}
+          var resetdelay = netlistcreator.readwtx(this.circuit.selected[0],"resetdelay");
+          if(resetdelay!=""){$(webtronics_resetdelay_value).value=resetdelay;}
+          var ic = netlistcreator.readwtx(this.circuit.selected[0],"ic");
+          if(ic!=""){$(webtronics_ic_value).value=ic;}
+          var tload = netlistcreator.readwtx(this.circuit.selected[0],"tload");
+          if(tload!=""){$(webtronics_tload_value).value=tload;}
+          var clkload = netlistcreator.readwtx(this.circuit.selected[0],"clkload");
+          if(clkload!=""){$(webtronics_clkload_value).value=clkload;}
+          var setload = netlistcreator.readwtx(this.circuit.selected[0],"setload");
+          if(setload!=""){$(webtronics_setload_value).value=setload;}
+          var resetload = netlistcreator.readwtx(this.circuit.selected[0],"resetload");
+          if(resetload!=""){$(webtronics_resetload_value).value=resetload;}
+          var risedelay = netlistcreator.readwtx(this.circuit.selected[0],"risedelay");
+          if(risedelay!=""){$(webtronics_risedelay_value).value=risedelay;}
+          var falldelay = netlistcreator.readwtx(this.circuit.selected[0],"falldelay");
+          if(falldelay!=""){$(webtronics_falldelay_value).value=falldelay;}
+        }
 
+        if(c=="srff"){
+          $("webtronics_clkdelay").style.display='block'
+          $("webtronics_setdelay").style.display='block'
+          $("webtronics_resetdelay").style.display='block'
+          $("webtronics_ic").style.display='block'
+          $("webtronics_srload").style.display='block'
+          $("webtronics_clkload").style.display='block'
+          $("webtronics_setload").style.display='block'
+          $("webtronics_resetload").style.display='block'
+          $("webtronics_risedelay").style.display='block'
+          $("webtronics_falldelay").style.display='block'
 
+          var clkdelay = netlistcreator.readwtx(this.circuit.selected[0],"clkdelay");
+          if(clkdelay!=""){$(webtronics_clkdelay_value).value=clkdelay;}
+          var setdelay = netlistcreator.readwtx(this.circuit.selected[0],"setdelay");
+          if(setdelay!=""){$(webtronics_setdelay_value).value=setdelay;}
+          var resetdelay = netlistcreator.readwtx(this.circuit.selected[0],"resetdelay");
+          if(resetdelay!=""){$(webtronics_resetdelay_value).value=resetdelay;}
+          var ic = netlistcreator.readwtx(this.circuit.selected[0],"ic");
+          if(ic!=""){$(webtronics_ic_value).value=ic;}
+          var srload = netlistcreator.readwtx(this.circuit.selected[0],"srload");
+          if(srload!=""){$(webtronics_srload_value).value=srload;}
+          var clkload = netlistcreator.readwtx(this.circuit.selected[0],"clkload");
+          if(clkload!=""){$(webtronics_clkload_value).value=clkload;}
+          var setload = netlistcreator.readwtx(this.circuit.selected[0],"setload");
+          if(setload!=""){$(webtronics_setload_value).value=setload;}
+          var resetload = netlistcreator.readwtx(this.circuit.selected[0],"resetload");
+          if(resetload!=""){$(webtronics_resetload_value).value=resetload;}
+          var risedelay = netlistcreator.readwtx(this.circuit.selected[0],"risedelay");
+          if(risedelay!=""){$(webtronics_risedelay_value).value=risedelay;}
+          var falldelay = netlistcreator.readwtx(this.circuit.selected[0],"falldelay");
+          if(falldelay!=""){$(webtronics_falldelay_value).value=falldelay;}
+      }
 
-     else if(c=="scope"){
-      this.getvalues(this.circuit.selected[0]);
-      $("webtronics_print_dir_field").style.display='block'
-      $("webtronics_print_dir_value").value=netlistcreator.readwtx(this.circuit.selected[0],'measure');
-      $("directive").style.display='none'
-
-      $("webtronics_offsetvoltage").style.display='none'
-      $("webtronics_frequency").style.display='none'
-      $("webtronics_voltageamplitude").style.display='none'
-      $("webtronics_delaytime").style.display='none'
-      $("webtronics_dampingfactor").style.display='none'
-
-
-      $("webtronics_eval1").style.display='none'
-      $("webtronics_eval2").style.display='none'
-      $("webtronics_eval3").style.display='none'
-      $("webtronics_eval4").style.display='none'
-      $("webtronics_eval5").style.display='none'
-      $("webtronics_eval6").style.display='none'
-
-
-      $("webtronics_pwlval1").style.display='none'
-      $("webtronics_pwlval2").style.display='none'
-      $("webtronics_pwlval3").style.display='none'
-      $("webtronics_pwlval4").style.display='none'
-      $("webtronics_pwlval5").style.display='none'
-      $("webtronics_pwlval6").style.display='none'
-      $("webtronics_pwlval7").style.display='none'
-      $("webtronics_pwlval8").style.display='none'
-
-      $("webtronics_pulval1").style.display='none'
-      $("webtronics_pulval2").style.display='none'
-      $("webtronics_pulval3").style.display='none'
-      $("webtronics_pulval4").style.display='none'
-      $("webtronics_pulval5").style.display='none'
-      $("webtronics_pulval6").style.display='none'
-      $("webtronics_pulval7").style.display='none'
-
-      $("webtronics_amplitude").style.display='none'
-      $("webtronics_phase").style.display='none'
-    }
-
-    else if(category=="digitalmodels")
-    {
-      $("models").style.display='none'
-      if(c=="dff"){
-        $("webtronics_clkdelay").style.display='block'
+      if(c=="dlatch"){
+        $("webtronics_datadelay").style.display='block'
         $("webtronics_setdelay").style.display='block'
         $("webtronics_resetdelay").style.display='block'
         $("webtronics_ic").style.display='block'
+        $("webtronics_enabledelay").style.display='block'
         $("webtronics_dataload").style.display='block'
-        $("webtronics_clkload").style.display='block'
+        $("webtronics_enableload").style.display='block'
         $("webtronics_setload").style.display='block'
         $("webtronics_resetload").style.display='block'
         $("webtronics_risedelay").style.display='block'
         $("webtronics_falldelay").style.display='block'
 
-        var clkdelay = netlistcreator.readwtx(this.circuit.selected[0],"clkdelay");
-        if(clkdelay!=""){$(webtronics_clkdelay_value).value=clkdelay;}
+        var datadelay = netlistcreator.readwtx(this.circuit.selected[0],"datadelay");
+        if(datadelay!=""){$(webtronics_datadelay_value).value=datadelay;}
         var setdelay = netlistcreator.readwtx(this.circuit.selected[0],"setdelay");
         if(setdelay!=""){$(webtronics_setdelay_value).value=setdelay;}
         var resetdelay = netlistcreator.readwtx(this.circuit.selected[0],"resetdelay");
         if(resetdelay!=""){$(webtronics_resetdelay_value).value=resetdelay;}
         var ic = netlistcreator.readwtx(this.circuit.selected[0],"ic");
         if(ic!=""){$(webtronics_ic_value).value=ic;}
+        var enabledelay = netlistcreator.readwtx(this.circuit.selected[0],"enabledelay");
+        if(enabledelay!=""){$(webtronics_enabledelay_value).value=enabledelay;}
         var dataload = netlistcreator.readwtx(this.circuit.selected[0],"dataload");
         if(dataload!=""){$(webtronics_dataload_value).value=dataload;}
-        var clkload = netlistcreator.readwtx(this.circuit.selected[0],"clkload");
-        if(clkload!=""){$(webtronics_clkload_value).value=clkload;}
+        var enableload = netlistcreator.readwtx(this.circuit.selected[0],"enableload");
+        if(enableload!=""){$(webtronics_enableload_value).value=enableload;}
         var setload = netlistcreator.readwtx(this.circuit.selected[0],"setload");
         if(setload!=""){$(webtronics_setload_value).value=setload;}
         var resetload = netlistcreator.readwtx(this.circuit.selected[0],"resetload");
@@ -508,98 +631,33 @@ var webtronics={
         if(falldelay!=""){$(webtronics_falldelay_value).value=falldelay;}
       }
 
-      if(c=="jkff"){
-        $("webtronics_clkdelay").style.display='block'
+      if(c=="srlatch"){
+        $("webtronics_srdelay").style.display='block'
         $("webtronics_setdelay").style.display='block'
         $("webtronics_resetdelay").style.display='block'
         $("webtronics_ic").style.display='block'
-        $("webtronics_jkload").style.display='block'
-        $("webtronics_clkload").style.display='block'
-        $("webtronics_setload").style.display='block'
-        $("webtronics_resetload").style.display='block'
-        $("webtronics_risedelay").style.display='block'
-        $("webtronics_falldelay").style.display='block'
-
-        var clkdelay = netlistcreator.readwtx(this.circuit.selected[0],"clkdelay");
-        if(clkdelay!=""){$(webtronics_clkdelay_value).value=clkdelay;}
-        var setdelay = netlistcreator.readwtx(this.circuit.selected[0],"setdelay");
-        if(setdelay!=""){$(webtronics_setdelay_value).value=setdelay;}
-        var resetdelay = netlistcreator.readwtx(this.circuit.selected[0],"resetdelay");
-        if(resetdelay!=""){$(webtronics_resetdelay_value).value=resetdelay;}
-        var ic = netlistcreator.readwtx(this.circuit.selected[0],"ic");
-        if(ic!=""){$(webtronics_ic_value).value=ic;}
-        var jkload = netlistcreator.readwtx(this.circuit.selected[0],"jkload");
-        if(jkload!=""){$(webtronics_jkload_value).value=jkload;}
-        var clkload = netlistcreator.readwtx(this.circuit.selected[0],"clkload");
-        if(clkload!=""){$(webtronics_clkload_value).value=clkload;}
-        var setload = netlistcreator.readwtx(this.circuit.selected[0],"setload");
-        if(setload!=""){$(webtronics_setload_value).value=setload;}
-        var resetload = netlistcreator.readwtx(this.circuit.selected[0],"resetload");
-        if(resetload!=""){$(webtronics_resetload_value).value=resetload;}
-        var risedelay = netlistcreator.readwtx(this.circuit.selected[0],"risedelay");
-        if(risedelay!=""){$(webtronics_risedelay_value).value=risedelay;}
-        var falldelay = netlistcreator.readwtx(this.circuit.selected[0],"falldelay");
-        if(falldelay!=""){$(webtronics_falldelay_value).value=falldelay;}
-      }
-
-      if(c=="tff"){
-        $("webtronics_clkdelay").style.display='block'
-        $("webtronics_setdelay").style.display='block'
-        $("webtronics_resetdelay").style.display='block'
-        $("webtronics_ic").style.display='block'
-        $("webtronics_tload").style.display='block'
-        $("webtronics_clkload").style.display='block'
-        $("webtronics_setload").style.display='block'
-        $("webtronics_resetload").style.display='block'
-        $("webtronics_risedelay").style.display='block'
-        $("webtronics_falldelay").style.display='block'
-
-        var clkdelay = netlistcreator.readwtx(this.circuit.selected[0],"clkdelay");
-        if(clkdelay!=""){$(webtronics_clkdelay_value).value=clkdelay;}
-        var setdelay = netlistcreator.readwtx(this.circuit.selected[0],"setdelay");
-        if(setdelay!=""){$(webtronics_setdelay_value).value=setdelay;}
-        var resetdelay = netlistcreator.readwtx(this.circuit.selected[0],"resetdelay");
-        if(resetdelay!=""){$(webtronics_resetdelay_value).value=resetdelay;}
-        var ic = netlistcreator.readwtx(this.circuit.selected[0],"ic");
-        if(ic!=""){$(webtronics_ic_value).value=ic;}
-        var tload = netlistcreator.readwtx(this.circuit.selected[0],"tload");
-        if(tload!=""){$(webtronics_tload_value).value=tload;}
-        var clkload = netlistcreator.readwtx(this.circuit.selected[0],"clkload");
-        if(clkload!=""){$(webtronics_clkload_value).value=clkload;}
-        var setload = netlistcreator.readwtx(this.circuit.selected[0],"setload");
-        if(setload!=""){$(webtronics_setload_value).value=setload;}
-        var resetload = netlistcreator.readwtx(this.circuit.selected[0],"resetload");
-        if(resetload!=""){$(webtronics_resetload_value).value=resetload;}
-        var risedelay = netlistcreator.readwtx(this.circuit.selected[0],"risedelay");
-        if(risedelay!=""){$(webtronics_risedelay_value).value=risedelay;}
-        var falldelay = netlistcreator.readwtx(this.circuit.selected[0],"falldelay");
-        if(falldelay!=""){$(webtronics_falldelay_value).value=falldelay;}
-      }
-
-      if(c=="srff"){
-        $("webtronics_clkdelay").style.display='block'
-        $("webtronics_setdelay").style.display='block'
-        $("webtronics_resetdelay").style.display='block'
-        $("webtronics_ic").style.display='block'
+        $("webtronics_enabledelay").style.display='block'
         $("webtronics_srload").style.display='block'
-        $("webtronics_clkload").style.display='block'
+        $("webtronics_enableload").style.display='block'
         $("webtronics_setload").style.display='block'
         $("webtronics_resetload").style.display='block'
         $("webtronics_risedelay").style.display='block'
         $("webtronics_falldelay").style.display='block'
 
-        var clkdelay = netlistcreator.readwtx(this.circuit.selected[0],"clkdelay");
-        if(clkdelay!=""){$(webtronics_clkdelay_value).value=clkdelay;}
+        var srdelay = netlistcreator.readwtx(this.circuit.selected[0],"srdelay");
+        if(srdelay!=""){$(webtronics_srdelay_value).value=srdelay;}
         var setdelay = netlistcreator.readwtx(this.circuit.selected[0],"setdelay");
         if(setdelay!=""){$(webtronics_setdelay_value).value=setdelay;}
         var resetdelay = netlistcreator.readwtx(this.circuit.selected[0],"resetdelay");
         if(resetdelay!=""){$(webtronics_resetdelay_value).value=resetdelay;}
         var ic = netlistcreator.readwtx(this.circuit.selected[0],"ic");
         if(ic!=""){$(webtronics_ic_value).value=ic;}
+        var enabledelay = netlistcreator.readwtx(this.circuit.selected[0],"enabledelay");
+        if(enabledelay!=""){$(webtronics_enabledelay_value).value=enabledelay;}
         var srload = netlistcreator.readwtx(this.circuit.selected[0],"srload");
         if(srload!=""){$(webtronics_srload_value).value=srload;}
-        var clkload = netlistcreator.readwtx(this.circuit.selected[0],"clkload");
-        if(clkload!=""){$(webtronics_clkload_value).value=clkload;}
+        var enableload = netlistcreator.readwtx(this.circuit.selected[0],"enableload");
+        if(enableload!=""){$(webtronics_enableload_value).value=enableload;}
         var setload = netlistcreator.readwtx(this.circuit.selected[0],"setload");
         if(setload!=""){$(webtronics_setload_value).value=setload;}
         var resetload = netlistcreator.readwtx(this.circuit.selected[0],"resetload");
@@ -608,102 +666,27 @@ var webtronics={
         if(risedelay!=""){$(webtronics_risedelay_value).value=risedelay;}
         var falldelay = netlistcreator.readwtx(this.circuit.selected[0],"falldelay");
         if(falldelay!=""){$(webtronics_falldelay_value).value=falldelay;}
+      }
+
+
+      if(c=='and'|| c=='not'|| c=='nand'|| c=='or'||c=='nor'||c=='xor'||c=='xnor'){
+        
+        $("webtronics_risedelay").style.display='block';
+        $("webtronics_falldelay").style.display='block';
+        $("webtronics_inputload").style.display='block';
+        var risedelay = netlistcreator.readwtx(this.circuit.selected[0],"risedelay");
+        if(risedelay!=""){$(webtronics_risedelay_value).value=risedelay;}
+        var falldelay = netlistcreator.readwtx(this.circuit.selected[0],"falldelay");
+        if(falldelay!=""){$(webtronics_falldelay_value).value=falldelay;}
+        var inputload = netlistcreator.readwtx(this.circuit.selected[0],"inputload");
+        if(inputload!=""){$(webtronics_inputload_value).value=inputload;}
+        
+      }
     }
 
-    if(c=="dlatch"){
-      $("webtronics_datadelay").style.display='block'
-      $("webtronics_setdelay").style.display='block'
-      $("webtronics_resetdelay").style.display='block'
-      $("webtronics_ic").style.display='block'
-      $("webtronics_enabledelay").style.display='block'
-      $("webtronics_dataload").style.display='block'
-      $("webtronics_enableload").style.display='block'
-      $("webtronics_setload").style.display='block'
-      $("webtronics_resetload").style.display='block'
-      $("webtronics_risedelay").style.display='block'
-      $("webtronics_falldelay").style.display='block'
-
-      var datadelay = netlistcreator.readwtx(this.circuit.selected[0],"datadelay");
-      if(datadelay!=""){$(webtronics_datadelay_value).value=datadelay;}
-      var setdelay = netlistcreator.readwtx(this.circuit.selected[0],"setdelay");
-      if(setdelay!=""){$(webtronics_setdelay_value).value=setdelay;}
-      var resetdelay = netlistcreator.readwtx(this.circuit.selected[0],"resetdelay");
-      if(resetdelay!=""){$(webtronics_resetdelay_value).value=resetdelay;}
-      var ic = netlistcreator.readwtx(this.circuit.selected[0],"ic");
-      if(ic!=""){$(webtronics_ic_value).value=ic;}
-      var enabledelay = netlistcreator.readwtx(this.circuit.selected[0],"enabledelay");
-      if(enabledelay!=""){$(webtronics_enabledelay_value).value=enabledelay;}
-      var dataload = netlistcreator.readwtx(this.circuit.selected[0],"dataload");
-      if(dataload!=""){$(webtronics_dataload_value).value=dataload;}
-      var enableload = netlistcreator.readwtx(this.circuit.selected[0],"enableload");
-      if(enableload!=""){$(webtronics_enableload_value).value=enableload;}
-      var setload = netlistcreator.readwtx(this.circuit.selected[0],"setload");
-      if(setload!=""){$(webtronics_setload_value).value=setload;}
-      var resetload = netlistcreator.readwtx(this.circuit.selected[0],"resetload");
-      if(resetload!=""){$(webtronics_resetload_value).value=resetload;}
-      var risedelay = netlistcreator.readwtx(this.circuit.selected[0],"risedelay");
-      if(risedelay!=""){$(webtronics_risedelay_value).value=risedelay;}
-      var falldelay = netlistcreator.readwtx(this.circuit.selected[0],"falldelay");
-      if(falldelay!=""){$(webtronics_falldelay_value).value=falldelay;}
-    }
-
-    if(c=="srlatch"){
-      $("webtronics_srdelay").style.display='block'
-      $("webtronics_setdelay").style.display='block'
-      $("webtronics_resetdelay").style.display='block'
-      $("webtronics_ic").style.display='block'
-      $("webtronics_enabledelay").style.display='block'
-      $("webtronics_srload").style.display='block'
-      $("webtronics_enableload").style.display='block'
-      $("webtronics_setload").style.display='block'
-      $("webtronics_resetload").style.display='block'
-      $("webtronics_risedelay").style.display='block'
-      $("webtronics_falldelay").style.display='block'
-
-      var srdelay = netlistcreator.readwtx(this.circuit.selected[0],"srdelay");
-      if(srdelay!=""){$(webtronics_srdelay_value).value=srdelay;}
-      var setdelay = netlistcreator.readwtx(this.circuit.selected[0],"setdelay");
-      if(setdelay!=""){$(webtronics_setdelay_value).value=setdelay;}
-      var resetdelay = netlistcreator.readwtx(this.circuit.selected[0],"resetdelay");
-      if(resetdelay!=""){$(webtronics_resetdelay_value).value=resetdelay;}
-      var ic = netlistcreator.readwtx(this.circuit.selected[0],"ic");
-      if(ic!=""){$(webtronics_ic_value).value=ic;}
-      var enabledelay = netlistcreator.readwtx(this.circuit.selected[0],"enabledelay");
-      if(enabledelay!=""){$(webtronics_enabledelay_value).value=enabledelay;}
-      var srload = netlistcreator.readwtx(this.circuit.selected[0],"srload");
-      if(srload!=""){$(webtronics_srload_value).value=srload;}
-      var enableload = netlistcreator.readwtx(this.circuit.selected[0],"enableload");
-      if(enableload!=""){$(webtronics_enableload_value).value=enableload;}
-      var setload = netlistcreator.readwtx(this.circuit.selected[0],"setload");
-      if(setload!=""){$(webtronics_setload_value).value=setload;}
-      var resetload = netlistcreator.readwtx(this.circuit.selected[0],"resetload");
-      if(resetload!=""){$(webtronics_resetload_value).value=resetload;}
-      var risedelay = netlistcreator.readwtx(this.circuit.selected[0],"risedelay");
-      if(risedelay!=""){$(webtronics_risedelay_value).value=risedelay;}
-      var falldelay = netlistcreator.readwtx(this.circuit.selected[0],"falldelay");
-      if(falldelay!=""){$(webtronics_falldelay_value).value=falldelay;}
-    }
-
-
- if(c=='and'|| c=='not'|| c=='nand'|| c=='or'||c=='nor'||c=='xor'||c=='xnor')
-    {
-
-  $("webtronics_risedelay").style.display='block';
-   $("webtronics_falldelay").style.display='block';
-  $("webtronics_inputload").style.display='block';
-      var risedelay = netlistcreator.readwtx(this.circuit.selected[0],"risedelay");
-      if(risedelay!=""){$(webtronics_risedelay_value).value=risedelay;}
-      var falldelay = netlistcreator.readwtx(this.circuit.selected[0],"falldelay");
-      if(falldelay!=""){$(webtronics_falldelay_value).value=falldelay;}
-       var inputload = netlistcreator.readwtx(this.circuit.selected[0],"inputload");
-      if(inputload!=""){$(webtronics_inputload_value).value=inputload;}
-
-    }
-  }
-
-  else if(category=="analogmodels"){
-         $("models").style.display='none'
-         if(c=="gains"){
+    else if(category=="analogmodels"){
+      $("models").style.display='none'
+      if(c=="gains"){
         $("webtronics_inoffset").style.display='table-row'
         $("webtronics_gain").style.display='table-row'
         $("webtronics_outoffset").style.display='table-row'  
@@ -714,8 +697,8 @@ var webtronics={
         if(gain!=""){$(webtronics_gain_value).value=gain;}
         if(inoffset!=""){$(webtronics_inoffset_value).value=inoffset;}
         if(outoffset!=""){$(webtronics_outoffset_value).value=outoffset;}
-         }
-         if(c=="summer"){
+      }
+      if(c=="summer"){
         $("webtronics_inoffset").style.display='table-row'
         $("webtronics_ingain").style.display='table-row'
         $("webtronics_outgain").style.display='table-row'
@@ -729,8 +712,8 @@ var webtronics={
         if(outgain!=""){$(webtronics_gain_value).value=outgain;}
         if(inoffset!=""){$(webtronics_inoffset_value).value=inoffset;}
         if(outoffset!=""){$(webtronics_outoffset_value).value=outoffset;}
-         }
-         if(c=="multiplier"){
+      }
+      if(c=="multiplier"){
         $("webtronics_inoffset").style.display='table-row'
         $("webtronics_ingain").style.display='table-row'
         $("webtronics_outgain").style.display='table-row'
@@ -744,8 +727,8 @@ var webtronics={
         if(outgain!=""){$(webtronics_outgain_value).value=outgain;}
         if(inoffset!=""){$(webtronics_inoffset_value).value=inoffset;}
         if(outoffset!=""){$(webtronics_outoffset_value).value=outoffset;}
-         }
-          if(c=="divider"){
+      }
+      if(c=="divider"){
         $("webtronics_numoffset").style.display='table-row'
         $("webtronics_numgain").style.display='table-row'
         $("webtronics_outgain").style.display='table-row'
@@ -773,8 +756,8 @@ var webtronics={
         if(prop7!=""){$(webtronics_fraction_value).value=prop7;}
         if(prop8!=""){$(webtronics_dendomain_value).value=prop8;}
         if(prop9!=""){$(webtronics_denlowerlimit_value).value=prop9;}
-        }
-          if(c=="limiter"){
+      }
+      if(c=="limiter"){
         $("webtronics_limitrange").style.display='table-row'
         $("webtronics_fraction").style.display='table-row'
         $("webtronics_outupperlimit").style.display='table-row'
@@ -793,8 +776,8 @@ var webtronics={
         if(prop4!=""){$(webtronics_outlowerlimit_value).value=prop4;}
         if(prop5!=""){$(webtronics_gain_value).value=prop5;}
         if(prop6!=""){$(webtronics_inoffset_value).value=prop6;}
-          }         
-          if(c=="controllimiter"){
+      }         
+      if(c=="controllimiter"){
         $("webtronics_limitrange").style.display='table-row'
         $("webtronics_fraction").style.display='table-row'
         $("webtronics_upperdelta").style.display='table-row'
@@ -813,8 +796,8 @@ var webtronics={
         if(prop4!=""){$(webtronics_lowerdelta_value).value=prop4;}
         if(prop5!=""){$(webtronics_gain_value).value=prop5;}
         if(prop6!=""){$(webtronics_inoffset_value).value=prop6;}
-          }         
-          if(c=="pwlcontrolsource"){
+      }         
+      if(c=="pwlcontrolsource"){
         $("webtronics_xarr").style.display='table-row'
         $("webtronics_fraction").style.display='table-row'
         $("webtronics_yarr").style.display='table-row'
@@ -827,8 +810,8 @@ var webtronics={
         if(prop2!=""){$(webtronics_fraction_value).value=prop2;}
         if(prop3!=""){$(webtronics_yarr_value).value=prop3;}
         if(prop4!=""){$(webtronics_indomain_value).value=prop4;}
-          }         
-       if(c=="multiinputpwlblock"){
+      }         
+      if(c=="multiinputpwlblock"){
         $("webtronics_xarr").style.display='table-row'
         $("webtronics_amodel").style.display='table-row'
         $("webtronics_yarr").style.display='table-row'
@@ -838,8 +821,8 @@ var webtronics={
         if(prop1!=""){$(webtronics_xarr_value).value=prop1;}
         if(prop2!=""){$(webtronics_amodel_value).value=prop2;}
         if(prop3!=""){$(webtronics_yarr_value).value=prop3;}
-          }      
-       if(c=="aswitch"){
+      }      
+      if(c=="aswitch"){
         $("webtronics_con").style.display='table-row'
         $("webtronics_coff").style.display='table-row'
         $("webtronics_roff").style.display='table-row'
@@ -855,8 +838,8 @@ var webtronics={
         if(prop3!=""){$(webtronics_ron_value).value=prop3;}
         if(prop4!=""){$(webtronics_roff_value).value=prop4;}
         if(prop5!=""){$(webtronics_log_value).value=prop5;}
-          }      
-       if(c=="zener"){
+      }      
+      if(c=="zener"){
         $("webtronics_irev").style.display='table-row'
         $("webtronics_isat").style.display='table-row'
         $("webtronics_vbreak").style.display='table-row'
@@ -878,8 +861,8 @@ var webtronics={
         if(prop5!=""){$(webtronics_rbreak_value).value=prop5;}
         if(prop6!=""){$(webtronics_limitswitch_value).value=prop6;}
         if(prop7!=""){$(webtronics_nfor_value).value=prop7;}
-          }      
-       if(c=="currentlimiter"){
+      }      
+      if(c=="currentlimiter"){
         $("webtronics_rsource").style.display='table-row'
         $("webtronics_rsink").style.display='table-row'
         $("webtronics_inoffset").style.display='table-row'
@@ -910,8 +893,8 @@ var webtronics={
         if(prop8!=""){$(webtronics_isource_value).value=prop8;}
         if(prop9!=""){$(webtronics_isink_value).value=prop9;}
         if(prop10!=""){$(webtronics_routdomain_value).value=prop10;}
-          }      
-       if(c=="hysteresis"){
+      }      
+      if(c=="hysteresis"){
         $("webtronics_inlow").style.display='table-row'
         $("webtronics_inhigh").style.display='table-row'
         $("webtronics_outlowerlimit").style.display='table-row'
@@ -933,8 +916,8 @@ var webtronics={
         if(prop5!=""){$(webtronics_fraction_value).value=prop5;}
         if(prop6!=""){$(webtronics_indomain_value).value=prop6;}
         if(prop7!=""){$(webtronics_hyst_value).value=prop7;}
-          }      
-        if(c=="differentiator"){
+      }      
+      if(c=="differentiator"){
         $("webtronics_outoffset").style.display='table-row'
         $("webtronics_gain").style.display='table-row'
         $("webtronics_outlowerlimit").style.display='table-row'
@@ -950,8 +933,8 @@ var webtronics={
         if(prop3!=""){$(webtronics_outupperlimit_value).value=prop3;}
         if(prop4!=""){$(webtronics_limitrange_value).value=prop4;}
         if(prop5!=""){$(webtronics_gain_value).value=prop5;}
-          }      
-        if(c=="integrator"){
+      }      
+      if(c=="integrator"){
         $("webtronics_outoffset").style.display='table-row'
         $("webtronics_gain").style.display='table-row'
         $("webtronics_outlowerlimit").style.display='table-row'
@@ -970,8 +953,8 @@ var webtronics={
         if(prop4!=""){$(webtronics_limitrange_value).value=prop4;}
         if(prop5!=""){$(webtronics_gain_value).value=prop5;}
         if(prop6!=""){$(webtronics_outic_value).value=prop6;}
-          }        
-        if(c=="sdomain"){
+      }        
+      if(c=="sdomain"){
         $("webtronics_gain").style.display='table-row'
         $("webtronics_intic").style.display='table-row'
         $("webtronics_dencoeff").style.display='table-row'
@@ -990,16 +973,16 @@ var webtronics={
         if(prop4!=""){$(webtronics_numcoeff_value).value=prop4;}
         if(prop5!=""){$(webtronics_inoffset_value).value=prop5;}
         if(prop6!=""){$(webtronics_denormfreq_value).value=prop6;}
-        }    
-        if(c=="slewrateblock"){
+      }    
+      if(c=="slewrateblock"){
         $("webtronics_riseslope").style.display='table-row'
         $("webtronics_fallslope").style.display='table-row'
         var prop1=netlistcreator.readwtx(this.circuit.selected[0],"riseslope");  
         var prop2 = netlistcreator.readwtx(this.circuit.selected[0],"fallslope");
         if(prop1!=""){$(webtronics_riseslope_value).value=prop1;}
         if(prop2!=""){$(webtronics_fallslope_value).value=prop2;}
-        }    
-        if(c=="sineoscillator"){
+      }    
+      if(c=="sineoscillator"){
         $("webtronics_outlow").style.display='table-row'
         $("webtronics_outhigh").style.display='table-row'
         $("webtronics_cntlarr").style.display='table-row'
@@ -1012,8 +995,8 @@ var webtronics={
         if(prop2!=""){$(webtronics_outhigh_value).value=prop2;}
         if(prop3!=""){$(webtronics_cntlarr_value).value=prop3;}
         if(prop4!=""){$(webtronics_freqarr_value).value=prop4;}
-        }    
-        if(c=="triangleoscillator"){
+      }    
+      if(c=="triangleoscillator"){
         $("webtronics_outlow").style.display='table-row'
         $("webtronics_outhigh").style.display='table-row'
         $("webtronics_cntlarr").style.display='table-row'
@@ -1029,8 +1012,8 @@ var webtronics={
         if(prop3!=""){$(webtronics_cntlarr_value).value=prop3;}
         if(prop4!=""){$(webtronics_freqarr_value).value=prop4;}
         if(prop5!=""){$(webtronics_duty_value).value=prop5;}
-        }    
-        if(c=="squareoscillator"){
+      }    
+      if(c=="squareoscillator"){
         $("webtronics_outlow").style.display='table-row'
         $("webtronics_outhigh").style.display='table-row'
         $("webtronics_cntlarr").style.display='table-row'
@@ -1052,26 +1035,26 @@ var webtronics={
         if(prop5!=""){$(webtronics_duty_value).value=prop5;}
         if(prop6!=""){$(webtronics_risetime_value).value=prop6;}
         if(prop7!=""){$(webtronics_falltime_value).value=prop7;}
-        }    
-        if(c=="capacitancemeter"){
-          $("webtronics_gain").style.display='table-row'
-          var prop1 = netlistcreator.readwtx(this.circuit.selected[0],"gain");
+      }    
+      if(c=="capacitancemeter"){
+        $("webtronics_gain").style.display='table-row'
+        var prop1 = netlistcreator.readwtx(this.circuit.selected[0],"gain");
         if(prop1!=""){$(webtronics_gain_value).value=prop1;}
-        }
-        if(c=="inductancemeter"){
-          $("webtronics_gain").style.display='table-row'
-          var prop1 = netlistcreator.readwtx(this.circuit.selected[0],"gain");
+      }
+      if(c=="inductancemeter"){
+        $("webtronics_gain").style.display='table-row'
+        var prop1 = netlistcreator.readwtx(this.circuit.selected[0],"gain");
         if(prop1!=""){$(webtronics_gain_value).value=prop1;}
-        }
-        if(c=="oneshot"){
+      }
+      if(c=="oneshot"){
         $("webtronics_cntlarr").style.display='table-row'
         $("webtronics_pwarr").style.display='table-row'
         $("webtronics_clktrig").style.display='table-row'
         $("webtronics_ptrig").style.display='table-row'
         $("webtronics_outlow").style.display='table-row'
         $("webtronics_outhigh").style.display='table-row'
-         $("webtronics_rdelay").style.display='table-row'
-          $("webtronics_fdelay").style.display='table-row'
+        $("webtronics_rdelay").style.display='table-row'
+        $("webtronics_fdelay").style.display='table-row'
         var prop1=netlistcreator.readwtx(this.circuit.selected[0],"cntlarr"); 
         var prop2 = netlistcreator.readwtx(this.circuit.selected[0],"pwarr");
         var prop3 = netlistcreator.readwtx(this.circuit.selected[0],"clktrig");
@@ -1086,12 +1069,12 @@ var webtronics={
         if(prop4!=""){$(webtronics_ptrig_value).value=prop4;}
         if(prop5!=""){$(webtronics_outlow_value).value=prop5;}
         if(prop6!=""){$(webtronics_outhigh_value).value=prop6;}
-         if(prop7!=""){$(webtronics_rdelay_value).value=prop7;}
+        if(prop7!=""){$(webtronics_rdelay_value).value=prop7;}
         if(prop8!=""){$(webtronics_fdelay_value).value=prop8;}
        
-        }
+      }
 
- if(c=="memristor"){
+      if(c=="memristor"){
         $("webtronics_rmin").style.display='table-row'
         $("webtronics_rmax").style.display='table-row'
         $("webtronics_rinit").style.display='table-row'
@@ -1110,64 +1093,57 @@ var webtronics={
         if(prop4!=""){$(webtronics_vt_value).value=prop4;}
         if(prop5!=""){$(webtronics_alpha_value).value=prop5;}
         if(prop6!=""){$(webtronics_beta_value).value=prop6;}
-          }   
+      }   
+    }
+    else {
+      this.getvalues(this.circuit.selected[0]);
+      $("directive").style.display='none'
+
+      $("webtronics_offsetvoltage").style.display='none'
+      $("webtronics_frequency").style.display='none'
+      $("webtronics_voltageamplitude").style.display='none'
+      $("webtronics_delaytime").style.display='none'
+      $("webtronics_dampingfactor").style.display='none'
+      $("valuemodel").style.display='block'
+
+      $("webtronics_amplitude").style.display='none'
+      $("webtronics_phase").style.display='none'
 
 
-  }
+      $("webtronics_eval1").style.display='none'
+      $("webtronics_eval2").style.display='none'
+      $("webtronics_eval3").style.display='none'
+      $("webtronics_eval4").style.display='none'
+      $("webtronics_eval5").style.display='none'
+      $("webtronics_eval6").style.display='none'
 
 
-
-  else {
-
-    this.getvalues(this.circuit.selected[0]);
-    $("directive").style.display='none'
-
-    $("webtronics_offsetvoltage").style.display='none'
-    $("webtronics_frequency").style.display='none'
-    $("webtronics_voltageamplitude").style.display='none'
-    $("webtronics_delaytime").style.display='none'
-    $("webtronics_dampingfactor").style.display='none'
-    $("valuemodel").style.display='block'
-
-    $("webtronics_amplitude").style.display='none'
-    $("webtronics_phase").style.display='none'
+      $("webtronics_pwlval1").style.display='none'
+      $("webtronics_pwlval2").style.display='none'
+      $("webtronics_pwlval3").style.display='none'
+      $("webtronics_pwlval4").style.display='none'
+      $("webtronics_pwlval5").style.display='none'
+      $("webtronics_pwlval6").style.display='none'
+      $("webtronics_pwlval7").style.display='none'
+      $("webtronics_pwlval8").style.display='none'
 
 
-    $("webtronics_eval1").style.display='none'
-    $("webtronics_eval2").style.display='none'
-    $("webtronics_eval3").style.display='none'
-    $("webtronics_eval4").style.display='none'
-    $("webtronics_eval5").style.display='none'
-    $("webtronics_eval6").style.display='none'
+      $("webtronics_pulval1").style.display='none'
+      $("webtronics_pulval2").style.display='none'
+      $("webtronics_pulval3").style.display='none'
+      $("webtronics_pulval4").style.display='none'
+      $("webtronics_pulval5").style.display='none'
+      $("webtronics_pulval6").style.display='none'
+      $("webtronics_pulval7").style.display='none'
+      var value=netlistcreator.readwtx(this.circuit.selected[0],"value");
+      if(value!=""){$('webtronics_part_value').value=value;}
 
-
-    $("webtronics_pwlval1").style.display='none'
-    $("webtronics_pwlval2").style.display='none'
-    $("webtronics_pwlval3").style.display='none'
-    $("webtronics_pwlval4").style.display='none'
-    $("webtronics_pwlval5").style.display='none'
-    $("webtronics_pwlval6").style.display='none'
-    $("webtronics_pwlval7").style.display='none'
-    $("webtronics_pwlval8").style.display='none'
-
-
-    $("webtronics_pulval1").style.display='none'
-    $("webtronics_pulval2").style.display='none'
-    $("webtronics_pulval3").style.display='none'
-    $("webtronics_pulval4").style.display='none'
-    $("webtronics_pulval5").style.display='none'
-    $("webtronics_pulval6").style.display='none'
-    $("webtronics_pulval7").style.display='none'
-    var value=netlistcreator.readwtx(this.circuit.selected[0],"value");
-    if(value!=""){$('webtronics_part_value').value=value;}
-
-    if(c=="dac_bridge")
-    {
-         $("webtronics_outlow").style.display='table-row'
+      if(c=="dac_bridge"){
+        $("webtronics_outlow").style.display='table-row'
         $("webtronics_outhigh").style.display='table-row'
         $("webtronics_outundef").style.display='table-row'
         $("webtronics_inputload").style.display='block';
-         $("webtronics_falltime").style.display='table-row'
+        $("webtronics_falltime").style.display='table-row'
         $("webtronics_risetime").style.display='table-row'
         $("valuemodel").style.display='none'
         var outlow = netlistcreator.readwtx(this.circuit.selected[0],"outlow");
@@ -1183,10 +1159,9 @@ var webtronics={
         var falltime = netlistcreator.readwtx(this.circuit.selected[0],"falltime");
         if(falltime!=""){$(webtronics_falltime_value).value=falltime;}
         
-    }
+      }
 
-    if(c=="adc_bridge")
-    {
+      if(c=="adc_bridge"){
         $("webtronics_outundef").style.display='none'
         $("webtronics_inlow").style.display='table-row'
         $("webtronics_inhigh").style.display='table-row'
@@ -1201,151 +1176,142 @@ var webtronics={
         if(risedelay!=""){$(webtronics_risedelay_value).value=risedelay;}
         var falldelay = netlistcreator.readwtx(this.circuit.selected[0],"falldelay");
         if(falldelay!=""){$(webtronics_falldelay_value).value=falldelay;}
+      }
 
-
-        
-
-    }
-
-    if(c=="cdo")
-    {
-       $("webtronics_cntlarr").style.display='table-row'
+      if(c=="cdo"){
+        $("webtronics_cntlarr").style.display='table-row'
         $("webtronics_freqarr").style.display='table-row'
         $("webtronics_duty").style.display='table-row'
         $("webtronics_phase").style.display='table-row'
         $("webtronics_risedelay").style.display='block';
-       $("webtronics_falldelay").style.display='block';
-       $("valuemodel").style.display='none';
-       $("webtronics_outundef").style.display='none'
+        $("webtronics_falldelay").style.display='block';
+        $("valuemodel").style.display='none';
+        $("webtronics_outundef").style.display='none'
 
-      var cntlarr = netlistcreator.readwtx(this.circuit.selected[0],"cntlarr");
-      if(cntlarr!=""){$(webtronics_cntlarr_value).value=cntlarr;}
-      var freqarr = netlistcreator.readwtx(this.circuit.selected[0],"freqarr");
-      if(freqarr!=""){$(webtronics_freqarr_value).value=freqarr;}
-      var duty = netlistcreator.readwtx(this.circuit.selected[0],"duty");
-      if(duty!=""){$(webtronics_duty_value).value=duty;}
-      var phase = netlistcreator.readwtx(this.circuit.selected[0],"phase");
-      if(phase!=""){$(webtronics_phase_value).value=phase;}
-      var risedelay = netlistcreator.readwtx(this.circuit.selected[0],"risedelay");
-      if(risedelay!=""){$(webtronics_risedelay_value).value=risedelay;}
-      var falldelay = netlistcreator.readwtx(this.circuit.selected[0],"falldelay");
-      if(falldelay!=""){$(webtronics_falldelay_value).value=falldelay;}
-    }   
-
-  }
+        var cntlarr = netlistcreator.readwtx(this.circuit.selected[0],"cntlarr");
+        if(cntlarr!=""){$(webtronics_cntlarr_value).value=cntlarr;}
+        var freqarr = netlistcreator.readwtx(this.circuit.selected[0],"freqarr");
+        if(freqarr!=""){$(webtronics_freqarr_value).value=freqarr;}
+        var duty = netlistcreator.readwtx(this.circuit.selected[0],"duty");
+        if(duty!=""){$(webtronics_duty_value).value=duty;}
+        var phase = netlistcreator.readwtx(this.circuit.selected[0],"phase");
+        if(phase!=""){$(webtronics_phase_value).value=phase;}
+        var risedelay = netlistcreator.readwtx(this.circuit.selected[0],"risedelay");
+        if(risedelay!=""){$(webtronics_risedelay_value).value=risedelay;}
+        var falldelay = netlistcreator.readwtx(this.circuit.selected[0],"falldelay");
+        if(falldelay!=""){$(webtronics_falldelay_value).value=falldelay;}
+      }   
+    }
 
     if(category=="mosfets"||category=="transistors"){
-    $("directive").style.display='block';
-
-  }
-  if(c=="diode")$("directive").style.display='block'
+      $("directive").style.display='block';
+    }
+    if(c=="diode")$("directive").style.display='block'
     var id=netlistcreator.readwtx(this.circuit.selected[0],"id");
-  if(type=="x")$("directive").style.display='block';
-  
-  if(id!=""){$('webtronics_part_id').value=id;}
+    if(type=="x")$("directive").style.display='block';
+    if(id!=""){$('webtronics_part_id').value=id;}
+    $("webtronics_part_dir_value").value=netlistcreator.readwtx(this.circuit.selected[0],'model');
+    
+    if(!netlistcreator.readwtx(webtronics.circuit.selected[0],"value")){
+      $('webtronics_part_id').value=this.circuit.getnextid(this.circuit.selected[0],0);
+    }
 
-  $("webtronics_part_dir_value").value=netlistcreator.readwtx(this.circuit.selected[0],'model');
+    this.disablepage();
+    $('webtronics_properties_div').style.display = "block";
 
-  if(!netlistcreator.readwtx(webtronics.circuit.selected[0],"value")){
-    $('webtronics_part_id').value=this.circuit.getnextid(this.circuit.selected[0],0);
-  }
+  },
 
-  this.disablepage();
-  $('webtronics_properties_div').style.display = "block";
+  sanitize:function(xmldoc){
+    var elems=xmldoc.getElementsByTagName('*');
+    for(var i=0;i<elems.length;i++){
+      if(!elems[i].tagName.match(this.Elist))return elems[i].tagName;
+      var attr=elems[i].attributes;
+      for(var j=0;j<attr.length;j++){
+        if(!attr[j].name.match(this.Alist))return attr[j].name;
+        if(attr[j].value.match(this.Vlist))return attr[j].value;
+      } 
+    }
+  },
 
-},
+  createfilemenu:function(x,y,id,parent,list){
+    var menu=document.createElement('div');
+    menu.id=id;
+    menu.className='webtronics_menu';
+    menu.style.left=x+'px';
+    menu.style.top=y+'px';
+    for(var i=0;i<list.length;i++){
+      var item=new Element('a',{Title:list[i].label,id:'webtronics_context_option',class:'enabled'})
+      .observe('click',list[i].cb.bind(this))
+      .observe('contextmenu', Event.stop)
+      .update(list[i].label);
+      menu.insert(item);
+      menu.insert(new Element('br'));
+    }
+    menu.observe('click',Event.stop)
+    .observe('contextmenu',Event.stop);
+    menu.style.display='none';
+    return menu;			
 
-sanitize:function(xmldoc){
-  var elems=xmldoc.getElementsByTagName('*');
-  for(var i=0;i<elems.length;i++){
-    if(!elems[i].tagName.match(this.Elist))return elems[i].tagName;
-    var attr=elems[i].attributes;
-    for(var j=0;j<attr.length;j++){
-     if(!attr[j].name.match(this.Alist))return attr[j].name;
-     if(attr[j].value.match(this.Vlist))return attr[j].value;
-   } 
- }
-},
-createfilemenu:function(x,y,id,parent,list){
-  var menu=document.createElement('div');
-  menu.id=id;
-  menu.className='webtronics_menu';
-  menu.style.left=x+'px';
-  menu.style.top=y+'px';
-  for(var i=0;i<list.length;i++){
-    var item=new Element('a',{Title:list[i].label,id:'webtronics_context_option',class:'enabled'})
-    .observe('click',list[i].cb.bind(this))
-    .observe('contextmenu', Event.stop)
-    .update(list[i].label);
-    menu.insert(item);
-    menu.insert(new Element('br'));
-  }
-  menu.observe('click',Event.stop)
-  .observe('contextmenu',Event.stop);
-  menu.style.display='none';
-  return menu;			
+  },
 
-},
+  file_open:function(){
+    var file=new Element('input',{'type':'file'});
+    var div=new Element('div',{'class':'modal'}).insert(file);
+    Event.observe(file,'change',function(){
+      if(window.FileReader){
+        var textReader = new FileReader();
+        textReader.onloadend=function(){
+          if(!textReader.result){
+            console.log("error opening file");
+            return;
+          };
 
-file_open:function(){
-  var file=new Element('input',{'type':'file'});
-  var div=new Element('div',{'class':'modal'}).insert(file);
-  Event.observe(file,'change',function(){
-    if(window.FileReader){
-     var textReader = new FileReader();
-     textReader.onloadend=function(){
-       if(!textReader.result){
-         console.log("error opening file");
-         return;
-       };
+          var xmlDoc=this.docfromtext(textReader.result);
+          if(!xmlDoc){alert("error parsing svg");}
+          else{
+            var result=this.sanitize(xmlDoc)
+            if(result){console.log(result+ ' found');alert('unclean file');return;}
+            var node=xmlDoc.getElementsByTagName('svg')[0];
+            if(!node){alert("svg node not found")}
+            else this.circuit.getfile(node);
+          }
+        
+        }.bind(this);
+        textReader.readAsText(file.files[0]);
+        $('webtronics_main_window').removeChild(div);
+      }
+    }.bind(this));
+    $('webtronics_main_window').insert(div);
+    div.style.display='block';
+    file.focus();
+    file.click();
+    $('webtronics_file_menu').style.display='none';
+    div.style.display='none';
 
-       var xmlDoc=this.docfromtext(textReader.result);
-       if(!xmlDoc){alert("error parsing svg");}
-       else{
-         var result=this.sanitize(xmlDoc)
-         if(result){console.log(result+ ' found');alert('unclean file');return;}
-         var node=xmlDoc.getElementsByTagName('svg')[0];
-         if(!node){alert("svg node not found")}
-           else this.circuit.getfile(node);
-       }
-     }.bind(this);
-     textReader.readAsText(file.files[0]);
-     $('webtronics_main_window').removeChild(div);
-   }
- }.bind(this));
-  $('webtronics_main_window').insert(div);
-  div.style.display='block';
-  file.focus();
-  file.click();
-  $('webtronics_file_menu').style.display='none';
-  div.style.display='none';
+  },
 
-},
+  download:function(filename, data) {
+    var pom = document.createElement('a');
+    pom.setAttribute('href', data);
+    pom.setAttribute('download', filename);
+    document.body.appendChild(pom);
+    pom.click();
+    pom.parentNode.removeChild(pom);
+  },
 
-download:function(filename, data) {
- var pom = document.createElement('a');
- pom.setAttribute('href', data);
- pom.setAttribute('download', filename);
- document.body.appendChild(pom);
- pom.click();
- pom.parentNode.removeChild(pom);
-},
-saveuri:function(){
-  var string="<?xml version='1.0' ?>\n";
-  string+="<!--Created by webtronics 0.1-->\n";
-  var doc=this.circuit.getDoc(true,false);
-  string += (new XMLSerializer()).serializeToString(doc);
-  this.download("webtronix.svg","data:application/octet-stream;charset=utf-8;base64," + encode64(string));
+  saveuri:function(){
+    var string="<?xml version='1.0' ?>\n";
+    string+="<!--Created by webtronics 0.1-->\n";
+    var doc=this.circuit.getDoc(true,false);
+    string += (new XMLSerializer()).serializeToString(doc);
+    this.download("webtronix.svg","data:application/octet-stream;charset=utf-8;base64," + encode64(string));
 
-  $('webtronics_file_menu').style.display='none';
+    $('webtronics_file_menu').style.display='none';
 
-},
+  },
 
-
-
-
-file_new:function(){
-  $('webtronics_file_menu').style.display='none';
+  file_new:function(){
+    $('webtronics_file_menu').style.display='none';
     //this.setMode('webtronics_select','select','Selection');
     input_box=confirm("Click OK to Clear the Drawing.");
     if (input_box==true){
@@ -1353,14 +1319,15 @@ file_new:function(){
       var frame=new Element('iframe',{id:'webtronics_display_frame',src:'canvas/canvas.html'});
       $('webtronics_diagram_area').insert(frame);
       Event.observe(frame,'load',function(){
-       var filename='Schematic.svg';
-       this.attachframe(filename,frame);
-
-     }.bind(this));
+        var filename='Schematic.svg';
+        this.attachframe(filename,frame);
+      }.bind(this));
+      
       $("webtronics_showhelp").checked=false;
       $$(".webtronics_help").forEach(function(e){
-       e.style.display="none";
-     });
+        e.style.display="none";
+      });
+        
       $("webtronics_invert").checked=false;
       $("webtronics_graph").checked=false;
       $("webtronics_connections").checked=false;
@@ -1379,30 +1346,31 @@ file_new:function(){
       $('webtronics_context_menu').style.left=Event.pointerX(e)+'px';                        
       if(this.circuit.mode =="select")$('webtronics_context_menu').style.display='block';                        
       if(this.circuit.selected.length===1&& this.circuit.selected[0].tagName==='g'){
-       $$('div#webtronics_context_menu [title=Properties]')[0].className='enabled';
-     }
-     else {
-       $$('div#webtronics_context_menu [title=Properties]')[0].className='disabled';
-     }
+        $$('div#webtronics_context_menu [title=Properties]')[0].className='enabled';
+      }
+      else {
+        $$('div#webtronics_context_menu [title=Properties]')[0].className='disabled';
+      }
      Event.stop(e);
-   }.bind(this));
+    }.bind(this));
+    
     Event.observe(this.circuit.container,'click',function(e){
       if(Event.isLeftClick(e)){                
-       if($('webtronics_context_menu')){
-         $('webtronics_context_menu').style.display='none';
-       }
-     }
-   }.bind(this));
+        if($('webtronics_context_menu')){
+          $('webtronics_context_menu').style.display='none';
+        }
+      }
+    }.bind(this));
     
     Event.observe(this.circuit.container,'keydown',function(e){
-    if(e.keyCode == 46) {
-       // alert('Delete Key Pressed');
+      if(e.keyCode == 46) {
+        // alert('Delete Key Pressed');
         webtronics.circuit.clearinfo();
-      webtronics.circuit.addhistory();
-      webtronics.circuit.deleteSelection();
-    }
+        webtronics.circuit.addhistory();
+        webtronics.circuit.deleteSelection();
+      }
 
-   }.bind(this));
+    }.bind(this));
 
   },
   
@@ -1414,6 +1382,7 @@ file_new:function(){
     html.value=spice1;
     return html;            
   },
+
   spicenetlist:"",
   gnucapjs:function(netlist){
     webtronics.spicenetlist=netlist;
@@ -1459,8 +1428,8 @@ console.log(exception);
 
 },
 */
-savepng:function(){
-/*   
+  savepng:function(){
+  /*   
     if(navigator.appName == 'Microsoft Internet Explorer'){
       $('webtronics_image_div').innerHTML="<img id='webtronics_image_save' >";
     }
@@ -1481,6 +1450,7 @@ savepng:function(){
     this.download("webtronix.png",url);
     canvas.parentNode.removeChild(canvas);		
   },
+  
   addpart:function(url,cat,partname) {
     var listfile=function(partsvg){
       var part=new Element("div",{"id":"webtronics_"+partname,"class":"webtronics_menu_part",'style':"display:none",'title':partname})
@@ -1490,116 +1460,104 @@ savepng:function(){
         var group=$$( "#"+ part.id+" g" )[0];
         webtronics.circuit.getgroup(group);
         webtronics.setMode('select','Selection');
-        
-        
         webtronics.showdefault();
-
-
       });
+      
       Event.observe(part,'mouseup',function(e){
        webtronics.circuit.deleteSelection();				
-     });
-
-
+      });
     }
 
     if(url.indexOf("http://")==-1){
-     openfile(url+'/'+cat+'/'+partname+'.svg',listfile);
+      openfile(url+'/'+cat+'/'+partname+'.svg',listfile);
+    }
+    else{
+      new request(url,cat+"/"+partname+'.svg',listfile);
+    }
 
-   }
-   else{
-     new request(url,cat+"/"+partname+'.svg',listfile);
-
-   }
-
- },
+  },
 
 
-//this takes an objectand returns a menu element
-makemenu:function(url, partlist,menu){
+  //this takes an objectand returns a menu element
+  makemenu:function(url, partlist,menu){
+    for (var cat in partlist.parts){
+      if(!$("webtronics_"+cat)){
+        var category=new Element("div",{"id":"webtronics_"+cat})
+          .insert(new Element("p").update(cat)
+            .observe('click',function(e){
 
+              var menuitems=$$('#'+menu.id+'>div>div');
 
-  for (var cat in partlist.parts){
-   if(!$("webtronics_"+cat)){
-    var category=new Element("div",{"id":"webtronics_"+cat})
-    .insert(new Element("p").update(cat)
-     .observe('click',function(e){
+              for(var i=0;i<menuitems.length;i++){
+                if(menuitems[i].parentNode==Event.element(e).parentNode){
+                  if(menuitems[i].style.display=='none'){
+                    menuitems[i].style.display='block';
+                  }
+                  else{
+                    menuitems[i].style.display='none';
+                  }
+                }
+                else{
+                  menuitems[i].style.display='none';
+                }
+              }
+          }));
+      
+        menu.insertBefore(category,menu.firstChild);
 
-      var menuitems=$$('#'+menu.id+'>div>div');
+        for(var partname in partlist.parts[cat]){
+          if(!$("webtronics_"+partname)){
+            webtronics.addpart(url , cat,partname);
+          }
+							//if(partlist.parts[cat][partname].indexOf()<0){}
+        }                
 
-      for(var i=0;i<menuitems.length;i++){
-       if(menuitems[i].parentNode==Event.element(e).parentNode){
-         if(menuitems[i].style.display=='none'){
-           menuitems[i].style.display='block';
-         }
-         else{
-           menuitems[i].style.display='none';
-         }
-       }
-       else{
-         menuitems[i].style.display='none';
-       }
-     }
-   }));
-    menu.insertBefore(category,menu.firstChild);
-
-    for(var partname in partlist.parts[cat]){
-     if(!$("webtronics_"+partname)){
-      webtronics.addpart(url , cat,partname);
+      }
 
     }
-							//if(partlist.parts[cat][partname].indexOf()<0){}
-            }                
+  },
+      
+  populatemenu:function(){
+    /*asynchronous part loading */
+    $("webtronics_parts_list").innerHTML="";
+    webtronics.serverurls.each(function(url){
+      if(url=="webtronix_server"){
+        openfile(url+"/parts.json",function(text){
+          webtronics.partslists.push(text.evalJSON(true));
+          webtronics.partslists[webtronics.partslists.length-1].url=url;
+          webtronics.makemenu(url,webtronics.partslists[webtronics.partslists.length-1] , $("webtronics_parts_list"));
+        });
+      }
+      else{
+        new request(url,"parts.json",function(text){
+          webtronics.partslists.push(text.evalJSON(true));
+          webtronics.partslists[webtronics.partslists.length-1].url=url;
+          webtronics.makemenu(url,webtronics.partslists[webtronics.partslists.length-1] , $("webtronics_parts_list"));
+        });
+      }
+    }.bind(this));
+  },
 
-          }
+  opensources:function(){
+    var sources=$$(".webtronics_add_source_input");
+    for( var i=0;i<sources.length;i++){
+      if(webtronics.serverurls[i])sources[i].value=webtronics.serverurls[i];
+      else sources[i].value="";
+    }
+    $("webtronics_add source").style.display="block";
+    this.center($("webtronics_add source"));
+    this.disablepage();
+  },
 
-        }
-      },
-      populatemenu:function(){
-        /*asynchronous part loading */
-        $("webtronics_parts_list").innerHTML="";
-        webtronics.serverurls.each(function(url){
-         if(url=="webtronix_server"){
-          openfile(url+"/parts.json",function(text){
-           webtronics.partslists.push(text.evalJSON(true));
-           webtronics.partslists[webtronics.partslists.length-1].url=url;
-           webtronics.makemenu(url,webtronics.partslists[webtronics.partslists.length-1] , $("webtronics_parts_list"));
-         });
+  /*all events are loaded here*/
+  init:function(){
+    Event.observe(window, 'load', function(){
+      if (!window.console) {
+        window.console = {};
+        window.console.log = function(){};
+      }
 
-        }
-        else{
-          new request(url,"parts.json",function(text){
-           webtronics.partslists.push(text.evalJSON(true));
-           webtronics.partslists[webtronics.partslists.length-1].url=url;
-           webtronics.makemenu(url,webtronics.partslists[webtronics.partslists.length-1] , $("webtronics_parts_list"));
-         });
-
-        }
-      }.bind(this));
-
-
-      },
-
-      opensources:function(){
-        var sources=$$(".webtronics_add_source_input");
-        for( var i=0;i<sources.length;i++){
-         if(webtronics.serverurls[i])sources[i].value=webtronics.serverurls[i];
-         else sources[i].value="";
-       }
-       $("webtronics_add source").style.display="block";
-       this.center($("webtronics_add source"));
-       this.disablepage();
-     },
-
-     /*all events are loaded here*/
-     init:function(){
-      Event.observe(window, 'load', function(){
-        if (!window.console) {
-         window.console = {};
-         window.console.log = function(){};
-       }
-
-       webtronics.setsize();
+      webtronics.setsize();
       //	    $('webtronics_scope_display_iframe').src="";
       var menu;
       $("webtronics_showhelp").checked=false;
@@ -1617,162 +1575,162 @@ makemenu:function(url, partlist,menu){
         {label:'kicad',cb:wtx2kicad},
         {label:'save-png',cb:webtronics.savepng},
         {label:'new',cb:webtronics.file_new}]);
+      
       menu.observe('mouseout',function(e){
-       if((e.relatedTarget!=null)&&!((e.relatedTarget == menu) || e.relatedTarget.descendantOf(menu))){
-	  //                if(!(e.relatedTarget == menu) ){
-     menu.style.display='none';
-   }
- });    
+        if((e.relatedTarget!=null)&&!((e.relatedTarget == menu) || e.relatedTarget.descendantOf(menu))){
+          //                if(!(e.relatedTarget == menu) ){
+          menu.style.display='none';
+        }
+      });    
       
       $("webtronics_main_window").insertBefore(menu,$("webtronics_disable"));
       
       
       /*replace context menu*/
       var myLinks = [
-      {label:'copy',cb:function(){
-       webtronics.copy=webtronics.circuit.copy();
-       $('webtronics_context_menu').style.display='none';
-     }},
-     {label:'paste',cb:function(){
-       webtronics.circuit.paste(webtronics.copy);
-       $('webtronics_context_menu').style.display='none';}},
+        {label:'copy',cb:function(){
+          webtronics.copy=webtronics.circuit.copy();
+          $('webtronics_context_menu').style.display='none';
+        }},
+        {label:'paste',cb:function(){
+          webtronics.circuit.paste(webtronics.copy);
+          $('webtronics_context_menu').style.display='none';
+        }},
 
-       {label:'delete',cb:function(){
-        webtronics.circuit.deleteSelection();
-        $('webtronics_context_menu').style.display='none';}},
+        {label:'delete',cb:function(){
+          webtronics.circuit.deleteSelection();
+          $('webtronics_context_menu').style.display='none';
+        }},
 
         {label:'Properties',cb:function(){
           webtronics.openProperties()
           webtronics.center($('webtronics_properties_div'));
           document.forms['webtronics_properties_form'].focus();
           $('webtronics_context_menu').style.display='none';
-
-
         }}];
-        var contextmenu=this.createfilemenu(0,
-          0,
-          'webtronics_context_menu',
-          $('webtronics_diagram_area'),
-          myLinks);
-        $("webtronics_diagram_area").insert(contextmenu);
-        /*add a new frame */
-        var frame=new Element('iframe',{id:'webtronics_display_frame',src:'canvas/canvas.html'});
-        $('webtronics_diagram_area').insert(frame);
+        
+      var contextmenu=this.createfilemenu(0,
+        0,
+        'webtronics_context_menu',
+        $('webtronics_diagram_area'),
+        myLinks);
 
-        Event.observe(frame,'load',function(){
-          var filename='Schematic.svg';
-          this.attachframe(filename,frame);
-        }.bind(this));
+      $("webtronics_diagram_area").insert(contextmenu);
+      /*add a new frame */
+      var frame=new Element('iframe',{id:'webtronics_display_frame',src:'canvas/canvas.html'});
+      $('webtronics_diagram_area').insert(frame);
 
-        Event.observe(window, 'resize', function() {
-          webtronics.setsize();
-          webtronics.circuit.addtools();	
-        });
+      Event.observe(frame,'load',function(){
+        var filename='Schematic.svg';
+        this.attachframe(filename,frame);
+      }.bind(this));
 
-        $('webtronics_toolbar').onselectstart = function() {return false;} 
-
-        $('webtronics_diagram_area').onselectstart = function() {return false;} 
-        $('webtronics_side_bar').onselectstart = function() {return false;} 
-
-
-//populate default menu
-
-webtronics.populatemenu();
-
-
-
-    			
-
-
-/*chipmaker*/
-$("webtronics_hor_pins").insert(Element("option",{"value":0}).update(0));
-for(var i=1;i<50;i++){
-  if(i>3){
-    $("webtronics_hor_pins").insert(Element("option",{"value":i}).update(i*2));
-  }
-  $("webtronics_vert_pins").insert(Element("option",{"value":i}).update(i*2));
-
-}
-
-/*menu events*/		
-
-Event.observe($('webtronics_file'), 'click', function() {
-  if($('webtronics_file_menu').style.display=='block'){
-    $('webtronics_file_menu').style.display='none';
-  }            
-  else {
-    $('webtronics_file_menu').style.display='block';
-  }                
-});
-Event.observe($('webtronics_chips_open'), 'click', function() {
-  webtronics.circuit.clearinfo();
-  webtronics.setMode('select','Selection');
-  chipmaker.openmaker();
-  $('webtronics_chips_box').style.display = "block";
-  webtronics.center($('webtronics_chips_box'));
-  webtronics.disablepage();
-});
-
-
-Event.observe($('webtronics_netlist_simulate'), 'click', function() {
-  $('webtronics_plot_box').style.display = "block";
-  $('plot_details').style.display = "block";
-  $('abscissa_value').value = "";
-  $('ordinate_value').value = "";
- // $('webtronics_graph_display').style.display = "none";
-  webtronics.center($('webtronics_plot_box'));
-  webtronics.disablepage();
-});
-
-
-
-
-
-if($("webtronics_select"))Event.observe($('webtronics_select'), 'click', function() {
-  webtronics.circuit.clearinfo();
-  webtronics.setMode('select', 'Selection');
-});
-  if($("webtronics_wire"))Event.observe($('webtronics_wire'), 'click', function() {
-    webtronics.circuit.clearinfo();
-    webtronics.setMode('line','Wire');
-  });
-    Event.observe($('webtronics_text'), 'click', function() {
-      webtronics.circuit.clearinfo();
-      if($('webtronics_text').className=='pressed_button'){
-        $('webtronics_text').className = 'normal_button';
-        webtronics.setMode('select', 'Selection');
-      }
-      else {
-        $('webtronics_text').className = 'pressed_button';
-        webtronics.setMode('text', 'Text');
-      }
-
-    });
-    if($('webtronics_undo')){
-      Event.observe($('webtronics_undo'),'click',function(){
-        webtronics.circuit.undo();
-
+      Event.observe(window, 'resize', function() {
+        webtronics.setsize();
+        webtronics.circuit.addtools();	
       });
-    }
-    if($('webtronics_redo')){
-      Event.observe($('webtronics_redo'),'click',function(){
-        webtronics.circuit.redo();
-      });
-    }
 
-    Event.observe($('webtronics_delete'), 'click', function() {
-      webtronics.circuit.clearinfo();
-      webtronics.circuit.addhistory();
-      webtronics.circuit.deleteSelection();
-    });
+      $('webtronics_toolbar').onselectstart = function() {return false;} 
 
-    Event.observe($(document), 'keydown', function(e) {
-    if(e.keyCode == 46) {  
-      webtronics.circuit.clearinfo();
-      webtronics.circuit.addhistory();
-      webtronics.circuit.deleteSelection();
+      $('webtronics_diagram_area').onselectstart = function() {return false;} 
+      $('webtronics_side_bar').onselectstart = function() {return false;} 
+
+
+      //populate default menu
+
+      webtronics.populatemenu();
+
+
+
+      /*chipmaker*/
+      $("webtronics_hor_pins").insert(Element("option",{"value":0}).update(0));
+      for(var i=1;i<50;i++){
+        if(i>3){
+          $("webtronics_hor_pins").insert(Element("option",{"value":i}).update(i*2));
         }
-    });
+        $("webtronics_vert_pins").insert(Element("option",{"value":i}).update(i*2));
+
+      }
+
+      /*menu events*/		
+
+      Event.observe($('webtronics_file'), 'click', function() {
+        if($('webtronics_file_menu').style.display=='block'){
+          $('webtronics_file_menu').style.display='none';
+        }            
+        else {
+          $('webtronics_file_menu').style.display='block';
+        }                
+      });
+      Event.observe($('webtronics_chips_open'), 'click', function() {
+        webtronics.circuit.clearinfo();
+        webtronics.setMode('select','Selection');
+        chipmaker.openmaker();
+        $('webtronics_chips_box').style.display = "block";
+        webtronics.center($('webtronics_chips_box'));
+        webtronics.disablepage();
+      });
+
+
+      Event.observe($('webtronics_netlist_simulate'), 'click', function() {
+        $('webtronics_plot_box').style.display = "block";
+        $('plot_details').style.display = "block";
+        $('abscissa_value').value = "";
+        $('ordinate_value').value = "";
+       // $('webtronics_graph_display').style.display = "none";
+        webtronics.center($('webtronics_plot_box'));
+        webtronics.disablepage();
+      });
+
+
+
+      if($("webtronics_select"))Event.observe($('webtronics_select'), 'click', function() {
+        webtronics.circuit.clearinfo();
+        webtronics.setMode('select', 'Selection');
+      });
+  
+      if($("webtronics_wire"))Event.observe($('webtronics_wire'), 'click', function() {
+        webtronics.circuit.clearinfo();
+        webtronics.setMode('line','Wire');
+      });
+    
+      Event.observe($('webtronics_text'), 'click', function() {
+        webtronics.circuit.clearinfo();
+        if($('webtronics_text').className=='pressed_button'){
+          $('webtronics_text').className = 'normal_button';
+          webtronics.setMode('select', 'Selection');
+        }
+        else {
+          $('webtronics_text').className = 'pressed_button';
+          webtronics.setMode('text', 'Text');
+        }
+
+      });
+      if($('webtronics_undo')){
+        Event.observe($('webtronics_undo'),'click',function(){
+          webtronics.circuit.undo();
+
+        });
+      }
+      if($('webtronics_redo')){
+        Event.observe($('webtronics_redo'),'click',function(){
+          webtronics.circuit.redo();
+        });
+      }
+
+      Event.observe($('webtronics_delete'), 'click', function() {
+        webtronics.circuit.clearinfo();
+        webtronics.circuit.addhistory();
+        webtronics.circuit.deleteSelection();
+      });
+
+      Event.observe($(document), 'keydown', function(e) {
+      if(e.keyCode == 46) {  
+        webtronics.circuit.clearinfo();
+        webtronics.circuit.addhistory();
+        webtronics.circuit.deleteSelection();
+          }
+      });
 
 /*
 		  if($('webtronics_save')){
@@ -1792,7 +1750,7 @@ if($("webtronics_select"))Event.observe($('webtronics_select'), 'click', functio
         analysis_type = jQuery(this).val();
         saved_analysis_type=analysis_type;
       });
-        analysis_type=saved_analysis_type;
+      analysis_type=saved_analysis_type;
 
 
 
@@ -1800,576 +1758,548 @@ if($("webtronics_select"))Event.observe($('webtronics_select'), 'click', functio
       if($('webtronics_netlist')){
         Event.observe($('webtronics_netlist'), 'click', function() {
           if(flag1!=0){
-
             netlistcreator.createnetlist(function(netlist){
-             var content=$$("#webtronics_netlist_text_div > *") 
-             for(var i=0;i<content.length;i++){
-               $("webtronics_netlist_text_div").removeChild(content[i]);
-             }
-             $("webtronics_netlist_text_div").insert(webtronics.formatnetlist(netlist,null));
-             $("webtronics_netlist_text").style.display='block';
-             globalVariable=1;
-             webtronics.center($('webtronics_netlist_text_div'));
-             webtronics.disablepage();});
-
-
-
+            var content=$$("#webtronics_netlist_text_div > *") 
+            for(var i=0;i<content.length;i++){
+              $("webtronics_netlist_text_div").removeChild(content[i]);
+            }
+            $("webtronics_netlist_text_div").insert(webtronics.formatnetlist(netlist,null));
+            $("webtronics_netlist_text").style.display='block';
+            globalVariable=1;
+            webtronics.center($('webtronics_netlist_text_div'));
+            webtronics.disablepage();});
 
             jQuery('#webtronics_netlist_buttons').show();
             jQuery('#webtronics_netlist_text').show();
             jQuery('#webtronics_netlist_text_div').show();
 
-
-
-
-
             change_val = "0";
             Flag = "";
-  //console.log("out")
+            //console.log("out")
 
-
-if (change_val == "0")
-{
-  Flag = jQuery("#webtronics_netlist_text_area").val();
+            if (change_val == "0"){
+              Flag = jQuery("#webtronics_netlist_text_area").val();
     
-  jQuery("#webtronics_netlist_text_area").val("");
-  /*------------------------------------------------------------------------------------------------------------------------------------- 
-   Here are the conditions concatenated to give final netlist values for dc all cases  
-   ---------------------------------------------------------------------------------------------------------------------------------------------*/ 
-  if (analysis_type == "1") 
-  { 
+              jQuery("#webtronics_netlist_text_area").val("");
+              /*------------------------------------------------------------------------------------------------------------------------------------- 
+               Here are the conditions concatenated to give final netlist values for dc all cases  
+               ---------------------------------------------------------------------------------------------------------------------------------------------*/ 
+              if (analysis_type == "1") 
+              { 
 
-   	str1='\n'+ ".dc" + " " + source + " " + start + "e" + "-" + start_dc_unit + " " +  stop + "e" + "-" + stop_dc_unit + " " + increment + "e" + "-" + increment_dc_unit + '\n' + '\n'+ ".control \n"+ "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+ ".end \n";
-    jQuery("#webtronics_netlist_text_area").val(Flag + str1 );
-    	final_str=str1;
-    change_val = "1";
-    //console.log(jQuery("#analysis_selectbox").val());
-  }
-
-
-  /*------------------------------------------------------------------------------------------------------------------------------------------------
-  Here are the all AC Cases for generating final netlist values
-  ------------------------------------------------------------------------------------------------------------------------------------------------*/
-  else if (analysis_type == "2")
-  {	
-     str2='\n'+ ".ac" + " " + scale_val + " " + noofpoint + " " + startfreq + start_ac_unit + " " + stopfreq + stop_ac_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+  ".end \n" ;
-
-    jQuery("#webtronics_netlist_text_area").val(Flag +str2 );
-    final_str=str2;
-    change_val = "1";
-        //console.log(jQuery("#webtronics_netlist_text_area").val());
-      console.log("from 00");
-  } 
-  /*------------------------------------------------------------------------------------------------------------------------------------------------
-  Here are the all Transiet Cases for generating final netlist values
-  ------------------------------------------------------------------------------------------------------------------------------------------------*/
-    //else if (analysis_type == "3" && time == "1")
-  else if (analysis_type== "3")
-  {
-  	str3='\n' + ".tran" + " " + step_trans + "e" + "-" + step_trans_unit + " " + stop_trans + "e"+ "-" + stop_trans_unit + " " + start_trans + "e" + "-" + start_trans_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n" +".end \n";
-    jQuery("#webtronics_netlist_text_area").val(Flag + str3 ); 
-    final_str=str3;
-    change_val = "1";
+               	str1='\n'+ ".dc" + " " + source + " " + start + "e" + "-" + start_dc_unit + " " +  stop + "e" + "-" + stop_dc_unit + " " + increment + "e" + "-" + increment_dc_unit + '\n' + '\n'+ ".control \n"+ "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+ ".end \n";
+                jQuery("#webtronics_netlist_text_area").val(Flag + str1 );
+                	final_str=str1;
+                change_val = "1";
+                //console.log(jQuery("#analysis_selectbox").val());
+              }
 
 
-  }
+              /*------------------------------------------------------------------------------------------------------------------------------------------------
+              Here are the all AC Cases for generating final netlist values
+              ------------------------------------------------------------------------------------------------------------------------------------------------*/
+              else if (analysis_type == "2")
+              {	
+                 str2='\n'+ ".ac" + " " + scale_val + " " + noofpoint + " " + startfreq + start_ac_unit + " " + stopfreq + stop_ac_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+  ".end \n" ;
 
-  else if (analysis_type == "4") 
-  { 
-
-    str4='\n'+ ".dc" + " " + source1 + " " + start1 + "e" + "-" + start_dc_unit1 + " " +  stop1 + "e" + "-" + stop_dc_unit1 + " " + increment1 + "e" + "-" + increment_dc_unit1 + " " + source2 + " " + start2 + "e" + "-" + start_dc_unit2 + " " +  stop2 + "e" + "-" + stop_dc_unit2 + " " + increment2 + "e" + "-" + increment_dc_unit2 + '\n' + '\n'+ ".control \n"+ "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+ ".end \n";
-    jQuery("#webtronics_netlist_text_area").val(Flag + str4 );
-    final_str=str4;
-    change_val = "1";
-    //console.log(jQuery("#analysis_selectbox").val());
-  }
-
-
-}
-
-else if (change_val == "1")
-{
-
-  jQuery("#webtronics_netlist_text_area").val("");
-
-  /*------------------------------------------------------------------------------------------------------------------------------------- 
-   Here are the conditions concatenated to give final netlist values for dc all cases  
-   ---------------------------------------------------------------------------------------------------------------------------------------------*/ 
-  if (analysis_type == "1") 
-  { 
-
-    jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".dc" + " " + source + " " + start + "e" + "-" + start_dc_unit + " " +  stop + "e" + "-" + stop_dc_unit + " " + increment + "e" + "-" + increment_dc_unit + '\n' + '\n'+ ".control \n"+ "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+ ".end \n" );
-
-    change_val = "1";
-    //console.log(jQuery("#analysis_selectbox").val());
-  }
+                jQuery("#webtronics_netlist_text_area").val(Flag +str2 );
+                final_str=str2;
+                change_val = "1";
+                    //console.log(jQuery("#webtronics_netlist_text_area").val());
+                  console.log("from 00");
+              } 
+              /*------------------------------------------------------------------------------------------------------------------------------------------------
+              Here are the all Transiet Cases for generating final netlist values
+              ------------------------------------------------------------------------------------------------------------------------------------------------*/
+                //else if (analysis_type == "3" && time == "1")
+              else if (analysis_type== "3")
+              {
+              	str3='\n' + ".tran" + " " + step_trans + "e" + "-" + step_trans_unit + " " + stop_trans + "e"+ "-" + stop_trans_unit + " " + start_trans + "e" + "-" + start_trans_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n" +".end \n";
+                jQuery("#webtronics_netlist_text_area").val(Flag + str3 ); 
+                final_str=str3;
+                change_val = "1";
 
 
-  /*------------------------------------------------------------------------------------------------------------------------------------------------
-  Here are the all AC Cases for generating final netlist values
-  ------------------------------------------------------------------------------------------------------------------------------------------------*/
-  else if (analysis_type == "2")
-  {
-    jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".ac" + " " + scale_val + " " + noofpoint + " " + startfreq + start_ac_unit + " " + stopfreq + stop_ac_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+  ".end \n" );
+              }
 
-    change_val = "1";
+              else if (analysis_type == "4") 
+              { 
 
-  } 
-  /*------------------------------------------------------------------------------------------------------------------------------------------------
-  Here are the all Transiet Cases for generating final netlist values
-  ------------------------------------------------------------------------------------------------------------------------------------------------*/
-    //else if (analysis_type == "3" && time == "1")
-  else if (analysis_type== "3")
-  {
-    jQuery("#webtronics_netlist_text_area").val(Flag + '\n' + ".tran" + " " + step_trans + "e" + "-" + step_trans_unit + " " + stop_trans + "e"+ "-" + stop_trans_unit + " " + start_trans + "e" + "-" + start_trans_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n" +".end \n" ); 
-
-    change_val = "1";
+                str4='\n'+ ".dc" + " " + source1 + " " + start1 + "e" + "-" + start_dc_unit1 + " " +  stop1 + "e" + "-" + stop_dc_unit1 + " " + increment1 + "e" + "-" + increment_dc_unit1 + " " + source2 + " " + start2 + "e" + "-" + start_dc_unit2 + " " +  stop2 + "e" + "-" + stop_dc_unit2 + " " + increment2 + "e" + "-" + increment_dc_unit2 + '\n' + '\n'+ ".control \n"+ "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+ ".end \n";
+                jQuery("#webtronics_netlist_text_area").val(Flag + str4 );
+                final_str=str4;
+                change_val = "1";
+                //console.log(jQuery("#analysis_selectbox").val());
+              }
 
 
-  }
+            }
 
-  else if (analysis_type == "4") 
-  { 
+          else if (change_val == "1"){
+            jQuery("#webtronics_netlist_text_area").val("");
 
-    jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".dc" + " " + source1 + " " + start1 + "e" + "-" + start_dc_unit1 + " " +  stop1 + "e" + "-" + stop_dc_unit1 + " " + increment1 + "e" + "-" + increment_dc_unit1 + " " + source2 + " " + start2 + "e" + "-" + start_dc_unit2 + " " +  stop2 + "e" + "-" + stop_dc_unit2 + " " + increment2 + "e" + "-" + increment_dc_unit2 + '\n' + '\n'+ ".control \n"+ "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+ ".end \n" );
+            /*------------------------------------------------------------------------------------------------------------------------------------- 
+             Here are the conditions concatenated to give final netlist values for dc all cases  
+             ---------------------------------------------------------------------------------------------------------------------------------------------*/ 
+            if (analysis_type == "1") 
+            { 
 
-    change_val = "1";
-    //console.log(jQuery("#analysis_selectbox").val());
-  }
+              jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".dc" + " " + source + " " + start + "e" + "-" + start_dc_unit + " " +  stop + "e" + "-" + stop_dc_unit + " " + increment + "e" + "-" + increment_dc_unit + '\n' + '\n'+ ".control \n"+ "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+ ".end \n" );
 
-  console.log(jQuery("#webtronics_netlist_text_area").val());
-  console.log("deepblueSea");
-} 
-
-
-
-
-}
-
-else {
-  alert("Analysis information is not available !");
-}
+              change_val = "1";
+              //console.log(jQuery("#analysis_selectbox").val());
+            }
 
 
+            /*------------------------------------------------------------------------------------------------------------------------------------------------
+            Here are the all AC Cases for generating final netlist values
+            ------------------------------------------------------------------------------------------------------------------------------------------------*/
+            else if (analysis_type == "2")
+            {
+              jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".ac" + " " + scale_val + " " + noofpoint + " " + startfreq + start_ac_unit + " " + stopfreq + stop_ac_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+  ".end \n" );
+
+              change_val = "1";
+
+            } 
+            /*------------------------------------------------------------------------------------------------------------------------------------------------
+            Here are the all Transiet Cases for generating final netlist values
+            ------------------------------------------------------------------------------------------------------------------------------------------------*/
+              //else if (analysis_type == "3" && time == "1")
+            else if (analysis_type== "3")
+            {
+              jQuery("#webtronics_netlist_text_area").val(Flag + '\n' + ".tran" + " " + step_trans + "e" + "-" + step_trans_unit + " " + stop_trans + "e"+ "-" + stop_trans_unit + " " + start_trans + "e" + "-" + start_trans_unit + '\n' + '\n'+ ".control \n"+  "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n" +".end \n" ); 
+
+              change_val = "1";
 
 
-});
-}
+            }
 
+            else if (analysis_type == "4") 
+            { 
 
+              jQuery("#webtronics_netlist_text_area").val(Flag + '\n'+ ".dc" + " " + source1 + " " + start1 + "e" + "-" + start_dc_unit1 + " " +  stop1 + "e" + "-" + stop_dc_unit1 + " " + increment1 + "e" + "-" + increment_dc_unit1 + " " + source2 + " " + start2 + "e" + "-" + start_dc_unit2 + " " +  stop2 + "e" + "-" + stop_dc_unit2 + " " + increment2 + "e" + "-" + increment_dc_unit2 + '\n' + '\n'+ ".control \n"+ "run \n"+ "print allv > dumpv.txt \n" + "print alli > dumpi.txt \n" + ".endc \n"+ ".end \n" );
 
+              change_val = "1";
+              //console.log(jQuery("#analysis_selectbox").val());
+            }
 
+            console.log(jQuery("#webtronics_netlist_text_area").val());
+            console.log("deepblueSea");
+          } 
+        }
+        else {
+          alert("Analysis information is not available !");
+        }
 
-jQuery("#webtronics_analysis").click(function(){
-  flag1=1;
-  jQuery('#webtronics_netlist_analysis').show();
-
-  jQuery('#webtronics_disable').show();
-
-
-
-});
-
-jQuery(".button_cancel").click(function(){
-  flag1=0;
-  jQuery("#webtronics_netlist_analysis").hide();
-  jQuery("#webtronics_disable").hide();
-
-});
-
-
-
-
-
-if($('webtronics_run')){
-  Event.observe($('webtronics_run'), 'click', function() {
-		      //                    webtronics.postspice(webtronics.circuit.createnetlist());
-		      netlistcreator.createnetlist(webtronics.gnucapjs);
-		    });
-
-}
-
-if($('webtronics_invert')){
-
-  Event.observe($('webtronics_invert'),'click',function(){
-    webtronics.circuit.invert($('webtronics_invert').checked);
-
-  });
-}		
-if($('webtronics_graph')){
-  Event.observe($('webtronics_graph'),'click',function(){
-    if($('webtronics_graph').checked){
-     webtronics.circuit.graph=true;
-     webtronics.circuit.showbackground();									
-   }
-   else{
-     webtronics.circuit.graph=false;
-     webtronics.circuit.showbackground();									
-   }
- });
-}
-if($('webtronics_connections')){
-  $('webtronics_connections').checked=false;
-  Event.observe($('webtronics_connections'),'click',function(){
-    webtronics.circuit.showconnections($('webtronics_connections').checked);
-
-  });
-}
-if($("webtronics_showhelp")){
-  Event.observe($("webtronics_showhelp"),"click",function(){
-   if($("webtronics_showhelp").checked){
-    $$(".webtronics_help").forEach(function(e){
-     e.style.display="block";
-   });
-  }
-  else{
-    $$(".webtronics_help").forEach(function(e){
-     e.style.display="none";
-   });
-  }
-});
-}
-/*properties events*/		
-
-
-if($('webtronics_properties_ok'))Event.observe($('webtronics_properties_ok'), 'click', function() {
-  $("webtronics_print_dir_field").style.display="none";
-  $('webtronics_properties_div').style.display='none';
-  webtronics.enablepage();
-  var model=webtronics.circuit.selected[0];
-  netlistcreator.writewtx(model,"id",$('webtronics_part_id').value);
-  netlistcreator.writewtx(model,"value",$('webtronics_part_value').value);
-  netlistcreator.writewtx(model,"model",$('webtronics_part_dir_value').value);
-  netlistcreator.writewtx(model,"measure",$('webtronics_print_dir_value').value);
-  
-  var modelname=netlistcreator.readwtx(model,"name");
-  if(modelname=="gains"){
-    netlistcreator.writewtx(model,"gain",$('webtronics_gain_value').value);
-    netlistcreator.writewtx(model,"inoffset",$('webtronics_inoffset_value').value);
-    netlistcreator.writewtx(model,"outoffset",$('webtronics_outoffset_value').value);
-  }
-  else if(modelname=="summer"){
-    netlistcreator.writewtx(model,"ingain",$('webtronics_ingain_value').value);
-    netlistcreator.writewtx(model,"outgain",$('webtronics_outgain_value').value);
-    netlistcreator.writewtx(model,"inoffset",$('webtronics_inoffset_value').value);
-    netlistcreator.writewtx(model,"outoffset",$('webtronics_outoffset_value').value);
-  }
-  else if(modelname=="multiplier"){
-    netlistcreator.writewtx(model,"ingain",$('webtronics_ingain_value').value);
-    netlistcreator.writewtx(model,"outgain",$('webtronics_outgain_value').value);
-    netlistcreator.writewtx(model,"inoffset",$('webtronics_inoffset_value').value);
-    netlistcreator.writewtx(model,"outoffset",$('webtronics_outoffset_value').value);
-  }
-    else if(modelname=="divider"){
-    netlistcreator.writewtx(model,"numgain",$('webtronics_numgain_value').value);
-    netlistcreator.writewtx(model,"outgain",$('webtronics_outgain_value').value);
-    netlistcreator.writewtx(model,"numoffset",$('webtronics_numoffset_value').value);
-    netlistcreator.writewtx(model,"dengain",$('webtronics_dengain_value').value);
-    netlistcreator.writewtx(model,"denoffset",$('webtronics_denoffset_value').value);
-    netlistcreator.writewtx(model,"fraction",$('webtronics_fraction_value').value);
-    netlistcreator.writewtx(model,"dendomain",$('webtronics_dendomain_value').value);
-    netlistcreator.writewtx(model,"denlowerlimit",$('webtronics_denlowerlimit_value').value);
-    netlistcreator.writewtx(model,"outoffset",$('webtronics_outoffset_value').value);
-  }
-  else if(modelname=="limiter"){
-    netlistcreator.writewtx(model,"limitrange",$('webtronics_limitrange_value').value);
-    netlistcreator.writewtx(model,"fraction",$('webtronics_fraction_value').value);
-    netlistcreator.writewtx(model,"outupperlimit",$('webtronics_outupperlimit_value').value);
-    netlistcreator.writewtx(model,"outlowerlimit",$('webtronics_outlowerlimit_value').value);
-    netlistcreator.writewtx(model,"inoffset",$('webtronics_inoffset_value').value);
-    netlistcreator.writewtx(model,"gain",$('webtronics_gain_value').value);
-  }
-  else if(modelname=="controllimiter"){
-    netlistcreator.writewtx(model,"limitrange",$('webtronics_limitrange_value').value);
-    netlistcreator.writewtx(model,"fraction",$('webtronics_fraction_value').value);
-    netlistcreator.writewtx(model,"upperdelta",$('webtronics_upperdelta_value').value);
-    netlistcreator.writewtx(model,"lowerdelta",$('webtronics_lowerdelta_value').value);
-    netlistcreator.writewtx(model,"inoffset",$('webtronics_inoffset_value').value);
-    netlistcreator.writewtx(model,"gain",$('webtronics_gain_value').value);
-  }
-  else if(modelname=="pwlcontrolsource"){
-    netlistcreator.writewtx(model,"xarr",$('webtronics_xarr_value').value);
-    netlistcreator.writewtx(model,"fraction",$('webtronics_fraction_value').value);
-    netlistcreator.writewtx(model,"yarr",$('webtronics_yarr_value').value);
-    netlistcreator.writewtx(model,"indomain",$('webtronics_indomain_value').value);
+      });
     }
-  else if(modelname=="multiinputpwlblock"){
-    netlistcreator.writewtx(model,"xarr",$('webtronics_xarr_value').value);
-    netlistcreator.writewtx(model,"amodel",$('webtronics_amodel_value').value);
-    netlistcreator.writewtx(model,"yarr",$('webtronics_yarr_value').value);
+
+    jQuery("#webtronics_analysis").click(function(){
+      flag1=1;
+      jQuery('#webtronics_netlist_analysis').show();
+
+      jQuery('#webtronics_disable').show();
+
+
+
+    });
+
+    jQuery(".button_cancel").click(function(){
+      flag1=0;
+      jQuery("#webtronics_netlist_analysis").hide();
+      jQuery("#webtronics_disable").hide();
+
+    });
+
+    if($('webtronics_run')){
+      Event.observe($('webtronics_run'), 'click', function() {
+  		  //                    webtronics.postspice(webtronics.circuit.createnetlist());
+  		  netlistcreator.createnetlist(webtronics.gnucapjs);
+  		});
+
     }
-  else if(modelname=="aswitch"){
-    netlistcreator.writewtx(model,"coff",$('webtronics_coff_value').value);
-    netlistcreator.writewtx(model,"con",$('webtronics_con_value').value);
-    netlistcreator.writewtx(model,"roff",$('webtronics_roff_value').value);
-    netlistcreator.writewtx(model,"ron",$('webtronics_ron_value').value);
-    netlistcreator.writewtx(model,"log",$('webtronics_log_value').value);
-   }
-  else if(modelname=="zener"){
-    netlistcreator.writewtx(model,"irev",$('webtronics_irev_value').value);
-    netlistcreator.writewtx(model,"isat",$('webtronics_isat_value').value);
-    netlistcreator.writewtx(model,"limitswitch",$('webtronics_limitswitch_value').value);
-    netlistcreator.writewtx(model,"nfor",$('webtronics_nfor_value').value);
-    netlistcreator.writewtx(model,"vbreak",$('webtronics_vbreak_value').value);
-    netlistcreator.writewtx(model,"ibreak",$('webtronics_ibreak_value').value);
-    netlistcreator.writewtx(model,"rbreak",$('webtronics_rbreak_value').value);
-   }
-  else if(modelname=="currentlimiter"){
-    netlistcreator.writewtx(model,"rsource",$('webtronics_rsource_value').value);
-    netlistcreator.writewtx(model,"rsink",$('webtronics_rsink_value').value);
-    netlistcreator.writewtx(model,"inoffset",$('webtronics_inoffset_value').value);
-    netlistcreator.writewtx(model,"gain",$('webtronics_gain_value').value);
-    netlistcreator.writewtx(model,"ilimitsource",$('webtronics_ilimitsource_value').value);
-    netlistcreator.writewtx(model,"ilimitsink",$('webtronics_ilimitsink_value').value);
-    netlistcreator.writewtx(model,"vpwr",$('webtronics_ibreak_value').value);
-    netlistcreator.writewtx(model,"isource",$('webtronics_isource_value').value);
-    netlistcreator.writewtx(model,"isink",$('webtronics_isink_value').value);
-    netlistcreator.writewtx(model,"routdomain",$('webtronics_routdomain_value').value);
-   }
-  else if(modelname=="hysteresis"){
-    netlistcreator.writewtx(model,"inlow",$('webtronics_inlow_value').value);
-    netlistcreator.writewtx(model,"inhigh",$('webtronics_inhigh_value').value);
-    netlistcreator.writewtx(model,"outlowerlimit",$('webtronics_outlowerlimit_value').value);
-    netlistcreator.writewtx(model,"outupperlimit",$('webtronics_outupperlimit_value').value);
-    netlistcreator.writewtx(model,"hyst",$('webtronics_hyst_value').value);
-    netlistcreator.writewtx(model,"indomain",$('webtronics_indomain_value').value);
-    netlistcreator.writewtx(model,"fraction",$('webtronics_fraction_value').value);
-   }   
-  else if(modelname=="differentiator"){
-    netlistcreator.writewtx(model,"outoffset",$('webtronics_outoffset_value').value);
-    netlistcreator.writewtx(model,"gain",$('webtronics_gain_value').value);
-    netlistcreator.writewtx(model,"outlowerlimit",$('webtronics_outlowerlimit_value').value);
-    netlistcreator.writewtx(model,"outupperlimit",$('webtronics_outupperlimit_value').value);
-    netlistcreator.writewtx(model,"limitrange",$('webtronics_limitrange_value').value);
-   }
 
-  else if(modelname=="integrator"){
-    netlistcreator.writewtx(model,"outoffset",$('webtronics_outoffset_value').value);
-    netlistcreator.writewtx(model,"gain",$('webtronics_gain_value').value);
-    netlistcreator.writewtx(model,"outlowerlimit",$('webtronics_outlowerlimit_value').value);
-    netlistcreator.writewtx(model,"outupperlimit",$('webtronics_outupperlimit_value').value);
-    netlistcreator.writewtx(model,"limitrange",$('webtronics_limitrange_value').value);
-     netlistcreator.writewtx(model,"outic",$('webtronics_outic_value').value);
-   }
-  else if(modelname=="sdomain"){
-    netlistcreator.writewtx(model,"gain",$('webtronics_gain_value').value);
-    netlistcreator.writewtx(model,"intic",$('webtronics_intic_value').value);
-    netlistcreator.writewtx(model,"numcoeff",$('webtronics_numcoeff_value').value);
-    netlistcreator.writewtx(model,"dencoeff",$('webtronics_dencoeff_value').value);
-    netlistcreator.writewtx(model,"inoffset",$('webtronics_inoffset_value').value);
-    netlistcreator.writewtx(model,"denormfreq",$('webtronics_denormfreq_value').value);
-  }
-  else if(modelname=="slewrateblock"){
-    netlistcreator.writewtx(model,"riseslope",$('webtronics_riseslope_value').value);
-    netlistcreator.writewtx(model,"fallslope",$('webtronics_fallslope_value').value);
+    if($('webtronics_invert')){
+      Event.observe($('webtronics_invert'),'click',function(){
+      webtronics.circuit.invert($('webtronics_invert').checked);
+      });
+    }		
+
+    if($('webtronics_graph')){
+      Event.observe($('webtronics_graph'),'click',function(){
+        if($('webtronics_graph').checked){
+          webtronics.circuit.graph=true;
+          webtronics.circuit.showbackground();									
+        }
+        else{
+          webtronics.circuit.graph=false;
+          webtronics.circuit.showbackground();									
+        }
+      });
     }
-  else if(modelname=="sineoscillator"){
-    netlistcreator.writewtx(model,"outlow",$('webtronics_outlow_value').value);
-    netlistcreator.writewtx(model,"outhigh",$('webtronics_outhigh_value').value);
-    netlistcreator.writewtx(model,"freqarr",$('webtronics_freqarr_value').value);
-    netlistcreator.writewtx(model,"cntlarr",$('webtronics_cntlarr_value').value);
-    }
-  else if(modelname=="triangleoscillator"){
-    netlistcreator.writewtx(model,"outlow",$('webtronics_outlow_value').value);
-    netlistcreator.writewtx(model,"outhigh",$('webtronics_outhigh_value').value);
-    netlistcreator.writewtx(model,"freqarr",$('webtronics_freqarr_value').value);
-    netlistcreator.writewtx(model,"cntlarr",$('webtronics_cntlarr_value').value);
-    netlistcreator.writewtx(model,"duty",$('webtronics_duty_value').value);
-    }
-  else if(modelname=="squareoscillator"){
-    netlistcreator.writewtx(model,"outlow",$('webtronics_outlow_value').value);
-    netlistcreator.writewtx(model,"outhigh",$('webtronics_outhigh_value').value);
-    netlistcreator.writewtx(model,"freqarr",$('webtronics_freqarr_value').value);
-    netlistcreator.writewtx(model,"cntlarr",$('webtronics_cntlarr_value').value);
-    netlistcreator.writewtx(model,"duty",$('webtronics_duty_value').value);
-    netlistcreator.writewtx(model,"risetime",$('webtronics_risetime_value').value);
-    netlistcreator.writewtx(model,"falltime",$('webtronics_falltime_value').value);
-    }
-else if(modelname=="oneshot"){
-    netlistcreator.writewtx(model,"cntlarr",$('webtronics_cntlarr_value').value);
-    netlistcreator.writewtx(model,"pwarr",$('webtronics_pwarr_value').value);
-    netlistcreator.writewtx(model,"clktrig",$('webtronics_clktrig_value').value);
-    netlistcreator.writewtx(model,"ptrig",$('webtronics_ptrig_value').value);
-    netlistcreator.writewtx(model,"outlow",$('webtronics_outlow_value').value);
-     netlistcreator.writewtx(model,"outhigh",$('webtronics_outhigh_value').value);
-      netlistcreator.writewtx(model,"rdelay",$('webtronics_rdelay_value').value);
-     netlistcreator.writewtx(model,"fdelay",$('webtronics_fdelay_value').value);
-   }
-   
-
- else if(modelname=="memristor"){
-    netlistcreator.writewtx(model,"rmin",$('webtronics_rmin_value').value);
-    netlistcreator.writewtx(model,"rmax",$('webtronics_rmax_value').value);
-    netlistcreator.writewtx(model,"rinit",$('webtronics_rinit_value').value);
-    netlistcreator.writewtx(model,"vt",$('webtronics_vt_value').value);
-    netlistcreator.writewtx(model,"alpha",$('webtronics_alpha_value').value);
-     netlistcreator.writewtx(model,"beta",$('webtronics_beta_value').value);
-   }
-
-  else if(modelname=="ac"){
-    netlistcreator.writewtx(model,"phase",$('webtronics_phase_value').value);
-    netlistcreator.writewtx(model,"amplitude",$('webtronics_amplitude_value').value);
-
-  }
-  else if(modelname=="capacitancemeter"||modelname=="inductancemeter"){
-    netlistcreator.writewtx(model,"gain",$('webtronics_gain_value').value);
-     }
-
-  else if(modelname=="sinvoltagesource"){
-    netlistcreator.writewtx(model,"offsetvoltage",$('webtronics_offsetvoltage_value').value);
-    netlistcreator.writewtx(model,"voltageamplitude",$('webtronics_voltageamplitude_value').value);
-    netlistcreator.writewtx(model,"frequency",$('webtronics_frequency_value').value);
-    netlistcreator.writewtx(model,"delaytime",$('webtronics_delaytime_value').value);
-    netlistcreator.writewtx(model,"dampingfactor",$('webtronics_dampingfactor_value').value);
-
-  }
-  else if(modelname=="pulse"){
-    netlistcreator.writewtx(model,"pulval1",$('webtronics_pulval1_value').value);
-    netlistcreator.writewtx(model,"pulval2",$('webtronics_pulval2_value').value);
-    netlistcreator.writewtx(model,"pulval3",$('webtronics_pulval3_value').value);
-    netlistcreator.writewtx(model,"pulval4",$('webtronics_pulval4_value').value);
-    netlistcreator.writewtx(model,"pulval5",$('webtronics_pulval5_value').value);
-    netlistcreator.writewtx(model,"pulval6",$('webtronics_pulval6_value').value);
-    netlistcreator.writewtx(model,"pulval7",$('webtronics_pulval7_value').value);                   
-  }
-  else if(modelname=="pwl"){
-    netlistcreator.writewtx(model,"pwlval1",$('webtronics_pwlval1_value').value);
-    netlistcreator.writewtx(model,"pwlval2",$('webtronics_pwlval2_value').value);
-    netlistcreator.writewtx(model,"pwlval3",$('webtronics_pwlval3_value').value);
-    netlistcreator.writewtx(model,"pwlval4",$('webtronics_pwlval4_value').value);
-    netlistcreator.writewtx(model,"pwlval5",$('webtronics_pwlval5_value').value);
-    netlistcreator.writewtx(model,"pwlval6",$('webtronics_pwlval6_value').value);
-    netlistcreator.writewtx(model,"pwlval7",$('webtronics_pwlval7_value').value);                   
-    netlistcreator.writewtx(model,"pwlval8",$('webtronics_pwlval8_value').value);                   
-  }
-  else if(modelname=="exponential"){
-    netlistcreator.writewtx(model,"eval1",$('webtronics_eval1_value').value);
-    netlistcreator.writewtx(model,"eval2",$('webtronics_eval2_value').value);
-    netlistcreator.writewtx(model,"eval3",$('webtronics_eval3_value').value);
-    netlistcreator.writewtx(model,"eval4",$('webtronics_eval4_value').value);
-    netlistcreator.writewtx(model,"eval5",$('webtronics_eval5_value').value);
-    netlistcreator.writewtx(model,"eval6",$('webtronics_eval6_value').value);
-  }
-
-  else if(modelname=="and"|| modelname=='not'|| modelname=='nand'|| modelname=='or'||modelname=='nor'||modelname=='xor'||modelname=='xnor'){
-    netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
-    netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
-    netlistcreator.writewtx(model,"inputload",$('webtronics_inputload_value').value);
-  }
-  else if(modelname=="dff"){
-    netlistcreator.writewtx(model,"clkdelay",$('webtronics_clkdelay_value').value);
-    netlistcreator.writewtx(model,"setdelay",$('webtronics_setdelay_value').value);
-    netlistcreator.writewtx(model,"resetdelay",$('webtronics_resetdelay_value').value);
-    netlistcreator.writewtx(model,"ic",$('webtronics_ic_value').value);
-    netlistcreator.writewtx(model,"dataload",$('webtronics_dataload_value').value);
-    netlistcreator.writewtx(model,"clkload",$('webtronics_clkload_value').value);
-    netlistcreator.writewtx(model,"setload",$('webtronics_seload_value').value);
-    netlistcreator.writewtx(model,"resetload",$('webtronics_resetload_value').value);
-    netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
-    netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
     
-  }
-  else if(modelname=="jkff"){
-    netlistcreator.writewtx(model,"clkdelay",$('webtronics_clkdelay_value').value);
-    netlistcreator.writewtx(model,"setdelay",$('webtronics_setdelay_value').value);
-    netlistcreator.writewtx(model,"resetdelay",$('webtronics_resetdelay_value').value);
-    netlistcreator.writewtx(model,"ic",$('webtronics_ic_value').value);
-    netlistcreator.writewtx(model,"jkload",$('webtronics_jkload_value').value);
-    netlistcreator.writewtx(model,"clkload",$('webtronics_clkload_value').value);
-    netlistcreator.writewtx(model,"setload",$('webtronics_seload_value').value);
-    netlistcreator.writewtx(model,"resetload",$('webtronics_resetload_value').value);
-    netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
-    netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
-  }
-  else if(modelname=="tff"){
-    netlistcreator.writewtx(model,"clkdelay",$('webtronics_clkdelay_value').value);
-    netlistcreator.writewtx(model,"setdelay",$('webtronics_setdelay_value').value);
-    netlistcreator.writewtx(model,"resetdelay",$('webtronics_resetdelay_value').value);
-    netlistcreator.writewtx(model,"ic",$('webtronics_ic_value').value);
-    netlistcreator.writewtx(model,"tload",$('webtronics_tload_value').value);
-    netlistcreator.writewtx(model,"clkload",$('webtronics_clkload_value').value);
-    netlistcreator.writewtx(model,"setload",$('webtronics_seload_value').value);
-    netlistcreator.writewtx(model,"resetload",$('webtronics_resetload_value').value);
-    netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
-    netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
-  }
-  else if(modelname=="srff"){
-    netlistcreator.writewtx(model,"clkdelay",$('webtronics_clkdelay_value').value);
-    netlistcreator.writewtx(model,"setdelay",$('webtronics_setdelay_value').value);
-    netlistcreator.writewtx(model,"resetdelay",$('webtronics_resetdelay_value').value);
-    netlistcreator.writewtx(model,"ic",$('webtronics_ic_value').value);
-    netlistcreator.writewtx(model,"srload",$('webtronics_srload_value').value);
-    netlistcreator.writewtx(model,"clkload",$('webtronics_clkload_value').value);
-    netlistcreator.writewtx(model,"setload",$('webtronics_seload_value').value);
-    netlistcreator.writewtx(model,"resetload",$('webtronics_resetload_value').value);
-    netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
-    netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
-  }
-  else if(modelname=="dlatch"){
-    netlistcreator.writewtx(model,"datadelay",$('webtronics_datadelay_value').value);
-    netlistcreator.writewtx(model,"enabledelay",$('webtronics_enabledelay_value').value);
-    netlistcreator.writewtx(model,"setdelay",$('webtronics_setdelay_value').value);
-    netlistcreator.writewtx(model,"resetdelay",$('webtronics_resetdelay_value').value);
-    netlistcreator.writewtx(model,"ic",$('webtronics_ic_value').value);
-    netlistcreator.writewtx(model,"dataload",$('webtronics_dataload_value').value);
-    netlistcreator.writewtx(model,"enableload",$('webtronics_enableload_value').value);
-    netlistcreator.writewtx(model,"setload",$('webtronics_seload_value').value);
-    netlistcreator.writewtx(model,"resetload",$('webtronics_resetload_value').value);
-    netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
-    netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
-  }
-  else if(modelname=="srlatch"){
-    netlistcreator.writewtx(model,"datadelay",$('webtronics_datadelay_value').value);
-    netlistcreator.writewtx(model,"enabledelay",$('webtronics_enabledelay_value').value);
-    netlistcreator.writewtx(model,"setdelay",$('webtronics_setdelay_value').value);
-    netlistcreator.writewtx(model,"resetdelay",$('webtronics_resetdelay_value').value);
-    netlistcreator.writewtx(model,"ic",$('webtronics_ic_value').value);
-    netlistcreator.writewtx(model,"srload",$('webtronics_srload_value').value);
-    netlistcreator.writewtx(model,"enableload",$('webtronics_enableload_value').value);
-    netlistcreator.writewtx(model,"setload",$('webtronics_seload_value').value);
-    netlistcreator.writewtx(model,"resetload",$('webtronics_resetload_value').value);
-    netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
-    netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
-  }
+    if($('webtronics_connections')){
+      $('webtronics_connections').checked=false;
+      Event.observe($('webtronics_connections'),'click',function(){
+        webtronics.circuit.showconnections($('webtronics_connections').checked);
 
-  else if(modelname=="cdo"){
-    netlistcreator.writewtx(model,"cntlarr",$('webtronics_cntlarr_value').value);
-    netlistcreator.writewtx(model,"freqarr",$('webtronics_freqarr_value').value);
-    netlistcreator.writewtx(model,"duty",$('webtronics_duty_value').value);
-    netlistcreator.writewtx(model,"phase",$('webtronics_phase_value').value);
-    netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
-    netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
-
-  }
-  
-   else if(modelname=="adc_bridge"){
-    netlistcreator.writewtx(model,"inlow",$('webtronics_inlow_value').value);
-    netlistcreator.writewtx(model,"inhigh",$('webtronics_inhigh_value').value);
-    netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
-    netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);    
-
-   }
-
-   else if(modelname=="dac_bridge")
-    {
-      netlistcreator.writewtx(model,"outlow",$('webtronics_outlow_value').value);
-      netlistcreator.writewtx(model,"outhigh",$('webtronics_outhigh_value').value);
-      netlistcreator.writewtx(model,"outundef",$('webtronics_outundef_value').value);
-      netlistcreator.writewtx(model,"inputload",$('webtronics_inputload_value').value);
-      netlistcreator.writewtx(model,"outlow",$('webtronics_risetime_value').value);
-      netlistcreator.writewtx(model,"falltime",$('webtronics_falltime_value').value);
+      });
+    }
+    
+    if($("webtronics_showhelp")){
+      Event.observe($("webtronics_showhelp"),"click",function(){
+        if($("webtronics_showhelp").checked){
+          $$(".webtronics_help").forEach(function(e){
+            e.style.display="block";
+          });
+        }
+        else{
+          $$(".webtronics_help").forEach(function(e){
+            e.style.display="none";
+          });
+        }
+      });
     }
 
+    /*properties events*/		
 
+    if($('webtronics_properties_ok'))Event.observe($('webtronics_properties_ok'), 'click', function() {
+      $("webtronics_print_dir_field").style.display="none";
+      $('webtronics_properties_div').style.display='none';
+      webtronics.enablepage();
+      var model=webtronics.circuit.selected[0];
+      netlistcreator.writewtx(model,"id",$('webtronics_part_id').value);
+      netlistcreator.writewtx(model,"value",$('webtronics_part_value').value);
+      netlistcreator.writewtx(model,"model",$('webtronics_part_dir_value').value);
+      netlistcreator.writewtx(model,"measure",$('webtronics_print_dir_value').value);
+  
+      var modelname=netlistcreator.readwtx(model,"name");
+      if(modelname=="gains"){
+        netlistcreator.writewtx(model,"gain",$('webtronics_gain_value').value);
+        netlistcreator.writewtx(model,"inoffset",$('webtronics_inoffset_value').value);
+        netlistcreator.writewtx(model,"outoffset",$('webtronics_outoffset_value').value);
+      }
+      else if(modelname=="summer"){
+        netlistcreator.writewtx(model,"ingain",$('webtronics_ingain_value').value);
+        netlistcreator.writewtx(model,"outgain",$('webtronics_outgain_value').value);
+        netlistcreator.writewtx(model,"inoffset",$('webtronics_inoffset_value').value);
+        netlistcreator.writewtx(model,"outoffset",$('webtronics_outoffset_value').value);
+      }
+      else if(modelname=="multiplier"){
+        netlistcreator.writewtx(model,"ingain",$('webtronics_ingain_value').value);
+        netlistcreator.writewtx(model,"outgain",$('webtronics_outgain_value').value);
+        netlistcreator.writewtx(model,"inoffset",$('webtronics_inoffset_value').value);
+        netlistcreator.writewtx(model,"outoffset",$('webtronics_outoffset_value').value);
+      }
+      else if(modelname=="divider"){
+        netlistcreator.writewtx(model,"numgain",$('webtronics_numgain_value').value);
+        netlistcreator.writewtx(model,"outgain",$('webtronics_outgain_value').value);
+        netlistcreator.writewtx(model,"numoffset",$('webtronics_numoffset_value').value);
+        netlistcreator.writewtx(model,"dengain",$('webtronics_dengain_value').value);
+        netlistcreator.writewtx(model,"denoffset",$('webtronics_denoffset_value').value);
+        netlistcreator.writewtx(model,"fraction",$('webtronics_fraction_value').value);
+        netlistcreator.writewtx(model,"dendomain",$('webtronics_dendomain_value').value);
+        netlistcreator.writewtx(model,"denlowerlimit",$('webtronics_denlowerlimit_value').value);
+        netlistcreator.writewtx(model,"outoffset",$('webtronics_outoffset_value').value);
+      }
+      else if(modelname=="limiter"){
+        netlistcreator.writewtx(model,"limitrange",$('webtronics_limitrange_value').value);
+        netlistcreator.writewtx(model,"fraction",$('webtronics_fraction_value').value);
+        netlistcreator.writewtx(model,"outupperlimit",$('webtronics_outupperlimit_value').value);
+        netlistcreator.writewtx(model,"outlowerlimit",$('webtronics_outlowerlimit_value').value);
+        netlistcreator.writewtx(model,"inoffset",$('webtronics_inoffset_value').value);
+        netlistcreator.writewtx(model,"gain",$('webtronics_gain_value').value);
+      }
+      else if(modelname=="controllimiter"){
+        netlistcreator.writewtx(model,"limitrange",$('webtronics_limitrange_value').value);
+        netlistcreator.writewtx(model,"fraction",$('webtronics_fraction_value').value);
+        netlistcreator.writewtx(model,"upperdelta",$('webtronics_upperdelta_value').value);
+        netlistcreator.writewtx(model,"lowerdelta",$('webtronics_lowerdelta_value').value);
+        netlistcreator.writewtx(model,"inoffset",$('webtronics_inoffset_value').value);
+        netlistcreator.writewtx(model,"gain",$('webtronics_gain_value').value);
+      }
+      else if(modelname=="pwlcontrolsource"){
+        netlistcreator.writewtx(model,"xarr",$('webtronics_xarr_value').value);
+        netlistcreator.writewtx(model,"fraction",$('webtronics_fraction_value').value);
+        netlistcreator.writewtx(model,"yarr",$('webtronics_yarr_value').value);
+        netlistcreator.writewtx(model,"indomain",$('webtronics_indomain_value').value);
+        }
+      else if(modelname=="multiinputpwlblock"){
+        netlistcreator.writewtx(model,"xarr",$('webtronics_xarr_value').value);
+        netlistcreator.writewtx(model,"amodel",$('webtronics_amodel_value').value);
+        netlistcreator.writewtx(model,"yarr",$('webtronics_yarr_value').value);
+        }
+      else if(modelname=="aswitch"){
+        netlistcreator.writewtx(model,"coff",$('webtronics_coff_value').value);
+        netlistcreator.writewtx(model,"con",$('webtronics_con_value').value);
+        netlistcreator.writewtx(model,"roff",$('webtronics_roff_value').value);
+        netlistcreator.writewtx(model,"ron",$('webtronics_ron_value').value);
+        netlistcreator.writewtx(model,"log",$('webtronics_log_value').value);
+       }
+      else if(modelname=="zener"){
+        netlistcreator.writewtx(model,"irev",$('webtronics_irev_value').value);
+        netlistcreator.writewtx(model,"isat",$('webtronics_isat_value').value);
+        netlistcreator.writewtx(model,"limitswitch",$('webtronics_limitswitch_value').value);
+        netlistcreator.writewtx(model,"nfor",$('webtronics_nfor_value').value);
+        netlistcreator.writewtx(model,"vbreak",$('webtronics_vbreak_value').value);
+        netlistcreator.writewtx(model,"ibreak",$('webtronics_ibreak_value').value);
+        netlistcreator.writewtx(model,"rbreak",$('webtronics_rbreak_value').value);
+       }
+      else if(modelname=="currentlimiter"){
+        netlistcreator.writewtx(model,"rsource",$('webtronics_rsource_value').value);
+        netlistcreator.writewtx(model,"rsink",$('webtronics_rsink_value').value);
+        netlistcreator.writewtx(model,"inoffset",$('webtronics_inoffset_value').value);
+        netlistcreator.writewtx(model,"gain",$('webtronics_gain_value').value);
+        netlistcreator.writewtx(model,"ilimitsource",$('webtronics_ilimitsource_value').value);
+        netlistcreator.writewtx(model,"ilimitsink",$('webtronics_ilimitsink_value').value);
+        netlistcreator.writewtx(model,"vpwr",$('webtronics_ibreak_value').value);
+        netlistcreator.writewtx(model,"isource",$('webtronics_isource_value').value);
+        netlistcreator.writewtx(model,"isink",$('webtronics_isink_value').value);
+        netlistcreator.writewtx(model,"routdomain",$('webtronics_routdomain_value').value);
+       }
+      else if(modelname=="hysteresis"){
+        netlistcreator.writewtx(model,"inlow",$('webtronics_inlow_value').value);
+        netlistcreator.writewtx(model,"inhigh",$('webtronics_inhigh_value').value);
+        netlistcreator.writewtx(model,"outlowerlimit",$('webtronics_outlowerlimit_value').value);
+        netlistcreator.writewtx(model,"outupperlimit",$('webtronics_outupperlimit_value').value);
+        netlistcreator.writewtx(model,"hyst",$('webtronics_hyst_value').value);
+        netlistcreator.writewtx(model,"indomain",$('webtronics_indomain_value').value);
+        netlistcreator.writewtx(model,"fraction",$('webtronics_fraction_value').value);
+       }   
+      else if(modelname=="differentiator"){
+        netlistcreator.writewtx(model,"outoffset",$('webtronics_outoffset_value').value);
+        netlistcreator.writewtx(model,"gain",$('webtronics_gain_value').value);
+        netlistcreator.writewtx(model,"outlowerlimit",$('webtronics_outlowerlimit_value').value);
+        netlistcreator.writewtx(model,"outupperlimit",$('webtronics_outupperlimit_value').value);
+        netlistcreator.writewtx(model,"limitrange",$('webtronics_limitrange_value').value);
+       }
 
-  webtronics.circuit.createvalue(webtronics.circuit.selected[0]);
-});
+      else if(modelname=="integrator"){
+        netlistcreator.writewtx(model,"outoffset",$('webtronics_outoffset_value').value);
+        netlistcreator.writewtx(model,"gain",$('webtronics_gain_value').value);
+        netlistcreator.writewtx(model,"outlowerlimit",$('webtronics_outlowerlimit_value').value);
+        netlistcreator.writewtx(model,"outupperlimit",$('webtronics_outupperlimit_value').value);
+        netlistcreator.writewtx(model,"limitrange",$('webtronics_limitrange_value').value);
+         netlistcreator.writewtx(model,"outic",$('webtronics_outic_value').value);
+       }
+      else if(modelname=="sdomain"){
+        netlistcreator.writewtx(model,"gain",$('webtronics_gain_value').value);
+        netlistcreator.writewtx(model,"intic",$('webtronics_intic_value').value);
+        netlistcreator.writewtx(model,"numcoeff",$('webtronics_numcoeff_value').value);
+        netlistcreator.writewtx(model,"dencoeff",$('webtronics_dencoeff_value').value);
+        netlistcreator.writewtx(model,"inoffset",$('webtronics_inoffset_value').value);
+        netlistcreator.writewtx(model,"denormfreq",$('webtronics_denormfreq_value').value);
+      }
+      else if(modelname=="slewrateblock"){
+        netlistcreator.writewtx(model,"riseslope",$('webtronics_riseslope_value').value);
+        netlistcreator.writewtx(model,"fallslope",$('webtronics_fallslope_value').value);
+        }
+      else if(modelname=="sineoscillator"){
+        netlistcreator.writewtx(model,"outlow",$('webtronics_outlow_value').value);
+        netlistcreator.writewtx(model,"outhigh",$('webtronics_outhigh_value').value);
+        netlistcreator.writewtx(model,"freqarr",$('webtronics_freqarr_value').value);
+        netlistcreator.writewtx(model,"cntlarr",$('webtronics_cntlarr_value').value);
+        }
+      else if(modelname=="triangleoscillator"){
+        netlistcreator.writewtx(model,"outlow",$('webtronics_outlow_value').value);
+        netlistcreator.writewtx(model,"outhigh",$('webtronics_outhigh_value').value);
+        netlistcreator.writewtx(model,"freqarr",$('webtronics_freqarr_value').value);
+        netlistcreator.writewtx(model,"cntlarr",$('webtronics_cntlarr_value').value);
+        netlistcreator.writewtx(model,"duty",$('webtronics_duty_value').value);
+        }
+      else if(modelname=="squareoscillator"){
+        netlistcreator.writewtx(model,"outlow",$('webtronics_outlow_value').value);
+        netlistcreator.writewtx(model,"outhigh",$('webtronics_outhigh_value').value);
+        netlistcreator.writewtx(model,"freqarr",$('webtronics_freqarr_value').value);
+        netlistcreator.writewtx(model,"cntlarr",$('webtronics_cntlarr_value').value);
+        netlistcreator.writewtx(model,"duty",$('webtronics_duty_value').value);
+        netlistcreator.writewtx(model,"risetime",$('webtronics_risetime_value').value);
+        netlistcreator.writewtx(model,"falltime",$('webtronics_falltime_value').value);
+        }
+    else if(modelname=="oneshot"){
+        netlistcreator.writewtx(model,"cntlarr",$('webtronics_cntlarr_value').value);
+        netlistcreator.writewtx(model,"pwarr",$('webtronics_pwarr_value').value);
+        netlistcreator.writewtx(model,"clktrig",$('webtronics_clktrig_value').value);
+        netlistcreator.writewtx(model,"ptrig",$('webtronics_ptrig_value').value);
+        netlistcreator.writewtx(model,"outlow",$('webtronics_outlow_value').value);
+         netlistcreator.writewtx(model,"outhigh",$('webtronics_outhigh_value').value);
+          netlistcreator.writewtx(model,"rdelay",$('webtronics_rdelay_value').value);
+         netlistcreator.writewtx(model,"fdelay",$('webtronics_fdelay_value').value);
+       }
+       
 
-  if($('webtronics_properties_cancel'))Event.observe($('webtronics_properties_cancel'), 'click', function() {
-    $("webtronics_print_dir_field").style.display="none";
-    $('webtronics_properties_div').style.display='none';
-    webtronics.enablepage();
-  });
+     else if(modelname=="memristor"){
+        netlistcreator.writewtx(model,"rmin",$('webtronics_rmin_value').value);
+        netlistcreator.writewtx(model,"rmax",$('webtronics_rmax_value').value);
+        netlistcreator.writewtx(model,"rinit",$('webtronics_rinit_value').value);
+        netlistcreator.writewtx(model,"vt",$('webtronics_vt_value').value);
+        netlistcreator.writewtx(model,"alpha",$('webtronics_alpha_value').value);
+         netlistcreator.writewtx(model,"beta",$('webtronics_beta_value').value);
+       }
+
+      else if(modelname=="ac"){
+        netlistcreator.writewtx(model,"phase",$('webtronics_phase_value').value);
+        netlistcreator.writewtx(model,"amplitude",$('webtronics_amplitude_value').value);
+
+      }
+      else if(modelname=="capacitancemeter"||modelname=="inductancemeter"){
+        netlistcreator.writewtx(model,"gain",$('webtronics_gain_value').value);
+         }
+
+      else if(modelname=="sinvoltagesource"){
+        netlistcreator.writewtx(model,"offsetvoltage",$('webtronics_offsetvoltage_value').value);
+        netlistcreator.writewtx(model,"voltageamplitude",$('webtronics_voltageamplitude_value').value);
+        netlistcreator.writewtx(model,"frequency",$('webtronics_frequency_value').value);
+        netlistcreator.writewtx(model,"delaytime",$('webtronics_delaytime_value').value);
+        netlistcreator.writewtx(model,"dampingfactor",$('webtronics_dampingfactor_value').value);
+
+      }
+      else if(modelname=="pulse"){
+        netlistcreator.writewtx(model,"pulval1",$('webtronics_pulval1_value').value);
+        netlistcreator.writewtx(model,"pulval2",$('webtronics_pulval2_value').value);
+        netlistcreator.writewtx(model,"pulval3",$('webtronics_pulval3_value').value);
+        netlistcreator.writewtx(model,"pulval4",$('webtronics_pulval4_value').value);
+        netlistcreator.writewtx(model,"pulval5",$('webtronics_pulval5_value').value);
+        netlistcreator.writewtx(model,"pulval6",$('webtronics_pulval6_value').value);
+        netlistcreator.writewtx(model,"pulval7",$('webtronics_pulval7_value').value);                   
+      }
+      else if(modelname=="pwl"){
+        netlistcreator.writewtx(model,"pwlval1",$('webtronics_pwlval1_value').value);
+        netlistcreator.writewtx(model,"pwlval2",$('webtronics_pwlval2_value').value);
+        netlistcreator.writewtx(model,"pwlval3",$('webtronics_pwlval3_value').value);
+        netlistcreator.writewtx(model,"pwlval4",$('webtronics_pwlval4_value').value);
+        netlistcreator.writewtx(model,"pwlval5",$('webtronics_pwlval5_value').value);
+        netlistcreator.writewtx(model,"pwlval6",$('webtronics_pwlval6_value').value);
+        netlistcreator.writewtx(model,"pwlval7",$('webtronics_pwlval7_value').value);                   
+        netlistcreator.writewtx(model,"pwlval8",$('webtronics_pwlval8_value').value);                   
+      }
+      else if(modelname=="exponential"){
+        netlistcreator.writewtx(model,"eval1",$('webtronics_eval1_value').value);
+        netlistcreator.writewtx(model,"eval2",$('webtronics_eval2_value').value);
+        netlistcreator.writewtx(model,"eval3",$('webtronics_eval3_value').value);
+        netlistcreator.writewtx(model,"eval4",$('webtronics_eval4_value').value);
+        netlistcreator.writewtx(model,"eval5",$('webtronics_eval5_value').value);
+        netlistcreator.writewtx(model,"eval6",$('webtronics_eval6_value').value);
+      }
+
+      else if(modelname=="and"|| modelname=='not'|| modelname=='nand'|| modelname=='or'||modelname=='nor'||modelname=='xor'||modelname=='xnor'){
+        netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
+        netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
+        netlistcreator.writewtx(model,"inputload",$('webtronics_inputload_value').value);
+        
+      }
+      else if(modelname=="dff"){
+        netlistcreator.writewtx(model,"clkdelay",$('webtronics_clkdelay_value').value);
+        netlistcreator.writewtx(model,"setdelay",$('webtronics_setdelay_value').value);
+        netlistcreator.writewtx(model,"resetdelay",$('webtronics_resetdelay_value').value);
+        netlistcreator.writewtx(model,"ic",$('webtronics_ic_value').value);
+        netlistcreator.writewtx(model,"dataload",$('webtronics_dataload_value').value);
+        netlistcreator.writewtx(model,"clkload",$('webtronics_clkload_value').value);
+        netlistcreator.writewtx(model,"setload",$('webtronics_seload_value').value);
+        netlistcreator.writewtx(model,"resetload",$('webtronics_resetload_value').value);
+        netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
+        netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
+        
+      }
+      else if(modelname=="jkff"){
+        netlistcreator.writewtx(model,"clkdelay",$('webtronics_clkdelay_value').value);
+        netlistcreator.writewtx(model,"setdelay",$('webtronics_setdelay_value').value);
+        netlistcreator.writewtx(model,"resetdelay",$('webtronics_resetdelay_value').value);
+        netlistcreator.writewtx(model,"ic",$('webtronics_ic_value').value);
+        netlistcreator.writewtx(model,"jkload",$('webtronics_jkload_value').value);
+        netlistcreator.writewtx(model,"clkload",$('webtronics_clkload_value').value);
+        netlistcreator.writewtx(model,"setload",$('webtronics_seload_value').value);
+        netlistcreator.writewtx(model,"resetload",$('webtronics_resetload_value').value);
+        netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
+        netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
+      }
+      else if(modelname=="tff"){
+        netlistcreator.writewtx(model,"clkdelay",$('webtronics_clkdelay_value').value);
+        netlistcreator.writewtx(model,"setdelay",$('webtronics_setdelay_value').value);
+        netlistcreator.writewtx(model,"resetdelay",$('webtronics_resetdelay_value').value);
+        netlistcreator.writewtx(model,"ic",$('webtronics_ic_value').value);
+        netlistcreator.writewtx(model,"tload",$('webtronics_tload_value').value);
+        netlistcreator.writewtx(model,"clkload",$('webtronics_clkload_value').value);
+        netlistcreator.writewtx(model,"setload",$('webtronics_seload_value').value);
+        netlistcreator.writewtx(model,"resetload",$('webtronics_resetload_value').value);
+        netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
+        netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
+      }
+      else if(modelname=="srff"){
+        netlistcreator.writewtx(model,"clkdelay",$('webtronics_clkdelay_value').value);
+        netlistcreator.writewtx(model,"setdelay",$('webtronics_setdelay_value').value);
+        netlistcreator.writewtx(model,"resetdelay",$('webtronics_resetdelay_value').value);
+        netlistcreator.writewtx(model,"ic",$('webtronics_ic_value').value);
+        netlistcreator.writewtx(model,"srload",$('webtronics_srload_value').value);
+        netlistcreator.writewtx(model,"clkload",$('webtronics_clkload_value').value);
+        netlistcreator.writewtx(model,"setload",$('webtronics_seload_value').value);
+        netlistcreator.writewtx(model,"resetload",$('webtronics_resetload_value').value);
+        netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
+        netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
+      }
+      else if(modelname=="dlatch"){
+        netlistcreator.writewtx(model,"datadelay",$('webtronics_datadelay_value').value);
+        netlistcreator.writewtx(model,"enabledelay",$('webtronics_enabledelay_value').value);
+        netlistcreator.writewtx(model,"setdelay",$('webtronics_setdelay_value').value);
+        netlistcreator.writewtx(model,"resetdelay",$('webtronics_resetdelay_value').value);
+        netlistcreator.writewtx(model,"ic",$('webtronics_ic_value').value);
+        netlistcreator.writewtx(model,"dataload",$('webtronics_dataload_value').value);
+        netlistcreator.writewtx(model,"enableload",$('webtronics_enableload_value').value);
+        netlistcreator.writewtx(model,"setload",$('webtronics_seload_value').value);
+        netlistcreator.writewtx(model,"resetload",$('webtronics_resetload_value').value);
+        netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
+        netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
+      }
+      else if(modelname=="srlatch"){
+        netlistcreator.writewtx(model,"datadelay",$('webtronics_datadelay_value').value);
+        netlistcreator.writewtx(model,"enabledelay",$('webtronics_enabledelay_value').value);
+        netlistcreator.writewtx(model,"setdelay",$('webtronics_setdelay_value').value);
+        netlistcreator.writewtx(model,"resetdelay",$('webtronics_resetdelay_value').value);
+        netlistcreator.writewtx(model,"ic",$('webtronics_ic_value').value);
+        netlistcreator.writewtx(model,"srload",$('webtronics_srload_value').value);
+        netlistcreator.writewtx(model,"enableload",$('webtronics_enableload_value').value);
+        netlistcreator.writewtx(model,"setload",$('webtronics_seload_value').value);
+        netlistcreator.writewtx(model,"resetload",$('webtronics_resetload_value').value);
+        netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
+        netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
+      }
+
+      else if(modelname=="cdo"){
+        netlistcreator.writewtx(model,"cntlarr",$('webtronics_cntlarr_value').value);
+        netlistcreator.writewtx(model,"freqarr",$('webtronics_freqarr_value').value);
+        netlistcreator.writewtx(model,"duty",$('webtronics_duty_value').value);
+        netlistcreator.writewtx(model,"phase",$('webtronics_phase_value').value);
+        netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
+        netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);
+
+      }
+      
+      else if(modelname=="adc_bridge"){
+        netlistcreator.writewtx(model,"inlow",$('webtronics_inlow_value').value);
+        netlistcreator.writewtx(model,"inhigh",$('webtronics_inhigh_value').value);
+        netlistcreator.writewtx(model,"risedelay",$('webtronics_risedelay_value').value);
+        netlistcreator.writewtx(model,"falldelay",$('webtronics_falldelay_value').value);    
+
+      }
+
+      else if(modelname=="dac_bridge")
+      {
+        netlistcreator.writewtx(model,"outlow",$('webtronics_outlow_value').value);
+        netlistcreator.writewtx(model,"outhigh",$('webtronics_outhigh_value').value);
+        netlistcreator.writewtx(model,"outundef",$('webtronics_outundef_value').value);
+        netlistcreator.writewtx(model,"inputload",$('webtronics_inputload_value').value);
+        netlistcreator.writewtx(model,"outlow",$('webtronics_risetime_value').value);
+        netlistcreator.writewtx(model,"falltime",$('webtronics_falltime_value').value);
+      }
+      
+      webtronics.circuit.createvalue(webtronics.circuit.selected[0]);
+    });
+
+    if($('webtronics_properties_cancel'))Event.observe($('webtronics_properties_cancel'), 'click', function() {
+      $("webtronics_print_dir_field").style.display="none";
+      $('webtronics_properties_div').style.display='none';
+      webtronics.enablepage();
+    });
 
     if($('webtronics_part_model'))Event.observe($('webtronics_part_model'),'change',function(){
       var part=netlistcreator.readwtx(webtronics.circuit.selected[0],"name");
@@ -2378,19 +2308,19 @@ else if(modelname=="oneshot"){
         $("webtronics_part_dir_model").options.length=0;
         $("webtronics_part_dir_model").appendChild(new Element("option",{"value":""}).update("none"));
         for( var i=0;i<webtronics.partslists.length;i++){
-         for(var j=0;j<webtronics.partslists[i].parts[cat][part].values[$('webtronics_part_model').value].length;j++){
-           $("webtronics_part_dir_model").insert(new Element("option",{"value":webtronics.partslists[i].parts[cat][part].values[$('webtronics_part_model').value][j]}).update(webtronics.partslists[i].parts[cat][part].values[$('webtronics_part_model').value][j]));
-         }
-       }
-     }
-     $('webtronics_part_value').value=$("webtronics_part_model").options[$("webtronics_part_model").selectedIndex].value;
-
-   });
-
-      if($('webtronics_part_dir_model'))Event.observe($('webtronics_part_dir_model'),'change',function(){
-        $('webtronics_part_dir_value').value=$("webtronics_part_dir_model").options[$("webtronics_part_dir_model").selectedIndex].value;
+          for(var j=0;j<webtronics.partslists[i].parts[cat][part].values[$('webtronics_part_model').value].length;j++){
+            $("webtronics_part_dir_model").insert(new Element("option",{"value":webtronics.partslists[i].parts[cat][part].values[$('webtronics_part_model').value][j]}).update(webtronics.partslists[i].parts[cat][part].values[$('webtronics_part_model').value][j]));
+          }
+        }
+      }
+      $('webtronics_part_value').value=$("webtronics_part_model").options[$("webtronics_part_model").selectedIndex].value;
 
       });
+
+    if($('webtronics_part_dir_model'))Event.observe($('webtronics_part_dir_model'),'change',function(){
+      $('webtronics_part_dir_value').value=$("webtronics_part_dir_model").options[$("webtronics_part_dir_model").selectedIndex].value;
+
+    });
 		  //**OPEN LOCAL SPICE MODELS EXPERIMENT
 		  //            if($("webtronics_part_file"))Event.observe($("webtronics_part_file"),'change',function(){
 		  // 	      console.log($("webtronics_part_file").files[0]);
@@ -2409,179 +2339,171 @@ else if(modelname=="oneshot"){
 		  // 		    }.bind(this));
 		  
 		  /*save as png modal*/
-		  if($("webtronics_image_ok")){
-        Event.observe($('webtronics_image_ok'), 'click', function() {
+		if($("webtronics_image_ok")){
+      Event.observe($('webtronics_image_ok'), 'click', function() {
           webtronics.enablepage();
           $('webtronics_image').style.display='none';
           webtronics.setMode('select','Selection');
+      });
+    }
+
+    /*chip box events*/
+    Event.observe($('webtronics_vert_pins'), 'change', function() {
+      $("webtronics_chip_display").parentNode.removeChild($("webtronics_chip_display"));
+      var div=new Element("div",{id:"webtronics_chip_display"})
+      .insert(chipmaker.drawchip($('webtronics_hor_pins').value,$('webtronics_vert_pins').value));
+      $("webtronics_chips_box").insertBefore(div,$("webtronics_chips_box").firstChild);
+    });
+    Event.observe($('webtronics_hor_pins'), 'change', function() {
+      $("webtronics_chip_display").parentNode.removeChild($("webtronics_chip_display"));
+      var div=new Element("div",{id:"webtronics_chip_display"})
+      .update(chipmaker.drawchip($('webtronics_hor_pins').value,$('webtronics_vert_pins').value));
+      $("webtronics_chips_box").insertBefore(div,$("webtronics_chips_box").firstChild);
+    });
+
+    Event.observe($('webtronics_chip_spice_select'), 'change', function() {
+      $("webtronics_chip_display").parentNode.removeChild($("webtronics_chip_display"));
+      var div=new Element("div",{id:"webtronics_chip_display"})
+      $("webtronics_chips_box").insertBefore(div,$("webtronics_chips_box").firstChild);
+      $("webtronics_chip_spice").value=$('webtronics_chip_spice_select').value;
+      if($('webtronics_chip_spice_select').value!="none"){
+        openfile("symbols/predefined/"+$('webtronics_chip_spice_select').value+".svg",function(svg){
+          div.update(svg);
+          var model=$("webtronics_chip_display").getElementsByTagName("g")[0];
+          netlistcreator.writewtx(model,"value",$('webtronics_chip_spice_select').value);
+          netlistcreator.writewtx(model,"model",webtronics.models[$('webtronics_chip_spice_select').value]);
         });
-
-
       }
-
-      /*chip box events*/
-      Event.observe($('webtronics_vert_pins'), 'change', function() {
-        $("webtronics_chip_display").parentNode.removeChild($("webtronics_chip_display"));
-        var div=new Element("div",{id:"webtronics_chip_display"})
-        .insert(chipmaker.drawchip($('webtronics_hor_pins').value,$('webtronics_vert_pins').value));
-        $("webtronics_chips_box").insertBefore(div,$("webtronics_chips_box").firstChild);
-      });
-      Event.observe($('webtronics_hor_pins'), 'change', function() {
-        $("webtronics_chip_display").parentNode.removeChild($("webtronics_chip_display"));
-        var div=new Element("div",{id:"webtronics_chip_display"})
-        .update(chipmaker.drawchip($('webtronics_hor_pins').value,$('webtronics_vert_pins').value));
-        $("webtronics_chips_box").insertBefore(div,$("webtronics_chips_box").firstChild);
-      });
-
-      Event.observe($('webtronics_chip_spice_select'), 'change', function() {
-        $("webtronics_chip_display").parentNode.removeChild($("webtronics_chip_display"));
-        var div=new Element("div",{id:"webtronics_chip_display"})
-        $("webtronics_chips_box").insertBefore(div,$("webtronics_chips_box").firstChild);
-        $("webtronics_chip_spice").value=$('webtronics_chip_spice_select').value;
-        if($('webtronics_chip_spice_select').value!="none"){
-          openfile("symbols/predefined/"+$('webtronics_chip_spice_select').value+".svg",function(svg){
-           div.update(svg);
-           var model=$("webtronics_chip_display").getElementsByTagName("g")[0];
-           netlistcreator.writewtx(model,"value",$('webtronics_chip_spice_select').value);
-           netlistcreator.writewtx(model,"model",webtronics.models[$('webtronics_chip_spice_select').value]);
-         });
-        }
-      });
+    });
 
 
-      Event.observe($('webtronics_chip_ok'), 'click', function() {
-        webtronics.enablepage()
-        webtronics.returnchip();
+    Event.observe($('webtronics_chip_ok'), 'click', function() {
+      webtronics.enablepage()
+      webtronics.returnchip();
 		    //chipmaker.clear();
-		  });
-      Event.observe($('webtronics_chip_cancel'), 'click', function() {
-        webtronics.enablepage();
-        $('webtronics_chips_box').style.display='none';
+		});
+      
+    Event.observe($('webtronics_chip_cancel'), 'click', function() {
+      webtronics.enablepage();
+      $('webtronics_chips_box').style.display='none';
+      webtronics.setMode('select','Selection');
+    });
+
+
+	  Event.observe($('webtronics_plot_cancel'), 'click', function() {
+      webtronics.enablepage();
+      $('webtronics_plot_box').style.display='none';
+    });
+
+
+    /*text add events*/
+    if($("webtronics_text_ok")){
+      Event.observe($('webtronics_text_ok'), 'click', function() {
+        webtronics.circuit.addtext($('webtronics_comment').value);
+        $('webtronics_add_text').style.display='none';
         webtronics.setMode('select','Selection');
       });
-
-
-	Event.observe($('webtronics_plot_cancel'), 'click', function() {
-        webtronics.enablepage();
-        $('webtronics_plot_box').style.display='none';
+    }
+    if($("webtronics_text_cancel")){
+      Event.observe($('webtronics_text_cancel'), 'click', function() {
+        webtronics.setMode('select','Selection');
+        $('webtronics_add_text').style.display='none';
       });
-
-
-
-
-
-
-      /*text add events*/
-      if($("webtronics_text_ok")){
-        Event.observe($('webtronics_text_ok'), 'click', function() {
-          webtronics.circuit.addtext($('webtronics_comment').value);
-          $('webtronics_add_text').style.display='none';
-          webtronics.setMode('select','Selection');
-        });
-      }
-      if($("webtronics_text_cancel")){
-        Event.observe($('webtronics_text_cancel'), 'click', function() {
-          webtronics.setMode('select','Selection');
-          $('webtronics_add_text').style.display='none';
-        });
-      }
-      /*netlist text events*/
-      if($("webtronics_netlist_text_ok")){
-        Event.observe($('webtronics_netlist_text_ok'), 'click', function() {
-          webtronics.setMode('select','Selection');
-          $('webtronics_netlist_text').style.display='none';
-          webtronics.enablepage();
-        });
-      }
-
-
+    }
     
+    /*netlist text events*/
+    if($("webtronics_netlist_text_ok")){
+      Event.observe($('webtronics_netlist_text_ok'), 'click', function() {
+        webtronics.setMode('select','Selection');
+        $('webtronics_netlist_text').style.display='none';
+        webtronics.enablepage();
+      });
+    }
 
 
+    if($("webtronics_netlist_text_run")){
+      Event.observe($('webtronics_netlist_text_run'), 'click', function() {
+        webtronics.gnucapjs($("webtronics_netlist_text_area").value);
+		    //$('webtronics_netlist_text').style.visibility='none';
+		    //webtronics.enablepage();
+		  });
+    }  
+    
+    /*scope events*/
+    if($("webtronics_scope_display")){
+      this.scopestatus=$("webtronics_scope_status");
+      this.scopedata=$("webtronics_scope_data");
 
+      $("webtronics_scope_output_graph").checked=true;
+      Event.observe($("webtronics_scope_output_graph"),'click',function(){$("webtronics_scope_display_frame").contentWindow.displaygraph()});
+      Event.observe($("webtronics_scope_output_log"),'click', function(){$("webtronics_scope_display_frame").contentWindow.displaylog()});
 
-      if($("webtronics_netlist_text_run")){
-        Event.observe($('webtronics_netlist_text_run'), 'click', function() {
-          webtronics.gnucapjs($("webtronics_netlist_text_area").value);
-		      //$('webtronics_netlist_text').style.visibility='none';
-		      //webtronics.enablepage();
-		    });
-      }  
-      /*scope events*/
-      if($("webtronics_scope_display")){
-        this.scopestatus=$("webtronics_scope_status");
-        this.scopedata=$("webtronics_scope_data");
-
-        $("webtronics_scope_output_graph").checked=true;
-        Event.observe($("webtronics_scope_output_graph"),'click',function(){$("webtronics_scope_display_frame").contentWindow.displaygraph()});
-        Event.observe($("webtronics_scope_output_log"),'click', function(){$("webtronics_scope_display_frame").contentWindow.displaylog()});
-
-        Event.observe($('webtronics_scope_display_ok'), 'click', function() {
-          webtronics.setMode('select','Selection');
-          $('webtronics_scope_display').style.display='none';
-          $('webtronics_scope_display_div').innerHTML="";
-		      //                    webtronics.enablepage();
-		    });
-        Event.observe($('webtronics_scope_display_stop'), 'click', function() {
-          webtronics.setMode('select','Selection');
-          $("webtronics_scope_display_frame").contentWindow.stopsimulation()				
+      Event.observe($('webtronics_scope_display_ok'), 'click', function() {
+        webtronics.setMode('select','Selection');
+        $('webtronics_scope_display').style.display='none';
+        $('webtronics_scope_display_div').innerHTML="";
+	      //                    webtronics.enablepage();
+	    });
+      Event.observe($('webtronics_scope_display_stop'), 'click', function() {
+        webtronics.setMode('select','Selection');
+        $("webtronics_scope_display_frame").contentWindow.stopsimulation()				
 //		      $('webtronics_scope_display').style.display='none';
 //		      $('webtronics_scope_display_div').innerHTML="";
-		      //                    webtronics.enablepage();
-		    });
+	      //                    webtronics.enablepage();
+	    });
 
 
 
-        Event.observe($("webtronics_scope_display"),'mousedown',function(e){
-          var startx=e.layerX;
-          var starty=e.layerY;
-          Event.observe($("webtronics_scope_display"),'mousemove',function(e){
-           $("webtronics_scope_display").style.top =e.clientY-starty + 'px';
-           $("webtronics_scope_display").style.left =e.clientX-startx + 'px';
-         });
-          e.preventDefault();
+      Event.observe($("webtronics_scope_display"),'mousedown',function(e){
+        var startx=e.layerX;
+        var starty=e.layerY;
+        Event.observe($("webtronics_scope_display"),'mousemove',function(e){
+         $("webtronics_scope_display").style.top =e.clientY-starty + 'px';
+         $("webtronics_scope_display").style.left =e.clientX-startx + 'px';
         });
-        Event.observe($("webtronics_scope_display"),'mouseup',function(){
-          Event.stopObserving($("webtronics_scope_display"),'mousemove');
-        });            
-
-      }
-
-
-
-      /*text open events*/
-      Event.observe($('webtronics_open_text_ok'), 'click', function() {
-        $('webtronics_open_text').style.display='none';
+        e.preventDefault();
       });
-      Event.observe($('webtronics_open_text_cancel'), 'click', function() {
-        webtronics.setMode('select','Selection');
+      
+      Event.observe($("webtronics_scope_display"),'mouseup',function(){
+        Event.stopObserving($("webtronics_scope_display"),'mousemove');
+      });            
 
-        $('webtronics_open_text').style.display='none';
-      });
-		  //sources events
-		  Event.observe($('webtronics_add source_ok'), 'click', function() {
-        var sources=$$(".webtronics_add_source_input");
-        var addresses=[]
-        for( var i=0;i<sources.length;i++){
-         if(sources[i].value.match(/.*/)!=-1)addresses.push(sources[i].value);
-       }	
-       webtronics.serverurls=addresses;
-       webtronics.populatemenu();
-       $('webtronics_add source').style.display='none';
-       webtronics.enablepage();
-     });
-		  
-		  Event.observe($("webtronics_add_source_cancel"), 'click', function() {
-        webtronics.setMode('select','Selection');
+    }
 
-        $('webtronics_add source').style.display='none';
-        webtronics.enablepage();
-      });
-		  
-		  
-		  
+
+
+    /*text open events*/
+    Event.observe($('webtronics_open_text_ok'), 'click', function() {
+      $('webtronics_open_text').style.display='none';
+    });
+    Event.observe($('webtronics_open_text_cancel'), 'click', function() {
+      webtronics.setMode('select','Selection');
+
+      $('webtronics_open_text').style.display='none';
+    });
+	  //sources events
+	  Event.observe($('webtronics_add source_ok'), 'click', function() {
+      var sources=$$(".webtronics_add_source_input");
+      var addresses=[]
+      for( var i=0;i<sources.length;i++){
+       if(sources[i].value.match(/.*/)!=-1)addresses.push(sources[i].value);
+     }	
+     webtronics.serverurls=addresses;
+     webtronics.populatemenu();
+     $('webtronics_add source').style.display='none';
+     webtronics.enablepage();
+    });
+	  
+	  Event.observe($("webtronics_add_source_cancel"), 'click', function() {
+      webtronics.setMode('select','Selection');
+
+      $('webtronics_add source').style.display='none';
+      webtronics.enablepage();
+    });
+	  
     }.bind(this));
 
-}
-}
+    }
+  }
+
 webtronics.init();

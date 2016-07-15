@@ -208,7 +208,7 @@ var netlistcreator={
   getwtxdata:function(parts){
     list=[];
     for(var i=0;i<parts.length;i++){
-      var part={error:"", elem:{}, analogpins:[],digitalpins:[],amplitude:"",phase:"",offsetvoltage:"",voltageamplitude:"",frequency:"",delaytime:"",dampingfactor:"",type:"", name:"", category:"", value:"", spice:"", model:"",measure:"", risedelay:"", falldelay:"", pulval1:"", pulval2:"", pulval3:"", pulval4:"", pulval5:"", pulval6:"", pulval7:"", eval1:"", eval2:"", eval3:"", eval4:"", eval5:"", eval6:"", pwlval1:"", pwlval2:"", pwlval3:"", pwlval4:"", pwlval5:"", pwlval6:"", pwlval7:"", pwlval8:"",
+      var part={error:"", elem:{}, analogpins:[],digitalpins:[],amplitude:"",phase:"",offsetvoltage:"",voltageamplitude:"",frequency:"",delaytime:"",dampingfactor:"",type:"", name:"", category:"", value:"", spice:"", model:"",measure:"", risedelay:"", falldelay:"",inputload:"", pulval1:"", pulval2:"", pulval3:"", pulval4:"", pulval5:"", pulval6:"", pulval7:"", eval1:"", eval2:"", eval3:"", eval4:"", eval5:"", eval6:"", pwlval1:"", pwlval2:"", pwlval3:"", pwlval4:"", pwlval5:"", pwlval6:"", pwlval7:"", pwlval8:"",
       inoffset:"",gain:"",outoffset:"",ingain:"",outgain:"",denoffset:"",dengain:"",numoffset:"",numgain:"",fraction:"",dendomain:"",denlowerlimit:"",outlowerlimit:"",outupperlimit:"",limitrange:"",upperdelta:"",lowerdelta:"",indomain:"",xarr:"",yarr:"",amodel:"",coff:"",con:"",irev:"",rbreak:"",limitswitch:"",roff:"",ron:"",log:"",vbreak:"",ibreak:"",isat:"",nfor:"",rsource:"",rsink:"",ilimitsource:"",ilimitsink:"",vpwr:"",isource:"",isink:"",routdomain:"",inlow:"",inhigh:"",hyst:"",outic:"",numcoeff:"",dencoeff:"",intic:"",denormfreq:"",
       riseslope:"",fallslope:"",outlow:"",outhigh:"",cntlarr:"",freqarr:"",duty:"",risetime:"",falltime:"",clktrig:"",pwarr:"",ptrig:"",rdelay:"",fdelay:"",rmax:"",rmin:"",rinit:"",vt:"",alpha:"",beta:"", clkdelay:"", setdelay:"", resetdelay:"", ic:"", dataload:"", jkload:"", tload:"", srload:"", clkload:"", setload:"", resetload:"", datadelay:"", enableload:"",srdelay:"", enabledelay:"", outundef:""}
       /*
@@ -917,6 +917,7 @@ createnetlist:function(responsefunc){
         spice+=sections.netlist[i].error+'\n';
         continue;
       }
+      
       command=sections.netlist[i].partid;
       var pins=[];
       for(var j=0;j<sections.netlist[i].pins['analog'].length;j++)pins.push(sections.netlist[i].pins['analog'][j]);
@@ -1257,7 +1258,7 @@ createnetlist:function(responsefunc){
         var rd=sections.netlist[i].inputload;
         var rt=sections.netlist[i].risetime;
         var ft=sections.netlist[i].falltime;
-        command+=" dac_"+pid+"\n.model dac_"+pid+" dac_bridge(out_low ="+ol+" out_high = "+oh+" out_undef = "+ou+" input_load = "+rd+" t_rise = "+rt+"t_fall"+ft+")\n";
+        command+=" dac_"+pid+"\n.model dac_"+pid+" dac_bridge(out_low ="+ol+" out_high = "+oh+" out_undef = "+ou+" input_load = "+rd+" t_rise = "+rt+"t_fall ="+ft+")\n";
       }
 
       else if(sections.netlist[i].name=="adc_bridge")
