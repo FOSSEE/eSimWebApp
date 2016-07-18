@@ -146,7 +146,7 @@ var webtronics={
     $("webtronics_risedelay").style.display='none';
 	  $("webtronics_falldelay").style.display='none';
 	  $("webtronics_inputload").style.display='none';
-
+    //console.log("Value of C: "+c);
     if(!c){
       netlistcreator.writewtx(this.circuit.selected[0],"name","ic");
     }
@@ -670,7 +670,6 @@ var webtronics={
 
 
       if(c=='and'|| c=='not'|| c=='nand'|| c=='or'||c=='nor'||c=='xor'||c=='xnor'){
-        
         $("webtronics_risedelay").style.display='block';
         $("webtronics_falldelay").style.display='block';
         $("webtronics_inputload").style.display='block';
@@ -1968,6 +1967,7 @@ console.log(exception);
       $('webtronics_properties_div').style.display='none';
       webtronics.enablepage();
       var model=webtronics.circuit.selected[0];
+      //console.log("Model :"+model);
       netlistcreator.writewtx(model,"id",$('webtronics_part_id').value);
       netlistcreator.writewtx(model,"value",$('webtronics_part_value').value);
       netlistcreator.writewtx(model,"model",$('webtronics_part_dir_value').value);

@@ -218,13 +218,15 @@ var netlistcreator={
     catch{part.error="wtx:pins not found"}
     */
       part.elem=parts[i];
-
+      
+      console.log("Parts Elem :"+parts[i])
+      
       try{
         var category=webtronics.circuit.getwtxtagname(parts[i],"analog")[0];
         var nodes = webtronics.circuit.getwtxtagname(category,"node");
         for(var j=0;j<nodes.length;j++){
-         var point = this.matrixxform( {x:webtronics.circuit.getwtxattribute(nodes[j],"x"),y:webtronics.circuit.getwtxattribute(nodes[j],"y")},webtronics.circuit.parseMatrix(part.elem));
-         part.analogpins.push({index:webtronics.circuit.getwtxattribute(nodes[j],"index"),x:point.x,y:point.y,node:undefined}) ;
+          var point = this.matrixxform( {x:webtronics.circuit.getwtxattribute(nodes[j],"x"),y:webtronics.circuit.getwtxattribute(nodes[j],"y")},webtronics.circuit.parseMatrix(part.elem));
+          part.analogpins.push({index:webtronics.circuit.getwtxattribute(nodes[j],"index"),x:point.x,y:point.y,node:undefined}) ;
         }
         //sort nodes int correct order
         part.analogpins.sort(function(a,b){if (a.name > b.name)return 1;if (a.name < b.name)return -1;return 0;});
@@ -427,7 +429,9 @@ var netlistcreator={
 
       //digital and
       try{
+        console.log("RiseDelay Parts :"+parts[i])
         part.risedelay=this.readwtx(parts[i],'risedelay');
+        console.log("part.risedelay :"+part.risedelay);
       }
       catch(e){part.error="wtx:risedelay not found";}
 
@@ -884,7 +888,7 @@ getnodes:function(parts){
     }
     
   }
-  
+  console.log("Net :"+net)
   return sections;
 },
 
