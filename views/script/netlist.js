@@ -1267,7 +1267,7 @@ createnetlist:function(responsefunc){
         var ih=sections.netlist[i].inhigh;
         var rised=sections.netlist[i].risedelay;
         var falld=sections.netlist[i].falldelay;
-        command+=" adcbridge_"+pid+"\n.model adc_buff_"+pid+" adcbridge(in_low ="+il+" in_high = "+ih+")\n";
+        command+=" adc_"+pid+"\n.model adc_"+pid+" adc_bridge(in_low ="+il+" in_high = "+ih+" rise_delay = "+rised+" fall_delay = "+falld+")\n";
       }
 
 
