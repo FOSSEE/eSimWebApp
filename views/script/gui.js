@@ -1134,6 +1134,7 @@ var webtronics={
       $("webtronics_pulval5").style.display='none'
       $("webtronics_pulval6").style.display='none'
       $("webtronics_pulval7").style.display='none'
+      
       var value=netlistcreator.readwtx(this.circuit.selected[0],"value");
       if(value!=""){$('webtronics_part_value').value=value;}
 
@@ -1967,7 +1968,7 @@ console.log(exception);
       $('webtronics_properties_div').style.display='none';
       webtronics.enablepage();
       var model=webtronics.circuit.selected[0];
-      //console.log("Model :"+model);
+      console.log("Model :"+model);
       netlistcreator.writewtx(model,"id",$('webtronics_part_id').value);
       netlistcreator.writewtx(model,"value",$('webtronics_part_value').value);
       netlistcreator.writewtx(model,"model",$('webtronics_part_dir_value').value);

@@ -153,10 +153,20 @@
 					"2n7000":["2n7000.mod"],
 					"irf150":["irf150.mod"],
 					"irf530":["irf530.mod"],
-					"irfz44n":["irfz44n.mod"]
+					"irfz44n":["irfz44n.mod"],
+					"NMOS0.5um":["NMOS-0.5um.lib"],
+					"NMOS180nm":["NMOS-180nm.lib"],
+					"NMOS5um":["NMOS-5um.lib"]
 				}
 			},
-			"pmosfet":{}
+			"pmosfet":{
+				"values":{
+					"PMOS0.5um":["PMOS-0.5um.lib"],
+					"PMOS180nm":["PMOS-180nm.lib"],
+					"PMOS5um":["PMOS-5um.lib"]
+				}
+
+			}
 
 		},
 
