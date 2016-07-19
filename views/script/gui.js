@@ -25,7 +25,7 @@ var webtronics={
 
   Vlist:/\s*expression|\s*url|.*script/,
   Alist:/^(x|y|x1|y1|x2|y2|dx|dy|cx|cy|r|width|height|style|transform|d|id|xml:space|class|fill|stroke|text-anchor|visibility|fill-opacity|stroke-linejoin|stroke-linecap|stroke-opacity|stroke-width|xmlns|xmlns:wtx|connects|partvalue|flippable|spice|index|font-size|font-weight|font-style|font-family)$/,
-  Elist:/^(path|circle|rect|line|text|g|tspan|svg|wtx:limitswitch|wtx:irev|wtx:rbreak|wtx:inoffset|wtx:gain|wtx:outoffset|wtx:outundef|wtx:ingain|wtx:outgain|wtx:denoffset|wtx:dengain|wtx:numoffset|wtx:numgain|wtx:fraction|wtx:dendomain|wtx:denlowerlimit|wtx:outlowerlimit|wtx:outupperlimit|wtx:limitrange|wtx:upperdelta|wtx:lowerdelta|wtx:indomain|wtx:xarr|wtx:yarr|wtx:amodel|wtx:coff|wtx:con|wtx:roff|wtx:ron|wtx:log|wtx:vbreak|wtx:ibreak|wtx:isat|wtx:nfor|wtx:rsource|wtx:rsink|wtx:ilimitsource|wtx:ilimitsink|wtx:vpwr|wtx:isource|wtx:isink|wtx:routdomain|wtx:inlow|wtx:inhigh|wtx:hyst|wtx:outic|wtx:numcoeff|wtx:dencoeff|wtx:intic|wtx:denormfreq|wtx:riseslope|wtx:fallslope|wtx:outlow|wtx:outhigh|wtx:cntlarr|wtx:freqarr|wtx:duty|wtx:risetime|wtx:falltime|wtx:clktrig|wtx:pwarr|wtx:ptrig|wtx:rdelay|wtx:fdelay|wtx:rmax|wtx:rmin|wtx:rinit|wtx:vt|wtx:alpha|wtx:beta|wtx:eval1|wtx:eval2|wtx:eval3|wtx:eval4|wtx:eval5|wtx:eval6|wtx:pwlval1|wtx:pwlval2|wtx:pwlval3|wtx:pwlval4|wtx:pwlval5|wtx:pwlval6|wtx:pwlval7|wtx:pwlval8|wtx:pulval1|wtx:pulval2|wtx:pulval3|wtx:pulval4|wtx:pulval5|wtx:pulval6|wtx:pulval7|wtx:amplitude|wtx:phase|wtx:offsetvoltage|wtx:voltageamplitude|wtx:frequency|wtx:delaytime|wtx:dampingfactor|wtx:part|wtx:pins|wtx:analog|wtx:digital|wtx:node|wtx:id|wtx:type|wtx:name|wtx:category|wtx:value|wtx:label|wtx:spice|wtx:risedelay|wtx:inputload|wtx:falldelay|wtx:flip|wtx:model|wtx:measure|metadata|)$/,
+  Elist:/^(path|circle|rect|line|text|g|tspan|svg|wtx:limitswitch|wtx:irev|wtx:rbreak|wtx:inoffset|wtx:gain|wtx:outoffset|wtx:outundef|wtx:ingain|wtx:outgain|wtx:denoffset|wtx:dengain|wtx:numoffset|wtx:numgain|wtx:fraction|wtx:dendomain|wtx:denlowerlimit|wtx:outlowerlimit|wtx:outupperlimit|wtx:limitrange|wtx:upperdelta|wtx:lowerdelta|wtx:indomain|wtx:xarr|wtx:yarr|wtx:amodel|wtx:coff|wtx:con|wtx:roff|wtx:ron|wtx:log|wtx:vbreak|wtx:ibreak|wtx:isat|wtx:nfor|wtx:rsource|wtx:rsink|wtx:ilimitsource|wtx:ilimitsink|wtx:vpwr|wtx:isource|wtx:isink|wtx:routdomain|wtx:inlow|wtx:inhigh|wtx:hyst|wtx:outic|wtx:numcoeff|wtx:dencoeff|wtx:intic|wtx:denormfreq|wtx:riseslope|wtx:fallslope|wtx:outlow|wtx:outhigh|wtx:cntlarr|wtx:freqarr|wtx:duty|wtx:risetime|wtx:falltime|wtx:clktrig|wtx:pwarr|wtx:ptrig|wtx:rdelay|wtx:fdelay|wtx:rmax|wtx:rmin|wtx:rinit|wtx:vt|wtx:alpha|wtx:beta|wtx:eval1|wtx:eval2|wtx:eval3|wtx:eval4|wtx:eval5|wtx:eval6|wtx:pwlval|wtx:pulval1|wtx:pulval2|wtx:pulval3|wtx:pulval4|wtx:pulval5|wtx:pulval6|wtx:pulval7|wtx:amplitude|wtx:phase|wtx:offsetvoltage|wtx:voltageamplitude|wtx:frequency|wtx:delaytime|wtx:dampingfactor|wtx:part|wtx:pins|wtx:analog|wtx:digital|wtx:node|wtx:id|wtx:type|wtx:name|wtx:category|wtx:value|wtx:label|wtx:spice|wtx:risedelay|wtx:inputload|wtx:falldelay|wtx:flip|wtx:model|wtx:measure|metadata|)$/,
   /* .lib files contain spice .model devices .mod devices contain .subckt devices and the id must begin with x*/
   //	serverurls:["http://logical.github.io/webtronix/webtronix_server"],
  	serverurls:["webtronix_server"],
@@ -172,15 +172,8 @@ var webtronics={
         $("webtronics_eval5").style.display='none'
         $("webtronics_eval6").style.display='none'
 
-        $("webtronics_pwlval1").style.display='none'
-        $("webtronics_pwlval2").style.display='none'
-        $("webtronics_pwlval3").style.display='none'
-        $("webtronics_pwlval4").style.display='none'
-        $("webtronics_pwlval5").style.display='none'
-        $("webtronics_pwlval6").style.display='none'
-        $("webtronics_pwlval7").style.display='none'
-        $("webtronics_pwlval8").style.display='none'
-
+        $("webtronics_pwlval").style.display='none'
+        
         $("webtronics_offsetvoltage").style.display='none'
         $("webtronics_frequency").style.display='none'
         $("webtronics_voltageamplitude").style.display='none'
@@ -222,15 +215,8 @@ var webtronics={
         $("directive").style.display='none'
 
 
-        $("webtronics_pwlval1").style.display='none'
-        $("webtronics_pwlval2").style.display='none'
-        $("webtronics_pwlval3").style.display='none'
-        $("webtronics_pwlval4").style.display='none'
-        $("webtronics_pwlval5").style.display='none'
-        $("webtronics_pwlval6").style.display='none'
-        $("webtronics_pwlval7").style.display='none'
-        $("webtronics_pwlval8").style.display='none'
-
+        $("webtronics_pwlval").style.display='none'
+        
         $("webtronics_pulval1").style.display='none'
         $("webtronics_pulval2").style.display='none'
         $("webtronics_pulval3").style.display='none'
@@ -271,15 +257,8 @@ var webtronics={
         $("webtronics_eval5").style.display='none'
         $("webtronics_eval6").style.display='none'
 
-        $("webtronics_pwlval1").style.display='none'
-        $("webtronics_pwlval2").style.display='none'
-        $("webtronics_pwlval3").style.display='none'
-        $("webtronics_pwlval4").style.display='none'
-        $("webtronics_pwlval5").style.display='none'
-        $("webtronics_pwlval6").style.display='none'
-        $("webtronics_pwlval7").style.display='none'
-        $("webtronics_pwlval8").style.display='none'
-
+        $("webtronics_pwlval").style.display='none'
+        
         $("webtronics_pulval1").style.display='block'
         $("webtronics_pulval2").style.display='block'
         $("webtronics_pulval3").style.display='block'
@@ -327,15 +306,8 @@ var webtronics={
         $("webtronics_pulval7").style.display='none'
 
 
-        $("webtronics_pwlval1").style.display='none'
-        $("webtronics_pwlval2").style.display='none'
-        $("webtronics_pwlval3").style.display='none'
-        $("webtronics_pwlval4").style.display='none'
-        $("webtronics_pwlval5").style.display='none'
-        $("webtronics_pwlval6").style.display='none'
-        $("webtronics_pwlval7").style.display='none'
-        $("webtronics_pwlval8").style.display='none'
-
+        $("webtronics_pwlval").style.display='none'
+        
         $("webtronics_eval1").style.display='block'
         $("webtronics_eval2").style.display='block'
         $("webtronics_eval3").style.display='block'
@@ -387,32 +359,11 @@ var webtronics={
         $("webtronics_pulval6").style.display='none'
         $("webtronics_pulval7").style.display='none'
 
-        $("webtronics_pwlval1").style.display='block'
-        $("webtronics_pwlval2").style.display='block'
-        $("webtronics_pwlval3").style.display='block'
-        $("webtronics_pwlval4").style.display='block'
-        $("webtronics_pwlval5").style.display='block'
-        $("webtronics_pwlval6").style.display='block'
-        $("webtronics_pwlval7").style.display='block'
-        $("webtronics_pwlval8").style.display='block'
-
+        $("webtronics_pwlval").style.display='block'
+        
         $("directive").style.display='none'
-        var pwlval1=netlistcreator.readwtx(this.circuit.selected[0],"pwlval1");
-        var pwlval2=netlistcreator.readwtx(this.circuit.selected[0],"pwlval2");
-        var pwlval3=netlistcreator.readwtx(this.circuit.selected[0],"pwlval3");
-        var pwlval4=netlistcreator.readwtx(this.circuit.selected[0],"pwlval4");
-        var pwlval5=netlistcreator.readwtx(this.circuit.selected[0],"pwlval5");
-        var pwlval6=netlistcreator.readwtx(this.circuit.selected[0],"pwlval6");
-        var pwlval7=netlistcreator.readwtx(this.circuit.selected[0],"pwlval7");
-        var pwlval8=netlistcreator.readwtx(this.circuit.selected[0],"pwlval8");         
-        if(pwlval1!=""){$('webtronics_pwlval1_value').value=pwlval1;}
-        if(pwlval2!=""){$('webtronics_pwlval2_value').value=pwlval2;}
-        if(pwlval3!=""){$('webtronics_pwlval3_value').value=pwlval3;}
-        if(pwlval4!=""){$('webtronics_pwlval4_value').value=pwlval4;}
-        if(pwlval5!=""){$('webtronics_pwlval5_value').value=pwlval5;}
-        if(pwlval6!=""){$('webtronics_pwlval6_value').value=pwlval6;}
-        if(pwlval7!=""){$('webtronics_pwlval7_value').value=pwlval7;}
-        if(pwlval8!=""){$('webtronics_pwlval7_value').value=pwlval8;}
+        var pwlval=netlistcreator.readwtx(this.circuit.selected[0],"pwlval");
+        if(pwlval!=""){$('webtronics_pwlval_value').value=pwlval;}
         $("valuemodel").style.display='none'
       }
 
@@ -435,15 +386,8 @@ var webtronics={
         $("webtronics_eval5").style.display='none'
         $("webtronics_eval6").style.display='none'
   
-        $("webtronics_pwlval1").style.display='none'
-        $("webtronics_pwlval2").style.display='none'
-        $("webtronics_pwlval3").style.display='none'
-        $("webtronics_pwlval4").style.display='none'
-        $("webtronics_pwlval5").style.display='none'
-        $("webtronics_pwlval6").style.display='none'
-        $("webtronics_pwlval7").style.display='none'
-        $("webtronics_pwlval8").style.display='none'
-
+        $("webtronics_pwlval").style.display='none'
+        
         $("webtronics_pulval1").style.display='none'
         $("webtronics_pulval2").style.display='none'
         $("webtronics_pulval3").style.display='none'
@@ -1117,16 +1061,8 @@ var webtronics={
       $("webtronics_eval6").style.display='none'
 
 
-      $("webtronics_pwlval1").style.display='none'
-      $("webtronics_pwlval2").style.display='none'
-      $("webtronics_pwlval3").style.display='none'
-      $("webtronics_pwlval4").style.display='none'
-      $("webtronics_pwlval5").style.display='none'
-      $("webtronics_pwlval6").style.display='none'
-      $("webtronics_pwlval7").style.display='none'
-      $("webtronics_pwlval8").style.display='none'
-
-
+      $("webtronics_pwlval").style.display='none'
+      
       $("webtronics_pulval1").style.display='none'
       $("webtronics_pulval2").style.display='none'
       $("webtronics_pulval3").style.display='none'
@@ -2165,14 +2101,8 @@ console.log(exception);
         netlistcreator.writewtx(model,"pulval7",$('webtronics_pulval7_value').value);                   
       }
       else if(modelname=="pwl"){
-        netlistcreator.writewtx(model,"pwlval1",$('webtronics_pwlval1_value').value);
-        netlistcreator.writewtx(model,"pwlval2",$('webtronics_pwlval2_value').value);
-        netlistcreator.writewtx(model,"pwlval3",$('webtronics_pwlval3_value').value);
-        netlistcreator.writewtx(model,"pwlval4",$('webtronics_pwlval4_value').value);
-        netlistcreator.writewtx(model,"pwlval5",$('webtronics_pwlval5_value').value);
-        netlistcreator.writewtx(model,"pwlval6",$('webtronics_pwlval6_value').value);
-        netlistcreator.writewtx(model,"pwlval7",$('webtronics_pwlval7_value').value);                   
-        netlistcreator.writewtx(model,"pwlval8",$('webtronics_pwlval8_value').value);                   
+        netlistcreator.writewtx(model,"pwlval",$('webtronics_pwlval_value').value);
+                      
       }
       else if(modelname=="exponential"){
         netlistcreator.writewtx(model,"eval1",$('webtronics_eval1_value').value);

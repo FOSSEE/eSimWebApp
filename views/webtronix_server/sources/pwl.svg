@@ -33,16 +33,7 @@
     <wtx:category>sources</wtx:category>
     <wtx:value></wtx:value>
 
-    <wtx:pwlval1></wtx:pwlval1>
-    <wtx:pwlval2></wtx:pwlval2>
-    <wtx:pwlval3></wtx:pwlval3>
-    <wtx:pwlval4></wtx:pwlval4>
-    <wtx:pwlval5></wtx:pwlval5>
-    <wtx:pwlval6></wtx:pwlval6>
-    <wtx:pwlval7></wtx:pwlval7>
-
-    <wtx:pwlval8></wtx:pwlval8>
-
+    <wtx:pwlval></wtx:pwlval>
 
     <wtx:label></wtx:label>
     <wtx:spice></wtx:spice>

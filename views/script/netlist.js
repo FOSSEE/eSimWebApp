@@ -208,7 +208,7 @@ var netlistcreator={
   getwtxdata:function(parts){
     list=[];
     for(var i=0;i<parts.length;i++){
-      var part={error:"", elem:{}, analogpins:[],digitalpins:[],amplitude:"",phase:"",offsetvoltage:"",voltageamplitude:"",frequency:"",delaytime:"",dampingfactor:"",type:"", name:"", category:"", value:"", spice:"", model:"",measure:"", risedelay:"", falldelay:"",inputload:"", pulval1:"", pulval2:"", pulval3:"", pulval4:"", pulval5:"", pulval6:"", pulval7:"", eval1:"", eval2:"", eval3:"", eval4:"", eval5:"", eval6:"", pwlval1:"", pwlval2:"", pwlval3:"", pwlval4:"", pwlval5:"", pwlval6:"", pwlval7:"", pwlval8:"",
+      var part={error:"", elem:{}, analogpins:[],digitalpins:[],amplitude:"",phase:"",offsetvoltage:"",voltageamplitude:"",frequency:"",delaytime:"",dampingfactor:"",type:"", name:"", category:"", value:"", spice:"", model:"",measure:"", risedelay:"", falldelay:"",inputload:"", pulval1:"", pulval2:"", pulval3:"", pulval4:"", pulval5:"", pulval6:"", pulval7:"", eval1:"", eval2:"", eval3:"", eval4:"", eval5:"", eval6:"", pwlval:"",
       inoffset:"",gain:"",outoffset:"",ingain:"",outgain:"",denoffset:"",dengain:"",numoffset:"",numgain:"",fraction:"",dendomain:"",denlowerlimit:"",outlowerlimit:"",outupperlimit:"",limitrange:"",upperdelta:"",lowerdelta:"",indomain:"",xarr:"",yarr:"",amodel:"",coff:"",con:"",irev:"",rbreak:"",limitswitch:"",roff:"",ron:"",log:"",vbreak:"",ibreak:"",isat:"",nfor:"",rsource:"",rsink:"",ilimitsource:"",ilimitsink:"",vpwr:"",isource:"",isink:"",routdomain:"",inlow:"",inhigh:"",hyst:"",outic:"",numcoeff:"",dencoeff:"",intic:"",denormfreq:"",
       riseslope:"",fallslope:"",outlow:"",outhigh:"",cntlarr:"",freqarr:"",duty:"",risetime:"",falltime:"",clktrig:"",pwarr:"",ptrig:"",rdelay:"",fdelay:"",rmax:"",rmin:"",rinit:"",vt:"",alpha:"",beta:"", clkdelay:"", setdelay:"", resetdelay:"", ic:"", dataload:"", jkload:"", tload:"", srload:"", clkload:"", setload:"", resetload:"", datadelay:"", enableload:"",srdelay:"", enabledelay:"", outundef:""}
       /*
@@ -357,44 +357,9 @@ var netlistcreator={
 
       //FOR pwl volatge source
       try{        
-        part.pwlval1=this.readwtx(parts[i],'pwlval1');
+        part.pwlval=this.readwtx(parts[i],'pwlval');
       }
-      catch(e){part.error="wtx:Time T1 Value not found";} 
-
-      try{        
-        part.pwlval2=this.readwtx(parts[i],'pwlval2');
-      }
-      catch(e){part.error="wtx:Voltage V1 Value not found";} 
-        
-      try{        
-        part.pwlval3=this.readwtx(parts[i],'pwlval3');
-      }
-      catch(e){part.error="wtx:Time T2 Value not found";} 
-        
-      try{        
-        part.pwlval4=this.readwtx(parts[i],'pwlval4');
-      }
-      catch(e){part.error="wtx:Voltage V2 value not found";} 
-
-      try{        
-        part.pwlval5=this.readwtx(parts[i],'pwlval5');
-      }
-      catch(e){part.error="wtx:Time T3 value not found";} 
-        
-      try{        
-        part.pwlval6=this.readwtx(parts[i],'pwlval6');
-      }
-      catch(e){part.error="wtx:Voltage V3 value not found";} 
-        
-      try{        
-        part.pwlval7=this.readwtx(parts[i],'pwlval7');
-      }
-      catch(e){part.error="wtx:Time T4 Value not found";} 
-        
-      try{        
-        part.pwlval8=this.readwtx(parts[i],'pwlval8');
-      }
-      catch(e){part.error="wtx:Voltage V4 Value not found";} 
+      catch(e){part.error="wtx:PWL Value not found";} 
 
       //FOR exponential volatge source
       try{        
@@ -874,7 +839,7 @@ getnodes:function(parts){
       }
 
       //create pins array
-      var net={error:parts[i].error,pwlval1:parts[i].pwlval1,pwlval2:parts[i].pwlval2,pwlval3:parts[i].pwlval3,pwlval4:parts[i].pwlval4,pwlval5:parts[i].pwlval5,pwlval6:parts[i].pwlval6,pwlval7:parts[i].pwlval7,pwlval8:parts[i].pwlval8,pulval1:parts[i].pulval1,pulval2:parts[i].pulval2,pulval3:parts[i].pulval3,pulval4:parts[i].pulval4,pulval5:parts[i].pulval5,pulval6:parts[i].pulval6,pulval7:parts[i].pulval7,name:parts[i].name,
+      var net={error:parts[i].error,pwlval:parts[i].pwlval,pulval1:parts[i].pulval1,pulval2:parts[i].pulval2,pulval3:parts[i].pulval3,pulval4:parts[i].pulval4,pulval5:parts[i].pulval5,pulval6:parts[i].pulval6,pulval7:parts[i].pulval7,name:parts[i].name,
         partid:parts[i].id,pins:{analog:parts[i].analogpins,digital:parts[i].digitalpins},model:parts[i].value,amplitude:parts[i].amplitude,
       phase:parts[i].phase, risedelay:parts[i].risedelay, inputload:parts[i].inputload, falldelay:parts[i].falldelay, offsetvoltage:parts[i].offsetvoltage,voltageamplitude:parts[i].voltageamplitude,frequency:parts[i].frequency,
       delaytime:parts[i].delaytime,dampingfactor:parts[i].dampingfactor,eval1:parts[i].eval1,eval2:parts[i].eval2,eval3:parts[i].eval3,eval4:parts[i].eval4,eval5:parts[i].eval5,eval6:parts[i].eval6,
@@ -947,7 +912,7 @@ createnetlist:function(responsefunc){
         command+=" "+"PULSE ("+sections.netlist[i].pulval1+" "+sections.netlist[i].pulval2+" "+sections.netlist[i].pulval3+" "+sections.netlist[i].pulval4+" "+sections.netlist[i].pulval5+" "+sections.netlist[i].pulval6+" "+sections.netlist[i].pulval7+")";
       }
       else if(sections.netlist[i].name=="pwl"){
-        command+=" "+"PWL ("+sections.netlist[i].pwlval1+" "+sections.netlist[i].pwlval2+" "+sections.netlist[i].pwlval3+" "+sections.netlist[i].pwlval4+" "+sections.netlist[i].pwlval5+" "+sections.netlist[i].pwlval6+" "+sections.netlist[i].pwlval7+" "+sections.netlist[i].pwlval8+")";
+        command+=" "+"PWL ( "+sections.netlist[i].pwlval+" )";
       }
       else if(sections.netlist[i].name=="exponential"){
         command+=" "+"EXP ("+sections.netlist[i].eval1+" "+sections.netlist[i].eval2+" "+sections.netlist[i].eval3+" "+sections.netlist[i].eval4+" "+sections.netlist[i].eval5+" "+sections.netlist[i].eval6+")";
