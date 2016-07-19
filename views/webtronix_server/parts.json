@@ -142,12 +142,17 @@
 			"njfet":{
 				"values":{
 					"mpf102":["mpf102.lib"],
-					"2n3819":["2n3819.lib"]
+					"2n3819":["2n3819.lib"],
+					"J2N3819":["NJF.lib"]
 
 				}
 			},
 
-			"pjfet":{},
+			"pjfet":{
+				"values":{
+					"J2N3820":["PJF.lib"]
+				}
+			},
 			"nmosfet":{
 				"values":{
 					"2n7000":["2n7000.mod"],
