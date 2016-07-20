@@ -18,8 +18,47 @@ jQuery(document).ready(function(){
     ------------------------------------------------------------------------------------------------------------------------------------------------*/
 
     jQuery("#webtronics_netlist_text_download").click(function(){
-    	console.log("button clicked");
-			
+    	var netlist = jQuery("#webtronics_netlist_text_area").val();
+    	//  create a new Blob (html5 magic) that conatins the data from your form feild
+		var textFileAsBlob = new Blob([netlist], {type:'text/plain'});
+    	
+    	var netListFileName = prompt('Enter name of netlist file to be saved');
+    	if(!netListFileName){
+    		alert("Please give the proper name");
+    	} 
+
+    	// create a link for our script to 'click'
+		var downloadLink = document.createElement("a");
+
+    	downloadLink.download = netListFileName+'.cir';
+
+    	// Link Name
+		downloadLink.innerHTML = "Netlist Download Link";
+
+		// allow our code to work in webkit & Gecko based browsers
+		// without the need for a if / else block.
+		window.URL = window.URL || window.webkitURL;
+
+		// Create the link Object.
+		downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+		// when link is clicked call a function to remove it from
+		// the DOM in case user wants to save a second file.
+		downloadLink.onclick = destroyClickedElement;
+		// make sure the link is hidden.
+		downloadLink.style.display = "none";
+		// add the link to the DOM
+		document.body.appendChild(downloadLink);
+
+		// click the new link
+		downloadLink.click();
+
+        function destroyClickedElement(event)
+		{
+			// remove the link from the DOM
+    		document.body.removeChild(event.target);
+		}
+
+	
 	});
 
     /*------------------------------------------------------------------------------------------------------------------------------------------------
