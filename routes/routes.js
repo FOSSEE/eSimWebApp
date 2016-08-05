@@ -96,7 +96,8 @@ module.exports = function(express,app,io,fs,exec,os,PythonShell,scriptPath){
 	{
 		console.log("Ngspice netlist executed successfully ");
 		socket.emit('serverMessage','Ngspice netlist executed successfully: ');	
-		var analysisInfo = grep('.tran|.dc|.ac', fileName);
+		//var analysisInfo = grep('.tran|.dc|.ac', fileName);
+		var analysisInfo = getAnalysisInfo(fileName);
 		console.log("Analysis :"+analysisInfo);
 		console.log("Plot Allv :"+dumpv);
 		console.log("Plot Alli :"+dumpi);
@@ -119,6 +120,18 @@ module.exports = function(express,app,io,fs,exec,os,PythonShell,scriptPath){
  			//Emitting Data Points to client
 			socket.emit('plotData',resultString);
  	    });
+	}
+
+	function getAnalysisInfo(fileName){
+		var analysisType;
+		fs.readFileSync(fileName).toString().split('\n').forEach(function (line) {
+			line = line.trim();
+			if(line.startsWith(".ac")||line.startsWith(".tran")||line.startsWith(".dc")){
+				analysisType = line;
+			}
+				
+		});
+		return analysisType;
 	}
 
 });
