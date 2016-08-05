@@ -13,7 +13,7 @@ module.exports = function(express,app,io,fs,exec,os,PythonShell,scriptPath){
    
     io.on('connection',function(socket){
     	var socketId = getSocketID(socket);
-    	var analysisFile = '/tmp/' + socketId + '.cir.out';
+    	var fileName = '/tmp/' + socketId + '.cir.out';
     	//Conversion to lower case is required as NgSpice internally converts the filename to lower case.
     	var dumpv = '/tmp/' + socketId.toLowerCase() + '-dumpv.txt';
     	var dumpi = '/tmp/' + socketId.toLowerCase() + '-dumpi.txt';
@@ -23,7 +23,7 @@ module.exports = function(express,app,io,fs,exec,os,PythonShell,scriptPath){
 		
 		socket.on('disconnect', function(){
 			console.log('Client with socket id ' + socketId + ' has disconnected.');
-			deleteOnExit(analysisFile);
+			deleteOnExit(fileName);
 			deleteOnExit(dumpv);
 			deleteOnExit(dumpi);
 		});
@@ -34,13 +34,13 @@ module.exports = function(express,app,io,fs,exec,os,PythonShell,scriptPath){
 	  		var update = msg.replace('dumpv.txt', dumpv);
 	  		var result = update.replace('dumpi.txt', dumpi);
 
-      		fs.writeFile(analysisFile, result, function(err){
+      		fs.writeFile(fileName, result, function(err){
       			if(err){
       				return console.log(err);
       			}
       		});
 
-      		executeNgspiceNetlist(analysisFile);
+      		executeNgspiceNetlist(fileName);
 		});
 
     function deleteOnExit(filename){
@@ -96,7 +96,7 @@ module.exports = function(express,app,io,fs,exec,os,PythonShell,scriptPath){
 	{
 		console.log("Ngspice netlist executed successfully ");
 		socket.emit('serverMessage','Ngspice netlist executed successfully: ');	
-		var analysisInfo = grep('.tran|.dc|.ac', analysisFile);
+		var analysisInfo = grep('.tran|.dc|.ac', fileName);
 		console.log("Analysis :"+analysisInfo);
 		console.log("Plot Allv :"+dumpv);
 		console.log("Plot Alli :"+dumpi);
