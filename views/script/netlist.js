@@ -54,7 +54,7 @@ var netlistcreator={
         D.push(list[i]);
       }
       else if(list[i].type=='i'){	
-        J.push(list[i]);
+        I.push(list[i]);
       }
       else if(list[i].type=='j'){	
         J.push(list[i]);
@@ -93,6 +93,7 @@ var netlistcreator={
       /* this is the best way I could think to tell if a part i digital */
       else if(list[i].category=="digitalmodels"||list[i].category=="hybridmodels"){	
         A.push(list[i]);
+        //console.log("Digital List :"+Object.keys(list[i]));
       }
       else {
         list[i].error='unknown device';
@@ -143,7 +144,10 @@ var netlistcreator={
     R.each(function(item){newlist.push(item)});
     U.each(function(item){newlist.push(item)});		
     X.each(function(item){newlist.push(item)});
-    A.each(function(item){newlist.push(item)});		
+    A.each(function(item){
+      newlist.push(item);
+      console.log("Item--->"+Object.keys(item));
+    });		
     other.each(function(item){newlist.push(item)});		
 
     /*plots go last*/
@@ -241,6 +245,8 @@ var netlistcreator={
           part.digitalpins.push({index:webtronics.circuit.getwtxattribute(nodes[j],"index"),x:point.x,y:point.y,node:undefined}) ;
         }
         part.digitalpins.sort(function(a,b){if (a.name > b.name)return 1;if (a.name < b.name)return -1;return 0;});
+        part.pin=this.readwtx(parts[i],'digitalpins');
+        console.log("Parts ID: "+part.pin);
       }
       catch(e){console.log("no digital pins found");}
        
@@ -720,6 +726,8 @@ getconnected:function(wirelist,wire){
 //returns points connected by lines
 //it is recursive and should be called with NULL for wires
 followwires:function(wires,pin){
+  console.log("Wires :"+wires);
+  console.log("Pins :"+pin);
   if(wires==null)wires=[];
   var points=[];
   points.push(pin);	
@@ -727,6 +735,8 @@ followwires:function(wires,pin){
   for(var i =0 ;i<lines.length;i++){
     var point1={x:lines[i].getAttribute('x1')-0,y:lines[i].getAttribute('y1')-0};
     var point2={x:lines[i].getAttribute('x2')-0,y:lines[i].getAttribute('y2')-0};
+    // console.log("Poinst1 : "+Object.keys(point1));
+    // console.log("Points2 : "+Object.keys(point2));
     if(wires.indexOf(lines[i])<0){		
       if(this.ispoint(point1,pin)){
        wires.push(lines[i]);
@@ -761,7 +771,7 @@ numberwires:function(parts){
 digitalpoints.push(wire);
 }
 parts[i].analogpins[0]["node"]=0;
-//      parts[i].digitalpins[0]["node"]=0;
+     // parts[i].digitalpins[0]["node"]=0; 
 continue;
 }
 if(parts[i].analogpins!=undefined){
@@ -786,6 +796,7 @@ if(parts[i].analogpins!=undefined){
        if(found<0){
          digitalpoints.push(wire);
          parts[i].digitalpins[j]["node"]=digitalpoints.length-1;
+         // console.log("Wire---->"+Object.keys(wire));
        }
        else{
          parts[i].digitalpins[j]["node"]=found;
@@ -851,9 +862,10 @@ getnodes:function(parts){
       
       if(net!=null)sections.netlist.push(net);
     }
-    
+    // console.log("Net :"+net.partid);
+    // console.log("Pins :"+parts[i].digitalpins);
   }
-  console.log("Net :"+net)
+  // console.log(Object.values(sections.netlist));
   return sections;
 },
 
@@ -1227,7 +1239,7 @@ createnetlist:function(responsefunc){
         var rd=sections.netlist[i].inputload;
         var rt=sections.netlist[i].risetime;
         var ft=sections.netlist[i].falltime;
-        command+=" dac_"+pid+"\n.model dac_"+pid+" dac_bridge(out_low ="+ol+" out_high = "+oh+" out_undef = "+ou+" input_load = "+rd+" t_rise = "+rt+"t_fall ="+ft+")\n";
+        command+=" dac_"+pid+"\n.model dac_"+pid+" dac_bridge(out_low ="+ol+" out_high = "+oh+" out_undef = "+ou+" input_load = "+rd+" t_rise = "+rt+" t_fall ="+ft+")\n";
       }
 
       else if(sections.netlist[i].name=="adc_bridge")
@@ -1236,6 +1248,7 @@ createnetlist:function(responsefunc){
         var ih=sections.netlist[i].inhigh;
         var rised=sections.netlist[i].risedelay;
         var falld=sections.netlist[i].falldelay;
+        console.log("Command----->"+command);
         command+=" adc_"+pid+"\n.model adc_"+pid+" adc_bridge(in_low ="+il+" in_high = "+ih+" rise_delay = "+rised+" fall_delay = "+falld+")\n";
       }
 

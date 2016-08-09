@@ -2219,7 +2219,7 @@ console.log(exception);
         netlistcreator.writewtx(model,"outhigh",$('webtronics_outhigh_value').value);
         netlistcreator.writewtx(model,"outundef",$('webtronics_outundef_value').value);
         netlistcreator.writewtx(model,"inputload",$('webtronics_inputload_value').value);
-        netlistcreator.writewtx(model,"outlow",$('webtronics_risetime_value').value);
+        netlistcreator.writewtx(model,"risetime",$('webtronics_risetime_value').value);
         netlistcreator.writewtx(model,"falltime",$('webtronics_falltime_value').value);
       }
       
