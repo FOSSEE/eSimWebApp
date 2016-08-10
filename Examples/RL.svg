@@ -1,0 +1,137 @@
+<?xml version='1.0' ?>
+<!--Created by webtronics 0.1-->
+<svg xmlns="http://www.w3.org/2000/svg" width="220.01953125px" height="157.5px"><rect x="0" y="0" fill="white" width="220.01953125px" height="157.5px"/><text x="10" y="59.9998779296875" font-size="12" fill="black" stroke-width="0px" id="value-v1-d868ba52a50cce"><tspan dx="0" dy="0">v1</tspan></text><g class="pwl" id="Pwl" transform="matrix(-1.8369702788777518e-16,-1,1,-1.8369702788777518e-16,20,110)">
+
+
+<!--
+    pwlval1=first time part T1
+    pwlval2=first voltage part V1
+    pwlval3=T2
+    pwlval4=V2
+    pwlval5=T3
+    pwlval6=V3
+    pwlval7=T4
+    pwlval8=V4
+    -->
+
+    
+<metadata class="part">
+<wtx:part xmlns:wtx="http://code.google.com/p/webtronics">
+    <wtx:pins>
+    <wtx:analog>
+                <wtx:node y="20" x="0" index="1"/>
+                <wtx:node y="20" x="60" index="2"/>
+    </wtx:analog>
+    </wtx:pins>
+    <wtx:id>v1</wtx:id>
+    <wtx:type>v</wtx:type>
+    <wtx:name>pwl</wtx:name>
+    <wtx:category>sources</wtx:category>
+    <wtx:value/>
+
+    <wtx:pwlval1>0m</wtx:pwlval1>
+    <wtx:pwlval2>0</wtx:pwlval2>
+    <wtx:pwlval3>0.5m</wtx:pwlval3>
+    <wtx:pwlval4>5</wtx:pwlval4>
+    <wtx:pwlval5>50m</wtx:pwlval5>
+    <wtx:pwlval6>5</wtx:pwlval6>
+    <wtx:pwlval7>50.5m</wtx:pwlval7>
+
+    <wtx:pwlval8>0</wtx:pwlval8>
+
+
+    <wtx:label>value-v1-d868ba52a50cce</wtx:label>
+    <wtx:spice/>
+    <wtx:flip/>
+    <wtx:model/>
+</wtx:part>
+</metadata>
+
+
+
+
+
+<path d=" M 0.00 0.00 L 60.00 0.00 L 60.00 19.00 C 55.63 19.00 51.25 18.97 46.88 19.05 C 46.14 13.35 43.15 7.80 38.02 4.92 C 30.21 -0.51 18.48 2.78 13.93 10.98 C 11.98 13.26 11.92 16.30 11.12 19.05 C 7.42 18.98 3.71 19.00 0.00 19.00 L 0.00 0.00 Z" fill="#ffffff"/>
+<path d=" M 13.93 10.98 C 18.48 2.78 30.21 -0.51 38.02 4.92 C 43.15 7.80 46.14 13.35 46.88 19.05 C 51.25 18.97 55.63 19.00 60.00 19.00 L 60.00 21.00 C 55.62 21.00 51.23 21.02 46.85 20.97 C 46.09 29.36 39.19 36.93 30.66 37.64 C 20.97 38.83 11.90 30.52 11.16 20.97 C 7.44 21.01 3.72 21.00 0.00 21.00 L 0.00 19.00 C 3.71 19.00 7.42 18.98 11.12 19.05 C 11.92 16.30 11.98 13.26 13.93 10.98 Z" fill="#000000"/>
+<path d=" M 28.25 3.15 C 30.45 2.91 32.57 4.05 34.78 4.17 C 39.08 5.83 42.38 9.51 44.67 13.46 C 45.05 15.66 45.53 17.84 45.97 20.04 C 45.50 22.21 45.05 24.39 44.65 26.57 C 42.53 30.39 39.39 33.53 35.57 35.66 C 33.37 36.06 31.18 36.51 29.00 36.97 C 26.81 36.51 24.63 36.06 22.43 35.66 C 18.61 33.53 15.47 30.39 13.35 26.57 C 12.95 24.39 12.50 22.21 12.03 20.03 C 12.47 17.84 12.95 15.66 13.33 13.46 C 15.46 9.61 18.62 6.46 22.46 4.33 C 24.39 3.94 26.34 3.67 28.25 3.15 Z" fill="#ffffff"/>
+<path d=" M 20.36 10.85 C 24.06 11.65 27.69 12.79 31.43 13.46 C 29.65 14.76 27.50 13.55 25.62 13.22 C 23.70 12.89 21.83 12.17 20.36 10.85 Z" fill="#000000"/>
+<path d=" M 24.99 18.15 C 27.91 16.85 30.35 14.52 33.47 13.75 C 31.77 16.31 28.64 17.09 26.01 18.34 C 26.00 20.52 26.00 22.70 25.98 24.88 C 28.77 26.74 32.43 27.40 34.54 30.18 C 31.30 28.80 28.26 26.98 25.00 25.63 C 25.00 23.14 25.00 20.64 24.99 18.15 Z" fill="#000000"/>
+<path d=" M 38.99 16.00 L 40.00 15.98 C 40.00 17.32 40.00 18.66 40.01 20.00 C 41.34 20.00 42.68 20.00 44.02 19.99 L 44.00 20.90 C 41.99 20.94 39.55 20.53 39.51 23.32 C 39.31 22.80 38.90 21.76 38.70 21.25 C 37.57 20.99 36.48 20.64 35.41 20.20 C 36.32 20.12 38.13 19.94 39.03 19.86 C 39.01 18.57 39.00 17.28 38.99 16.00 Z" fill="#000000"/>
+<path d=" M 18.30 17.09 C 19.80 18.34 19.07 21.98 18.70 23.91 C 17.20 22.66 17.93 19.02 18.30 17.09 Z" fill="#000000"/>
+<path d=" M 0.00 21.00 C 3.72 21.00 7.44 21.01 11.16 20.97 C 11.90 30.52 20.97 38.83 30.66 37.64 C 39.19 36.93 46.09 29.36 46.85 20.97 C 51.23 21.02 55.62 21.00 60.00 21.00 L 60.00 40.00 L 24.81 40.00 C 26.25 37.94 22.80 37.85 23.96 40.00 L 0.00 40.00 L 0.00 21.00 Z" fill="#ffffff"/>
+<path d=" M 23.96 40.00 C 22.80 37.85 26.25 37.94 24.81 40.00 L 23.96 40.00 Z" fill="#000000"/>
+</g><text x="90" y="10" font-size="12" fill="black" stroke-width="0px" id="value-r1-19a57311a8598a"><tspan dx="-14" dy="15">10</tspan><tspan dx="0" dy="0">r1</tspan></text><g stroke-width="2px" stroke="black" transform="matrix(1,0,0,1,90,10)">
+<metadata class="part">
+<wtx:part xmlns:wtx="/home/niel/Desktop/webtronics">
+    <wtx:pins>
+		<wtx:analog>
+		  <wtx:node y="10" x="0" index="1"/>
+		  <wtx:node y="10" x="40" index="2"/>
+		</wtx:analog>
+    </wtx:pins>
+    <wtx:id>r1</wtx:id>
+    <wtx:type>r</wtx:type>
+    <wtx:name>resistor</wtx:name>
+    <wtx:category>resistors</wtx:category>
+    <wtx:value>10</wtx:value>
+    <wtx:label>value-r1-19a57311a8598a</wtx:label>
+    <wtx:spice/>
+    <wtx:flip/>
+    <wtx:model/>
+</wtx:part>
+</metadata>
+
+    <path fill="none" id="path3444" d="M 5.1400289,10.973441 7.5009997,5.0436578 10.530362,14.908323 14.248435,4.3282724 18.324457,14.77488 21.761826,4.4617163 25.849828,14.589134 29.504786,4.5222528 33.128938,14.818135 35.33864,10.115602"/>
+    <path id="path2159" d="m 0,10 5.424147,0"/>
+    <path id="path2161" d="m 40,10 -5.459106,0"/>
+    <rect visibility="hidden" id="rect2162" y="0" x="0" height="20" width="40"/>
+
+  </g><text x="170" y="60" font-size="12" fill="black" stroke-width="0px" id="value-l1-dbeeab34e49971"><tspan dx="-12" dy="15">100m</tspan><tspan dx="0" dy="0">l1</tspan></text><g class="coil" id="L" stroke-width="2px" stroke="black" connects="0,10;60,10" transform="matrix(6.123234262925839e-17,1,-1,6.123234262925839e-17,210,40)">
+<metadata class="part">
+    <wtx:part xmlns:wtx="/home/niel/Desktop/webtronics">
+        <wtx:pins>
+        <wtx:analog>
+            <wtx:node y="10" x="0" index="1"/>
+            <wtx:node y="10" x="60" index="2"/>
+        </wtx:analog>
+
+    </wtx:pins>
+    <wtx:id>l1</wtx:id>
+
+    <wtx:type>l</wtx:type>
+    <wtx:name>coil</wtx:name>
+    <wtx:category>inductors</wtx:category>
+    <wtx:flip/>
+    <wtx:value>100m</wtx:value>
+    <wtx:label>value-l1-dbeeab34e49971</wtx:label>
+    <wtx:spice/>
+    <wtx:model/>
+    </wtx:part>
+</metadata>
+
+    <path fill="none" id="path2905" d="m 0,10 10,0 C 10,10 9.6107334,-0.12011806 14.591528,0.31770045 21.747112,0.94668589 24.470253,17.720009 20.544629,19.8941 15.951065,16.735947 18.786323,-0.6683819 25,0 31.159111,0.66251249 34.941921,15.894397 30.453858,20.030257 26.167898,17.899016 27.910571,0.45899332 35,0 41.407905,-0.41486922 44.153942,17.10781 40.363086,20.075643 35.723271,16.865025 37.979061,-0.59780321 45,0 c 4.981974,0.42419394 5,10 5,10 l 10,0"/>
+  </g><text x="110" y="129.9998779296875" font-size="12" fill="black" stroke-width="0px" id="value-gnd-5542b88262eb11"><tspan dx="0" dy="0">gnd</tspan></text><g class="ground" id="Gnd" stroke-width="2px" stroke="black" connects="10,0" transform="matrix(1,0,0,1,110,130)">
+<metadata>
+<wtx:part xmlns:wtx="/home/niel/Desktop/webtronics">
+    <wtx:pins>
+        <wtx:analog>
+            <wtx:node y="0" x="10" index="1"/>
+        </wtx:analog>
+    </wtx:pins>
+    <wtx:id>gnd</wtx:id>
+    <wtx:type>gnd</wtx:type>
+    <wtx:name>ground</wtx:name>
+    <wtx:category>sources</wtx:category>
+    <wtx:flip/>
+    <wtx:value/>
+    <wtx:label>value-gnd-5542b88262eb11</wtx:label>
+    <wtx:spice/>
+    <wtx:model/>
+</wtx:part>
+</metadata>
+
+    <path id="path3694" d="M 10,0 L 10,11"/>
+    <path id="path3696" d="M 0.50000006,11.834153 L 19.671275,11.834153"/>
+    <path id="path3698" d="M 2.6480823,14.5 L 17.732881,14.5"/>
+    <path id="path3700" d="M 5.802873,17.5 L 14.648082,17.5"/>
+  </g><circle cx="120" cy="113" r="3" stroke="black" fill="black"/><line x1="40" y1="50" x2="40" y2="20" stroke="black" stroke-width="2"/><line x1="40" y1="20" x2="90" y2="20" stroke="black" stroke-width="2"/><line x1="130" y1="20" x2="200" y2="20" stroke="black" stroke-width="2"/><line x1="200" y1="20" x2="200" y2="40" stroke="black" stroke-width="2"/><line x1="200" y1="100" x2="200" y2="113" stroke="black" stroke-width="2"/><line x1="200" y1="113" x2="40" y2="113" stroke="black" stroke-width="2"/><line x1="40" y1="113" x2="40" y2="110" stroke="black" stroke-width="2"/><line x1="200" y1="113" x2="120" y2="113" stroke="black" stroke-width="2"/><line x1="120" y1="113" x2="40" y2="113" stroke="black" stroke-width="2"/><line x1="120" y1="130" x2="120" y2="113" stroke="black" stroke-width="2"/></svg>

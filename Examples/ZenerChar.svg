@@ -1,0 +1,116 @@
+<?xml version='1.0' ?>
+<!--Created by webtronics 0.1-->
+<svg xmlns="http://www.w3.org/2000/svg" width="235px" height="157.5px"><rect x="0" y="0" fill="white" width="235px" height="157.5px"/><text x="25" y="59.9998779296875" font-size="12" fill="black" stroke-width="0px" id="value-v1-e45c87d9d95f30"><tspan dx="-15" dy="15">10</tspan><tspan dx="0" dy="0">v1</tspan></text><g class="battery" id="v" stroke-width="2px" stroke="black" transform="matrix(6.123234262925839e-17,1,-1,6.123234262925839e-17,65,50)">
+<metadata class="part">
+<wtx:part xmlns:wtx="/home/niel/Desktop/webtronics">
+    <wtx:pins>
+    <wtx:analog>
+        <wtx:node y="10" x="0" index="1"/>
+        <wtx:node y="10" x="50" index="2"/>
+    </wtx:analog>
+    </wtx:pins>
+    <wtx:id>v1</wtx:id>
+    <wtx:type>v</wtx:type>
+    <wtx:name>battery</wtx:name>
+    <wtx:category>sources</wtx:category>
+    <wtx:value>10</wtx:value>
+    <wtx:label>value-v1-e45c87d9d95f30</wtx:label>
+    <wtx:spice/>
+    <wtx:flip/>
+    <wtx:model/>
+</wtx:part>
+</metadata>
+      <path id="path5009" d="M 0,10 L 17,10"/>
+      <path id="path5019" d="M 32,10 L 50,10"/>
+      <path id="path5011" d="M 17.836609,0.68314333 L 17.718673,19.199113"/>
+      <path id="path5013" d="M 22.436119,3.7494823 L 22.436119,15.071349"/>
+      <path id="path5015" d="M 27.507371,0.68314333 L 27.507371,19.552922"/>
+      <path id="path5017" d="M 31.753072,3.8674183 L 31.635136,15.425157"/>
+      <text stroke-width="0px" font-size="12px" id="text5025" y="8.5261526" x="8.2167969">+</text>
+      <text stroke-width="0px" font-size="12px" id="text5029" y="0.5234375" x="34.111794">_</text>
+  </g><text x="105" y="10" font-size="12" fill="black" stroke-width="0px" id="value-r1-31cbd398db36da"><tspan dx="-14" dy="15">1k</tspan><tspan dx="0" dy="0">r1</tspan></text><g stroke-width="2px" stroke="black" transform="matrix(1,0,0,1,105,10)">
+<metadata class="part">
+<wtx:part xmlns:wtx="/home/niel/Desktop/webtronics">
+    <wtx:pins>
+		<wtx:analog>
+		  <wtx:node y="10" x="0" index="1"/>
+		  <wtx:node y="10" x="40" index="2"/>
+		</wtx:analog>
+    </wtx:pins>
+    <wtx:id>r1</wtx:id>
+    <wtx:type>r</wtx:type>
+    <wtx:name>resistor</wtx:name>
+    <wtx:category>resistors</wtx:category>
+    <wtx:value>1k</wtx:value>
+    <wtx:label>value-r1-31cbd398db36da</wtx:label>
+    <wtx:spice/>
+    <wtx:flip/>
+    <wtx:model/>
+</wtx:part>
+</metadata>
+
+    <path fill="none" id="path3444" d="M 5.1400289,10.973441 7.5009997,5.0436578 10.530362,14.908323 14.248435,4.3282724 18.324457,14.77488 21.761826,4.4617163 25.849828,14.589134 29.504786,4.5222528 33.128938,14.818135 35.33864,10.115602"/>
+    <path id="path2159" d="m 0,10 5.424147,0"/>
+    <path id="path2161" d="m 40,10 -5.459106,0"/>
+    <rect visibility="hidden" id="rect2162" y="0" x="0" height="20" width="40"/>
+
+  </g><text x="195" y="70" font-size="12" fill="black" stroke-width="0px" id="value-a1-63402cde52bd09"><tspan dx="0" dy="0">a1</tspan></text><g class="zener" id="g2232" stroke-width="2px" stroke="black" connects="0,10;40,10" transform="matrix(6.123234262925839e-17,1,-1,6.123234262925839e-17,225,60)">
+<metadata class="part">
+    <wtx:part xmlns:wtx="/home/niel/Desktop/webtronics">
+        <wtx:pins>
+        <wtx:analog>
+                <wtx:node y="10" x="0" index="1"/>
+                <wtx:node y="10" x="40" index="2"/>
+        </wtx:analog>
+    </wtx:pins>
+    <wtx:id>a1</wtx:id>
+
+    <wtx:type>a</wtx:type>
+    <wtx:name>zener</wtx:name>
+    <wtx:category>analogmodels</wtx:category>
+
+    <wtx:vbreak>1.0</wtx:vbreak>
+    <wtx:ibreak>2.0e-2</wtx:ibreak>
+    <wtx:rbreak>1.0</wtx:rbreak>
+    <wtx:isat>1.0e-12</wtx:isat>
+    <wtx:limitswitch>FALSE</wtx:limitswitch>
+    <wtx:nfor>1.0</wtx:nfor>
+    <wtx:irev>1.0e-6</wtx:irev>
+    
+
+    <wtx:flip/>
+    <wtx:value/>
+    <wtx:label>value-a1-63402cde52bd09</wtx:label>
+    <wtx:spice/>
+    <wtx:model/>
+    </wtx:part>
+</metadata>
+
+    <path fill="none" id="path2210" d="M 14.639172,0.38974096 L 10.056699,0.45435962 L 10.056699,19.706003 L 5,19.660362"/>
+    <path id="path3202" d="M 0,10 L 40,10"/>
+    <path fill="black" id="path2220" d="M 11.056699,9.3421656 L 30.030771,0.61472262 L 30.030771,19.706003 L 11.056699,9.3421656 z"/>
+  </g><text x="125" y="129.9998779296875" font-size="12" fill="black" stroke-width="0px" id="value-gnd-6060f87c3e7545"><tspan dx="0" dy="0">gnd</tspan></text><g class="ground" id="Gnd" stroke-width="2px" stroke="black" connects="10,0" transform="matrix(1,0,0,1,125,130)">
+<metadata>
+<wtx:part xmlns:wtx="/home/niel/Desktop/webtronics">
+    <wtx:pins>
+        <wtx:analog>
+            <wtx:node y="0" x="10" index="1"/>
+        </wtx:analog>
+    </wtx:pins>
+    <wtx:id>gnd</wtx:id>
+    <wtx:type>gnd</wtx:type>
+    <wtx:name>ground</wtx:name>
+    <wtx:category>sources</wtx:category>
+    <wtx:flip/>
+    <wtx:value/>
+    <wtx:label>value-gnd-6060f87c3e7545</wtx:label>
+    <wtx:spice/>
+    <wtx:model/>
+</wtx:part>
+</metadata>
+
+    <path id="path3694" d="M 10,0 L 10,11"/>
+    <path id="path3696" d="M 0.50000006,11.834153 L 19.671275,11.834153"/>
+    <path id="path3698" d="M 2.6480823,14.5 L 17.732881,14.5"/>
+    <path id="path3700" d="M 5.802873,17.5 L 14.648082,17.5"/>
+  </g><circle cx="135" cy="117" r="3" stroke="black" fill="black"/><line x1="55" y1="50" x2="55" y2="20" stroke="black" stroke-width="2"/><line x1="55" y1="20" x2="105" y2="20" stroke="black" stroke-width="2"/><line x1="145" y1="20" x2="215" y2="20" stroke="black" stroke-width="2"/><line x1="215" y1="20" x2="215" y2="60" stroke="black" stroke-width="2"/><line x1="215" y1="100" x2="215" y2="117" stroke="black" stroke-width="2"/><line x1="215" y1="117" x2="55" y2="117" stroke="black" stroke-width="2"/><line x1="55" y1="117" x2="55" y2="100" stroke="black" stroke-width="2"/><line x1="215" y1="117" x2="135" y2="117" stroke="black" stroke-width="2"/><line x1="135" y1="117" x2="55" y2="117" stroke="black" stroke-width="2"/><line x1="135" y1="130" x2="135" y2="117" stroke="black" stroke-width="2"/></svg>

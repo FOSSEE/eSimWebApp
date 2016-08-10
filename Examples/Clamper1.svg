@@ -1,0 +1,110 @@
+<?xml version='1.0' ?>
+<!--Created by webtronics 0.1-->
+<svg xmlns="http://www.w3.org/2000/svg" width="258px" height="177.5px"><rect x="0" y="0" fill="white" width="258px" height="177.5px"/><text x="10" y="60" font-size="12" fill="black" stroke-width="0px" id="value-v1-05c18dd81daa3d"><tspan dx="0" dy="0">v1</tspan></text><g class="sinvoltagesource" connects="0,20;60,20" stroke-width="2px" stroke="#000" id="S" transform="matrix(6.123234262925839e-17,1,-1,6.123234262925839e-17,60,50)">
+<metadata class="part">
+<wtx:part xmlns:wtx="http://code.google.com/p/webtronics">
+    <wtx:pins>
+    <wtx:analog>
+                <wtx:node y="20" x="0" index="1"/>
+                <wtx:node y="20" x="60" index="2"/>
+    </wtx:analog>
+    </wtx:pins>
+    <wtx:id>v1</wtx:id>
+    <wtx:type>v</wtx:type>
+    <wtx:name>sinvoltagesource</wtx:name>
+    <wtx:category>sources</wtx:category>
+    <wtx:value/>
+    
+    <wtx:offsetvoltage>0</wtx:offsetvoltage>
+    <wtx:voltageamplitude>5</wtx:voltageamplitude>
+    <wtx:frequency>50</wtx:frequency>
+    <wtx:delaytime>0</wtx:delaytime>
+    <wtx:dampingfactor>0</wtx:dampingfactor>
+
+    <wtx:label>value-v1-05c18dd81daa3d</wtx:label>
+    <wtx:spice/>
+    <wtx:flip/>
+    <wtx:model/>
+    <wtx:measure/>
+</wtx:part>
+</metadata>
+  <path d="m50.381,19.923a20.203,19.698,0,1,1,-40.406,0,20.203,19.698,0,1,1,40.406,0z" fill="none" id="path2816"/>
+  <path d="M10,20,0,20" id="path2818"/>
+  <path d="m50,20,10,0" id="path2820"/>
+  <path fill="none" stroke-width="1px" d="M15.763,19.492c10.699,23.004,16.424-16.073,27.966,0.169" id="path2819"/>
+<text stroke-width="0px" font-size="12px" id="text5025" y="20" x="0">+</text>
+<text stroke-width="0px" font-size="12px" id="text5029" y="15" x="53">_</text>
+
+</g><text x="110" y="10" font-size="12" fill="black" stroke-width="0px" id="value-c1-71574a757bca86"><tspan dx="-15" dy="15">1nf</tspan><tspan dx="0" dy="0">c1</tspan></text><g class="capacitor" id="C" stroke-width="2px" stroke="black" connects="0,10;30,10" transform="matrix(1,0,0,1,110,10)">
+<metadata class="part">
+<wtx:part xmlns:wtx="/home/niel/Desktop/webtronics">
+    <wtx:pins>
+		<wtx:analog>
+			<wtx:node y="10" x="0" index="1"/>
+			<wtx:node y="10" x="30" index="2"/>
+		</wtx:analog>
+    </wtx:pins>
+    <wtx:id>c1</wtx:id>
+    <wtx:type>c</wtx:type>
+    <wtx:name>capacitor</wtx:name>
+    <wtx:category>capacitors</wtx:category>
+    <wtx:value>1nf</wtx:value>
+    <wtx:label>value-c1-71574a757bca86</wtx:label>
+    <wtx:spice/>
+    <wtx:flip/>
+    <wtx:model/>
+</wtx:part>
+</metadata>
+    <path id="path3412" d="M 10,0 10,20"/>
+    <path id="path3414" d="m 20,0 0,20"/>
+    <path id="path3420" d="m 20,10 10,0"/>
+    <path id="path3422" d="M 10,10 0,10"/>
+  </g><text x="200" y="70" font-size="12" fill="black" stroke-width="0px" id="value-d1-a7c963558c8147"><tspan dx="-16" dy="15">1n4007</tspan><tspan dx="0" dy="0">d1</tspan></text><g stroke-width="2px" stroke="#000" class="diode" id="D" transform="matrix(-1.8369702788777518e-16,-1,1,-1.8369702788777518e-16,210,100)">
+<metadata class="part">
+    <wtx:part xmlns:wtx="/home/niel/Desktop/webtronics">
+    <wtx:pins>
+        <wtx:analog>
+                <wtx:node y="10" x="40" index="1"/>
+                <wtx:node y="10" x="0" index="2"/>
+        </wtx:analog>
+    </wtx:pins>
+    <wtx:id>d1</wtx:id>
+
+    <wtx:type>d</wtx:type>
+    <wtx:name>diode</wtx:name>
+    <wtx:category>diodes</wtx:category>
+    <wtx:flip/>
+    <wtx:value>1n4007</wtx:value>
+    <wtx:label>value-d1-a7c963558c8147</wtx:label>
+    <wtx:spice/>
+    <wtx:model>1n4007.lib</wtx:model>
+    </wtx:part>
+</metadata>
+  <path d="m11.059,19.249,0-18.37" id="path2210"/>
+  <path d="M0,10h40" id="path3202"/>
+  <path d="m11.298,10,17.776-8.5486,0,17.1l-17.776-8.551z" fill="#000" id="path2220"/>
+ </g><text x="130" y="149.9998779296875" font-size="12" fill="black" stroke-width="0px" id="value-gnd-70ac59e6d54fdb"><tspan dx="0" dy="0">gnd</tspan></text><g class="ground" id="Gnd" stroke-width="2px" stroke="black" connects="10,0" transform="matrix(1,0,0,1,130,150)">
+<metadata>
+<wtx:part xmlns:wtx="/home/niel/Desktop/webtronics">
+    <wtx:pins>
+        <wtx:analog>
+            <wtx:node y="0" x="10" index="1"/>
+        </wtx:analog>
+    </wtx:pins>
+    <wtx:id>gnd</wtx:id>
+    <wtx:type>gnd</wtx:type>
+    <wtx:name>ground</wtx:name>
+    <wtx:category>sources</wtx:category>
+    <wtx:flip/>
+    <wtx:value/>
+    <wtx:label>value-gnd-70ac59e6d54fdb</wtx:label>
+    <wtx:spice/>
+    <wtx:model/>
+</wtx:part>
+</metadata>
+
+    <path id="path3694" d="M 10,0 L 10,11"/>
+    <path id="path3696" d="M 0.50000006,11.834153 L 19.671275,11.834153"/>
+    <path id="path3698" d="M 2.6480823,14.5 L 17.732881,14.5"/>
+    <path id="path3700" d="M 5.802873,17.5 L 14.648082,17.5"/>
+  </g><circle cx="140" cy="130" r="3" stroke="black" fill="black"/><line x1="40" y1="50" x2="40" y2="22" stroke="black" stroke-width="2"/><line x1="40" y1="22" x2="110" y2="22" stroke="black" stroke-width="2"/><line x1="110" y1="22" x2="110" y2="20" stroke="black" stroke-width="2"/><line x1="140" y1="20" x2="220" y2="20" stroke="black" stroke-width="2"/><line x1="220" y1="20" x2="220" y2="60" stroke="black" stroke-width="2"/><line x1="220" y1="100" x2="220" y2="130" stroke="black" stroke-width="2"/><line x1="220" y1="130" x2="40" y2="130" stroke="black" stroke-width="2"/><line x1="40" y1="130" x2="40" y2="110" stroke="black" stroke-width="2"/><line x1="220" y1="130" x2="140" y2="130" stroke="black" stroke-width="2"/><line x1="140" y1="130" x2="40" y2="130" stroke="black" stroke-width="2"/><line x1="140" y1="150" x2="140" y2="130" stroke="black" stroke-width="2"/></svg>

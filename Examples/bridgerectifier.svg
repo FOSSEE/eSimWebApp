@@ -1,0 +1,184 @@
+<?xml version='1.0' ?>
+<!--Created by webtronics 0.1-->
+<svg xmlns="http://www.w3.org/2000/svg" width="350px" height="294.5px"><rect x="0" y="0" fill="white" width="350px" height="294.5px"/><text x="10" y="117" font-size="12" fill="black" stroke-width="0px" id="value-v1-620fd87f036489"><tspan dx="0" dy="0">v1</tspan></text><g class="sinvoltagesource" connects="0,20;60,20" stroke-width="2px" stroke="#000" id="S" transform="matrix(6.123234262925839e-17,1,-1,6.123234262925839e-17,60,107)">
+<metadata class="part">
+<wtx:part xmlns:wtx="http://code.google.com/p/webtronics">
+    <wtx:pins>
+    <wtx:analog>
+                <wtx:node y="20" x="0" index="1"/>
+                <wtx:node y="20" x="60" index="2"/>
+    </wtx:analog>
+    </wtx:pins>
+    <wtx:id>v1</wtx:id>
+    <wtx:type>v</wtx:type>
+    <wtx:name>sinvoltagesource</wtx:name>
+    <wtx:category>sources</wtx:category>
+    <wtx:value/>
+    
+    <wtx:offsetvoltage>0</wtx:offsetvoltage>
+    <wtx:voltageamplitude>2</wtx:voltageamplitude>
+    <wtx:frequency>50</wtx:frequency>
+    <wtx:delaytime>0</wtx:delaytime>
+    <wtx:dampingfactor>0</wtx:dampingfactor>
+
+    <wtx:label>value-v1-620fd87f036489</wtx:label>
+    <wtx:spice/>
+    <wtx:flip/>
+    <wtx:model/>
+    <wtx:measure/>
+</wtx:part>
+</metadata>
+  <path d="m50.381,19.923a20.203,19.698,0,1,1,-40.406,0,20.203,19.698,0,1,1,40.406,0z" fill="none" id="path2816"/>
+  <path d="M10,20,0,20" id="path2818"/>
+  <path d="m50,20,10,0" id="path2820"/>
+  <path fill="none" stroke-width="1px" d="M15.763,19.492c10.699,23.004,16.424-16.073,27.966,0.169" id="path2819"/>
+<text stroke-width="0px" font-size="12px" id="text5025" y="20" x="0">+</text>
+<text stroke-width="0px" font-size="12px" id="text5029" y="15" x="53">_</text>
+
+</g><text x="130" y="47" font-size="12" fill="black" stroke-width="0px" id="value-d1-7460b6487c355b"><tspan dx="-16" dy="15">1n4007</tspan><tspan dx="0" dy="0">d1</tspan></text><g stroke-width="2px" stroke="#000" class="diode" id="D" transform="matrix(6.123234262925839e-17,1,-1,6.123234262925839e-17,160,37)">
+<metadata class="part">
+    <wtx:part xmlns:wtx="/home/niel/Desktop/webtronics">
+    <wtx:pins>
+        <wtx:analog>
+                <wtx:node y="10" x="40" index="1"/>
+                <wtx:node y="10" x="0" index="2"/>
+        </wtx:analog>
+    </wtx:pins>
+    <wtx:id>d1</wtx:id>
+
+    <wtx:type>d</wtx:type>
+    <wtx:name>diode</wtx:name>
+    <wtx:category>diodes</wtx:category>
+    <wtx:flip/>
+    <wtx:value>1n4007</wtx:value>
+    <wtx:label>value-d1-7460b6487c355b</wtx:label>
+    <wtx:spice/>
+    <wtx:model>1n4007.lib</wtx:model>
+    </wtx:part>
+</metadata>
+  <path d="m11.059,19.249,0-18.37" id="path2210"/>
+  <path d="M0,10h40" id="path3202"/>
+  <path d="m11.298,10,17.776-8.5486,0,17.1l-17.776-8.551z" fill="#000" id="path2220"/>
+ </g><text x="210" y="47" font-size="12" fill="black" stroke-width="0px" id="value-d2-9e95a1b8bdd297"><tspan dx="-16" dy="15">1n4007</tspan><tspan dx="0" dy="0">d2</tspan></text><g stroke-width="2px" stroke="#000" class="diode" id="D" transform="matrix(6.123234262925839e-17,1,-1,6.123234262925839e-17,240,37)">
+<metadata class="part">
+    <wtx:part xmlns:wtx="/home/niel/Desktop/webtronics">
+    <wtx:pins>
+        <wtx:analog>
+                <wtx:node y="10" x="40" index="1"/>
+                <wtx:node y="10" x="0" index="2"/>
+        </wtx:analog>
+    </wtx:pins>
+    <wtx:id>d2</wtx:id>
+
+    <wtx:type>d</wtx:type>
+    <wtx:name>diode</wtx:name>
+    <wtx:category>diodes</wtx:category>
+    <wtx:flip/>
+    <wtx:value>1n4007</wtx:value>
+    <wtx:label>value-d2-9e95a1b8bdd297</wtx:label>
+    <wtx:spice/>
+    <wtx:model>1n4007.lib</wtx:model>
+    </wtx:part>
+</metadata>
+  <path d="m11.059,19.249,0-18.37" id="path2210"/>
+  <path d="M0,10h40" id="path3202"/>
+  <path d="m11.298,10,17.776-8.5486,0,17.1l-17.776-8.551z" fill="#000" id="path2220"/>
+ </g><text x="130" y="207" font-size="12" fill="black" stroke-width="0px" id="value-d3-f0b8095f7a07d6"><tspan dx="-16" dy="15">1n4007</tspan><tspan dx="0" dy="0">d3</tspan></text><g stroke-width="2px" stroke="#000" class="diode" id="D" transform="matrix(6.123234262925839e-17,1,-1,6.123234262925839e-17,160,197)">
+<metadata class="part">
+    <wtx:part xmlns:wtx="/home/niel/Desktop/webtronics">
+    <wtx:pins>
+        <wtx:analog>
+                <wtx:node y="10" x="40" index="1"/>
+                <wtx:node y="10" x="0" index="2"/>
+        </wtx:analog>
+    </wtx:pins>
+    <wtx:id>d3</wtx:id>
+
+    <wtx:type>d</wtx:type>
+    <wtx:name>diode</wtx:name>
+    <wtx:category>diodes</wtx:category>
+    <wtx:flip/>
+    <wtx:value>1n4007</wtx:value>
+    <wtx:label>value-d3-f0b8095f7a07d6</wtx:label>
+    <wtx:spice/>
+    <wtx:model>1n4007.lib</wtx:model>
+    </wtx:part>
+</metadata>
+  <path d="m11.059,19.249,0-18.37" id="path2210"/>
+  <path d="M0,10h40" id="path3202"/>
+  <path d="m11.298,10,17.776-8.5486,0,17.1l-17.776-8.551z" fill="#000" id="path2220"/>
+ </g><text x="210" y="207" font-size="12" fill="black" stroke-width="0px" id="value-d4-edbc133d061316"><tspan dx="-16" dy="15">1n4007</tspan><tspan dx="0" dy="0">d4</tspan></text><g stroke-width="2px" stroke="#000" class="diode" id="D" transform="matrix(6.123234262925839e-17,1,-1,6.123234262925839e-17,240,197)">
+<metadata class="part">
+    <wtx:part xmlns:wtx="/home/niel/Desktop/webtronics">
+    <wtx:pins>
+        <wtx:analog>
+                <wtx:node y="10" x="40" index="1"/>
+                <wtx:node y="10" x="0" index="2"/>
+        </wtx:analog>
+    </wtx:pins>
+    <wtx:id>d4</wtx:id>
+
+    <wtx:type>d</wtx:type>
+    <wtx:name>diode</wtx:name>
+    <wtx:category>diodes</wtx:category>
+    <wtx:flip/>
+    <wtx:value>1n4007</wtx:value>
+    <wtx:label>value-d4-edbc133d061316</wtx:label>
+    <wtx:spice/>
+    <wtx:model>1n4007.lib</wtx:model>
+    </wtx:part>
+</metadata>
+  <path d="m11.059,19.249,0-18.37" id="path2210"/>
+  <path d="M0,10h40" id="path3202"/>
+  <path d="m11.298,10,17.776-8.5486,0,17.1l-17.776-8.551z" fill="#000" id="path2220"/>
+ </g><text x="310" y="117" font-size="12" fill="black" stroke-width="0px" id="value-r1-cb79c9d457f011"><tspan dx="-14" dy="15">1K</tspan><tspan dx="0" dy="0">r1</tspan></text><g stroke-width="2px" stroke="black" transform="matrix(6.123234262925839e-17,1,-1,6.123234262925839e-17,340,107)">
+<metadata class="part">
+<wtx:part xmlns:wtx="/home/niel/Desktop/webtronics">
+    <wtx:pins>
+		<wtx:analog>
+		  <wtx:node y="10" x="0" index="1"/>
+		  <wtx:node y="10" x="40" index="2"/>
+		</wtx:analog>
+    </wtx:pins>
+    <wtx:id>r1</wtx:id>
+    <wtx:type>r</wtx:type>
+    <wtx:name>resistor</wtx:name>
+    <wtx:category>resistors</wtx:category>
+    <wtx:value>1K</wtx:value>
+    <wtx:label>value-r1-cb79c9d457f011</wtx:label>
+    <wtx:spice/>
+    <wtx:flip/>
+    <wtx:model/>
+</wtx:part>
+</metadata>
+
+    <path fill="none" id="path3444" d="M 5.1400289,10.973441 7.5009997,5.0436578 10.530362,14.908323 14.248435,4.3282724 18.324457,14.77488 21.761826,4.4617163 25.849828,14.589134 29.504786,4.5222528 33.128938,14.818135 35.33864,10.115602"/>
+    <path id="path2159" d="m 0,10 5.424147,0"/>
+    <path id="path2161" d="m 40,10 -5.459106,0"/>
+    <rect visibility="hidden" id="rect2162" y="0" x="0" height="20" width="40"/>
+
+  </g><text x="280" y="266.9998779296875" font-size="12" fill="black" stroke-width="0px" id="value-gnd-034cbf90460449"><tspan dx="0" dy="0">gnd</tspan></text><g class="ground" id="Gnd" stroke-width="2px" stroke="black" connects="10,0" transform="matrix(1,0,0,1,280,267)">
+<metadata>
+<wtx:part xmlns:wtx="/home/niel/Desktop/webtronics">
+    <wtx:pins>
+        <wtx:analog>
+            <wtx:node y="0" x="10" index="1"/>
+        </wtx:analog>
+    </wtx:pins>
+    <wtx:id>gnd</wtx:id>
+    <wtx:type>gnd</wtx:type>
+    <wtx:name>ground</wtx:name>
+    <wtx:category>sources</wtx:category>
+    <wtx:flip/>
+    <wtx:value/>
+    <wtx:label>value-gnd-034cbf90460449</wtx:label>
+    <wtx:spice/>
+    <wtx:model/>
+</wtx:part>
+</metadata>
+
+    <path id="path3694" d="M 10,0 L 10,11"/>
+    <path id="path3696" d="M 0.50000006,11.834153 L 19.671275,11.834153"/>
+    <path id="path3698" d="M 2.6480823,14.5 L 17.732881,14.5"/>
+    <path id="path3700" d="M 5.802873,17.5 L 14.648082,17.5"/>
+  </g><circle cx="290" cy="255" r="3" stroke="black" fill="black"/><circle cx="230" cy="255" r="3" stroke="black" fill="black"/><circle cx="230" cy="13" r="3" stroke="black" fill="black"/><circle cx="150" cy="126" r="3" stroke="black" fill="black"/><circle cx="230" cy="167" r="3" stroke="black" fill="black"/><line x1="150" y1="37" x2="150" y2="13" stroke="black" stroke-width="2"/><line x1="150" y1="13" x2="330" y2="13" stroke="black" stroke-width="2"/><line x1="330" y1="13" x2="330" y2="107" stroke="black" stroke-width="2"/><line x1="150" y1="237" x2="150" y2="255" stroke="black" stroke-width="2"/><line x1="150" y1="255" x2="330" y2="255" stroke="black" stroke-width="2"/><line x1="330" y1="255" x2="330" y2="147" stroke="black" stroke-width="2"/><line x1="150" y1="255" x2="290" y2="255" stroke="black" stroke-width="2"/><line x1="290" y1="255" x2="330" y2="255" stroke="black" stroke-width="2"/><line x1="290" y1="267" x2="290" y2="255" stroke="black" stroke-width="2"/><line x1="150" y1="255" x2="230" y2="255" stroke="black" stroke-width="2"/><line x1="230" y1="255" x2="290" y2="255" stroke="black" stroke-width="2"/><line x1="230" y1="237" x2="230" y2="255" stroke="black" stroke-width="2"/><line x1="150" y1="13" x2="230" y2="13" stroke="black" stroke-width="2"/><line x1="230" y1="13" x2="330" y2="13" stroke="black" stroke-width="2"/><line x1="230" y1="37" x2="230" y2="13" stroke="black" stroke-width="2"/><line x1="150" y1="77" x2="150" y2="197" stroke="black" stroke-width="2"/><line x1="230" y1="77" x2="230" y2="197" stroke="black" stroke-width="2"/><line x1="40" y1="107" x2="40" y2="92" stroke="black" stroke-width="2"/><line x1="40" y1="92" x2="96" y2="92" stroke="black" stroke-width="2"/><line x1="96" y1="92" x2="96" y2="126" stroke="black" stroke-width="2"/><line x1="150" y1="77" x2="150" y2="126" stroke="black" stroke-width="2"/><line x1="150" y1="126" x2="150" y2="197" stroke="black" stroke-width="2"/><line x1="96" y1="126" x2="150" y2="126" stroke="black" stroke-width="2"/><line x1="230" y1="77" x2="230" y2="167" stroke="black" stroke-width="2"/><line x1="230" y1="167" x2="230" y2="197" stroke="black" stroke-width="2"/><line x1="40" y1="167" x2="230" y2="167" stroke="black" stroke-width="2"/></svg>
