@@ -37,7 +37,7 @@ return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")
 function servefile(){
 var request = getParameterByName('file');
 if(request!="")openfile(request,sendfile);
-else openfile("parts.json",sendfile);
+else openfile("/esimStatic/webtronix_server/parts.json",sendfile);
 }
 </script>
 </head>

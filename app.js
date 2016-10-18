@@ -17,7 +17,7 @@ app.engine('html',require('hogan-express'));
 app.set('view engine','html');
 
 //Set Static public folder
-app.use(express.static(path.join(__dirname,'views')));
+app.use('/esimStatic',express.static(path.join(__dirname,'views')));
 
 //Set Port to run the app
 app.set('port',process.env.PORT||4000);

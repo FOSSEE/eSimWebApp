@@ -28,7 +28,8 @@ var webtronics={
   Elist:/^(path|circle|rect|line|text|g|tspan|svg|wtx:limitswitch|wtx:irev|wtx:rbreak|wtx:inoffset|wtx:gain|wtx:outoffset|wtx:outundef|wtx:ingain|wtx:outgain|wtx:denoffset|wtx:dengain|wtx:numoffset|wtx:numgain|wtx:fraction|wtx:dendomain|wtx:denlowerlimit|wtx:outlowerlimit|wtx:outupperlimit|wtx:limitrange|wtx:upperdelta|wtx:lowerdelta|wtx:indomain|wtx:xarr|wtx:yarr|wtx:amodel|wtx:coff|wtx:con|wtx:roff|wtx:ron|wtx:log|wtx:vbreak|wtx:ibreak|wtx:isat|wtx:nfor|wtx:rsource|wtx:rsink|wtx:ilimitsource|wtx:ilimitsink|wtx:vpwr|wtx:isource|wtx:isink|wtx:routdomain|wtx:inlow|wtx:inhigh|wtx:hyst|wtx:outic|wtx:numcoeff|wtx:dencoeff|wtx:intic|wtx:denormfreq|wtx:riseslope|wtx:fallslope|wtx:outlow|wtx:outhigh|wtx:cntlarr|wtx:freqarr|wtx:duty|wtx:risetime|wtx:falltime|wtx:clktrig|wtx:pwarr|wtx:ptrig|wtx:rdelay|wtx:fdelay|wtx:rmax|wtx:rmin|wtx:rinit|wtx:vt|wtx:alpha|wtx:beta|wtx:eval1|wtx:eval2|wtx:eval3|wtx:eval4|wtx:eval5|wtx:eval6|wtx:pwlval|wtx:pulval1|wtx:pulval2|wtx:pulval3|wtx:pulval4|wtx:pulval5|wtx:pulval6|wtx:pulval7|wtx:amplitude|wtx:phase|wtx:offsetvoltage|wtx:voltageamplitude|wtx:frequency|wtx:delaytime|wtx:dampingfactor|wtx:part|wtx:pins|wtx:analog|wtx:digital|wtx:node|wtx:id|wtx:type|wtx:name|wtx:category|wtx:value|wtx:label|wtx:spice|wtx:risedelay|wtx:inputload|wtx:falldelay|wtx:flip|wtx:model|wtx:measure|metadata|)$/,
   /* .lib files contain spice .model devices .mod devices contain .subckt devices and the id must begin with x*/
   //	serverurls:["http://logical.github.io/webtronix/webtronix_server"],
- 	serverurls:["webtronix_server"],
+ 	//Added esimStatic fin url for production
+  serverurls:["esimStatic/webtronix_server"],
   partslists:[],
   models:{},
   docfromtext:function(txt){
@@ -1252,7 +1253,7 @@ var webtronics={
     input_box=confirm("Click OK to Clear the Drawing.");
     if (input_box==true){
       $('webtronics_diagram_area').removeChild($("webtronics_display_frame"));
-      var frame=new Element('iframe',{id:'webtronics_display_frame',src:'canvas/canvas.html'});
+      var frame=new Element('iframe',{id:'webtronics_display_frame',src:'/esimStatic/canvas/canvas.html'});
       $('webtronics_diagram_area').insert(frame);
       Event.observe(frame,'load',function(){
         var filename='Schematic.svg';
@@ -1458,6 +1459,8 @@ console.log(exception);
     $("webtronics_parts_list").innerHTML="";
     webtronics.serverurls.each(function(url){
       if(url=="webtronix_server"){
+        // url = "esimStatic/"+url
+        console.log("IF----->"+url)
         openfile(url+"/parts.json",function(text){
           webtronics.partslists.push(text.evalJSON(true));
           webtronics.partslists[webtronics.partslists.length-1].url=url;
@@ -1465,6 +1468,8 @@ console.log(exception);
         });
       }
       else{
+        console.log("ELSE----->"+url)
+        // url = "esimStatic/"+url
         new request(url,"parts.json",function(text){
           webtronics.partslists.push(text.evalJSON(true));
           webtronics.partslists[webtronics.partslists.length-1].url=url;
@@ -1553,7 +1558,7 @@ console.log(exception);
 
       $("webtronics_diagram_area").insert(contextmenu);
       /*add a new frame */
-      var frame=new Element('iframe',{id:'webtronics_display_frame',src:'canvas/canvas.html'});
+      var frame=new Element('iframe',{id:'webtronics_display_frame',src:'/esimStatic/canvas/canvas.html'});
       $('webtronics_diagram_area').insert(frame);
 
       Event.observe(frame,'load',function(){
