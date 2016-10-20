@@ -1,4 +1,5 @@
-var socket = io();
+// var socket = io.connect();
+var socket = io.connect("http://localhost:4000",{ path: '/esimsockets' });
 
 socket.on("plotData",function(data){
 	var keys = Object.keys(data);

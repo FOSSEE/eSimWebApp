@@ -29,7 +29,7 @@ app.set('host',config.host);
 //Create server which listen app 
 var server = require('http').createServer(app);
 //Socket.io is invoked by passing server 
-var io = require('socket.io')(server);
+var io = require('socket.io')(server, { path: '/esimsockets' });
 var exec = require('child_process').exec;
 
 //Routing
